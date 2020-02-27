@@ -1,0 +1,155 @@
+onLoadName = "SAA Project";
+//loadScreen 		= "img\logo.jpg";
+respawn = 3;
+respawnDelay = 180;
+respawnButton = 0;
+respawnOnStart = -1;
+respawnTemplates[] = {"ace_spectator","Counter","Wave"}; // Enables the spectator template for all
+saving = 0;
+disabledAI = 1;
+enableDebugConsole = 1;
+debriefing = 0;
+
+//Function library definitions
+class CfgFunctions
+{
+    class Shadec
+    {
+        class Database {
+            class call_db {};
+			class getCash {};
+			class saveCash {};
+			class getInventory {};
+			class saveInventory {};
+			class loadStorage {};
+			class saveStorage {};
+            class loadPlayer {};
+            class savePlayer {};
+			class storageOutputFormat {};
+        };
+		class Respawn {
+			class changeRespawnTickets {};
+			class forceRespawn {};
+			class changeRespawnState {};
+			class showRespawnTickets {};
+			class showPlayers {};
+			class moveRespawnMarker {};
+			class changeRespawnTime {};
+		};
+		class Gameplay {
+			class endMission {};
+			class rolesAutoAssign {};
+			class addShadecArsenal {};
+			class respawnTeleport {};
+			class assignStorage {};
+			class assignFob {};
+			class assignJammer {};
+			class objectJamming {};
+			class radioSignalQuality {};
+			class manageCurators {};
+		};
+		class Generic {
+			class addToStorage {};
+			class createStorage {};
+			class deleteStorage {};
+			class gearList {};
+			class getCargoCompat {};
+			class itemsListShortener {};
+			class listCreate {};
+			class loadoutListCreate {};
+			class reLoadoutUnit {};
+			class addZeusModules {};
+			class getMsgServerVariable {};
+			class usersIDs {};
+			class initStorage {};
+			class removeStorage {};
+			class removeFob {};
+			class clearVehicleInventory {};
+		};
+    };
+};
+
+//Remote execution config
+class CfgRemoteExec
+{
+    class Functions {
+		mode = 2;
+		jip = 1;
+		class BIS_fnc_debugConsoleExec {allowedTargets = 0;};
+		class call_db {allowedTargets = 2;};
+		class changeRespawnTickets {allowedTargets = 2;};
+		class forceRespawn {allowedTargets = 2;};
+		class changeRespawnState {allowedTargets = 2;};
+		class showRespawnTickets {allowedTargets = 2;};
+		class endMission {allowedTargets = 2;};
+		class showPlayers {allowedTargets = 2;};
+		class moveRespawnMarker {allowedTargets = 2;};
+		class addToStorage {allowedTargets = 0;};
+		class reLoadoutUnit {allowedTargets = 2;};
+		class rolesAutoAssign {allowedTargets = 2;};
+		class addShadecArsenal {allowedTargets = 2;};
+		class getMsgServerVariable {allowedTargets = 2;};
+		class changeRespawnTime {allowedTargets = 2;};
+		class respawnTeleport {allowedTargets = 2;};
+		class usersIDs {allowedTargets = 2;};
+		class assignStorage {allowedTargets = 2;};
+		class initStorage {allowedTargets = 2;}
+		class assignFob {allowedTargets = 2;};
+		class removeStorage {allowedTargets = 2;};
+		class removeFob {allowedTargets = 2;};
+		class assignJammer {allowedTargets = 2;};
+		class objectJamming {allowedTargets = 0;};
+		class radioSignalQuality {allowedTargets = 0;};
+		class clearVehicleInventory {allowedTargets = 2;};
+		class storageOutputFormat {allowedTargets = 0;};
+		class manageCurators {allowedTargets = 2;}
+    };
+};
+
+class CfgDebriefing
+{  
+	class Win
+	{
+		title = "Mission Complete";
+		subtitle = "Respect+";
+		description = "";
+		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca";
+		pictureColor[] = {0.1,0.6,0.2,1};
+	};
+
+	class Lose
+	{
+		title = "Mission Failed";
+		subtitle = "We'll get em next time?...";
+		description = "";
+		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class toBeContinued
+	{
+		title = "To be continued...";
+		subtitle = "Until next time...";
+		description = "";
+		pictureColor[] = {1,1,1,1};
+	};
+
+	class allDead
+	{
+		title = "You all died!";
+		subtitle = "Everyone is dead.";
+		description = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+};
+
+disableChannels[] = {
+	{ 0, false, true },
+	{ 1, false, true },
+	{ 2, true, true },
+	{ 3, true, true },
+	{ 4, true, true },
+	{ 5, true, false },
+	{ 6, false, true }
+};

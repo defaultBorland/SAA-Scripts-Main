@@ -1,0 +1,139 @@
+﻿<Container name="Low Gear">
+
+<Key ID="STR_RIP_LOWGEARON"> 
+<Original>High-climbing gear (on)</Original> 
+<Russian>Включить пониженную</Russian> 
+</Key> 
+
+<Key ID="STR_RIP_LOWGEAROFF"> 
+<Original>High-climbing gear (off)</Original> 
+<Russian>Включить стандартную</Russian> 
+</Key>
+
+</Container>
+
+<Container name="Actions">
+
+<Key ID="str_SAA_STORAGE_ACTION"> 
+<Original>Open Private Storage</Original> 
+<Russian>Открыть личное хранилище</Russian> 
+</Key>
+
+<Key ID="str_SAA_ASSIGN_ZEUS_ACTION"> 
+<Original>Re-Assign Zeus</Original> 
+<Russian>Получить Зевса</Russian> 
+</Key>
+
+</Container>
+
+<Container name="General Words">
+
+<Key ID="str_GENERAL_YES"> 
+<Original>Yes</Original> 
+<Russian>Да</Russian> 
+</Key>
+
+<Key ID="str_GENERAL_NO"> 
+<Original>No</Original> 
+<Russian>Нет</Russian> 
+</Key>
+
+</Container>
+
+<Container name="Zeus Module Add Arsenal">
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_HEADER"> 
+<Original>Add SAA Arsenal</Original> 
+<Russian>Добавить арсенал SAA</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_UNIFORM"> 
+<Original>Uniform</Original> 
+<Russian>Униформа</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_WWEAPONS"> 
+<Original>w/Weapons</Original> 
+<Russian>С Оружием</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_ARID"> 
+<Original>Arid</Original> 
+<Russian>Пустынная</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_SEMIARID"> 
+<Original>Semi-Arid</Original> 
+<Russian>Полупустынная</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_FOREST"> 
+<Original>Forest</Original> 
+<Russian>Лесная</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_WINTER"> 
+<Original>Winter</Original> 
+<Russian>Зимняя</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_SPECOPS"> 
+<Original>Spec-Ops</Original> 
+<Russian>Ночная/Черная</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_WORD_ALL"> 
+<Original>All Above</Original> 
+<Russian>Вся</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_DIALOG_HEADER"> 
+<Original>Add SAA Uniform/Arsenal</Original> 
+<Russian>Добавить Униформу/Арсенал SAA</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_DIALOG_ARSENALTYPE"> 
+<Original>Arsenal Type</Original> 
+<Russian>Тип Арсенала</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_DIALOG_UNIFORMTYPE"> 
+<Original>Uniform Type</Original> 
+<Russian>Тип Униформы</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_DIALOG_CLEAROBJECT"> 
+<Original>Clear object inventory</Original> 
+<Russian>Очистить инвентарь обекта</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ADDARSENAL_ZEUSMESSAGE"> 
+<Original>Arsenal Added</Original> 
+<Russian>Арсенал добавлен</Russian> 
+</Key>
+
+</Container>
+
+<Container name="Zeus Module End Scenario">
+
+<Key ID="str_ZEUS_MODULES_ENDSCENARIO_TAB"> 
+<Original>Scenario Flow</Original> 
+<Russian>Ход сценария</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ENDSCENARIO_TITLE"> 
+<Original>End Mission (Use this)</Original> 
+<Russian>Завершить миссию (Для завершения)</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ENDSCENARIO_DIALOG_TITLE"> 
+<Original>End Mission</Original> 
+<Russian>Завершить миссию</Russian> 
+</Key>
+
+<Key ID="str_ZEUS_MODULES_ENDSCENARIO_DIALOG_TYPE"> 
+<Original>Choose End Type:</Original> 
+<Russian>Выберите тип конца:</Russian> 
+</Key>
+
+</Container>

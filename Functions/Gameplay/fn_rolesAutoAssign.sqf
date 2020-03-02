@@ -9,11 +9,15 @@ if (isNil {_fc}) exitWith {diag_log format ["First class is Nil!"]};
 if (isNil {_sc}) exitWith {diag_log format ["Second class is Nil!"]};
 
 switch (_fc) do {
-	case "Medic": {_unit setVariable ["ace_medical_medicclass", 1, true]};
+	case "Medic";
 	case "Nurse": {_unit setVariable ["ace_medical_medicclass", 1, true]};
 	case "Engineer": {
 		_unit setVariable ["ACE_IsEngineer",2, true];
 		{player setUnitTrait ["explosiveSpecialist", true]} remoteExec ["call", owner _unit];
+	};
+	case "Sniper": {
+		{player setUnitTrait ["camouflageCoef", 0.5]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["audibleCoef", 0.5]} remoteExec ["call", owner _unit];
 	};
 	default {};
 };

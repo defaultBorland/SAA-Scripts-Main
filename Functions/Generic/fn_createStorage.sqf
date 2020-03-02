@@ -7,10 +7,6 @@ _pcid = _this # 1;
 _uid = _this # 2;
 _buyList = _this # 3;
 
-// diag_log format["_storage:%1", _storageList];
-// diag_log format["_buyList:%1", _buyList];
-// diag_log format["_pcid:%1 | _uid:%2", _pcid, _uid];
-
 missionNamespace setVariable [format["storage_%1", _uid], _storageList];
 
 _objectStorage = missionNamespace getVariable ["objectStorage", nil];

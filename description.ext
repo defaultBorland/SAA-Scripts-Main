@@ -17,8 +17,6 @@ class CfgFunctions
     {
         class Database {
             class call_db {};
-			class getCash {};
-			class saveCash {};
 			class getInventory {};
 			class saveInventory {};
 			class loadStorage {};

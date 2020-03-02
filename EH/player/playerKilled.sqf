@@ -42,7 +42,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		_items append (assignedItems _unit);
 		_items = _items - [""];
 
-		sleep 3;
+		sleep 5;
 
 		removeAllItems _unit; 
 		removeAllWeapons _unit; 

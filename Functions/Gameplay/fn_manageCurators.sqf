@@ -34,7 +34,7 @@ fnc_Assign = {
 
 	unassignCurator (zeusSlots # _slot);
 	_unit assignCurator (zeusSlots # _slot);
-	[["You are Zeus now", "Plain", 1]] remoteExec ["cutText", owner _unit];
+	//[["You are Zeus now", "Plain", 1]] remoteExec ["cutText", owner _unit];
 };
 
 fnc_Unassign = {

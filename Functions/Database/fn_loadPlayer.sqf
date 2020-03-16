@@ -12,3 +12,5 @@ if (_uid in (missionNamespace getVariable "ZeusArray")) exitWith {
 };
 
 [["loadAll",_data],Shadec_fnc_call_db] remoteExec ["spawn", 2];
+
+// _unit in (allCurators apply {getAssignedCuratorUnit _x})

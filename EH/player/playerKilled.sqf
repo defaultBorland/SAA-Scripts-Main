@@ -48,35 +48,8 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		removeAllWeapons _unit; 
 		removeAllAssignedItems _unit;
 
-		private _droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 100];
-
-		{
-			private _holder = _x;
-
-			private _removing = _items select {_x in (weaponCargo _holder)};
-			_items = _items - _removing;
-
-			{
-				[_holder, _x] call CBA_fnc_removeWeaponCargo;
-			} forEach _removing;
-
-			_removing = _items select {_x in (magazineCargo _holder)};
-			_items = _items - _removing;
-
-			{
-				[_holder, _x] call CBA_fnc_removeMagazineCargo;
-			} forEach _removing;
-
-			_removing = _items select {_x in (itemCargo _holder)};
-			_items = _items - _removing;
-
-			{
-				[_holder, _x] call CBA_fnc_removeItemCargo;
-			} forEach _removing;
-
-			if (_items isEqualTo []) exitWith {};
-			
-		} forEach _droppedGear
+		_droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 7];
+		{deleteVehicle _x} forEach _droppedGear;
 	};
 
 	// Create public var and send it to server to trigger event

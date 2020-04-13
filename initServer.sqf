@@ -14,9 +14,5 @@
 missionNamespace setVariable ["tf_reciveVar", 1, true];
 missionNamespace setVariable ["tf_sendVar", 1, true];
 
-respawnTickets = 0;
+{deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 respawnTime = getNumber (missionConfigFile >> "respawnDelay");
-respawnEnabled = true;
-reservedTickets = 0;
-reservedIDs = [];
-teleportIDs = [];

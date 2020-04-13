@@ -29,6 +29,8 @@ if !((getPlayerUID player) in (missionNamespace getVariable "ZeusArray")) then {
 player setVariable ["tf_receivingDistanceMultiplicator", missionNamespace getVariable "tf_reciveVar"];
 player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVariable "tf_sendVar"];
 
+{deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
+
 // Execute EHs
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
 [] execVM "EH\player\arsenal.sqf";

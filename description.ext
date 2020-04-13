@@ -4,7 +4,7 @@ respawn = 3;
 respawnDelay = 180;
 respawnButton = 0;
 respawnOnStart = -1;
-respawnTemplates[] = {"ace_spectator","Counter","Wave"}; // Enables the spectator template for all
+respawnTemplates[] = {"MenuPosition","Spectator","Autorespawn","Tickets","Wave"}; // Enables the spectator template for all
 saving = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
@@ -30,7 +30,6 @@ class CfgFunctions
 			class forceRespawn {};
 			class changeRespawnState {};
 			class showRespawnTickets {};
-			class showPlayers {};
 			class moveRespawnMarker {};
 			class changeRespawnTime {};
 		};
@@ -45,6 +44,7 @@ class CfgFunctions
 			class objectJamming {};
 			class radioSignalQuality {};
 			class manageCurators {};
+			class playersList {};
 		};
 		class Generic {
 			class addToStorage {};

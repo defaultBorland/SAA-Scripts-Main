@@ -26,18 +26,13 @@ if (_additionalInfo isEqualTo 1) then {
 };
 
 ["FOB assigned."] remoteExec ["systemChat"];
+_respawnFOB setVariable ["isFOB", true];
 
 [_respawnFOB, _marker] spawn {
-	params["_respawnFOB", "_marker"];	
-	while {(alive _respawnFOB)} do {
-		if (isNil {missionNamespace getVariable "respawnFOB"}) exitWith {};
-		_marker setmarkerpos getpos _respawnFOB; 
+	params ["_respawnFOB", "_marker"];
+	while {(alive _respawnFOB) and (_respawnFOB getVariable "isFOB")} do {
+		_marker setMarkerPos getPos _respawnFOB;
 		sleep 1;
-		if !(_respawnFOB isEqualTo (missionNamespace getVariable "respawnFOB")) exitWith {};
 	};
-	if !(alive _respawnFOB) then {
-		["FOB was destroyed!"] remoteExec ["systemChat"]; 
-		["All", "Disable", "All"] call Shadec_fnc_changeRespawnState;
-	} else {["FOB was abandonded."] remoteExec ["systemChat"]};
+	missionNamespace setVariable ["respawnFOB", nil, true];
 };
-

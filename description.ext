@@ -30,7 +30,6 @@ class CfgFunctions
 			class forceRespawn {};
 			class changeRespawnState {};
 			class showRespawnTickets {};
-			class showPlayers {};
 			class moveRespawnMarker {};
 			class changeRespawnTime {};
 		};
@@ -45,6 +44,7 @@ class CfgFunctions
 			class objectJamming {};
 			class radioSignalQuality {};
 			class manageCurators {};
+			class playersList {};
 		};
 		class Generic {
 			class addToStorage {};
@@ -80,7 +80,7 @@ class CfgRemoteExec
 		class changeRespawnState {allowedTargets = 2;};
 		class showRespawnTickets {allowedTargets = 2;};
 		class endMission {allowedTargets = 2;};
-		class showPlayers {allowedTargets = 2;};
+		class playersList {allowedTargets = 2;};
 		class moveRespawnMarker {allowedTargets = 2;};
 		class addToStorage {allowedTargets = 0;};
 		class reLoadoutUnit {allowedTargets = 2;};

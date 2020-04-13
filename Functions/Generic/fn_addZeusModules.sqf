@@ -6,7 +6,7 @@
 [] execVM "Functions\ZeusModules\Respawn\enableDisableRespawn.sqf";
 [] execVM "Functions\ZeusModules\Respawn\changeRespawnTime.sqf";
 [] execVM "Functions\ZeusModules\Respawn\showRespawnTickets.sqf";
-[] execVM "Functions\ZeusModules\Respawn\showPlayers.sqf";
+[] execVM "Functions\ZeusModules\Main\playersList.sqf";
 [] execVM "Functions\ZeusModules\Main\addShadecArsenal.sqf";
 [] execVM "Functions\ZeusModules\Respawn\moveRespawnMarker.sqf";
 [] execVM "Functions\ZeusModules\Main\endMission.sqf";

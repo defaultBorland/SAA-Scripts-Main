@@ -48,6 +48,7 @@ fnc_FormatWeapon = {
 	_weaponArray
 };
 
+// Rewrite?
 fnc_FormatAssigned = {
 	params ["_assignedArray"];
 	private ["_map", "_compass", "_watch", "_radio", "_gps", "_nvg", "_bino"];

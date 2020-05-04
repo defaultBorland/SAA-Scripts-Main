@@ -14,10 +14,15 @@ switch (_fc) do {
 	case "Engineer": {
 		_unit setVariable ["ACE_IsEngineer",2, true];
 		{player setUnitTrait ["explosiveSpecialist", true]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["UAVHacker", true]} remoteExec ["call", owner _unit];
+	};
+	case "Marksman": {
+		{player setUnitTrait ["camouflageCoef", 0.7]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["audibleCoef", 0.7]} remoteExec ["call", owner _unit];
 	};
 	case "Sniper": {
-		{player setUnitTrait ["camouflageCoef", 0.5]} remoteExec ["call", owner _unit];
-		{player setUnitTrait ["audibleCoef", 0.5]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["camouflageCoef", 0.4]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["audibleCoef", 0.4]} remoteExec ["call", owner _unit];
 	};
 	default {};
 };
@@ -27,6 +32,11 @@ switch (_sc) do {
 	case "Engineer": {
 		_unit setVariable ["ACE_IsEngineer",1, true];
 		{player setUnitTrait ["explosiveSpecialist", true]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["UAVHacker", true]} remoteExec ["call", owner _unit];
+	};
+	case "Marksman": {
+		{player setUnitTrait ["camouflageCoef", 0.7]} remoteExec ["call", owner _unit];
+		{player setUnitTrait ["audibleCoef", 0.7]} remoteExec ["call", owner _unit];
 	};
 	default {};
 };

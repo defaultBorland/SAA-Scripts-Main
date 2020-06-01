@@ -26,12 +26,16 @@ disableSerialization;
 
 _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
 
+_playersCount = count _players;
+
 switch (_playersType) do {
 	case "Alive": {_players = _players select {alive _x}};
 	case "Dead": {_players = _players select {!alive _x}};
 	case "All";
 	default {};
 };
+
+_targetsCount = count _players;
 
 diag_log format ["playersList FNC | _players to show: %1", _players];
 
@@ -55,7 +59,7 @@ _playersGrouped = [];
 
 diag_log format ["playersList FNC | _players modified: %1", _playersGrouped];
 
-_structuredText = format["<t size='2.0' color='#ff0000' align='center' font='PuristaBold'>%1</t><br/>", _playersType];
+_structuredText = format["<t size='2.0' color='#ff0000' align='center' font='PuristaBold'>%1</t><t size='1.5' color='#ff0000' align='center' font='PuristaSemibold'> %2/%3</t><br/>", _playersType, _targetsCount, _playersCount];
 {
 	_currentGroup = _x;
 	_structuredText = _structuredText + format["<t size='1.5' align='center'>--- %1s ---</t><br/>", _groupOrder # _forEachIndex];

@@ -29,20 +29,17 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	
 	// Fill player display with black screen with text
 	titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
-    [] spawn {sleep 5; titleFadeOut 3};
+    [_unit] spawn {sleep 5; titleFadeOut 3; (_this # 0) linkItem "itemMap"};
 
-	player linkItem "itemMap";
+	// Change respawn time adjusting it to specific value
+	setPlayerRespawnTime (missionNamespace getVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay")]);
 
 	// If unit has Long Range Radio - Save Freqs to Load it after Respawn
-    if (call TFAR_fnc_haveLRRadio) then {player setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
+    if (call TFAR_fnc_haveLRRadio) then {_unit setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
 
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
 	[_unit] spawn {
 		private _unit = _this # 0;
-		private _items = [];
-		_items append [primaryWeapon _unit, secondaryWeapon _unit, handgunWeapon _unit];
-		_items append (assignedItems _unit);
-		_items = _items - [""];
 
 		sleep 5;
 

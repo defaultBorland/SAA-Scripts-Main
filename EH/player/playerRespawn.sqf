@@ -27,7 +27,7 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
         titleFadeOut 1;
 
         // Reassign medic/engineer roles
-        [[player, getPlayerUID player], Shadec_fnc_rolesAutoAssign] remoteExec ["spawn", 2];
+        [[player, getPlayerUID player, "Assign"], Shadec_fnc_rolesAssign] remoteExec ["spawn", 2];
 
         // Reenable fatigue (ace bug)
         player enableFatigue true;

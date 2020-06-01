@@ -208,8 +208,8 @@ switch (_action) do {
 					//_text = _text + "Личные предметы были изменены.\n"
 				};
 				case 7: { //Binocular
-					player unlinkItem _newBino;
-					if (_savedBino != "") then {player addItem _savedBino};
+					player removeWeapon _newBino;
+					if (_savedBino != "") then {player addWeapon _savedBino};
 					_text = _text + "Бинокль был изменен.\n"
 				};
 			};

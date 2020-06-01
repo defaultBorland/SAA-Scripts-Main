@@ -19,12 +19,10 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	missionNamespace setVariable [format["loadoutLoaded_%1", _uid], nil, true];
-	[format["%1 disconnected | Respawn tickets remaining: %2", _pname, respawnTickets]] remoteExec ["systemChat"];
 	false;
 }];
 
 //Player disconnected handler with _owner passed
 _EH_PlayerDisconnected = addMissionEventHandler ["PlayerDisconnected", {
 	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
-
 }];

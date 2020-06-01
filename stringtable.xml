@@ -38,6 +38,30 @@
 <Russian>Нет</Russian> 
 </Key>
 
+<Key ID="str_GENERAL_HIDE"> 
+<Original>Hide</Original> 
+<Russian>Скрыть</Russian> 
+</Key>
+
+<Key ID="str_GENERAL_WEAPONS"> 
+<Original>Weapons</Original> 
+<Russian>Оружие</Russian> 
+</Key>
+
+<Key ID="str_GENERAL_MAGAZINES"> 
+<Original>Ammunition</Original> 
+<Russian>Аммуниция</Russian> 
+</Key>
+
+<Key ID="str_GENERAL_ITEMS"> 
+<Original>Items</Original> 
+<Russian>Предметы</Russian> 
+</Key>
+
+<Key ID="str_GENERAL_EQUIPMENT"> 
+<Original>Equipment</Original> 
+<Russian>Экипировка</Russian> 
+</Key>
 </Container>
 
 <Container name="Zeus Module Add Arsenal">
@@ -134,6 +158,35 @@
 <Key ID="str_ZEUS_MODULES_ENDSCENARIO_DIALOG_TYPE"> 
 <Original>Choose End Type:</Original> 
 <Russian>Выберите тип конца:</Russian> 
+</Key>
+
+</Container>
+
+<Container name="Removed Items Dialog">
+
+<Key ID="str_ACTION_REMOVEDITEMSLIST"> 
+<Original>Removed Items List</Original> 
+<Russian>Список удаленного снаряжения</Russian> 
+</Key>
+
+<Key ID="str_DESCRIPTION_REMOVEDITEMSLIST_HEADER"> 
+<Original>Removed Equipment</Original> 
+<Russian>Удалённое снаряжение</Russian> 
+</Key>
+
+<Key ID="str_DESCRIPTION_REMOVEDITEMSLIST_DESC"> 
+<Original>Since your last visit some of your Storage equipment were removed due to your class restrictions</Original> 
+<Russian>С Вашего последнего визита часть снаряжения из хранилища было удалено в связи с ограничениями Вашего класса</Russian> 
+</Key>
+
+<Key ID="str_DESCRIPTION_REMOVEDITEMSLIST_HINT"> 
+<Original>Double click on position to post line in global chat and send classname to the server</Original> 
+<Russian>Двойное нажатие на строку в списке отправит её в глобальный чат и на сервер</Russian> 
+</Key>
+
+<Key ID="str_DESCRIPTION_REMOVEDITEMSLIST_ITEMSLISTMSG"> 
+<Original>None of your items were removed. Nothing to see here.</Original> 
+<Russian>Ничего не было удалено. Можете закрыть это окно.</Russian> 
 </Key>
 
 </Container>

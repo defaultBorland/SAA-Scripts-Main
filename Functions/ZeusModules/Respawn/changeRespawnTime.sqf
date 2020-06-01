@@ -5,8 +5,6 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	[["respawnTime"], Shadec_fnc_getMsgServerVariable] remoteExec ["call", 2];
-
 	private _dialogResult =
 	[
 		"Change Respawn Time",
@@ -23,7 +21,6 @@
 
 	// Check if text is correct value
 	_time = parseNumber _typedText;
-	if (_time < 15 or { _time > 300 }) exitWith {["Respawn Time must be in interval from 15 to 300!"] call Achilles_fnc_showZeusErrorMessage};
+	if (_time < 10 or { _time > 300 }) exitWith {["Respawn Time must be in interval from 15 to 300!"] call Achilles_fnc_showZeusErrorMessage};
 	[[_time], Shadec_fnc_changeRespawnTime] remoteExec ["call", 2];
-	[["respawnTime"], Shadec_fnc_getMsgServerVariable] remoteExec ["call", 2];
 }] call Ares_fnc_RegisterCustomModule;

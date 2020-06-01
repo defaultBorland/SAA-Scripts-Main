@@ -16,3 +16,4 @@ missionNamespace setVariable ["tf_sendVar", 1, true];
 
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 respawnTime = getNumber (missionConfigFile >> "respawnDelay");
+missionNamespace setVariable ["respawnTime", respawnTime, true];

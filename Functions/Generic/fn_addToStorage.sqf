@@ -1,13 +1,12 @@
 params ["_action", "_arrays", "_uid"];
 
-if !(count _arrays > 0) exitWith {diag_log format ["Empty array is passed."]};
-
-_weapons = _arrays # 0; //diag_log format ["aTS_weapons: %1", _weapons];
-_magazines = _arrays # 1; //diag_log format ["aTS_magazines: %1", _magazines];
-_items = _arrays # 2; //diag_log format ["aTS_items: %1", _items];
+if !(count _arrays > 0) exitWith {diag_log format ["fn_AddToStorage | Empty array is passed."]};
 
 _storage = missionNamespace getVariable [format["pStorage_%1", _uid], nil];
-if (isNil {_storage}) exitWith {diag_log format ["Fnc: addToStorage. Err: Can't find the storage."]};
+if (isNil {_storage}) exitWith {diag_log format ["fn_AddToStorage |  Can't find the storage."]};
+
+_arrays = [_arrays, _uid] call Shadec_fnc_removingRestrictingItems;
+_arrays params ["_weapons", "_magazines", "_items"];
 
 if !(typeName _action == "STRING") exitWith {diag_log format  ["Invalid action type."]};
 switch (_action) do {

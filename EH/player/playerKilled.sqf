@@ -29,54 +29,26 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	
 	// Fill player display with black screen with text
 	titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
-    [] spawn {sleep 5; titleFadeOut 3};
+    [_unit] spawn {sleep 5; titleFadeOut 3; (_this # 0) linkItem "itemMap"};
+
+	// Change respawn time adjusting it to specific value
+	setPlayerRespawnTime (missionNamespace getVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay")]);
 
 	// If unit has Long Range Radio - Save Freqs to Load it after Respawn
-    if (call TFAR_fnc_haveLRRadio) then {player setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
+    if (call TFAR_fnc_haveLRRadio) then {_unit setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
 
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
 	[_unit] spawn {
 		private _unit = _this # 0;
-		private _items = [];
-		_items append [primaryWeapon _unit, secondaryWeapon _unit, handgunWeapon _unit];
-		_items append (assignedItems _unit);
-		_items = _items - [""];
 
-		sleep 3;
+		sleep 5;
 
 		removeAllItems _unit; 
 		removeAllWeapons _unit; 
 		removeAllAssignedItems _unit;
 
-		private _droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 100];
-
-		{
-			private _holder = _x;
-
-			private _removing = _items select {_x in (weaponCargo _holder)};
-			_items = _items - _removing;
-
-			{
-				[_holder, _x] call CBA_fnc_removeWeaponCargo;
-			} forEach _removing;
-
-			_removing = _items select {_x in (magazineCargo _holder)};
-			_items = _items - _removing;
-
-			{
-				[_holder, _x] call CBA_fnc_removeMagazineCargo;
-			} forEach _removing;
-
-			_removing = _items select {_x in (itemCargo _holder)};
-			_items = _items - _removing;
-
-			{
-				[_holder, _x] call CBA_fnc_removeItemCargo;
-			} forEach _removing;
-
-			if (_items isEqualTo []) exitWith {};
-			
-		} forEach _droppedGear
+		_droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 7];
+		{deleteVehicle _x} forEach _droppedGear;
 	};
 
 	// Create public var and send it to server to trigger event

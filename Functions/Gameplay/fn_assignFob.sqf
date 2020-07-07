@@ -3,41 +3,43 @@ params ["_vehicle", "_clear", "_marker", "_addPAK", "_additionalInfo"];
 if !((typeName _vehicle) isEqualTo "OBJECT") exitWith {};
 if (_marker isEqualTo "") exitWith {};
 
-[] call Shadec_fnc_removeFob;
+missionNamespace setVariable ["lastFOB", _vehicle, true];
 
-_respawnFOB = _vehicle;
-missionNamespace setVariable ["respawnFOB", _respawnFOB, true];
+_allFOBs = missionNamespace getVariable ["respawnFOBs", [objNull]];
+_allFOBs pushBack _vehicle;
+missionNamespace setVariable ["respawnFOBs", _allFOBs];
 
 if (_clear isEqualTo 1) then {
-	clearItemCargoGlobal _respawnFOB;
-	clearWeaponCargoGlobal _respawnFOB;
-	clearMagazineCargoGlobal _respawnFOB;
-	clearBackpackCargoGlobal _respawnFOB;
+	clearItemCargoGlobal _vehicle;
+	clearWeaponCargoGlobal _vehicle;
+	clearMagazineCargoGlobal _vehicle;
+	clearBackpackCargoGlobal _vehicle;
 };
 
-_respawnFOB setVariable ["ace_medical_medicClass", 1];
+_vehicle setVariable ["ace_medical_medicClass", 1, true];
 
 if (_addPAK isEqualTo 1) then {
-	_respawnFOB addItemCargoGlobal ["ACE_personalAidKit", 3];
+	_vehicle addItemCargoGlobal ["ACE_personalAidKit", 3];
 };
 
 if (_additionalInfo isEqualTo 1) then {
-	{hint parseText format ["<t align='center'>Respawn-medical transport was assigned</t><t align='center'><img size='4' image='%1'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction: %3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %4</t>", getText(configfile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "respawnFOB") >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "respawnFOB") >> "displayName"), floor ([player, (missionNamespace getVariable "respawnFOB")] call BIS_fnc_dirTo), round (player distance (missionNamespace getVariable "respawnFOB"))]} remoteExec ["call"];
+	{hint parseText format ["<t align='center'>Respawn-medical transport was assigned</t><t align='center'><img size='4' image='%1'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction: %3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %4</t>", getText(configfile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "lastFOB") >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "lastFOB") >> "displayName"), floor ([player, (missionNamespace getVariable "lastFOB")] call BIS_fnc_dirTo), round (player distance (missionNamespace getVariable "lastFOB"))]} remoteExec ["call"];
 };
 
-["FOB assigned."] remoteExec ["systemChat"];
+["> Server: New FOB assigned"] remoteExec ["systemChat"];
+_vehicle setVariable ["isFOB", true];
 
-[_respawnFOB, _marker] spawn {
-	params["_respawnFOB", "_marker"];	
-	while {(alive _respawnFOB)} do {
-		if (isNil {missionNamespace getVariable "respawnFOB"}) exitWith {};
-		_marker setmarkerpos getpos _respawnFOB; 
+[_vehicle, _marker] spawn {
+	params ["_respawnFOB", "_marker"];
+	while {(alive _respawnFOB) and (_respawnFOB getVariable "isFOB")} do {
+		_marker setMarkerPos getPos _respawnFOB;
 		sleep 1;
-		if !(_respawnFOB isEqualTo (missionNamespace getVariable "respawnFOB")) exitWith {};
 	};
-	if !(alive _respawnFOB) then {
-		["FOB was destroyed!"] remoteExec ["systemChat"]; 
-		["All", "Disable", "All"] call Shadec_fnc_changeRespawnState;
-	} else {["FOB was abandonded."] remoteExec ["systemChat"]};
-};
 
+	if !(alive _respawnFOB) then {
+		[format["> Server: Respawn FOB '%1' were destroyed!", markerText _marker]] remoteExec ["systemChat", -2];
+	};
+
+	[_marker] call Shadec_fnc_removeRespawnPosition;
+	// deleteMarker _marker;
+};

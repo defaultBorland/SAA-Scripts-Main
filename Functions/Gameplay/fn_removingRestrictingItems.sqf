@@ -6,13 +6,12 @@ fnc_keepInStorage = {
 	if !(_class in _availiableEquipment) then {
 		switch (([_class] call BIS_fnc_itemType) # 0) do {
 			case "Weapon": {
-				_additionalWeapons = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold"];
-				if (_class in _additionalWeapons) then {
-					_return = true
-				} else {
-					_class = [_class] call BIS_fnc_baseWeapon;
-					if !(_class in _availiableEquipment) then {_return = false}
-				};
+				_additionalWeapons = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold", "rhs_weap_pp2000"];
+				if (_class in _additionalWeapons) exitWith {_return = true};
+				
+				_class = [_class] call BIS_fnc_baseWeapon;
+				if !(_class in _availiableEquipment) then {_return = false}
+				
 			};
 			case "Magazine": {
 				_return = false;
@@ -20,19 +19,17 @@ fnc_keepInStorage = {
 			case "Item": {
 				_additionalOptics = ["CUP_optic_ACOG_TA01B_Black_PIP","CUP_optic_ACOG_TA01B_Coyote_PIP","CUP_optic_ACOG_TA01B_OD_PIP","CUP_optic_ACOG_TA01B_RMR_Black_PIP","CUP_optic_ACOG_TA01B_RMR_Coyote_PIP","CUP_optic_ACOG_TA01B_RMR_OD_PIP","CUP_optic_ACOG_TA01B_RMR_Tan_PIP","CUP_optic_ACOG_TA01B_RMR_Tropic_PIP","CUP_optic_ACOG_TA01B_Tan_PIP","CUP_optic_ACOG_TA01B_Tropic_PIP", "rhsusf_acc_su230_mrds_c_3d", "rhsusf_acc_su230_mrds_3d",  "rhsusf_acc_su230_3d", "rhsusf_acc_su230_c_3d", "SMA_ELCAN_SPECTER_RDS_4z"];
 				
-				if (((_class call BIS_fnc_itemType) # 1) isEqualTo "Headgear") then {
-					_return = true;
-				} else if (_class in _additionalOptics) then {
-					_return = true;
-				} else {
-					_parents = [ configFile >> "CfgWeapons" >> _class, true ] call BIS_fnc_returnParents;
-					{
-						if ((_class find _x) > -1) then {
-							if !(_class isEqualTo _x) then {_class = _x};
-						};
-					} forEach _parents;
-					if !(_class in _availiableEquipment) then {_return = false};
-				};
+				if (((_class call BIS_fnc_itemType) # 1) isEqualTo "Headgear") exitWith {_return = true};
+				if (_class in _additionalOptics) exitWith {_return = true};
+
+				_parents = [ configFile >> "CfgWeapons" >> _class, true ] call BIS_fnc_returnParents;
+				{
+					if ((_class find _x) > -1) then {
+						if !(_class isEqualTo _x) then {_class = _x};
+					};
+				} forEach _parents;
+				if !(_class in _availiableEquipment) then {_return = false};
+				
 			};
 			default {};
 		};

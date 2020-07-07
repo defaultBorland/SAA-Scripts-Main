@@ -43,6 +43,7 @@ if (player getVariable ["SAA_isZeus", false]) then {
 player setVariable ["tf_receivingDistanceMultiplicator", missionNamespace getVariable "tf_reciveVar"];
 player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVariable "tf_sendVar"];
 
+// Delete Existing Markers if they were placed in Editor (Server solution is enough?)
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 
 // Execute EHs
@@ -53,7 +54,7 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 [] execVM "EH\player\playerRespawn.sqf";
 
 player removeItem "MineDetector";
-_itemsRemoved = missionNamespace getVariable [format["removedItems_%1", getPlayerUID player], []]; // I won't pass this var as arg into addAction bc to much ADDACTIONLINES :D
+_itemsRemoved = missionNamespace getVariable [format["removedItems_%1", getPlayerUID player], []]; // I won't pass this var as arg into addAction bc there will be to much ADDACTIONLINES :D
 
 if !(_itemsRemoved isEqualTo []) then {
 	player addAction [localize "str_ACTION_REMOVEDITEMSLIST", {

@@ -42,7 +42,7 @@ diag_log format ["playersList FNC | _players to show: %1", _players];
 _players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x]))};
 
 if (_groupBy isEqualTo "Ranks") then {
-	_ranksRanging = ["CPT","1LT","2LT","CW5","WO1","SMC","MSG","SSG","SGT","SPC","PV2","PV1"];
+	_ranksRanging = ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC","PV2","PV1"];
 	_groupOrder = _players apply {_x # 1};
 	_groupOrder = _ranksRanging arrayIntersect _groupOrder;
 } else {

@@ -26,11 +26,8 @@ disableSerialization;
 
 _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
 
-<<<<<<< HEAD
-=======
 _playersCount = count _players;
 
->>>>>>> c25ce2fcf35dbf7954a7860ba1bfd2a9d22679db
 switch (_playersType) do {
 	case "Alive": {_players = _players select {alive _x}};
 	case "Dead": {_players = _players select {!alive _x}};
@@ -38,21 +35,14 @@ switch (_playersType) do {
 	default {};
 };
 
-<<<<<<< HEAD
-=======
 _targetsCount = count _players;
 
->>>>>>> c25ce2fcf35dbf7954a7860ba1bfd2a9d22679db
 diag_log format ["playersList FNC | _players to show: %1", _players];
 
 _players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x]))};
 
 if (_groupBy isEqualTo "Ranks") then {
-<<<<<<< HEAD
-	_ranksRanging = ["CPT","1LT","2LT","CW5","WO1","SMC","MSG","SSG","SGT","SPC","PV2","PV1"];
-=======
 	_ranksRanging = ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC","PV2","PV1"];
->>>>>>> c25ce2fcf35dbf7954a7860ba1bfd2a9d22679db
 	_groupOrder = _players apply {_x # 1};
 	_groupOrder = _ranksRanging arrayIntersect _groupOrder;
 } else {
@@ -69,11 +59,7 @@ _playersGrouped = [];
 
 diag_log format ["playersList FNC | _players modified: %1", _playersGrouped];
 
-<<<<<<< HEAD
-_structuredText = format["<t size='2.0' color='#ff0000' align='center' font='PuristaBold'>%1</t><br/>", _playersType];
-=======
 _structuredText = format["<t size='2.0' color='#ff0000' align='center' font='PuristaBold'>%1</t><t size='1.5' color='#ff0000' align='center' font='PuristaSemibold'> %2/%3</t><br/>", _playersType, _targetsCount, _playersCount];
->>>>>>> c25ce2fcf35dbf7954a7860ba1bfd2a9d22679db
 {
 	_currentGroup = _x;
 	_structuredText = _structuredText + format["<t size='1.5' align='center'>--- %1s ---</t><br/>", _groupOrder # _forEachIndex];

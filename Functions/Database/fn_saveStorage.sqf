@@ -13,6 +13,9 @@ _data = [_weapons, _magazines, _items];
 
 missionNamespace setVariable [format["storage_%1", _uid], _data];
 
+// Saving Inventory to local profile to show in ShopMission
+profileNamespace setVariable ["SAA-Project-Storage", _data];
+
 [["saveStorage", [_uid,_data]], Shadec_fnc_call_db] remoteExec ["spawn", 2];
 
 //return

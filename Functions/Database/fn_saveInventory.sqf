@@ -8,6 +8,9 @@ if (((missionNamespace getVariable (format["%1_DATA", _uid])) # 0) isEqualTo "RD
 
 _inventory = getUnitLoadout _unit;
 
+// Saving Inventory to local profile to show in ShopMission
+profileNamespace setVariable ["SAA-Project-Inventory", _inventory];
+
 _data = [_inventory,_uid];
 diag_log format["SAVE PLAYER INVENTORY:%1", _data];
 

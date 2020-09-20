@@ -22,7 +22,7 @@ switch _act do {
 			missionNamespace setVariable [format["%1_DATA", _uid], [_rank, _pclass, _sclass], true];
 
 			[_getData # 4, owner _unit, _uid, _getData # 5] spawn Shadec_fnc_createStorage;
-			[_unit, _uid] spawn Shadec_fnc_rolesAutoAssign;
+			[_unit, _uid, "Assign"] spawn Shadec_fnc_rolesAssign;
 			_unit setUnitLoadout _inventory;
 			
 			missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
@@ -78,5 +78,13 @@ switch _act do {
 			_info # 0 //UID
 		];
 		diag_log format ["Buylist was erased. UID:%1", _info # 0];
+	};
+
+	case "changeClasses" : {
+		"Extdb3" callExtension format ["0:%1:changeClasses:%2:%3:%4", PROTOCOL,
+			_info # 1, // First Class
+			_info # 2, // Second Class
+			_info # 0 // UID
+		];
 	};
 };

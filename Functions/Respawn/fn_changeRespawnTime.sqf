@@ -1,19 +1,21 @@
 params ["_time"];
 
-if (_time < 5) exitWith {[["Respawn time can't be less than 5 seconds."] remoteExec ["systemChat"]]};
+if (_time < 10) exitWith {[["> Error: Respawn time can't be less than 10 seconds."] remoteExec ["systemChat", remoteExecutedOwner]]};
 
 missionNamespace setVariable ["respawnTimeDifference", respawnTime - _time, true];
-respawnTime = _time;
-
-[format["Respawn time was changed. New value: %1", respawnTime]] remoteExec ["systemChat"];
+missionNamespace setVariable ["respawnTime", _time, true];
+[format["> Server: Respawn time was changed. New value: %1", _time]] remoteExec ["systemChat"];
 
 {
 	{
-		private _time = missionNamespace getVariable ["respawnTimeDifference", 0];
-		if (playerRespawnTime - _time >= 0) then {setPlayerRespawnTime (playerRespawnTime - _time)}
-		else {setPlayerRespawnTime 5};
+		private _timeDiff = missionNamespace getVariable ["respawnTimeDifference", 0];
+		if ((playerRespawnTime < 9999) and (playerRespawnTime > 0)) then {
+			if ((playerRespawnTime - _timeDiff) > 5) then {
+				setPlayerRespawnTime (playerRespawnTime - _timeDiff);
+			} else {setPlayerRespawnTime 5};
+		};
 	} remoteExec ["call", _x];
-} forEach reservedIDs;
+} forEach allPlayers;
 
 //return
 true

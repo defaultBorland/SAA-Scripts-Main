@@ -1,13 +1,11 @@
-params["_value", "_changeState"];
-_value = _this # 0;
-if !(typeName _value isEqualTo "SCALAR") exitWith {["Invalid function parameters."] remoteExec ["systemChat"]};
-respawnTickets = respawnTickets + _value;
-if (respawnTickets < 0) then {respawnTickets = 0};
-if (_value isEqualTo 0) exitWith {};
-[format["Amount of respawn tickets was changed. New value: %1", respawnTickets]] remoteExec ["systemChat"];
+params["_side", "_value"];
 
-if (respawnTickets > 0 and (_changeState isEqualTo 1)) then {["All", "Enable", "Nobody"] call Shadec_fnc_changeRespawnState};
-if (respawnTickets < 1) then {["All", "Disable", "All"] call Shadec_fnc_changeRespawnState};
+
+// Change respawn tickets value
+[_SIDE, _value] call BIS_fnc_respawnTickets;
+
+// Message:
+[format["> Server: Amount of %1 respawn tickets was changed. New value: %2", toUpper str _SIDE, [_SIDE, 0] call BIS_fnc_respawnTickets]] remoteExec ["systemChat", -2];
 
 //return
-respawnTickets
+true

@@ -1,3 +1,6 @@
+
+
+
 // Private Storage Handlers 
 
 // Restrict player access to other storages
@@ -54,6 +57,7 @@ _EH_StoragePut = player addEventHandler ["Put", {
             {[_container, _x] call CBA_fnc_removeItemCargo} forEach _itemBaseAccs;
         } else {
             switch ([_item] call BIS_fnc_itemType select 1) do {
+                case "Radio";
                 case "Uniform";
                 case "Vest": {
                     [_container, _item, 1, true] call CBA_fnc_removeItemCargo;

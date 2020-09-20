@@ -2,15 +2,16 @@
 
 [] execVM "Functions\ZeusModules\Respawn\addRemoveRespawnTickets.sqf";
 [] execVM "Functions\ZeusModules\Respawn\forceRespawn.sqf";
-[] execVM "Functions\ZeusModules\Respawn\assignFob.sqf";
+[] execVM "Functions\ZeusModules\Respawn\removeRespawnPosition.sqf";
 [] execVM "Functions\ZeusModules\Respawn\enableDisableRespawn.sqf";
-[] execVM "Functions\ZeusModules\Respawn\changeRespawnTime.sqf";
-[] execVM "Functions\ZeusModules\Respawn\showRespawnTickets.sqf";
-[] execVM "Functions\ZeusModules\Main\playersList.sqf";
+[] execVM "Functions\ZeusModules\Respawn\changeRespawnTime.sqf"; 
+[] execVM "Functions\ZeusModules\Respawn\createRespawnPosition.sqf";
+[] execVM "Functions\ZeusModules\Respawn\playersRespawnInfo.sqf";
 [] execVM "Functions\ZeusModules\Main\addShadecArsenal.sqf";
-[] execVM "Functions\ZeusModules\Respawn\moveRespawnMarker.sqf";
+// [] execVM "Functions\ZeusModules\Respawn\moveRespawnMarker.sqf";
 [] execVM "Functions\ZeusModules\Main\endMission.sqf";
 [] execVM "Functions\ZeusModules\Main\assignStorage.sqf";
+[] execVM "Functions\ZeusModules\Main\playersList.sqf";
 [] execVM "Functions\ZeusModules\Utilites\spawnSoldiers.sqf";
 [] execVM "Functions\ZeusModules\Radio\addJammingVehicle.sqf";
 [] execVM "Functions\ZeusModules\Radio\removeJammingVehicle.sqf";

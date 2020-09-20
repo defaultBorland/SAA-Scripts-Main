@@ -1,10 +1,12 @@
+#include "Dialog_RemovedItemsList.h"
+
 onLoadName = "SAA Project";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
-respawnDelay = 180;
+respawnDelay = 120;
 respawnButton = 0;
 respawnOnStart = -1;
-respawnTemplates[] = {"ace_spectator","Counter","Wave"}; // Enables the spectator template for all
+respawnTemplates[] = {"MenuPosition", "Spectator", "Autorespawn", "Tickets", "Wave"};
 saving = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
@@ -23,19 +25,21 @@ class CfgFunctions
 			class saveStorage {};
             class loadPlayer {};
             class savePlayer {};
-			class storageOutputFormat {};
+			class changeClasses {};
         };
 		class Respawn {
 			class changeRespawnTickets {};
 			class forceRespawn {};
 			class changeRespawnState {};
-			class showRespawnTickets {};
+			class playersRespawnInfo {};
 			class moveRespawnMarker {};
 			class changeRespawnTime {};
+			class createRespawnPosition {};
+			class removeRespawnPosition {};
 		};
 		class Gameplay {
 			class endMission {};
-			class rolesAutoAssign {};
+			class rolesAssign {};
 			class addShadecArsenal {};
 			class respawnTeleport {};
 			class assignStorage {};
@@ -45,6 +49,7 @@ class CfgFunctions
 			class radioSignalQuality {};
 			class manageCurators {};
 			class playersList {};
+			class removingRestrictingItems {};
 		};
 		class Generic {
 			class addToStorage {};
@@ -63,6 +68,20 @@ class CfgFunctions
 			class removeStorage {};
 			class removeFob {};
 			class clearVehicleInventory {};
+			class composeAvailiableItems {};
+			class classSwitcher {};
+			class removedItemsListDisplay {};
+		};
+		class Classes {
+			class Rifleman {};
+			class Nurse {};
+			class Machinegunner {};
+			class Grenadier {};
+			class Engineer {};
+			class ATSpec {};
+			class Medic {};
+			class Marksman {};
+			class Sniper {};
 		};
     };
 };
@@ -78,13 +97,13 @@ class CfgRemoteExec
 		class changeRespawnTickets {allowedTargets = 2;};
 		class forceRespawn {allowedTargets = 2;};
 		class changeRespawnState {allowedTargets = 2;};
-		class showRespawnTickets {allowedTargets = 2;};
+		class playerRespawnInfo {allowedTargets = 2;};
 		class endMission {allowedTargets = 2;};
 		class playersList {allowedTargets = 2;};
 		class moveRespawnMarker {allowedTargets = 2;};
 		class addToStorage {allowedTargets = 0;};
 		class reLoadoutUnit {allowedTargets = 2;};
-		class rolesAutoAssign {allowedTargets = 2;};
+		class rolesAssign {allowedTargets = 2;};
 		class addShadecArsenal {allowedTargets = 2;};
 		class getMsgServerVariable {allowedTargets = 2;};
 		class changeRespawnTime {allowedTargets = 2;};
@@ -100,7 +119,10 @@ class CfgRemoteExec
 		class radioSignalQuality {allowedTargets = 0;};
 		class clearVehicleInventory {allowedTargets = 2;};
 		class storageOutputFormat {allowedTargets = 0;};
-		class manageCurators {allowedTargets = 2;}
+		class manageCurators {allowedTargets = 2;};
+		class createRespawnPosition {allowedTargets = 2;};
+		class removeRespawnPosition {allowedTargets = 2;};
+		class changeClasses {allowedTargets = 2;};
     };
 };
 

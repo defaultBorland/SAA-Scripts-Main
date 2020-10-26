@@ -32,7 +32,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
     [_unit] spawn {sleep 5; titleFadeOut 3; (_this # 0) linkItem "itemMap"};
 
 	// Change respawn time adjusting it to specific value
-	setPlayerRespawnTime (missionNamespace getVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay")]);
+	setPlayerRespawnTime (missionNamespace getVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay")]); //CHANGE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 	// If unit has Long Range Radio - Save Freqs to Load it after Respawn
     if (call TFAR_fnc_haveLRRadio) then {_unit setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};

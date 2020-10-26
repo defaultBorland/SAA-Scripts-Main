@@ -2,7 +2,7 @@ params["_uid"];
 _uid = _this # 0;
 if (_uid in (missionNamespace getVariable "ZeusArray")) exitWith {};
 if !(missionNamespace getVariable (format["loadoutLoaded_%1", _uid])) exitWith {};
-if (((missionNamespace getVariable (format["%1_DATA", _uid])) # 0) isEqualTo "RD") exitWith {};
+if (((missionNamespace getVariable (format["%1_DATA", _uid])) # 0) isEqualTo "GUEST") exitWith {};
 
 _pStorage = missionNamespace getVariable (format["pStorage_%1", _uid]);
 if ((isNil {_pStorage}) or (_pStorage isEqualTo objNull)) exitWith {diag_log format["!Warning! [%1]: Trying to save Storage that unaccessible", _uid]; false};

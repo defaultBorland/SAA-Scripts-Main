@@ -52,7 +52,7 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 [] execVM "EH\player\storage.sqf";
 [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
-[] execVM "EH\player\keyDown.sqf";
+[] execVM "EH\player\profileSavings.sqf";
 
 player removeItem "MineDetector";
 _itemsRemoved = missionNamespace getVariable [format["removedItems_%1", getPlayerUID player], []]; // I won't pass this var as arg into addAction bc there will be to much ADDACTIONLINES :D

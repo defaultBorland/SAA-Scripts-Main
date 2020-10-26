@@ -2,6 +2,7 @@
 
 fnc_keepInStorage = {
 	params ["_class", "_availiableEquipment"];
+
 	_return = true;
 	if !(_class in _availiableEquipment) then {
 		switch (([_class] call BIS_fnc_itemType) # 0) do {
@@ -17,10 +18,10 @@ fnc_keepInStorage = {
 				_return = false;
 			};
 			case "Item": {
-				_additionalOptics = ["CUP_optic_ACOG_TA01B_Black_PIP","CUP_optic_ACOG_TA01B_Coyote_PIP","CUP_optic_ACOG_TA01B_OD_PIP","CUP_optic_ACOG_TA01B_RMR_Black_PIP","CUP_optic_ACOG_TA01B_RMR_Coyote_PIP","CUP_optic_ACOG_TA01B_RMR_OD_PIP","CUP_optic_ACOG_TA01B_RMR_Tan_PIP","CUP_optic_ACOG_TA01B_RMR_Tropic_PIP","CUP_optic_ACOG_TA01B_Tan_PIP","CUP_optic_ACOG_TA01B_Tropic_PIP", "rhsusf_acc_su230_mrds_c_3d", "rhsusf_acc_su230_mrds_3d",  "rhsusf_acc_su230_3d", "rhsusf_acc_su230_c_3d", "SMA_ELCAN_SPECTER_RDS_4z"];
+				_additionalItems = ["CUP_optic_ACOG_TA01B_Black_PIP","CUP_optic_ACOG_TA01B_Coyote_PIP","CUP_optic_ACOG_TA01B_OD_PIP","CUP_optic_ACOG_TA01B_RMR_Black_PIP","CUP_optic_ACOG_TA01B_RMR_Coyote_PIP","CUP_optic_ACOG_TA01B_RMR_OD_PIP","CUP_optic_ACOG_TA01B_RMR_Tan_PIP","CUP_optic_ACOG_TA01B_RMR_Tropic_PIP","CUP_optic_ACOG_TA01B_Tan_PIP","CUP_optic_ACOG_TA01B_Tropic_PIP", "rhsusf_acc_su230_mrds_c_3d", "rhsusf_acc_su230_mrds_3d",  "rhsusf_acc_su230_3d", "rhsusf_acc_su230_c_3d", "SMA_ELCAN_SPECTER_RDS_4z", "UK3CB_BAF_LLM_IR_Black"];
 				
 				if (((_class call BIS_fnc_itemType) # 1) isEqualTo "Headgear") exitWith {_return = true};
-				if (_class in _additionalOptics) exitWith {_return = true};
+				if (_class in _additionalItems) exitWith {_return = true};
 
 				_parents = [ configFile >> "CfgWeapons" >> _class, true ] call BIS_fnc_returnParents;
 				{

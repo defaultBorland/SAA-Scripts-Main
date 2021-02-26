@@ -11,11 +11,12 @@ waituntil {!(IsNull (findDisplay 46))};
 
 
 // Mission Ended profile inventory saving EH
-addMissionEventHandler ["Ended", {
+_EH_EndedSaveProfile = addMissionEventHandler ["Ended", {
   params ["_endType"];
     // Saving Inventory to local profile to show in ShopMission
     profileNamespace setVariable ["SAA_Project_Inventory", getUnitLoadout player];
 
-    
-  
+    // diag_log format ["LOCAL PLAYER ENDED EH TRIGGERED!"];
+    // [player, getPlayerUID player, name player] spawn Shadec_fnc_savePlayer;
+    // [getPlayerUID player] spawn Shadec_fnc_saveStorage;
 }];

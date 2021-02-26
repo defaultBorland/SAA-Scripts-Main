@@ -1,6 +1,6 @@
 params ["_uid"];
 
-(missionNamespace getVariable [format["%1_DATA", _this # 0], ["PVT", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
+(missionNamespace getVariable [format["%1_DATA", _uid], ["PVT", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
 if (missionNamespace getVariable [format["availiableItems_%1_%2", _firstClass, _secondClass], []] isEqualTo []) then {
 	_arrayP = ["Primary"] call call compile format ["Shadec_fnc_%1", _firstClass];
 	_arrayS = ["Secondary"] call call compile format ["Shadec_fnc_%1", _secondClass];

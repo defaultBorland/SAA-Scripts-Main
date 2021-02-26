@@ -1,6 +1,6 @@
 // Zeus End Mission Module
 
-// End Mission Module in Scenario Flow tab for those zeuses who forghet the rules
+// End Mission Module in Scenario Flow tab for those zeuses who forget the rules
 [localize "str_ZEUS_MODULES_ENDSCENARIO_TAB", localize "str_ZEUS_MODULES_ENDSCENARIO_TITLE",
 {
 	// Get all the passed parameters

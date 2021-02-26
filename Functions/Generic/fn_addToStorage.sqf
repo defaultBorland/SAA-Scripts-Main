@@ -16,12 +16,12 @@ switch (_action) do {
 		{_storage addMagazineAmmoCargo _x} forEach _magazines;
 		{_storage addItemCargoGlobal _x} forEach _items;
 	};
-	case "loadBuylist": {
+	case "loadPurchaseOrder": {
 		{_storage addWeaponCargoGlobal _x} forEach _weapons;
 		{_storage addMagazineCargoGlobal _x} forEach _magazines;
 		{_storage addItemCargoGlobal _x} forEach _items;
 
-		["eraseBuylist", [_uid]] spawn Shadec_fnc_call_db;
+		["erasePurchaseOrder", [_uid]] spawn Shadec_fnc_call_db;
 	};
 	case "someGear": {
 		//

@@ -1,11 +1,11 @@
-// Create player box with equipment and buylist, access to the box via action from an object with "objectStorage" variable.
+// Create player box with equipment and PurchaseOrder, access to the box via action from an object with "objectStorage" variable.
 // If object with "objectStorage" variable doesn't exists - exit with log.
 
-params ["_storage", "_pcid", "_uid", "_buyList"];
+params ["_storage", "_pcid", "_uid", "_purchaseOrder"];
 _storageList = _this # 0;
 _pcid = _this # 1;
 _uid = _this # 2;
-_buyList = _this # 3;
+_purchaseOrder = _this # 3;
 
 missionNamespace setVariable [format["storage_%1", _uid], _storageList];
 
@@ -37,7 +37,7 @@ clearItemCargoGlobal _pStorage;
 clearBackpackCargoGlobal _pStorage;
 
 ["loadStorage", _storageList, _uid] spawn Shadec_fnc_addToStorage;
-["loadBuylist", _buyList, _uid] spawn Shadec_fnc_addToStorage;
+["loadPurchaseOrder", _purchaseOrder, _uid] spawn Shadec_fnc_addToStorage;
 
 hideObjectGlobal _pStorage;
 

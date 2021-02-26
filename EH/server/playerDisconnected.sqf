@@ -10,8 +10,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	_pname = _this select 3;
 
 	// If player equipment didn't load for some reason - don't save
-	_loadoutLoaded = missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false];
-	if (_loadoutLoaded) then {
+	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then {
 		[_unit, _uid, _pname] spawn Shadec_fnc_savePlayer;
 		[_uid] spawn Shadec_fnc_deleteStorage;	
 	} else {

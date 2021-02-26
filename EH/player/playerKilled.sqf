@@ -31,9 +31,6 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
     [_unit] spawn {sleep 5; titleFadeOut 3; (_this # 0) linkItem "itemMap"};
 
-	// Change respawn time adjusting it to specific value
-	setPlayerRespawnTime (missionNamespace getVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay")]);
-
 	// If unit has Long Range Radio - Save Freqs to Load it after Respawn
     if (call TFAR_fnc_haveLRRadio) then {_unit setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
 

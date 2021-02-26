@@ -7,7 +7,7 @@ switch _act do {
 			_info # 1, //inventory
 			_info # 2 //UID
 		];
-		diag_log format ["%1's info was saved. Inventory:%2 | UID:%3", _info # 0, _info # 1, _info # 2];
+		// diag_log format ["%1's info was saved. Inventory:%2 | UID:%3", _info # 0, _info # 1, _info # 2];
 	};
 	
 	case "loadAll" : { 
@@ -27,7 +27,7 @@ switch _act do {
 			
 			missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
 			
-			// diag_log format ["%1's info was loaded. Rank:%2 | PClass:%3 | SClass:%4 | Inventory:%5 | Storage:%6 | Buylist:%7 | UID:%8", name _unit, _rank, _pclass, _sclass, _inventory, _getData # 4, _getData # 5, _uid];
+			// diag_log format ["%1's info was loaded. Rank:%2 | PClass:%3 | SClass:%4 | Inventory:%5 | Storage:%6 | PurchaseOrder:%7 | UID:%8", name _unit, _rank, _pclass, _sclass, _inventory, _getData # 4, _getData # 5, _uid];
 		} else {
 			private _unit = _info # 1; //unit
 			"Extdb3" callExtension format  ["0:%1:newPlayer:%2:%3", PROTOCOL, getPlayerUID _unit, str name _unit];
@@ -66,18 +66,18 @@ switch _act do {
 		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:getStorage:%2", PROTOCOL, _info # 0])) # 1) # 0;
 		if !(isNil {_getData}) then {
 			private _storage = _getData # 0;
-			private _buylist = _getData # 1;
+			private _purchaseOrder = _getData # 1;
 			private _uid = _info # 0;
-			diag_log format ["loadStorage params: %1 | %2 | %3", owner (_info # 1), _uid, _buylist];
-			[_storage, owner (_info # 1), _uid, _buylist] spawn Shadec_fnc_createStorage;
+			diag_log format ["loadStorage params: %1 | %2 | %3", owner (_info # 1), _uid, _purchaseOrder];
+			[_storage, owner (_info # 1), _uid, _purchaseOrder] spawn Shadec_fnc_createStorage;
 		};
 	};
 	
-	case "eraseBuylist" : {
-		"Extdb3" callExtension format ["0:%1:eraseBuylist:%2", PROTOCOL, 
+	case "erasePurchaseOrder" : {
+		"Extdb3" callExtension format ["0:%1:erasePurchaseOrder:%2", PROTOCOL, 
 			_info # 0 //UID
 		];
-		diag_log format ["Buylist was erased. UID:%1", _info # 0];
+		//diag_log format ["PurchaseOrder was erased. UID:%1", _info # 0];
 	};
 
 	case "changeClasses" : {
@@ -86,5 +86,13 @@ switch _act do {
 			_info # 2, // Second Class
 			_info # 0 // UID
 		];
+	};
+
+	case "saveModlist" : {
+		"Extdb3" callExtension format ["0:%1:saveModlist:%2:%3", PROTOCOL, 
+			_info # 0, //modlist array
+			_info # 1 //UID
+		];
+		diag_log format ["modlist was saved. UID:%1 | MODLIST: %2", _info # 0, _info # 1];
 	};
 };

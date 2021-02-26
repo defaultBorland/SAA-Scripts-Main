@@ -1,4 +1,4 @@
-#include "Dialog_RemovedItemsList.h"
+#include "GUI\Dialog_RemovedItemsList.h"
 
 onLoadName = "SAA Project";
 //loadScreen 		= "img\logo.jpg";
@@ -11,6 +11,7 @@ saving = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
 debriefing = 0;
+// allowProfileGlasses = 0;
 
 //Function library definitions
 class CfgFunctions
@@ -26,6 +27,7 @@ class CfgFunctions
             class loadPlayer {};
             class savePlayer {};
 			class changeClasses {};
+			class saveModlist {};
         };
 		class Respawn {
 			class changeRespawnTickets {};
@@ -41,6 +43,7 @@ class CfgFunctions
 			class endMission {};
 			class rolesAssign {};
 			class addShadecArsenal {};
+			class addArsenalSpecificItems {};
 			class respawnTeleport {};
 			class assignStorage {};
 			class assignFob {};
@@ -71,6 +74,7 @@ class CfgFunctions
 			class composeAvailiableItems {};
 			class classSwitcher {};
 			class removedItemsListDisplay {};
+			class getModList {};
 		};
 		class Classes {
 			class Rifleman {};
@@ -123,6 +127,8 @@ class CfgRemoteExec
 		class createRespawnPosition {allowedTargets = 2;};
 		class removeRespawnPosition {allowedTargets = 2;};
 		class changeClasses {allowedTargets = 2;};
+		class saveModlist {allowedTargets = 2;};
+		class addArsenalSpecificItems {allowedTargets = 2;};
     };
 };
 

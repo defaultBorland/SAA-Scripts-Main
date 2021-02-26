@@ -5,7 +5,7 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 	private _arsenalTypes = ["Uniform", "w/Weapons"];
-	private _uniformTypes = ["Arid", "Semiarid", "Forest", "Winter", "Spec-Ops", "All of above"];
+	private _uniformTypes = ["Arid", "Semiarid", "Forest", "Winter", "Black", "All of above"];
 
 	private _selectedObjects = if (isNull _objectUnderCursor) then
 	{

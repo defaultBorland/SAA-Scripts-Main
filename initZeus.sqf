@@ -1,6 +1,6 @@
 
 _zeuses = [
-	""
+	"76561198084178342"
 ];
 
 missionNamespace setVariable ["ZeusArray", _zeuses, true];

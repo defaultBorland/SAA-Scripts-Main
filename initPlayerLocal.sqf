@@ -1,14 +1,9 @@
 //Player init
 waitUntil {!isNull player};
-if ((getPlayerUID player) in (missionNamespace getVariable "ZeusArray")) then {
-	player setVariable ["SAA_isZeus", true, true];
-	player setVariable ["SAA_isArsenalRestricted", false, true];
-	player setVariable ["SAA_storageRestricted", true, true];
-} else {
-	player setVariable ["SAA_isZeus", false, true];
-	player setVariable ["SAA_isArsenalRestricted", true, true];
-	player setVariable ["SAA_storageRestricted", false, true];
-};
+
+player setVariable ["SAA_isZeus", (getPlayerUID player) in (missionNamespace getVariable "ZeusArray"), true];
+player setVariable ["SAA_isArsenalUnrestricted", player getVariable ["SAA_isZeus", false], true];
+player setVariable ["SAA_storageRestricted", player getVariable ["SAA_isZeus", false], true];
 
 // Welcome message while loadout is loading
 titleText [format["<t color='#ff0000' size='2' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", name player, "Welcome to Duty | Shadec Asgardian Alliance"], "BLACK FADED", 2, false, true];
@@ -38,12 +33,15 @@ if (player getVariable ["SAA_isZeus", false]) then {
 	] call BIS_fnc_EXP_camp_SITREP;
 };
 
+// Saving Player Modlist to db
+[] spawn Shadec_fnc_saveModlist;
+
 // Recieve variables from server
 ["Check"] spawn Shadec_fnc_objectJamming; 
 player setVariable ["tf_receivingDistanceMultiplicator", missionNamespace getVariable "tf_reciveVar"];
 player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVariable "tf_sendVar"];
 
-// Delete Existing Markers if they were placed in Editor (Server solution is enough?)
+// Delete Existing Respawn Markers if they were placed in Editor
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 
 // Execute EHs
@@ -52,10 +50,13 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 [] execVM "EH\player\storage.sqf";
 [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
-[] execVM "EH\player\keyDown.sqf";
+[] execVM "EH\player\profileSavings.sqf";
+if (player getVariable ["SAA_isZeus", false]) then {
+	[] execVM "EH\player\zeus.sqf";
+};
 
 player removeItem "MineDetector";
-_itemsRemoved = missionNamespace getVariable [format["removedItems_%1", getPlayerUID player], []]; // I won't pass this var as arg into addAction bc there will be to much ADDACTIONLINES :D
+_itemsRemoved = missionNamespace getVariable [format["removedItems_%1", getPlayerUID player], []];
 
 if !(_itemsRemoved isEqualTo []) then {
 	player addAction [localize "str_ACTION_REMOVEDITEMSLIST", {

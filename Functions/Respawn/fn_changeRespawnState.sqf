@@ -12,7 +12,7 @@ if (_state isEqualTo "Disable") then {
 	{
 		{
 			private _time = missionNamespace getVariable ["respawnTime", 0];
-			if ((playerRespawnTime < 9999) and (playerRespawnTime > 0)) then {
+			if ((playerRespawnTime < 999) and (playerRespawnTime > 0)) then {
 				setPlayerRespawnTime _time;
 			};
 		} remoteExec ["call", _x];

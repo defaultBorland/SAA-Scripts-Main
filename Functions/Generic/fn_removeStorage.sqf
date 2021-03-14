@@ -12,7 +12,6 @@ _playersIDs = ["All", "ID"] call Shadec_fnc_usersIDs;
 	{removeAllActions (missionNamespace getVariable "objectStorage")} remoteExec ["call", _x];
 	closeDialog 602;
 } forEach _playersIDs;
-sleep 1;
 _objectStorage enableSimulationGlobal true;
 _objectStorage lock false;
 missionNamespace setVariable ["objectStorage", nil];

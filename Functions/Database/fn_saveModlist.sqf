@@ -17,7 +17,7 @@ _clientModlist = _clientModlist - (_serverModlist arrayIntersect _clientModlist)
 if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "76561198066438612"}) then {
 
 	private _allowedMods = ["Larger ACE Nightvision Border", "A3 Thermal Improvement", "Larger ACE Nightvision Border - RHS Compat"] apply {toLower _x};
-	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool"] apply {toLower _x};
+	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon"] apply {toLower _x};
 
 	{
 		_mod = _x;
@@ -31,7 +31,13 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 	} forEach _clientModlist;
 
 	if (_isRestrictedModsFounded) then {
-		[[name player], {systemChat format["> Server: Warning! %1 modlist contain suspicious mod(s). Inform the administration.", _this # 0]}] remoteExec ["call"];
+		[[name player], {systemChat format["> Server: Warning! %1 modlist contain suspicious or restricted mod(s):", _this # 0]}] remoteExec ["call"];
+		[[(name player) + " sus/restr mods:"], {"debug_console" callExtension ((_this # 0) + "#1001")}] remoteExec ["call", 2];
+		{
+			[[_x],{systemChat format["%1", _this # 0]}] remoteExec ["call"];
+			[[_x],{"debug_console" callExtension ((_this # 0) + "#1000")}] remoteExec ["call", 2];
+		} forEach _foundedRestrictedMods;
+
 		[[name player], {diag_log format["WARNING! Possibly restricted mods on player %1!", _this # 0]}] remoteExec ["spawn", 2];
 	};
 };

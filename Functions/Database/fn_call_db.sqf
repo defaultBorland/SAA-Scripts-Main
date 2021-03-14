@@ -15,9 +15,9 @@ switch _act do {
 		if !(isNil {_getData}) then {
 			private _uid = _info # 0;
 			private _unit = _info # 1;
-			private _rank = _getData # 0;
-			private _pclass = _getData # 1;
-			private _sclass = _getData # 2;
+			private _rank = _getData # 0; _unit setVariable ["SAA_Rank", _rank, true];
+			private _pclass = _getData # 1; _unit setVariable ["SAA_PrimaryClass", _pclass, true];
+			private _sclass = _getData # 2; _unit setVariable ["SAA_SecondaryClass", _sclass, true];
 			private _inventory = _getData # 3;
 			missionNamespace setVariable [format["%1_DATA", _uid], [_rank, _pclass, _sclass], true];
 

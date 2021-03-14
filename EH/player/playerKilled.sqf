@@ -24,21 +24,24 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	// Exit if unit wasn't a player 
 	if !(isPlayer _unit) exitWith {};
 	
-	// Creating variable to reLoadout person from serverside after respawn
-    missionNamespace setVariable [format["%1_INVENTORY", getPlayerUID player], getUnitLoadout _unit, true];
-	
-	// Fill player display with black screen with text
-	titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
-    [_unit] spawn {sleep 5; titleFadeOut 3; (_this # 0) linkItem "itemMap"};
+	// Creating variable to reLoadout person from serverside after respawn if player wasnt KIA on rejoin
+	if !(_unit getVariable ["KIA_onExit", false]) then {
+    	missionNamespace setVariable [format["%1_INVENTORY", getPlayerUID _unit], getUnitLoadout _unit, true];
+		
+		// Fill player display with black screen with text only in case if player was not rejoin being KIA
+		titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
+		
+	} else {
+		if (_unit getVariable ["KIA_returnTicket", false]) then {[playerSide, 1] call BIS_fnc_respawnTickets};
+		[{[_this] call Shadec_fnc_showUserInfo;}, player, 5] call CBA_fnc_waitAndExecute;
+	};
 
 	// If unit has Long Range Radio - Save Freqs to Load it after Respawn
     if (call TFAR_fnc_haveLRRadio) then {_unit setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
 
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
-	[_unit] spawn {
+	[{
 		private _unit = _this # 0;
-
-		sleep 5;
 
 		removeAllItems _unit; 
 		removeAllWeapons _unit; 
@@ -46,7 +49,15 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 
 		_droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 7];
 		{deleteVehicle _x} forEach _droppedGear;
-	};
+
+		titleFadeOut 3;
+		player linkItem "itemMap";
+
+	}, [_unit], 5] call CBA_fnc_waitAndExecute;
+
+	//
+	_unit setVariable ["KIA_onExit", nil];
+	_unit setVariable ["KIA_returnTicket", nil];
 
 	// Create public var and send it to server to trigger event
 	playerKilled = [player, getPlayerUID player];

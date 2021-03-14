@@ -36,8 +36,8 @@ class CfgFunctions
 			class playersRespawnInfo {};
 			class moveRespawnMarker {};
 			class changeRespawnTime {};
-			class createRespawnPosition {};
-			class removeRespawnPosition {};
+			class createRespawnPoint {};
+			class removeRespawnPoint {};
 		};
 		class Gameplay {
 			class endMission {};
@@ -53,6 +53,8 @@ class CfgFunctions
 			class manageCurators {};
 			class playersList {};
 			class removingRestrictingItems {};
+			class showUserInfo {};
+			class promoteToZeus {};
 		};
 		class Generic {
 			class addToStorage {};
@@ -86,6 +88,9 @@ class CfgFunctions
 			class Medic {};
 			class Marksman {};
 			class Sniper {};
+		};
+		class Mechanics {
+			class renameGroupDisplay {file = "Mechanics\GroupNaming\fn_renameGroupDisplay.sqf";};
 		};
     };
 };
@@ -124,8 +129,8 @@ class CfgRemoteExec
 		class clearVehicleInventory {allowedTargets = 2;};
 		class storageOutputFormat {allowedTargets = 0;};
 		class manageCurators {allowedTargets = 2;};
-		class createRespawnPosition {allowedTargets = 2;};
-		class removeRespawnPosition {allowedTargets = 2;};
+		class createRespawnPoint {allowedTargets = 2;};
+		class removeRespawnPoint {allowedTargets = 2;};
 		class changeClasses {allowedTargets = 2;};
 		class saveModlist {allowedTargets = 2;};
 		class addArsenalSpecificItems {allowedTargets = 2;};
@@ -134,8 +139,7 @@ class CfgRemoteExec
 
 class CfgDebriefing
 {  
-	class Win
-	{
+	class Win {
 		title = "Mission Complete";
 		subtitle = "Respect+";
 		description = "";
@@ -143,8 +147,7 @@ class CfgDebriefing
 		pictureColor[] = {0.1,0.6,0.2,1};
 	};
 
-	class Lose
-	{
+	class Lose {
 		title = "Mission Failed";
 		subtitle = "We'll get em next time?...";
 		description = "";
@@ -152,21 +155,43 @@ class CfgDebriefing
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
-	class toBeContinued
-	{
+	class toBeContinued {
 		title = "To be continued...";
 		subtitle = "Until next time...";
-		description = "";
+		description = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca";
 		pictureColor[] = {1,1,1,1};
 	};
 
-	class allDead
-	{
+	class allDead {
 		title = "You all died!";
 		subtitle = "Everyone is dead.";
 		description = "";
-		picture = "KIA";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class missingMap {
+		title = "Missing Map";
+		subtitle = "Server and Client Map missmatch";
+		description = "Go to Arma 3 Launcher and activate neccessary map.";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class somethingGoneWrong {
+		title = "Something Gone Wrong";
+		subtitle = "Inform administration about your problem";
+		description = "Do not try to rejoin, inform administration first.";
+		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";
+		pictureColor[] = {1,1,1,1};
+	};
+
+	class promotedToZeus {
+		title = "Promoted To Zeus";
+		subtitle = "You have been promoted to SAA-Zeus";
+		description = "Your data was saved. Please, reselect playable slot and proceed.";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
+		pictureColor[] = {0.1,0.6,0.1,1};
 	};
 };
 

@@ -9,9 +9,9 @@ _respawnTarget = []; // Object or Position
 if (isNull _objectUnderCursor) then {
 	diag_log format ["fn_createRespawnPos: POSITION TYPE"];
 	_respawnPositionData = [_side, _position, markerText _marker] call BIS_fnc_addRespawnPosition; // Marker -> Position
-	if (_showNotification isEqualTo 1) then {
-		[format["%1 respawn Point '%2' added.", toUpper str _side, markerText _marker]] remoteExec ["hint", -2];
-		[format[">Server: %1 respawn Point '%2' added.", toUpper str _side, markerText _marker]] remoteExec ["systemChat", -2];
+	if (_showNotification) then {
+		[format["Respawn Point '%1' added.", markerText _marker]] remoteExec ["hint", -2];
+		[format[">Server: Respawn Point '%1' added.", markerText _marker]] remoteExec ["systemChat", -2];
 	};
 	_respawnTarget pushBack _position; // КОСТЫЛЬ
 } else {

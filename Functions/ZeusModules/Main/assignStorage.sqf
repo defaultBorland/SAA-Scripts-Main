@@ -1,41 +1,30 @@
-["[SAA] Main", "Assign Storage",
+//
+
+[localize "SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-	
-	private _selectedObjects = if (isNull _objectUnderCursor) then
-	{
-		["Objects"] call Achilles_fnc_SelectUnits;
-	}
-	else
-	{
-		[_objectUnderCursor];
+
+	if (isNull _objectUnderCursor) exitWith {
+		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
-	// If the selection was canceled, exit the script to prevent any issues and errors.
-	if (isNil "_selectedObjects") exitWith {};
-	
-	// If the selection is empty, also exit, but with a message.
-	if (_selectedObjects isEqualTo []) exitWith 
-	{
-		["No object was selected!"] call Achilles_fnc_showZeusErrorMessage;
-	};
-
-	private _dialogResult =
-	[
-		"Assign Selected Object as Storage",
+	[localize "SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_HEADER",
 		[
-			["Show info to players", ["No", "Yes"], 1],
-			["Note:", ["Object will be locked and simulation will be disabled."], 0]
-		]
-	] call Ares_fnc_showChooseDialog;
+			["CHECKBOX", [localize "SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_SHOWHINT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_SHOWHINT_TOOLTIP"],
+				true
+			]
+		],
+		{ // On Confirmation
+			params ["_dialogResult", "_args"];
+			_dialogResult params ["_showInfo"];
+			_args params ["_selectedObject"];
 
-	// If the dialog was closed.
-	if (_dialogResult isEqualTo []) exitWith{};
-
-	// Get the selected data
-	_dialogResult params ["_additionalInfo", "_info"];
-
-	[[_selectedObjects # 0, _additionalInfo], Shadec_fnc_assignStorage] remoteExec ["spawn", 2];
-	["Storage Object changed."] call Achilles_fnc_showZeusErrorMessage;
-}] call Ares_fnc_RegisterCustomModule;
+			[[_selectedObject, _showInfo], Shadec_fnc_assignStorage] remoteExec ["call", 2];
+	
+			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+		},
+		{},
+		[_objectUnderCursor]
+	] call zen_dialog_fnc_create;
+}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;

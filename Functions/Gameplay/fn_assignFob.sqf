@@ -23,11 +23,11 @@ if (_addPAK isEqualTo 1) then {
 };
 
 if (_additionalInfo isEqualTo 1) then {
-	{hint parseText format ["<t align='center'>Respawn-medical transport was assigned</t><t align='center'><img size='4' image='%1'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction: %3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %4</t>", getText(configfile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "lastFOB") >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "lastFOB") >> "displayName"), floor ([player, (missionNamespace getVariable "lastFOB")] call BIS_fnc_dirTo), round (player distance (missionNamespace getVariable "lastFOB"))]} remoteExec ["call"];
+	{hint parseText format ["<t align='center'>Respawn-medical vehicle was assigned</t><t align='center'><img size='4' image='%1'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction: %3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %4</t>", getText(configfile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "lastFOB") >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf (missionNamespace getVariable "lastFOB") >> "displayName"), floor ([player, (missionNamespace getVariable "lastFOB")] call BIS_fnc_dirTo), round (player distance (missionNamespace getVariable "lastFOB"))]} remoteExec ["call"];
 };
 
 ["> Server: New FOB assigned"] remoteExec ["systemChat"];
-_vehicle setVariable ["isFOB", true];
+_vehicle setVariable ["isFOB", true, true];
 
 [_vehicle, _marker] spawn {
 	params ["_respawnFOB", "_marker"];
@@ -40,6 +40,6 @@ _vehicle setVariable ["isFOB", true];
 		[format["> Server: Respawn FOB '%1' were destroyed!", markerText _marker]] remoteExec ["systemChat", -2];
 	};
 
-	[_marker] call Shadec_fnc_removeRespawnPosition;
+	[_marker] call Shadec_fnc_removeRespawnPoint;
 	// deleteMarker _marker;
 };

@@ -8,7 +8,7 @@ fnc_FormatClasses = {
 		case "Nurse": {_returnString = "NURSE"};
 		case "Machinegunner": {_returnString = "MG"};
 		case "Engineer": {_returnString = "ENG"};
-		case "AT/AA-Spec": {_returnString = "AT/AA"};
+		case "ATSpec": {_returnString = "AT/AA"};
 		case "Medic": {_returnString = "MED"};
 		case "Grenadier": {_returnString = "GREN"};
 		case "Marksman": {_returnString = "MARKS"};
@@ -18,76 +18,101 @@ fnc_FormatClasses = {
 	_returnString
 };
 
-_groupOrder = [];
-_structuredText = "";
+fnc_NoReturn = {
+	params ["_status", "_isOnlyToZeus"];
 
-params["_playersType", "_target", "_groupBy"];
+	if (_status isEqualTo "All") then {_status = ""};
+
+	if (_isOnlyToZeus) then {
+		[[format["There are no %1 players!", toLower _status], "Plain", 2]] remoteExec ["cutText", remoteExecutedOwner];
+	} else {
+		[format["There are no %1 players!", toLower _status]] remoteExec ["hint"]
+	};
+
+};
+
+
+params["_status", "_groupBy", "_isOnlyToZeus"];
 disableSerialization;
 
-_players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
+private _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
 
-_playersCount = count _players;
+private _playersCount = count _players;
 
-switch (_playersType) do {
+switch (_status) do {
 	case "Alive": {_players = _players select {alive _x}};
 	case "Dead": {_players = _players select {!alive _x}};
 	case "All";
 	default {};
 };
 
-_targetsCount = count _players;
+// If no players with selected status - exit with message
+if (_players isEqualTo []) exitWith {[_status, _isOnlyToZeus] call fnc_NoReturn};
+
+private _targetsCount = count _players;
 
 diag_log format ["playersList FNC | _players to show: %1", _players];
 
-_players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x]))};
+_players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x])) + [_x, [grpNull, group _x] select ((count units group _x) > 1)]};
 
-if (_groupBy isEqualTo "Ranks") then {
-	_ranksRanging = ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC","PV2","PV1"];
-	_groupOrder = _players apply {_x # 1};
-	_groupOrder = _ranksRanging arrayIntersect _groupOrder;
-} else {
-	_groupOrder = _players apply {_x # 2};
-	_groupOrder = _groupOrder arrayIntersect _groupOrder;
-	_groupOrder sort true;
+
+// Grouping player by selected stat
+private _groupOrder = [];
+private _playersGrouped = [];
+switch (_groupBy) do {
+	case "Ranks": {
+		_ranksRanging = ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC","PV2","PV1"];
+		_groupOrder = _players apply {_x # 1};
+		_groupOrder = _groupOrder arrayIntersect _ranksRanging; // ex: ["SMC", "MSG", "SGT", "PV2"];
+
+		{
+			_groupOrderCurrent = _x;
+			_playersGrouped pushBack [_groupOrderCurrent, (_players select {_groupOrderCurrent in _x})];
+		} forEach _groupOrder;
+	};
+	case "Classes": {
+		_groupOrder = _players apply {_x # 2};
+		_groupOrder = _groupOrder arrayIntersect _groupOrder;
+		_groupOrder sort true; // ex: ["ATSpec", "Engineer", "Rifleman"];
+
+		{
+			_groupOrderCurrent = _x;
+			_playersGrouped pushBack [[_groupOrderCurrent, "LS"] call Shadec_fnc_classSwitcher, (_players select {_groupOrderCurrent in _x})];
+		} forEach _groupOrder;
+	};
+	case "Groups": {
+		_groupOrder = _players apply {_x # 5};
+		_groupOrder = _groupOrder arrayIntersect _groupOrder; 
+		_groupOrder = _groupOrder - [grpNull]; _groupOrder pushBack grpNull; // ex: [grp1, grp2]
+
+		{
+			_groupOrderCurrent = _x;	diag_log format ["playersList FNC | _groupOrderCurrent: %1 | %2 | %3", _groupOrderCurrent, typeName _groupOrderCurrent, groupId _groupOrderCurrent];
+			_playersGrouped pushBack [format["%1 (%2)", [groupId _groupOrderCurrent, "FREE"] select (_x isEqualTo grpNull), [name leader _groupOrderCurrent, "NO GROUP"] select (_x isEqualTo grpNull)], (_players select {_groupOrderCurrent in _x})];
+		} forEach _groupOrder;
+	};
+	default {};
 };
-
-_playersGrouped = [];
-{
-	_groupOrderValue = _x;
-	_playersGrouped pushBack (_players select {_groupOrderValue in _x});
-} forEach _groupOrder;
 
 diag_log format ["playersList FNC | _players modified: %1", _playersGrouped];
 
-_structuredText = format["<t size='2.0' color='#ff0000' align='center' font='PuristaBold'>%1</t><t size='1.5' color='#ff0000' align='center' font='PuristaSemibold'> %2/%3</t><br/>", _playersType, _targetsCount, _playersCount];
+// Compose Structured Text
+_structuredText = "";
+_structuredText = format["<t size='2.0' color='#ff0000' align='center' font='PuristaBold'>%1</t><t size='1.5' color='#ff0000' align='center' font='PuristaSemibold'> %2/%3</t><br/>", _status, _targetsCount, _playersCount];
 {
-	_currentGroup = _x;
-	_structuredText = _structuredText + format["<t size='1.5' align='center'>--- %1s ---</t><br/>", _groupOrder # _forEachIndex];
+	_currentGroup = _x # 1;
+	if (count _currentGroup < 1) then {continue}; // YOBANY COSTYL, REMOVING GRPNULL GROUP IF EMPTY
+	_header = [_x # 0, localize (_x # 0)] select (_groupBy isEqualTo "Classes");
+	_structuredText = _structuredText + format["<t size='1.5' align='center'>-- %1 [%2/%3] --</t><br/>", _header, count _currentGroup, _playersCount];
 	{
-		if (_groupBy isEqualTo "Ranks") then {
-			_structuredText = _structuredText + format["<t size='1.0' align='center'>[%2]  %1  [%3]</t><br/>", _x # 0, _x # 2, _x # 3];
-		} else {
-			_structuredText = _structuredText + format["<t size='1.0' align='center'>[%2]  %1  [%3]</t><br/>", _x # 0, _x # 1, _x # 2];
-		};
+		_structuredText = _structuredText + format["<t size='1.0' align='center'>[%1]  %2  [%3/%4]</t><br/>", _x # 1, _x # 0, _x # 2, _x # 3];
 	} forEach _currentGroup;
 } forEach _playersGrouped;
 
-switch (_target) do {
-	case "Only to Zeus": {
-		if !(_players isEqualTo []) then {
-			[[_structuredText, "Plain down", 2, false, true]] remoteExec ["cutText", remoteExecutedOwner];
-		} else {
-			[[format["There are no %1 players!", toLower _playersType], "Plain down", 2]] remoteExec ["cutText", remoteExecutedOwner];
-		};
-	};
-	case "To all players": {
-		if !(_players isEqualTo []) then {
-			[parseText _structuredText] remoteExec ["hint"];
-		} else {
-			[format["There are no %1 players!", toLower _playersType]] remoteExec ["hint"]
-		};
-	};
-	default {};
+// Show composed text
+if (_isOnlyToZeus) then {
+	[[_structuredText, "Plain", 2, false, true]] remoteExec ["cutText", remoteExecutedOwner];
+} else {
+	[parseText _structuredText] remoteExec ["hint"];
 };
 
 //return

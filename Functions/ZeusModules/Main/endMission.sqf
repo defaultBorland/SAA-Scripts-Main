@@ -1,47 +1,77 @@
-// Zeus End Mission Module
+// Zeus End Mission Module (SCENARIO FLOW TAB)
 
-// End Mission Module in Scenario Flow tab for those zeuses who forget the rules
-[localize "str_ZEUS_MODULES_ENDSCENARIO_TAB", localize "str_ZEUS_MODULES_ENDSCENARIO_TITLE",
+[localize "SAA_ZEUS_MODULES_CATEGORIES_SCENARIOFLOW", localize "SAA_ZEUS_MODULES_SCENARIOFLOW_ENDMISION_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-	_endTypes = ["Win", "Lose", "To Be Continued", "All Dead"];
 
-	private _dialogResult =
-	[
-		localize "str_ZEUS_MODULES_ENDSCENARIO_DIALOG_TITLE",
+	// if (isNull _objectUnderCursor) exitWith {
+	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+	// };
+
+	[localize "SAA_ZEUS_MODULES_MAIN_ENDMISION_DIALOG_HEADER",
 		[
-			[localize "str_ZEUS_MODULES_ENDSCENARIO_DIALOG_TYPE", _endTypes, 0]
-		]
-	] call Ares_fnc_showChooseDialog;
+			["COMBO", [localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_TOOLTIP"],
+				[
+					["Win", "Lose", "toBeContinued", "allDead"],
+					[
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca"], 
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca"], 
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED_TOOLTIP", "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca"], 
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP", "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca"]
+					],
+					0
+				]
+			]
+		],
+		{ // On Confirmation
+			params ["_dialogResult", "_args"];
+			_dialogResult params ["_endType"];
 
-	// If the dialog was closed.
-	if (_dialogResult isEqualTo []) exitWith{};
+			[[_endType], Shadec_fnc_endMission] remoteExec ["call", 2];
+	
+			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+		},
+		{},
+		[]
+	] call zen_dialog_fnc_create;
+}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
 
-	// Get the selected data
-	_dialogResult params ["_comboBoxResult"];
-	[[_endTypes # _comboBoxResult], Shadec_fnc_endMission] remoteExec ["spawn", 2];
-}] call Ares_fnc_RegisterCustomModule;
 
-// End Mission Module
-["[SAA] Main", "End Mission",
+// Zeus End Mission Module (SAA MAIN TAB)
+[localize "SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "SAA_ZEUS_MODULES_MAIN_ENDMISION_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-	_endTypes = ["Win", "Lose", "To Be Continued", "All Dead"];
 
-	private _dialogResult =
-	[
-		"End Mission",
+	// if (isNull _objectUnderCursor) exitWith {
+	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+	// };
+
+	[localize "SAA_ZEUS_MODULES_MAIN_ENDMISION_DIALOG_HEADER",
 		[
-			["Choose End Type:", _endTypes, 0]
-		]
-	] call Ares_fnc_showChooseDialog;
+			["COMBO", [localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_TOOLTIP"],
+				[
+					["Win", "Lose", "toBeContinued", "allDead"],
+					[
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca"], 
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca"], 
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED_TOOLTIP", "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca"], 
+						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP", "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca"]
+					],
+					0
+				]
+			]
+		],
+		{ // On Confirmation
+			params ["_dialogResult", "_args"];
+			_dialogResult params ["_endType"];
 
-	// If the dialog was closed.
-	if (_dialogResult isEqualTo []) exitWith{};
-
-	// Get the selected data
-	_dialogResult params ["_comboBoxResult"];
-	[[_endTypes # _comboBoxResult], Shadec_fnc_endMission] remoteExec ["spawn", 2];
-}] call Ares_fnc_RegisterCustomModule;
+			[[_endType], Shadec_fnc_endMission] remoteExec ["call", 2];
+	
+			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+		},
+		{},
+		[]
+	] call zen_dialog_fnc_create;
+}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;

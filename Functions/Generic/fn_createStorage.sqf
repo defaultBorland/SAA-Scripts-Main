@@ -41,7 +41,7 @@ clearBackpackCargoGlobal _pStorage;
 
 hideObjectGlobal _pStorage;
 
-[_objectStorage, [localize "str_SAA_STORAGE_ACTION", {
+[_objectStorage, [localize "SAA_SAA_STORAGE_ACTION", {
 	params ["_target", "_caller", "_actionId", "_arguments"];
 	(_this # 3 # 0) setPosASLW (getPosASLW (_this # 0));
 	(_this # 3 # 0) lock true;

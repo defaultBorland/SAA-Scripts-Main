@@ -1,12 +1,4 @@
 params ["_endType"];
-_endtype = _this # 0;
-switch (_endType) do {
-	case "Win": {_endType = "Win"};
-	case "Lose": {_endType = "Lose"};
-	case "To Be Continued": {_endType = "toBeContinued"};
-	case "All Dead": {_endType = "allDead"};
-	default {_endType = "EveryoneWon"};
-};
 
 {
 	[_x, getPlayerUID _x, name _x] spawn Shadec_fnc_savePlayer;

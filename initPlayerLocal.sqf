@@ -1,5 +1,6 @@
 //Player init
 waitUntil {!isNull player};
+[] call BIS_fnc_VRFadeOut;
 
 _uid = getPlayerUID player;
 
@@ -51,7 +52,7 @@ waitUntil {scriptDone script_handler};
 // If player was KIA - kill him
 if (player getVariable ["KIA_onExit", false]) then {player setDamage 1} else {
 	
-	script_handler = [] spawn {sleep 3; titleFadeOut 3;};
+	script_handler = [] spawn {sleep 5; [] call BIS_fnc_VRFadeIn;};
 	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 15, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 };
 

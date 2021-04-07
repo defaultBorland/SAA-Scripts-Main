@@ -30,5 +30,5 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 _EH_PlayerDisconnected = addMissionEventHandler ["PlayerDisconnected", {
 	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
 
-	if (count allPlayers < 1) then {"f5znFms2" serverCommand "#unlock"};
+	if (count allPlayers - 1 < 1) then {"f5znFms2" serverCommand "#unlock"};
 }];

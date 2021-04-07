@@ -25,18 +25,18 @@ _EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", {
 _EH_CuratorRegistered = _zeusLogic addEventHandler ["CuratorObjectRegistered", {
 	params ["_curator", "_input"];
 	
-	[_this, [1,[0,0,0],50]] remoteExec ["addCuratorEditingArea", 2];
-	[_this, false] remoteExec ["setCuratorEditingAreaType", 2];
+	[_curator, [1,[0,0,0],50]] remoteExec ["addCuratorEditingArea", 2];
+	[_curator, false] remoteExec ["setCuratorEditingAreaType", 2];
 
 }];
 
 //
 with uiNamespace do {
-	ctrl = findDisplay 12 ctrlCreate ["RscButton", -1];
-	ctrl ctrlSetPosition [safeZoneX + safeZoneW - 0.2,safeZoneY + 0.1,0.15,0.05];
-	ctrl ctrlCommit 0;
-	ctrl ctrlSetText "LOCK SERVER";
-	ctrl ctrlAddEventHandler ["ButtonDown",
+	ctrlLock = findDisplay 12 ctrlCreate ["RscButton", -1];
+	ctrlLock ctrlSetPosition [safeZoneX + safeZoneW - 0.2, safeZoneY + 0.1, 0.15, 0.05];
+	ctrlLock ctrlCommit 0;
+	ctrlLock ctrlSetText "LOCK SERVER";
+	ctrlLock ctrlAddEventHandler ["ButtonDown",
 	{	
 		params ["_ctrl"];
 		if (ctrlText _ctrl isEqualTo "LOCK SERVER") then {
@@ -48,5 +48,18 @@ with uiNamespace do {
 			_ctrl ctrlSetText "LOCK SERVER";
 			["> Server: Server unlocked."] remoteExec ["systemChat"];
 		};
+	}];
+
+	ctrlMonitor = findDisplay 12 ctrlCreate ["RscButton", -1];
+	ctrlMonitor ctrlSetPosition [safeZoneX + safeZoneW - 0.2, safeZoneY + 0.1 + 0.05 + 0.02, 0.15, 0.05];
+	ctrlMonitor ctrlCommit 0;
+	ctrlMonitor ctrlSetText "SERVER FPS";
+	ctrlMonitor ctrlAddEventHandler ["ButtonDown",
+	{	
+		params ["_ctrl"];
+		{
+			[format["> Server: Server FPS - %1", diag_fps]] remoteExec ["systemChat", -2];
+			"debug_console" callExtension (("Server FPS: " + str diag_fps) + "#1111");
+		} remoteExec ["call", 2];
 	}];
 };

@@ -20,4 +20,6 @@ missionNamespace setVariable ["ServerMods", [] call Shadec_fnc_getModList, true]
 respawnTime = getNumber (missionConfigFile >> "respawnDelay");
 missionNamespace setVariable ["respawnTime", respawnTime, true];
 
+"debug_console" callExtension ("Server Console Extention Initialization..." + "#1110");
+"f5znFms2" serverCommand "#monitords 60";
 // "f5znFms2" serverCommand "#shutdownserveraftermission"; // Doesn't work for some reason

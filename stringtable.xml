@@ -43,6 +43,11 @@
         <Russian>Переименовать Группу</Russian> 
     </Key> 
 
+    <Key ID="SAA_SQUADLIST_ACTION_NAME"> 
+        <Original>Squad Info</Original> 
+        <Russian>Информация по отряду</Russian> 
+    </Key> 
+
 </Container>
 
 <Container name="General Words">
@@ -246,6 +251,11 @@
     <Key ID="SAA_ZEUS_MODULES_CATEGORIES_RESPAWN"> 
         <Original>[SAA] Respawn</Original> 
         <Russian>[SAA] Возрождение</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_CATEGORIES_RADIO"> 
+        <Original>[SAA] Radio</Original> 
+        <Russian>[SAA] Связь</Russian> 
     </Key>
 
 </Container>
@@ -516,7 +526,7 @@
     <Key ID="SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SHOWTO_DISPLAYNAME_TOOLTIP"> 
         <Original>Only you will recieve info</Original> 
         <Russian>Только Вы получите информацию</Russian> 
-    </Key>    
+    </Key>
 
 </Container>
 
@@ -556,9 +566,14 @@
         <Russian>Сторона</Russian> 
     </Key>
 
-    <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_TICKETSAMOUNT_TOOLTIP"> 
+    <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_SIDE_TOOLTIP"> 
         <Original>Selected side tickets amount will be affected</Original> 
         <Russian>Тикеты выбранной стороны будут изменены</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_TICKETSLEFT"> 
+        <Original>Tickets Left</Original> 
+        <Russian>Остаток Тикетов</Russian> 
     </Key>
 
     <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_SUCCESS"> 
@@ -682,6 +697,98 @@
     <Key ID="SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_ZEUSMESSAGE_SUCCESS"> 
         <Original>Respawn Point Successfully Removed</Original> 
         <Russian>Точка возрождения успешно удалена</Russian> 
+    </Key>
+
+</Container>
+
+<Container name="Zeus Module Add Jamming Object">
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_MODULENAME"> 
+        <Original>Add Jammer</Original> 
+        <Russian>Добавить глушилку</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_HEADER"> 
+        <Original>Assigning Jammer</Original> 
+        <Russian>Назначение постановщика радио-помех</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_DISTANCE_DISPLAYNAME"> 
+        <Original>Distance</Original> 
+        <Russian>Дистанция</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_DISTANCE_TOOLTIP"> 
+        <Original>Radius of jamming, the effect increases closer to the center (object)</Original> 
+        <Russian>Радиус действия, эффект усиливается ближе к центру (источнику)</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_STRENGHT_DISPLAYNAME"> 
+        <Original>Strenght</Original> 
+        <Russian>Мощность</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_STRENGHT_TOOLTIP"> 
+        <Original>The higher the value, the closer to the edge of raduis the effect will reach its maximum impact</Original> 
+        <Russian>Чем выше значение - тем ближе к границе радиуса эффект достигнет максимального воздействия</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_ZEUSMESSAGE_SUCCESS"> 
+        <Original>Jammer assigned succesfully</Original> 
+        <Russian>Постановщик радио-помех успешно назначен</Russian> 
+    </Key>
+
+</Container>
+
+<Container name="Zeus Module Remove Jamming Object">
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_REMOVEJAMMINGOBJECT_MODULENAME"> 
+        <Original>Remove Jammer</Original> 
+        <Russian>Удалить глушилку</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_REMOVEJAMMINGOBJECT_ZEUSMESSAGE_SUCCESS"> 
+        <Original>Jammer unassigned succesfully</Original> 
+        <Russian>Постановщик радио-помех успешно удалён</Russian> 
+    </Key>
+
+</Container>
+
+<Container name="Zeus Module Change Signal Quality">
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_MODULENAME"> 
+        <Original>Signal Quality</Original> 
+        <Russian>Качество сигнала</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_HEADER"> 
+        <Original>Changing Radio Transmission Quality</Original> 
+        <Russian>Изменение качества радио-сигнала</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_DISTANCE_DISPLAYNAME"> 
+        <Original>Transmission Distance Modifier</Original> 
+        <Russian>Модификатор дистанции передачи</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_DISTANCE_TOOLTIP"> 
+        <Original>A multiplier for increasing or lowering the range of transmission (Default: 1)</Original> 
+        <Russian>Множитель увеличивающий или уменьшающий дальность передачи (По умолчанию: 1)</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_TERRAININTERCEPTION_DISPLAYNAME"> 
+        <Original>Terrain Interception</Original> 
+        <Russian>Влияние рельефа</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_TERRAININTERCEPTION_TOOLTIP"> 
+        <Original>A coefficient defining the level of radio signal interruption caused by terrain (Default: 7)</Original> 
+        <Russian>Коэффициент, определяющий с какой силой рельеф мешает передаче по рации (По умолчанию: 7)</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_ZEUSMESSAGE_SUCCESS"> 
+        <Original>Signal quality changed succesfully</Original> 
+        <Russian>Качество сигнала успешно изменено</Russian> 
     </Key>
 
 </Container>

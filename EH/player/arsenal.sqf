@@ -15,7 +15,7 @@ _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
     hint "";
     player setVariable["isArsenalOpened", true, true];
 	private _uid = getPlayerUID player;
-	if (player getVariable ["SAA_isArsenalUnrestricted", false]) then {["save"] call Shadec_fnc_gearList};
+	if !(player getVariable ["SAA_isArsenalUnrestricted", false]) then {["save"] call Shadec_fnc_gearList};
 
     [_this # 0] spawn {
         params ["_display"];
@@ -43,7 +43,7 @@ _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
 _EH_ArsenalClose = ["ace_arsenal_displayClosed", {
     player setVariable ["isArsenalOpened", false, true];
     private _uid = getPlayerUID player;
-   if (player getVariable ["SAA_isArsenalUnrestricted", false]) then {["load"] call Shadec_fnc_gearList};
+   if !(player getVariable ["SAA_isArsenalUnrestricted", false]) then {["load"] call Shadec_fnc_gearList};
 }] call CBA_fnc_addEventHandler;
 
 // Restrict "Open backpack" action on players who in ACE Arsenal;

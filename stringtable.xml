@@ -287,6 +287,16 @@
         <Russian>ОШИБКА: Выбранный игрок уже SAA-Зевс</Russian> 
     </Key>
 
+    <Key ID="SAA_ZEUS_MESSAGES_ALREADYSTORAGEPROXY"> 
+        <Original>ERROR: Selected object is already SAA-StorageProxy</Original> 
+        <Russian>ОШИБКА: Выбранный объект уже является объектом доступа к хранилищу</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MESSAGES_NOTASTORAGEPROXY"> 
+        <Original>ERROR: Selected object is not a SAA-StorageProxy</Original> 
+        <Russian>ОШИБКА: Выбранный объект не назначен объектом доступа к хранилищу</Russian> 
+    </Key>
+
 </Container>
 
 <Container name="Zeus Module Add Arsenal">
@@ -371,13 +381,13 @@
 <Container name="Zeus Module Assign Storage">
 
     <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_MODULENAME"> 
-        <Original>Assign Personal Storages</Original> 
-        <Russian>Назначить Личные Хранилища</Russian> 
+        <Original>Assign Personal Storage Proxy</Original> 
+        <Russian>Добавить доступ к хранилищу</Russian> 
     </Key>
 
     <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_HEADER"> 
         <Original>Assign Storage-proxy</Original> 
-        <Russian>Назначить Хранилище</Russian> 
+        <Russian>Назначить точку доступа к хранилищу</Russian> 
     </Key>
 
     <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
@@ -387,12 +397,41 @@
 
     <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
         <Original>Player will recieve notification about personal storage position and type</Original> 
-        <Russian>Игроки получат информацию об относительном местонахождении личного хранилища</Russian> 
+        <Russian>Игроки получат информацию об относительном местонахождении точки доступа к личному хранилищу</Russian> 
     </Key>
 
     <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_ZEUSMESSAGE_SUCCESS"> 
-        <Original>Хранилище успешно назначено</Original> 
-        <Russian>Арсенал успешно добавлен</Russian> 
+        <Original>Storage-Proxy has been assigned</Original> 
+        <Russian>Точка доступа к хранилищу добавлена</Russian> 
+    </Key>
+
+</Container>
+
+<Container name="Zeus Module Remove Storage">
+
+    <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_MODULENAME"> 
+        <Original>Remove Personal Storage Proxy</Original> 
+        <Russian>Удалить доступ к хранилищу</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_HEADER"> 
+        <Original>Remove Storage-proxy</Original> 
+        <Russian>Удалить доступ к хранилищу с объекта</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
+        <Original>Notify players</Original> 
+        <Russian>Уведомить игроков</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
+        <Original>Player will recieve notification about personal storage position and type</Original> 
+        <Russian>Игроки получат информацию об относительном местонахождении объекта, больше не являющегося доступом к личному хранилищу</Russian> 
+    </Key>
+
+    <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS"> 
+        <Original>Storage-proxy removed</Original> 
+        <Russian>Точка доступа к личному хранилищу удалена</Russian> 
     </Key>
 
 </Container>

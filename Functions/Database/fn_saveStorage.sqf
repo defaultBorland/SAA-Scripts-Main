@@ -11,8 +11,6 @@ _magazines = ["Magazines", magazinesAmmoCargo _pStorage] call Shadec_fnc_getCarg
 _items = ["Items", getItemCargo _pStorage] call Shadec_fnc_getCargoCompat;
 _data = [_weapons, _magazines, _items];
 
-missionNamespace setVariable [format["storage_%1", _uid], _data];
-
 // Saving Inventory to local profile to show in ShopMission
 profileNamespace setVariable ["SAA_Project_Storage", _data];
 

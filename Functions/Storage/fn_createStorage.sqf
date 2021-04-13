@@ -3,11 +3,6 @@
 
 params ["_storageList", "_pcid", "_uid", "_purchaseOrder"];
 
-missionNamespace setVariable [format["storage_%1", _uid], _storageList];
-
-_objectStorage = missionNamespace getVariable ["objectStorage", nil];
-if (isNil {_objectStorage}) exitWith {diag_log format ["objectStorage not found. Storage box cannot be created."]};
-
 (missionNamespace getVariable [format["%1_DATA", _uid], ["PV1","Rifleman", "None"]]) params ["_rank", "_primClass", "_secClass"];
 private _boxClass = "";
 switch (_primClass) do {
@@ -36,12 +31,13 @@ clearBackpackCargoGlobal _pStorage;
 ["loadPurchaseOrder", _purchaseOrder, _uid] spawn Shadec_fnc_addToStorage;
 
 hideObjectGlobal _pStorage;
+_pStorage setVariable ["ace_cookoff_enable", false, true];
 
-[_objectStorage, [localize "SAA_SAA_STORAGE_ACTION", {
-	params ["_target", "_caller", "_actionId", "_arguments"];
-	(_this # 3 # 0) setPosASLW (getPosASLW (_this # 0));
-	(_this # 3 # 0) lock true;
-	(_this # 1) action ["Gear", (_this # 3 # 0)];
-}, [_pStorage], 6, true, false, "", "true", 3, false ,"", ""]] remoteExec ["addAction", _pcid];
-
-//return
+_storages = missionNamespace getVariable ["storagesProxys", []];
+if !(_storages isEqualTo []) then {
+	{
+		[[_x], {
+			[_this # 0] call Shadec_fnc_addActionToStorage;
+		}] remoteExec ["spawn", _pcid];
+	} forEach _storages;
+};

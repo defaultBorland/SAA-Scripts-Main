@@ -18,6 +18,22 @@ class CfgFunctions
 {
     class Shadec
     {
+		class Arsenal {
+			class addArsenalSpecificItems {};
+			class addShadecArsenal {};
+		};
+		class Classes {
+			class classSwitcher {};
+			class Rifleman {};
+			class Nurse {};
+			class Machinegunner {};
+			class Grenadier {};
+			class Engineer {};
+			class ATSpec {};
+			class Medic {};
+			class Marksman {};
+			class Sniper {};
+		};
         class Database {
             class call_db {};
 			class getInventory {};
@@ -29,66 +45,60 @@ class CfgFunctions
 			class changeClasses {};
 			class saveModlist {};
         };
-		class Respawn {
-			class changeRespawnTickets {};
-			class forceRespawn {};
-			class changeRespawnState {};
-			class playersRespawnInfo {};
-			class moveRespawnMarker {};
-			class changeRespawnTime {};
-			class createRespawnPoint {};
-			class removeRespawnPoint {};
-		};
 		class Gameplay {
 			class endMission {};
-			class rolesAssign {};
-			class addShadecArsenal {};
-			class addArsenalSpecificItems {};
-			class respawnTeleport {};
-			class assignStorage {};
-			class assignFob {};
-			class assignJammer {};
-			class objectJamming {};
-			class radioSignalQuality {};
-			class manageCurators {};
 			class playersList {};
-			class removingRestrictingItems {};
+			class respawnTeleport {};
+			class rolesAssign {};
 			class showUserInfo {};
-			class promoteToZeus {};
 		};
 		class Generic {
-			class addToStorage {};
-			class createStorage {};
-			class deleteStorage {};
+			class clearVehicleInventory {};
 			class gearList {};
-			class getCargoCompat {};
+			class getModList {};
 			class itemsListShortener {};
 			class listCreate {};
 			class loadoutListCreate {};
 			class reLoadoutUnit {};
-			class addZeusModules {};
-			class getMsgServerVariable {};
 			class usersIDs {};
-			class initStorage {};
-			class removeStorage {};
+		};
+		class Radio {
+			class assignJammer {};
+			class objectJamming {};
+			class radioSignalQuality {};
+		};
+		class Respawn {
+			class assignFob {};
+			class changeRespawnState {};
+			class changeRespawnTickets {};
+			class changeRespawnTime {};
+			class createRespawnPoint {};
+			class forceRespawn {};
+			class moveRespawnMarker {};
+			class playersRespawnInfo {};
 			class removeFob {};
-			class clearVehicleInventory {};
+			class removeRespawnPoint {};
+		};
+		class Storage {
+			class addActionToStorage {};
+			class addToStorage {};
+			class assignStorage {};
 			class composeAvailiableItems {};
-			class classSwitcher {};
+			class createStorage {};
+			class deleteStorage {};
+			class getCargoCompat {};
+			class initStorage {};
+			class removeActionFromStorage {};
 			class removedItemsListDisplay {};
-			class getModList {};
+			class removeStorage {};
+			class removingRestrictingItems {};
 		};
-		class Classes {
-			class Rifleman {};
-			class Nurse {};
-			class Machinegunner {};
-			class Grenadier {};
-			class Engineer {};
-			class ATSpec {};
-			class Medic {};
-			class Marksman {};
-			class Sniper {};
+		class Zeus {
+			class addZeusModules {};
+			class manageCurators {};
+			class promoteToZeus {};
 		};
+
 		class Mechanics {
 			class renameGroupDisplay {file = "Mechanics\GroupNaming\fn_renameGroupDisplay.sqf";};
 		};
@@ -114,7 +124,6 @@ class CfgRemoteExec
 		class reLoadoutUnit {allowedTargets = 2;};
 		class rolesAssign {allowedTargets = 2;};
 		class addShadecArsenal {allowedTargets = 2;};
-		class getMsgServerVariable {allowedTargets = 2;};
 		class changeRespawnTime {allowedTargets = 2;};
 		class respawnTeleport {allowedTargets = 2;};
 		class usersIDs {allowedTargets = 2;};
@@ -134,6 +143,8 @@ class CfgRemoteExec
 		class changeClasses {allowedTargets = 2;};
 		class saveModlist {allowedTargets = 2;};
 		class addArsenalSpecificItems {allowedTargets = 2;};
+		class addActionToStorage {allowedTargets = 1;};
+		class removeActionFromStorage {allowedTargets = 1;};
     };
 };
 

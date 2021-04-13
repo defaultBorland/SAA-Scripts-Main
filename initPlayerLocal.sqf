@@ -43,6 +43,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
 [] execVM "EH\player\getOut.sqf";
+[] execVM "EH\player\serverFps.sqf";
 script_handler = [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
 if (player getVariable ["SAA_isZeus", false]) then {

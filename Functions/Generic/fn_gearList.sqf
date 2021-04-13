@@ -197,14 +197,14 @@ switch (_action) do {
 					_changesTexts pushBack "Вторичное оружие/Модули/Магазин";
 				};
 				case 6: { //Assigned Items  // [_map, _compass, _watch, _radio, _gps, _nvg]
+				if ((_newAssigned # 3) != "") then {_savedAssigned set [3, _newAssigned # 3]}; // Allow radio changes
 					{
 						if !((_savedAssigned # _forEachIndex) isEqualTo _x) then {
+							if (_forEachIndex isEqualTo 3) then {continue};
 							player unlinkItem _x;
 							player linkItem (_savedAssigned # _forEachIndex);
 						}
 					} forEach _newAssigned;
-
-					if ((_newAssigned # 3) != "") then {_savedAssigned set [3, _newAssigned # 3]}; // Allow radio changes
 					//_changesTexts = pushBack ""
 				};
 				case 7: { //Binocular
@@ -225,8 +225,7 @@ switch (_action) do {
 			private _txt = _changesTexts;
 			_txt pushBack composeText [_separator, _hint];
 
-			[_txt] spawn {sleep 0.5; "Возвращено к изначальному состоянию" hintC (_this # 0)};
-
+			[{"Возвращено к изначальному состоянию" hintC _this}, _txt, 0.5] call CBA_fnc_waitAndExecute;
 		};
 	};
 	default {

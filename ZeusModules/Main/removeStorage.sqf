@@ -22,7 +22,7 @@
 
 			if !(_selectedObject getVariable ["SAA_isStorageProxy", false]) exitWith {[objNull, localize "SAA_ZEUS_MESSAGES_NOTASTORAGEPROXY"] call bis_fnc_showCuratorFeedbackMessage};
 
-			[[_selectedObject, _showInfo], Shadec_fnc_assignStorage] remoteExec ["call", 2];
+			[[_selectedObject, _showInfo], Shadec_fnc_removeStorage] remoteExec ["call", 2];
 	
 			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},

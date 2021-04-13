@@ -17,7 +17,7 @@ _clientModlist = _clientModlist - (_serverModlist arrayIntersect _clientModlist)
 if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "76561198066438612"}) then {
 
 	private _allowedMods = ["Larger ACE Nightvision Border", "A3 Thermal Improvement", "Larger ACE Nightvision Border - RHS Compat"] apply {toLower _x};
-	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon"] apply {toLower _x};
+	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon", "HelpMe"] apply {toLower _x};
 
 	{
 		_mod = _x;

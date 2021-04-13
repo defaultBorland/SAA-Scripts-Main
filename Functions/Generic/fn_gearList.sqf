@@ -51,8 +51,7 @@ fnc_FormatWeapon = {
 // Rewrite?
 fnc_FormatAssigned = {
 	params ["_assignedArray"];
-	private ["_map", "_compass", "_watch", "_radio", "_gps", "_nvg", "_bino"];
-	_map = ""; _compass = ""; _watch = ""; _radio = ""; _gps = ""; _nvg = ""; _bino = "";
+	private _map = ""; private _compass = ""; private _watch = ""; private _radio = ""; private _gps = ""; private _nvg = ""; private _bino = "";
 	if (_assignedArray isEqualTo []) exitWith {[_map, _compass, _watch, _radio, _gps, _nvg]};
 	{
 		_type = _x call BIS_fnc_itemType;
@@ -151,7 +150,7 @@ switch (_action) do {
 		if !(_savedAssigned isEqualTo _newAssigned) then {_changesArray set [6,1]};
 		if !(_savedBino isEqualTo _newBino) then {_changesArray set [7,1]};
 
-		_header = []; 
+		_changesTexts = []; 
 		_changes = _changesArray find 1;
 		while {_changes > -1} do {
 			switch (_changes) do {
@@ -161,7 +160,7 @@ switch (_action) do {
 					{(uniformContainer player) addWeaponCargoGlobal _x} forEach (_savedUniformCargo # 0);
 					{(uniformContainer player) addMagazineAmmoCargo _x} forEach (_savedUniformCargo # 1);
 					{(uniformContainer player) addItemCargoGlobal _x} forEach (_savedUniformCargo # 2);
-					_header pushBack "Униформа";
+					_changesTexts pushBack "Униформа";
 				};
 				case 1: { //Vest
 					removeVest player;
@@ -169,7 +168,7 @@ switch (_action) do {
 					{(VestContainer player) addWeaponCargoGlobal _x} forEach (_savedVestCargo # 0);
 					{(VestContainer player) addMagazineAmmoCargo _x} forEach (_savedVestCargo # 1);
 					{(VestContainer player) addItemCargoGlobal _x} forEach (_savedVestCargo # 2);
-					_header pushBack "Разгрузка";
+					_changesTexts pushBack "Разгрузка";
 				};
 				case 2: { //Backpack
 					removeBackpack player;
@@ -177,52 +176,53 @@ switch (_action) do {
 					{(backpackContainer player) addWeaponCargoGlobal _x} forEach (_savedBackpackCargo # 0);
 					{(backpackContainer player) addMagazineAmmoCargo _x} forEach (_savedBackpackCargo # 1);
 					{(backpackContainer player) addItemCargoGlobal _x} forEach (_savedBackpackCargo # 2);
-					_header pushBack "Рюкзак";
+					_changesTexts pushBack "Рюкзак";
 				};
 				case 3: { //Primary Weapon
 					player removeWeapon (primaryWeapon player);
 					player addWeapon _savedPrimaryWeapon # 0;
 					{player addPrimaryWeaponItem _x} forEach _savedPrimaryWeapon # 1;
-					_header pushBack "Основное оружие/Модули/Магазин";
+					_changesTexts pushBack "Основное оружие/Модули/Магазин";
 				};
 				case 4: { //Secondary Weapon
 					player removeWeapon (secondaryWeapon player);
 					player addWeapon _savedSecondaryWeapon # 0;
 					{player addSecondaryWeaponItem _x} forEach _savedSecondaryWeapon # 1;
-					_header pushBack "Пусковая установка/Модули/Снаряд";
+					_changesTexts pushBack "Пусковая установка/Модули/Снаряд";
 				};
 				case 5: { //Handgun weapon
 					player removeWeapon (handgunWeapon player);
 					player addWeapon _savedHandgunWeapon # 0;
 					{player addHandgunItem _x} forEach _savedHandgunWeapon # 1;
-					_header pushBack "Вторичное оружие/Модули/Магазин";
+					_changesTexts pushBack "Вторичное оружие/Модули/Магазин";
 				};
-				case 6: { //Assigned Items
-					if ((_newAssigned # 3) != "") then {_savedAssigned set [3, _newAssigned # 3]};
+				case 6: { //Assigned Items  // [_map, _compass, _watch, _radio, _gps, _nvg]
 					{
 						if !((_savedAssigned # _forEachIndex) isEqualTo _x) then {
 							player unlinkItem _x;
 							player linkItem (_savedAssigned # _forEachIndex);
 						}
 					} forEach _newAssigned;
-					//_header = _header + "Личные предметы были изменены.\n"
+
+					if ((_newAssigned # 3) != "") then {_savedAssigned set [3, _newAssigned # 3]}; // Allow radio changes
+					//_changesTexts = pushBack ""
 				};
 				case 7: { //Binocular
 					player removeWeapon _newBino;
 					if (_savedBino != "") then {player addWeapon _savedBino};
-					_header pushBack "Бинокль";
+					_changesTexts pushBack "Бинокль";
 				};
 			};
 			_changesArray set [_changes, 0];
 			_changes = _changesArray find 1;
 		};
 		
-		if !(_header isEqualTo []) then {
+		if !(_changesTexts isEqualTo []) then {
 
 			private _separator = parseText "Возможные причины:<br />";  
 			private _hint = parseText "<br />1. Оставили неполный магазин в указанном типе экипировки.<br />2. Сменили экипировку на новую, в которую не поместилось ваше снаряжение<br />3. Попытались взять из арсенала что-то в указанный тип экипировки.";
 
-			private _txt = _header;
+			private _txt = _changesTexts;
 			_txt pushBack composeText [_separator, _hint];
 
 			[_txt] spawn {sleep 0.5; "Возвращено к изначальному состоянию" hintC (_this # 0)};

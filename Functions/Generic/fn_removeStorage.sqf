@@ -1,7 +1,7 @@
 params ["_objectStorage"];
 
 _playersIDs = ["All", "UID"] call Shadec_fnc_usersIDs;
-if (_playersIDs isEqualTo []) exitWith {diag_log format ["[INFO] There are none non-Zeus players. [INFO]"]};
+if (_playersIDs isEqualTo []) exitWith {diag_log format ["fnc_removeStorage | ERROR: There are none non-Zeus players."]};
 {
 	if ((isNil {missionNamespace getVariable (format["pStorage_%1", _x])}) or ((missionNamespace getVariable (format["pStorage_%1", _x]) isEqualTo objNull))) then {diag_log format["!Warning! [%1]: Trying to delete Storage that unaccessible", _x]}
 	else {[_x] spawn Shadec_fnc_deleteStorage};

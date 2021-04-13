@@ -1,6 +1,6 @@
 #include "GUI\Dialog_RemovedItemsList.h"
 
-onLoadName = "SAA Project";
+onLoadName = "SAA Project [dev]";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
 respawnDelay = 120;

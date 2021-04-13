@@ -1,28 +1,39 @@
 //
 
-["[SAA] Radio Utilites", "Signal Quality (Overmap jamming)",
+[localize "SAA_ZEUS_MODULES_CATEGORIES_RADIO", localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_MODULENAME",
 {
-	
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
-	
-	private _dialogResult =
-	[
-		"Change signal quality",
+
+	// if (isNull _objectUnderCursor) exitWith {
+	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+	// };
+
+	[localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_HEADER",
 		[
-			["Signal Quality: ", "SLIDER", 1]
-		]
-	] call Ares_fnc_showChooseDialog;
+			["SLIDER", [localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_DISTANCE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_DISTANCE_TOOLTIP"],
+				[
+					0, 1, 1, 2
+				]
+			],
+			["SLIDER", [localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_TERRAININTERCEPTION_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_DIALOG_TERRAININTERCEPTION_TOOLTIP"],
+				[
+					0, 7, 7, 1
+				]
+			]
+		],
+		{ // On Confirmation
+			params ["_dialogResult", "_args"];
+			_dialogResult params ["_rangeMod","_terrainIntercept"];
 
-	// If the dialog was closed.
-	if (_dialogResult isEqualTo []) exitWith{};
-
-	// Get the selected data
-	_dialogResult params ["_quality"];
-
-	missionNamespace setVariable ["tf_reciveVar", 26-(_quality*25), true];
-	missionNamespace setVariable ["tf_sendVar", _quality, true];
-
-	[[_quality], Shadec_fnc_radioSignalQuality] remoteExec ["spawn", -2];
-	["Signal quality changed"] call Achilles_fnc_showZeusErrorMessage;
-}] call Ares_fnc_RegisterCustomModule;
+			missionNamespace setVariable ["tf_reciveVar", 26-(_rangeMod*25), true];
+			missionNamespace setVariable ["tf_sendVar", _rangeMod, true];
+			missionNamespace setVariable ["TF_terrain_interception_coefficient", _terrainIntercept, true];
+			
+			[[_rangeMod], Shadec_fnc_radioSignalQuality] remoteExec ["spawn", -2];
+			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_RADIO_CHANGESIGNALQUALITY_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+		},
+		{},
+		[_objectUnderCursor]
+	] call zen_dialog_fnc_create;
+}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;

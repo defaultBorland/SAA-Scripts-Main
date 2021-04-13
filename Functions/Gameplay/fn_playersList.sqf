@@ -19,12 +19,12 @@ fnc_FormatClasses = {
 };
 
 fnc_NoReturn = {
-	params ["_status", "_isOnlyToZeus"];
+	params ["_status", "_isOnlyToCaller"];
 
-	if (_status isEqualTo "All") then {_status = ""};
+	if (_status isEqualTo "All") then {_status = "non-zeus"};
 
-	if (_isOnlyToZeus) then {
-		[[format["There are no %1 players!", toLower _status], "Plain", 2]] remoteExec ["cutText", remoteExecutedOwner];
+	if (_isOnlyToCaller) then {
+		[format["There are no %1 players!", toLower _status]] remoteExec ["hintSilent", remoteExecutedOwner];
 	} else {
 		[format["There are no %1 players!", toLower _status]] remoteExec ["hint"]
 	};
@@ -32,7 +32,7 @@ fnc_NoReturn = {
 };
 
 
-params["_status", "_groupBy", "_isOnlyToZeus"];
+params ["_status", "_groupBy", "_isOnlyToCaller", ["_caller", objNull]];
 disableSerialization;
 
 private _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
@@ -47,14 +47,14 @@ switch (_status) do {
 };
 
 // If no players with selected status - exit with message
-if (_players isEqualTo []) exitWith {[_status, _isOnlyToZeus] call fnc_NoReturn};
+if (_players isEqualTo []) exitWith {[_status, _isOnlyToCaller] call fnc_NoReturn};
 
 private _targetsCount = count _players;
 
 diag_log format ["playersList FNC | _players to show: %1", _players];
 
 _players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x])) + [_x, [grpNull, group _x] select ((count units group _x) > 1)]};
-
+// [Name, Rank, Class1, Class2, Unit, Group or grpNull if alone]
 
 // Grouping player by selected stat
 private _groupOrder = [];
@@ -86,9 +86,14 @@ switch (_groupBy) do {
 		_groupOrder = _groupOrder - [grpNull]; _groupOrder pushBack grpNull; // ex: [grp1, grp2]
 
 		{
-			_groupOrderCurrent = _x;	diag_log format ["playersList FNC | _groupOrderCurrent: %1 | %2 | %3", _groupOrderCurrent, typeName _groupOrderCurrent, groupId _groupOrderCurrent];
+			_groupOrderCurrent = _x;	//diag_log format ["playersList FNC | _groupOrderCurrent: %1 | %2 | %3", _groupOrderCurrent, typeName _groupOrderCurrent, groupId _groupOrderCurrent];
 			_playersGrouped pushBack [format["%1 (%2)", [groupId _groupOrderCurrent, "FREE"] select (_x isEqualTo grpNull), [name leader _groupOrderCurrent, "NO GROUP"] select (_x isEqualTo grpNull)], (_players select {_groupOrderCurrent in _x})];
 		} forEach _groupOrder;
+	};
+	case "Squad": {
+		if (_caller isEqualTo objNull) exitWith {diag_log format ["playersList FNC ERROR | No object passed into squad case"]};
+		_status = "Squad";
+		_playersGrouped pushBack [format ["%1 (%2)", groupID group _caller, name leader group _caller], _players select {(_x # 5) isEqualTo (group _caller)}];
 	};
 	default {};
 };
@@ -109,8 +114,9 @@ _structuredText = format["<t size='2.0' color='#ff0000' align='center' font='Pur
 } forEach _playersGrouped;
 
 // Show composed text
-if (_isOnlyToZeus) then {
-	[[_structuredText, "Plain", 2, false, true]] remoteExec ["cutText", remoteExecutedOwner];
+if (_isOnlyToCaller) then {
+	// [[_structuredText, "Plain", 2, false, true]] remoteExec ["cutText", remoteExecutedOwner];
+	[parseText _structuredText] remoteExec ["hintSilent", remoteExecutedOwner];
 } else {
 	[parseText _structuredText] remoteExec ["hint"];
 };

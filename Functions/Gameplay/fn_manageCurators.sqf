@@ -34,6 +34,7 @@ fnc_Assign = {
 
 	unassignCurator (zeusSlots # _slot);
 	_unit assignCurator (zeusSlots # _slot);
+	{[] execVM "EH\player\zeus.sqf"} remoteExec ["call", _unit];
 	//[["You are Zeus now", "Plain", 1]] remoteExec ["cutText", owner _unit];
 };
 

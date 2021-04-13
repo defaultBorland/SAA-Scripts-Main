@@ -1,5 +1,6 @@
 //Player init
 waitUntil {!isNull player};
+[] call BIS_fnc_VRFadeOut;
 
 _uid = getPlayerUID player;
 
@@ -37,21 +38,24 @@ if !(player getVariable ["KIA_onExit", false]) then {
 // Execute EHs
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
 [] execVM "Mechanics\GroupNaming\GroupNaming_Init.sqf";
-[] execVM "Mechanics\PlayersList\PlayersList_init.sqf";
+[] execVM "Mechanics\PlayersList\PlayersList_Init.sqf";
+[] execVM "Mechanics\SquadList\SquadList_Init.sqf";
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
+[] execVM "EH\player\getOut.sqf";
 script_handler = [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
-[] execVM "EH\player\profileSavings.sqf";
 if (player getVariable ["SAA_isZeus", false]) then {
 	[] execVM "EH\player\zeus.sqf";
+} else {
+	[] execVM "EH\player\profileSavings.sqf";
 };
 
 waitUntil {scriptDone script_handler};
 // If player was KIA - kill him
 if (player getVariable ["KIA_onExit", false]) then {player setDamage 1} else {
 	
-	script_handler = [] spawn {sleep 3; titleFadeOut 3;};
+	script_handler = [] spawn {sleep 6; [] call BIS_fnc_VRFadeIn;};
 	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 15, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 };
 

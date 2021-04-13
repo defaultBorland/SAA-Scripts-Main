@@ -23,7 +23,7 @@ missionNamespace setVariable ["playersListDeclared", true, true];
 					0
 				]
 			],
-			["COMBO", [localize "SAA_ZEUS_MODULES_MAIN_ADDARSENAL_DIALOG_UNIFORMTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_ADDARSENAL_DIALOG_UNIFORMTYPE_TOOLTIP"],
+			["COMBO", [localize "SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_GROUPING_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_GROUPING_TOOLTIP"],
 				[
 					["Classes", "Ranks", "Groups"],
 					[ 

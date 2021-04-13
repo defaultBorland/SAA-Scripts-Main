@@ -14,8 +14,8 @@
 [] execVM "Functions\ZeusModules\Main\playersList.sqf";
 [] execVM "Functions\ZeusModules\Main\promoteToZeus.sqf";
 // [] execVM "Functions\ZeusModules\Utilites\spawnSoldiers.sqf";
-// [] execVM "Functions\ZeusModules\Radio\addJammingVehicle.sqf";
-// [] execVM "Functions\ZeusModules\Radio\removeJammingVehicle.sqf";
-// [] execVM "Functions\ZeusModules\Radio\changeSignalQuality.sqf";
+[] execVM "Functions\ZeusModules\Radio\addJammingVehicle.sqf";
+[] execVM "Functions\ZeusModules\Radio\removeJammingVehicle.sqf";
+[] execVM "Functions\ZeusModules\Radio\changeSignalQuality.sqf";
 // [] execVM "Functions\ZeusModules\Utilites\clearVehicleInventory.sqf";
 // [] execVM "Functions\ZeusModules\Utilites\healAllPlayers.sqf";

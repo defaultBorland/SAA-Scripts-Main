@@ -1,11 +1,7 @@
 // Create player box with equipment and PurchaseOrder, access to the box via action from an object with "objectStorage" variable.
 // If object with "objectStorage" variable doesn't exists - exit with log.
 
-params ["_storage", "_pcid", "_uid", "_purchaseOrder"];
-_storageList = _this # 0;
-_pcid = _this # 1;
-_uid = _this # 2;
-_purchaseOrder = _this # 3;
+params ["_storageList", "_pcid", "_uid", "_purchaseOrder"];
 
 missionNamespace setVariable [format["storage_%1", _uid], _storageList];
 

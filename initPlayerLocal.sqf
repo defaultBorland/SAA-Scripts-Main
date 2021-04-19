@@ -33,7 +33,6 @@ if !(player getVariable ["KIA_onExit", false]) then {
 
 // Wait untill loadout is loaded by server or skip if zeus
 [{missionNamespace getVariable [format["loadoutLoaded_%1", _this], player getVariable ["SAA_isZeus", false]]}, {}, _uid, 30, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
-// waitUntil {missionNamespace getVariable [format["loadoutLoaded_%1", _this], player getVariable ["SAA_isZeus", false]]};
 
 // Execute EHs
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
@@ -42,7 +41,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "Mechanics\SquadList\SquadList_Init.sqf";
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
-[] execVM "EH\player\getOut.sqf";
+//[] execVM "EH\player\getOut.sqf";
 [] execVM "EH\player\serverFps.sqf";
 script_handler = [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";

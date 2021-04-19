@@ -20,7 +20,7 @@
 			_dialogResult params ["_showInfo"];
 			_args params ["_selectedObject"];
 
-			if (_selectedObject getVariable ["SAA_isStorageProxy", false]) exitWith {[objNull, localize "SAA_ZEUS_MESSAGES_ALREADYSTORAGEPROXY"] call bis_fnc_showCuratorFeedbackMessage};
+			if (_selectedObject getVariable ["SAA_isStorageProxy", false]) exitWith {[objNull, localize "SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_MESSAGES_ALREADYSTORAGEPROXY"] call bis_fnc_showCuratorFeedbackMessage};
 
 			[[_selectedObject, _showInfo], Shadec_fnc_assignStorage] remoteExec ["call", 2];
 	

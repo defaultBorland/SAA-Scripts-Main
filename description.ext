@@ -65,6 +65,7 @@ class CfgFunctions
 		class Radio {
 			class assignJammer {};
 			class objectJamming {};
+			class replaceVehicleRadio {};
 			class radioSignalQuality {};
 		};
 		class Respawn {
@@ -145,6 +146,7 @@ class CfgRemoteExec
 		class addArsenalSpecificItems {allowedTargets = 2;};
 		class addActionToStorage {allowedTargets = 1;};
 		class removeActionFromStorage {allowedTargets = 1;};
+		class replaceVehicleRadio {allowedTargets = 2;};
     };
 };
 

@@ -16,8 +16,7 @@ if (_clear isEqualTo 1) then {
 	clearBackpackCargoGlobal _vehicle;
 };
 
-//_vehicle setVariable ["ace_medical_medicClass", 1, true];
-_vehicle setVariable ["ace_medical_isMedicalVehicle", true, true];
+_vehicle setVariable ["ace_medical_medicClass", 1, true];
 
 if (_addPAK isEqualTo 1) then {
 	_vehicle addItemCargoGlobal ["ACE_personalAidKit", 3];

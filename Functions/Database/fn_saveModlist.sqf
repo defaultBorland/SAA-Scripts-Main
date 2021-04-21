@@ -28,6 +28,15 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 				_foundedRestrictedMods pushBack (format["%1/%2", _mod # 0, _mod # 1]);
 			};
 		} forEach _restrictedKeywords;
+
+		private _equalToServerModName = _serverModlist findIf {(_mod # 0) isEqualTo (_x # 0)};
+		private _equalToServerModID = [_serverModlist findIf {(_mod # 1) isEqualTo (_x # 1)}, -1] select ((_mod # 1) isEqualTo "0");
+
+		if ((_equalToServerModName > -1) || (_equalToServerModID > -1)) then {
+			_isRestrictedModsFounded = true;
+			_foundedRestrictedMods pushBack (format["%1/%2 - %3", _mod # 0, _mod # 1, "Corrupted"]);
+		};
+
 	} forEach _clientModlist;
 
 	if (_isRestrictedModsFounded) then {
@@ -42,8 +51,8 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 	};
 };
 
-_clientModlist = _clientModlist apply {format["%1/%2", _x # 0, _x # 1]};
-_clientModlist = [format["%1 | %2 | MODLIST = %3 | RESTRICTED = %4", ["SAFE","WARN"] select _isRestrictedModsFounded, count _clientModlist, _clientModlist joinString ", ", _foundedRestrictedMods joinString ", "]];
+_clientModlist = _clientModlist apply {format["%1/%2/%3", _x # 0, _x # 1, _x # 2]};
+_clientModlist = [format["%1 | %2 | CLIENTMODS = %3 | SUSPICIOUS = %4", ["SAFE","WARN"] select _isRestrictedModsFounded, count _clientModlist, _clientModlist joinString ", ", _foundedRestrictedMods joinString ", "]];
 
 _data = [_clientModlist, _uid];
 diag_log format["SAVE PLAYER MODLIST:%1", _data];

@@ -11,7 +11,7 @@ saving = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
 debriefing = 0;
-// allowProfileGlasses = 0;
+allowProfileGlasses = 0;
 
 //Function library definitions
 class CfgFunctions
@@ -74,7 +74,7 @@ class CfgFunctions
 			class changeRespawnTickets {};
 			class changeRespawnTime {};
 			class createRespawnPoint {};
-			class forceRespawn {};
+			class forceRespawnTimer {};
 			class moveRespawnMarker {};
 			class playersRespawnInfo {};
 			class removeFob {};
@@ -115,7 +115,7 @@ class CfgRemoteExec
 		class BIS_fnc_debugConsoleExec {allowedTargets = 0;};
 		class call_db {allowedTargets = 2;};
 		class changeRespawnTickets {allowedTargets = 2;};
-		class forceRespawn {allowedTargets = 2;};
+		class forceRespawnTimer {allowedTargets = 2;};
 		class changeRespawnState {allowedTargets = 2;};
 		class playerRespawnInfo {allowedTargets = 2;};
 		class endMission {allowedTargets = 2;};
@@ -191,8 +191,8 @@ class CfgDebriefing
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
-	class somethingGoneWrong {
-		title = "Something Gone Wrong";
+	class somethingWentWrong {
+		title = "Something Went Wrong";
 		subtitle = "Inform administration about your problem";
 		description = "Do not try to rejoin, inform administration first.";
 		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";

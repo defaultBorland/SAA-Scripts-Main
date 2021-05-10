@@ -17,7 +17,7 @@ _clientModlist = _clientModlist - (_serverModlist arrayIntersect _clientModlist)
 if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "76561198066438612"}) then {
 
 	private _allowedMods = ["Larger ACE Nightvision Border", "A3 Thermal Improvement", "Larger ACE Nightvision Border - RHS Compat"] apply {toLower _x};
-	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon", "HelpMe"] apply {toLower _x};
+	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon", "HelpMe", "POLPOX"] apply {toLower _x};
 
 	{
 		_mod = _x;
@@ -29,12 +29,15 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 			};
 		} forEach _restrictedKeywords;
 
-		private _equalToServerModName = _serverModlist findIf {(_mod # 0) isEqualTo (_x # 0)};
+		// private _equalToServerModName = _serverModlist findIf {(_mod # 0) isEqualTo (_x # 0)};
 		private _equalToServerModID = [_serverModlist findIf {(_mod # 1) isEqualTo (_x # 1)}, -1] select ((_mod # 1) isEqualTo "0");
 
-		if ((_equalToServerModName > -1) || (_equalToServerModID > -1)) then {
-			_isRestrictedModsFounded = true;
-			_foundedRestrictedMods pushBack (format["%1/%2 - %3", _mod # 0, _mod # 1, "Corrupted"]);
+		// if ((_equalToServerModName > -1) || (_equalToServerModID > -1)) then {
+		if (_equalToServerModID > -1) then {
+			if !((_mod # 2) isEqualTo (_x # 2)) then {
+				_isRestrictedModsFounded = true;
+				_foundedRestrictedMods pushBack (format["%1/%2 - %3", _mod # 0, _mod # 1, "Modified"]);
+			};
 		};
 
 	} forEach _clientModlist;

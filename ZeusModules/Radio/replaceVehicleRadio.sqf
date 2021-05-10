@@ -5,11 +5,11 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	if (!(isNull _objectUnderCursor) and {_objectUnderCursor getVariable ["isFOB", false]}) exitWith {
-		[objNull, localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_ERRORZEUSMESSAGE_ALREADYCV"] call bis_fnc_showCuratorFeedbackMessage;
+	if (isNull _objectUnderCursor) exitWith {
+		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
-	if !(_objectUnderCursor getVariable ["tf_hasRadio", false]) then { // If vehicle has no LR radio
+	if !(_objectUnderCursor call TFAR_fnc_hasVehicleRadio) exitWith { // If vehicle has no LR radio
 		[objNull, localize "SAA_ZEUS_MODULES_RADIO_REPLACEVEHICLERADIO_MESSAGES_VEHICLEHASNOLRRADIO"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 

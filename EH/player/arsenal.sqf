@@ -35,8 +35,6 @@ _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
             sleep 5;
         };
     };
-
-    
 }] call CBA_fnc_addEventHandler;
 
 // ACE Arsenal Handler Closed

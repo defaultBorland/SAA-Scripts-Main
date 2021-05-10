@@ -1,22 +1,46 @@
 // Function to define and init SAA Zeus modules to players (ZEUSES)
+private prefix = "ZeusModules\";
 
-[] execVM "ZeusModules\Respawn\addRemoveRespawnTickets.sqf";
-// [] execVM "Functions\ZeusModules\Respawn\forceRespawn.sqf";
-[] execVM "ZeusModules\Respawn\removeRespawnPoint.sqf";
-// [] execVM "Functions\ZeusModules\Respawn\enableDisableRespawn.sqf";
-// [] execVM "Functions\ZeusModules\Respawn\changeRespawnTime.sqf"; 
-[] execVM "ZeusModules\Respawn\createRespawnPoint.sqf";
-// [] execVM "Functions\ZeusModules\Respawn\playersRespawnInfo.sqf";
-[] execVM "ZeusModules\Main\addShadecArsenal.sqf";
-// [] execVM "Functions\ZeusModules\Respawn\moveRespawnMarker.sqf";
-[] execVM "ZeusModules\Main\endMission.sqf";
-[] execVM "ZeusModules\Main\assignStorage.sqf";
-[] execVM "ZeusModules\Main\removeStorage.sqf";
-[] execVM "ZeusModules\Main\playersList.sqf";
-[] execVM "ZeusModules\Main\promoteToZeus.sqf";
+{	// Main
+	prefix = prefix + "Main\";
+	{[] execVM (prefix + _x)} forEach [
+		"addShadecArsenal.sqf",
+		"endMission.sqf",
+		"assignStorage.sqf",
+		"removeStorage.sqf",
+		"playersList.sqf",
+		"promoteToZeus.sqf"
+	];
+};
+
+{	// Radio
+	prefix = prefix + "Radio\";
+	{[] execVM (prefix + _x)} forEach [
+		"addJammingVehicle.sqf",
+		"removeJammingVehicle.sqf",
+		"changeSignalQuality.sqf",
+		"replaceVehicleRadio.sqf"
+	];
+};
+
+{	// Respawn
+	prefix = prefix + "Respawn\";
+	{[] execVM (prefix + _x)} forEach [
+		"addRemoveRespawnTickets.sqf",
+		"forceRespawnTimer.sqf",
+		"createRespawnPoint.sqf",
+		"removeRespawnPoint.sqf"
+	];
+};
+
+{	// Utilities
+	prefix = prefix + "Utilities\";
+	{[] execVM (prefix + _x)} forEach [
+		
+	];
+};
+
+// Utilities
 // [] execVM "Functions\ZeusModules\Utilites\spawnSoldiers.sqf";
-[] execVM "ZeusModules\Radio\addJammingVehicle.sqf";
-[] execVM "ZeusModules\Radio\removeJammingVehicle.sqf";
-[] execVM "ZeusModules\Radio\changeSignalQuality.sqf";
 // [] execVM "Functions\ZeusModules\Utilites\clearVehicleInventory.sqf";
 // [] execVM "Functions\ZeusModules\Utilites\healAllPlayers.sqf";

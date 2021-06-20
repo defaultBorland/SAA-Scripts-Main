@@ -53,12 +53,9 @@ class CfgFunctions
 			class showUserInfo {};
 		};
 		class Generic {
-			class clearVehicleInventory {};
 			class gearList {};
 			class getModList {};
-			class itemsListShortener {};
-			class listCreate {};
-			class loadoutListCreate {};
+			class getPlayersNames {};
 			class reLoadoutUnit {};
 			class usersIDs {};
 		};
@@ -99,9 +96,10 @@ class CfgFunctions
 			class manageCurators {};
 			class promoteToZeus {};
 		};
-
 		class Mechanics {
-			class renameGroupDisplay {file = "Mechanics\GroupNaming\fn_renameGroupDisplay.sqf";};
+			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf";};
+			class showTickets {file = "Mechanics\TeamManagement\fn_showTickets.sqf"}
+			class sinkToCanister {file = "Mechanics\RefuelingCanisters\fn_sinkToCanister.sqf";};
 		};
     };
 };
@@ -113,40 +111,6 @@ class CfgRemoteExec
 		mode = 2;
 		jip = 1;
 		class BIS_fnc_debugConsoleExec {allowedTargets = 0;};
-		class call_db {allowedTargets = 2;};
-		class changeRespawnTickets {allowedTargets = 2;};
-		class forceRespawnTimer {allowedTargets = 2;};
-		class changeRespawnState {allowedTargets = 2;};
-		class playerRespawnInfo {allowedTargets = 2;};
-		class endMission {allowedTargets = 2;};
-		class playersList {allowedTargets = 2;};
-		class moveRespawnMarker {allowedTargets = 2;};
-		class addToStorage {allowedTargets = 0;};
-		class reLoadoutUnit {allowedTargets = 2;};
-		class rolesAssign {allowedTargets = 2;};
-		class addShadecArsenal {allowedTargets = 2;};
-		class changeRespawnTime {allowedTargets = 2;};
-		class respawnTeleport {allowedTargets = 2;};
-		class usersIDs {allowedTargets = 2;};
-		class assignStorage {allowedTargets = 2;};
-		class initStorage {allowedTargets = 2;}
-		class assignFob {allowedTargets = 2;};
-		class removeStorage {allowedTargets = 2;};
-		class removeFob {allowedTargets = 2;};
-		class assignJammer {allowedTargets = 2;};
-		class objectJamming {allowedTargets = 0;};
-		class radioSignalQuality {allowedTargets = 0;};
-		class clearVehicleInventory {allowedTargets = 2;};
-		class storageOutputFormat {allowedTargets = 0;};
-		class manageCurators {allowedTargets = 2;};
-		class createRespawnPoint {allowedTargets = 2;};
-		class removeRespawnPoint {allowedTargets = 2;};
-		class changeClasses {allowedTargets = 2;};
-		class saveModlist {allowedTargets = 2;};
-		class addArsenalSpecificItems {allowedTargets = 2;};
-		class addActionToStorage {allowedTargets = 1;};
-		class removeActionFromStorage {allowedTargets = 1;};
-		class replaceVehicleRadio {allowedTargets = 2;};
     };
 };
 

@@ -36,9 +36,10 @@ if !(player getVariable ["KIA_onExit", false]) then {
 
 // Execute EHs
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
-[] execVM "Mechanics\GroupNaming\GroupNaming_Init.sqf";
-[] execVM "Mechanics\PlayersList\PlayersList_Init.sqf";
-[] execVM "Mechanics\SquadList\SquadList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
+[] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
 //[] execVM "EH\player\getOut.sqf";

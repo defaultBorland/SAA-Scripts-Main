@@ -5,24 +5,25 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
-	// };
-	
 	// All players exclude curators and alive ones
-	private _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x}) - (allPlayers select {alive _x});
+	private _players = (allPlayers - (allCurators apply {getAssignedCuratorUnit _x}) - (allPlayers select {alive _x})) apply {name _x};
 
 	if (count _players < 1) exitWith {
 		[objNull, localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_ZEUSMESSAGE_NODEADPLAYERS"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
+	_returnValues = ["AllDead"]; 
+	_returnValues append _players;
+	_displayValues = [localize "SAA_GENERAL_ALL" + " " + localize "SAA_GENERAL_DEAD"]; 
+	_displayValues append _players;
+
 	[localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_DIALOG_HEADER",
 		[
 			["COMBO", [localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_DIALOG_TARGET_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_DIALOG_TARGET_TOOLTIP"],
 				[
-					[[_players apply {[name _x, owner _x]}] + _players apply {[name _x, owner _x]}],
+					_returnValues,
 					[
-						[localize "SAA_GENERAL_ALL" + " " + localize "SAA_GENERAL_DEAD"] + _players apply {name _x}
+						_displayValues
 					],
 					0
 				]

@@ -2,7 +2,8 @@ params ["_object", "_showInfo"];
 
 if (_object getVariable ["SAA_isStorageProxy", false]) exitWith {diag_log format ["fnc_assignStorage | Error: Passed object is already Storage Proxy"]};
 
-_storages = missionNamespace getVariable ["storagesProxys", []]; _storages pushBack _object;
+_storages = missionNamespace getVariable ["storagesProxys", []]; 
+_storages pushBack _object;
 missionNamespace setVariable ["storagesProxys", _storages, true];
 
 [_object] call Shadec_fnc_initStorage;

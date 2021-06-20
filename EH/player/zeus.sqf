@@ -19,7 +19,7 @@ _EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", {
 		clearItemCargoGlobal _entity;
 	};
 	if (_entity isKindOf "Man") then {
-		if !((owner group _entity) isEqualTo 2) then {
+		if !((groupOwner group _entity) isEqualTo 2) then {
 			[{
 				[[group effectiveCommander (_this # 0)], {(_this # 0) setGroupOwner 2}] remoteExec ["call", 2];
 			}, [_entity], 1] call CBA_fnc_waitAndExecute;
@@ -54,9 +54,3 @@ with uiNamespace do {
 		};
 	}];
 };
-
-_zeusLogic = (getAssignedCuratorLogic player); 
-_EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", { 
- params ["_curator", "_entity"]; 
- 	[[typeOf _entity], {format["Unit type: %1", (_this # 0)]}] remoteExec ["systemChat"];
-}];

@@ -65,6 +65,12 @@ switch (_class) do {
 		if (_lang isEqualTo "EN") then {_convertedClass = "N/A"};
 		if (_lang isEqualTo "LS") then {_convertedClass = "SAA_CLASSES_NA"};
 	};
+	case "None";
+	case "Отсутствует": {
+		if (_lang isEqualTo "RU") then {_convertedClass = "Отсутствует"};
+		if (_lang isEqualTo "EN") then {_convertedClass = "None"};
+		if (_lang isEqualTo "LS") then {_convertedClass = "SAA_CLASSES_NONE"};
+	};
 	default {_convertedClass = "N/A"};
 };
 

@@ -26,6 +26,44 @@
 
 </Container>
 
+<Container name="Show Tickets">
+
+    <Key ID="SAA_SHOWTICKETS_ACTIONNAME"> 
+        <Original>Enter Group Name: </Original> 
+        <Russian>Введите имя группы: </Russian> 
+    </Key>
+
+    <Key ID="SAA_SHOWTICKETS_NORESPAWNPOINTAVAILIABLE"> 
+        <Original>Enter Group Name: </Original> 
+        <Russian>Введите имя группы: </Russian> 
+    </Key>
+
+    <Key ID="SAA_SHOWTICKETS_UNLIMITED"> 
+        <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
+        <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
+    </Key>
+
+    <Key ID="SAA_SHOWTICKETS_TICKETSLEFT"> 
+        <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
+        <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
+    </Key>
+
+</Container>
+
+<Container name="Force Join To Squad">
+
+    <Key ID="SAA_FORCEJOINTOSQUAD_ACTIONNAME"> 
+        <Original>Join to squad</Original> 
+        <Russian>Добавить в отряд</Russian> 
+    </Key>
+
+    <Key ID="SAA_FORCEJOINTOSQUAD_CHATINFO"> 
+        <Original>was joined to squad by</Original> 
+        <Russian>был присоединён в отряд</Russian>
+    </Key>
+
+</Container>
+
 <Container name="Actions">
 
     <Key ID="SAA_SAA_STORAGE_ACTION"> 
@@ -224,6 +262,12 @@
         <Original>N/A</Original> 
         <Russian>Отсутствует</Russian>
     </Key>
+	
+	<Key ID="SAA_CLASSES_NONE"> 
+        <Original>None</Original> 
+        <Russian>Отсутствует</Russian>
+    </Key>
+
 
 </Container>
 

@@ -97,9 +97,8 @@ class CfgFunctions
 			class promoteToZeus {};
 		};
 		class Mechanics {
-			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf";};
-			class showTickets {file = "Mechanics\TeamManagement\fn_showTickets.sqf"}
-			class sinkToCanister {file = "Mechanics\RefuelingCanisters\fn_sinkToCanister.sqf";};
+			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
+			class showTickets {file = "Mechanics\ShowTickets\fn_showTickets.sqf"}
 		};
     };
 };

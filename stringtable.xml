@@ -29,23 +29,23 @@
 <Container name="Show Tickets">
 
     <Key ID="SAA_SHOWTICKETS_ACTIONNAME"> 
-        <Original>Enter Group Name: </Original> 
-        <Russian>Введите имя группы: </Russian> 
+        <Original>Check Tickets</Original> 
+        <Russian>Проверить тикеты</Russian> 
     </Key>
 
     <Key ID="SAA_SHOWTICKETS_NORESPAWNPOINTAVAILIABLE"> 
-        <Original>Enter Group Name: </Original> 
-        <Russian>Введите имя группы: </Russian> 
+        <Original>No respawn points available</Original> 
+        <Russian>Нет доступных точек возрождения</Russian> 
     </Key>
 
     <Key ID="SAA_SHOWTICKETS_UNLIMITED"> 
-        <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
-        <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
+        <Original>Неограничено</Original> 
+        <Russian>Unlimited</Russian> 
     </Key>
 
     <Key ID="SAA_SHOWTICKETS_TICKETSLEFT"> 
-        <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
-        <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
+        <Original>Tickets left</Original> 
+        <Russian>Осталось тикетов</Russian> 
     </Key>
 
 </Container>
@@ -60,6 +60,20 @@
     <Key ID="SAA_FORCEJOINTOSQUAD_CHATINFO"> 
         <Original>was joined to squad by</Original> 
         <Russian>был присоединён в отряд</Russian>
+    </Key>
+
+</Container>
+
+<Container name="Force Remove From Squad">
+
+    <Key ID="SAA_FORCEREMOVEFROMSQUAD_ACTIONNAME"> 
+        <Original>Remove from squad</Original> 
+        <Russian>Удалить из отряда</Russian> 
+    </Key>
+
+    <Key ID="SAA_FORCEREMOVEFROMSQUAD_CHATINFO"> 
+        <Original>was removed from squad by</Original> 
+        <Russian>был удалён из отряда</Russian>
     </Key>
 
 </Container>

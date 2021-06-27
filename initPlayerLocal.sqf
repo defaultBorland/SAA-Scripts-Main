@@ -34,12 +34,14 @@ if !(player getVariable ["KIA_onExit", false]) then {
 // Wait untill loadout is loaded by server or skip if zeus
 // [{player getVariable ["LoadoutLoaded", player getVariable ["SAA_isZeus", false]]}, {}, _uid, 30, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 
-// Execute EHs
+// Add Actions
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
 [] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
 [] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
 [] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
+[] execVM "Mechanics\TeamManagement\ForceJoinToSquad_Init.sqf";
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
+// Execute EHs
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
 //[] execVM "EH\player\getOut.sqf";

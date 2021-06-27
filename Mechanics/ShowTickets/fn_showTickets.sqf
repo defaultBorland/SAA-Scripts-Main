@@ -1,27 +1,24 @@
 //
 params ["_unit"];
 private _side = side _unit;
-private _text = "";
 
-private _sidesColors = [[west, "#004D99"], [east, "#800000"], [independent, "#008000"], [civilian, "#660080"]];
-private _color = (_sidesColors select {(_x # 0) isEqualTo _side}) # 0 # 1;
-private _sidePicturePaths = ["\A3\UI_F\data\Map\Markers\NATO\b_unknown", "\A3\UI_F\data\Map\Markers\NATO\o_unknown", "\A3\UI_F\data\Map\Markers\NATO\n_unknown", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"];
-private _picture = (_sidePicturePaths select {(_x # 0) isEqualTo _side}) # 0 # 1;
+private _sidesInfo = [[east, "#800000", "\A3\UI_F\data\Map\Markers\NATO\o_unknown"], [west, "#004D99", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"], [independent, "#008000", "\A3\UI_F\data\Map\Markers\NATO\n_unknown"], [civilian, "#660080", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"]];
+private _info = _sidesInfo # ([_side] call BIS_fnc_sideID);
+_info params ["_side", "_color", "_picture"];
 
-if (count (side call BIS_fnc_getRespawnPositions) < 1) then {
-	_text = localize "SAA_SHOWTICKETS_NORESPAWNPOINTAVAILIABLE";
-	
-	[[_picture, _color, _text], {
-		params ["_sidePicturePath", "_color", "_text"];
-		hint parseText format ["<t align='center'><img size='4' color='%1' image='%2'/></t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>", _sidePicturePath, _color, _text];
-	}] remoteExec ["call", -2];
+if (count (_side call BIS_fnc_getRespawnPositions) < 1) then {
+	[[_color, _picture], {
+		params ["_color", "_sidePicturePath"];
+		hint parseText format ["<t align='center'><img size='4' color='%1' image='%2'/></t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>", _color, _sidePicturePath, localize "SAA_SHOWTICKETS_NORESPAWNPOINTAVAILIABLE"];
+	}] remoteExec ["call", remoteExecutedOwner];
 } else {
 	private _tickets = [_side, 0] call BIS_fnc_respawnTickets;
-	if (_tickets isEqualTo -1) then {_tickets = localize "SAA_SHOWTICKETS_UNLIMITED"};
-	_text = format["%1: %2", localize "SAA_SHOWTICKETS_TICKETSLEFT", _tickets];
+	
+	[[_picture, _color, _tickets], {
+		params ["_sidePicturePath", "_color", "_tickets"];
+		private _hasTickets = false;
+		if (_tickets > -1) then {_hasTickets = true}; 
 
-	[[_picture, _color, _text], {
-		params ["_sidePicturePath", "_color", "_text"];
-		hint parseText format ["<t align='center'><img size='4' color='%1' image='%2'/></t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>", _sidePicturePath, _color, _text];
-	}] remoteExec ["call", -2];
+		hint parseText format ["<t align='center'><img size='4' color='%1' image='%2'/></t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>", _color, _sidePicturePath, format["%1: %2", localize "SAA_SHOWTICKETS_TICKETSLEFT", [localize "SAA_SHOWTICKETS_UNLIMITED", _tickets] select _hasTickets]];
+	}] remoteExec ["call", remoteExecutedOwner];
 };

@@ -40,6 +40,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
 [] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
 [] execVM "Mechanics\TeamManagement\ForceJoinToSquad_Init.sqf";
+[] execVM "Mechanics\TeamManagement\ForceRemoveFromSquad_Init.sqf";
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
 // Execute EHs
 [] execVM "EH\player\arsenal.sqf";

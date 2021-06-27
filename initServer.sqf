@@ -22,4 +22,8 @@ missionNamespace setVariable ["respawnTime", respawnTime, true];
 
 "debug_console" callExtension ("Server Console Extention Initialization..." + "#1110");
 "f5znFms2" serverCommand "#monitords 60";
-// "f5znFms2" serverCommand "#shutdownserveraftermission"; // Doesn't work for some reason
+
+{ // Nulify respawn tickets for each side
+	[_x, 1] call BIS_fnc_respawnTickets;
+	[_x, -1] call BIS_fnc_respawnTickets;
+} forEach [west, east, independent, civilian];

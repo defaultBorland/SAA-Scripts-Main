@@ -11,13 +11,29 @@ saving = 0;
 disabledAI = 1;
 enableDebugConsole = 1;
 debriefing = 0;
-// allowProfileGlasses = 0;
+allowProfileGlasses = 0;
 
 //Function library definitions
 class CfgFunctions
 {
     class Shadec
     {
+		class Arsenal {
+			class addArsenalSpecificItems {};
+			class addShadecArsenal {};
+		};
+		class Classes {
+			class classSwitcher {};
+			class Rifleman {};
+			class Nurse {};
+			class Machinegunner {};
+			class Grenadier {};
+			class Engineer {};
+			class ATSpec {};
+			class Medic {};
+			class Marksman {};
+			class Sniper {};
+		};
         class Database {
             class call_db {};
 			class getInventory {};
@@ -29,68 +45,60 @@ class CfgFunctions
 			class changeClasses {};
 			class saveModlist {};
         };
-		class Respawn {
-			class changeRespawnTickets {};
-			class forceRespawn {};
-			class changeRespawnState {};
-			class playersRespawnInfo {};
-			class moveRespawnMarker {};
-			class changeRespawnTime {};
-			class createRespawnPoint {};
-			class removeRespawnPoint {};
-		};
 		class Gameplay {
 			class endMission {};
-			class rolesAssign {};
-			class addShadecArsenal {};
-			class addArsenalSpecificItems {};
-			class respawnTeleport {};
-			class assignStorage {};
-			class assignFob {};
-			class assignJammer {};
-			class objectJamming {};
-			class radioSignalQuality {};
-			class manageCurators {};
 			class playersList {};
-			class removingRestrictingItems {};
+			class respawnTeleport {};
+			class rolesAssign {};
 			class showUserInfo {};
-			class promoteToZeus {};
 		};
 		class Generic {
+			class gearList {};
+			class getModList {};
+			class getPlayersNames {};
+			class reLoadoutUnit {};
+			class usersIDs {};
+		};
+		class Radio {
+			class assignJammer {};
+			class objectJamming {};
+			class replaceVehicleRadio {};
+			class radioSignalQuality {};
+		};
+		class Respawn {
+			class assignFob {};
+			class changeRespawnState {};
+			class changeRespawnTickets {};
+			class changeRespawnTime {};
+			class createRespawnPoint {};
+			class forceRespawnTimer {};
+			class moveRespawnMarker {};
+			class playersRespawnInfo {};
+			class removeFob {};
+			class removeRespawnPoint {};
+		};
+		class Storage {
+			class addActionToStorage {};
 			class addToStorage {};
+			class assignStorage {};
+			class composeAvailiableItems {};
 			class createStorage {};
 			class deleteStorage {};
-			class gearList {};
 			class getCargoCompat {};
-			class itemsListShortener {};
-			class listCreate {};
-			class loadoutListCreate {};
-			class reLoadoutUnit {};
-			class addZeusModules {};
-			class getMsgServerVariable {};
-			class usersIDs {};
 			class initStorage {};
-			class removeStorage {};
-			class removeFob {};
-			class clearVehicleInventory {};
-			class composeAvailiableItems {};
-			class classSwitcher {};
+			class removeActionFromStorage {};
 			class removedItemsListDisplay {};
-			class getModList {};
+			class removeStorage {};
+			class removingRestrictingItems {};
 		};
-		class Classes {
-			class Rifleman {};
-			class Nurse {};
-			class Machinegunner {};
-			class Grenadier {};
-			class Engineer {};
-			class ATSpec {};
-			class Medic {};
-			class Marksman {};
-			class Sniper {};
+		class Zeus {
+			class addZeusModules {};
+			class manageCurators {};
+			class promoteToZeus {};
 		};
 		class Mechanics {
-			class renameGroupDisplay {file = "Mechanics\GroupNaming\fn_renameGroupDisplay.sqf";};
+			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
+			class showTickets {file = "Mechanics\ShowTickets\fn_showTickets.sqf"}
 		};
     };
 };
@@ -102,38 +110,6 @@ class CfgRemoteExec
 		mode = 2;
 		jip = 1;
 		class BIS_fnc_debugConsoleExec {allowedTargets = 0;};
-		class call_db {allowedTargets = 2;};
-		class changeRespawnTickets {allowedTargets = 2;};
-		class forceRespawn {allowedTargets = 2;};
-		class changeRespawnState {allowedTargets = 2;};
-		class playerRespawnInfo {allowedTargets = 2;};
-		class endMission {allowedTargets = 2;};
-		class playersList {allowedTargets = 2;};
-		class moveRespawnMarker {allowedTargets = 2;};
-		class addToStorage {allowedTargets = 0;};
-		class reLoadoutUnit {allowedTargets = 2;};
-		class rolesAssign {allowedTargets = 2;};
-		class addShadecArsenal {allowedTargets = 2;};
-		class getMsgServerVariable {allowedTargets = 2;};
-		class changeRespawnTime {allowedTargets = 2;};
-		class respawnTeleport {allowedTargets = 2;};
-		class usersIDs {allowedTargets = 2;};
-		class assignStorage {allowedTargets = 2;};
-		class initStorage {allowedTargets = 2;}
-		class assignFob {allowedTargets = 2;};
-		class removeStorage {allowedTargets = 2;};
-		class removeFob {allowedTargets = 2;};
-		class assignJammer {allowedTargets = 2;};
-		class objectJamming {allowedTargets = 0;};
-		class radioSignalQuality {allowedTargets = 0;};
-		class clearVehicleInventory {allowedTargets = 2;};
-		class storageOutputFormat {allowedTargets = 0;};
-		class manageCurators {allowedTargets = 2;};
-		class createRespawnPoint {allowedTargets = 2;};
-		class removeRespawnPoint {allowedTargets = 2;};
-		class changeClasses {allowedTargets = 2;};
-		class saveModlist {allowedTargets = 2;};
-		class addArsenalSpecificItems {allowedTargets = 2;};
     };
 };
 
@@ -178,8 +154,8 @@ class CfgDebriefing
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
-	class somethingGoneWrong {
-		title = "Something Gone Wrong";
+	class somethingWentWrong {
+		title = "Something Went Wrong";
 		subtitle = "Inform administration about your problem";
 		description = "Do not try to rejoin, inform administration first.";
 		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";

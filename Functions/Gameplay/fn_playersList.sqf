@@ -94,6 +94,8 @@ switch (_groupBy) do {
 		if (_caller isEqualTo objNull) exitWith {diag_log format ["playersList FNC ERROR | No object passed into squad case"]};
 		_status = "Squad";
 		_playersGrouped pushBack [format ["%1 (%2)", groupID group _caller, name leader group _caller], _players select {(_x # 5) isEqualTo (group _caller)}];
+		_targetsCount = "-";
+		_playersCount = "-";
 	};
 	default {};
 };
@@ -107,7 +109,7 @@ _structuredText = format["<t size='2.0' color='#ff0000' align='center' font='Pur
 	_currentGroup = _x # 1;
 	if (count _currentGroup < 1) then {continue}; // YOBANY COSTYL, REMOVING GRPNULL GROUP IF EMPTY
 	_header = [_x # 0, localize (_x # 0)] select (_groupBy isEqualTo "Classes");
-	_structuredText = _structuredText + format["<t size='1.5' align='center'>-- %1 [%2/%3] --</t><br/>", _header, count _currentGroup, _playersCount];
+	_structuredText = _structuredText + format["<t size='1.5' align='center'>%1 [%2/%3]</t><br/>", _header, count _currentGroup, _playersCount];
 	{
 		_structuredText = _structuredText + format["<t size='1.0' align='center'>[%1]  %2  [%3/%4]</t><br/>", _x # 1, _x # 0, _x # 2, _x # 3];
 	} forEach _currentGroup;

@@ -43,5 +43,7 @@ if (_target isEqualTo "All") then {
 	};
 };
 
+// diag_log format ["fnc_usersIDs | return: %1", _players];
+
 //return
 _players

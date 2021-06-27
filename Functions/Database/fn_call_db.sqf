@@ -25,6 +25,7 @@ switch _act do {
 			[_unit, _uid, "Assign"] spawn Shadec_fnc_rolesAssign;
 			_unit setUnitLoadout _inventory;
 			
+			//_unit setVariable ["LoadoutLoaded", true, true];
 			missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
 			
 			// diag_log format ["%1's info was loaded. Rank:%2 | PClass:%3 | SClass:%4 | Inventory:%5 | Storage:%6 | PurchaseOrder:%7 | UID:%8", name _unit, _rank, _pclass, _sclass, _inventory, _getData # 4, _getData # 5, _uid];

@@ -51,9 +51,9 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		{deleteVehicle _x} forEach _droppedGear;
 
 		titleFadeOut 3;
-		player linkItem "itemMap";
-
 	}, [_unit], 5] call CBA_fnc_waitAndExecute;
+
+	[{player linkItem "itemMap"}, [_unit], 5] call CBA_fnc_waitAndExecute;
 
 	//
 	_unit setVariable ["KIA_onExit", nil];

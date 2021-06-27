@@ -16,8 +16,8 @@ _clientModlist = _clientModlist - (_serverModlist arrayIntersect _clientModlist)
 
 if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "76561198066438612"}) then {
 
-	private _allowedMods = ["Larger ACE Nightvision Border", "A3 Thermal Improvement", "Larger ACE Nightvision Border - RHS Compat"] apply {toLower _x};
-	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon", "HelpMe"] apply {toLower _x};
+	private _allowedMods = ["Larger ACE Nightvision Border", "A3 Thermal Improvement", "Larger ACE Nightvision Border - RHS Compat", "Larger ACE Nightvision Border - CUP Compat"] apply {toLower _x};
+	private _restrictedKeywords = ["personal","arsenal","remove","stamina","fatigue","casual","scopenvti","vision","thermal","sway","bullet casings","double weapon","scope with goggles","hitmarker","compass bearing & range distance hud", "logic fsm","develop","tool","Assistant", "Double Weapon", "HelpMe", "POLPOX", "ArmaZeusCache"] apply {toLower _x};
 
 	{
 		_mod = _x;
@@ -28,6 +28,18 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 				_foundedRestrictedMods pushBack (format["%1/%2", _mod # 0, _mod # 1]);
 			};
 		} forEach _restrictedKeywords;
+
+		// private _equalToServerModName = _serverModlist findIf {(_mod # 0) isEqualTo (_x # 0)};
+		private _equalToServerModID = [_serverModlist findIf {(_mod # 1) isEqualTo (_x # 1)}, -1] select ((_mod # 1) isEqualTo "0");
+
+		// if ((_equalToServerModName > -1) || (_equalToServerModID > -1)) then {
+		if (_equalToServerModID > -1) then {
+			if !((_mod # 2) isEqualTo (_x # 2)) then {
+				_isRestrictedModsFounded = true;
+				_foundedRestrictedMods pushBack (format["%1/%2 - %3", _mod # 0, _mod # 1, "Modified"]);
+			};
+		};
+
 	} forEach _clientModlist;
 
 	if (_isRestrictedModsFounded) then {
@@ -42,8 +54,8 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 	};
 };
 
-_clientModlist = _clientModlist apply {format["%1/%2", _x # 0, _x # 1]};
-_clientModlist = [format["%1 | %2 | MODLIST = %3 | RESTRICTED = %4", ["SAFE","WARN"] select _isRestrictedModsFounded, count _clientModlist, _clientModlist joinString ", ", _foundedRestrictedMods joinString ", "]];
+_clientModlist = _clientModlist apply {format["%1/%2/%3", _x # 0, _x # 1, _x # 2]};
+_clientModlist = [format["%1 | %2 | CLIENTMODS = %3 | SUSPICIOUS = %4", ["SAFE","WARN"] select _isRestrictedModsFounded, count _clientModlist, _clientModlist joinString ", ", _foundedRestrictedMods joinString ", "]];
 
 _data = [_clientModlist, _uid];
 diag_log format["SAVE PLAYER MODLIST:%1", _data];

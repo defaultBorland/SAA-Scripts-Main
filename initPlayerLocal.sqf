@@ -2,7 +2,7 @@
 waitUntil {!isNull player};
 [] call BIS_fnc_VRFadeOut;
 
-_uid = getPlayerUID player;
+private _uid = getPlayerUID player;
 
 player setVariable ["SAA_isZeus", _uid in (missionNamespace getVariable "ZeusArray"), true];
 player setVariable ["SAA_isArsenalUnrestricted", player getVariable ["SAA_isZeus", false], true];
@@ -32,17 +32,20 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [player] spawn Shadec_fnc_loadPlayer;
 
 // Wait untill loadout is loaded by server or skip if zeus
-[{missionNamespace getVariable [format["loadoutLoaded_%1", _this], player getVariable ["SAA_isZeus", false]]}, {}, _uid, 30, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
-// waitUntil {missionNamespace getVariable [format["loadoutLoaded_%1", _this], player getVariable ["SAA_isZeus", false]]};
+// [{player getVariable ["LoadoutLoaded", player getVariable ["SAA_isZeus", false]]}, {}, _uid, 30, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 
-// Execute EHs
+// Add Actions
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
-[] execVM "Mechanics\GroupNaming\GroupNaming_Init.sqf";
-[] execVM "Mechanics\PlayersList\PlayersList_Init.sqf";
-[] execVM "Mechanics\SquadList\SquadList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
+[] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
+[] execVM "Mechanics\TeamManagement\ForceJoinToSquad_Init.sqf";
+[] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
+// Execute EHs
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
-[] execVM "EH\player\getOut.sqf";
+//[] execVM "EH\player\getOut.sqf";
+[] execVM "EH\player\serverFps.sqf";
 script_handler = [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
 if (player getVariable ["SAA_isZeus", false]) then {
@@ -56,7 +59,7 @@ waitUntil {scriptDone script_handler};
 if (player getVariable ["KIA_onExit", false]) then {player setDamage 1} else {
 	
 	script_handler = [] spawn {sleep 6; [] call BIS_fnc_VRFadeIn;};
-	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 15, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
+	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 15, {"somethingWentWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 };
 
 // Saving Player Modlist to db

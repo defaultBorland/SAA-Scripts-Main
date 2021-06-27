@@ -58,7 +58,7 @@
 			_marker setMarkerColor _color;
 			_marker setMarkerText _markerText;
 
-			[[_position, _objectUnderCursor, str _side, _marker, _showNotification], Shadec_fnc_createRespawnPoint] remoteExec ["spawn", 2];	
+			[[_position, _objectUnderCursor, _side, _marker, _showNotification], Shadec_fnc_createRespawnPoint] remoteExec ["spawn", 2];	
 			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},

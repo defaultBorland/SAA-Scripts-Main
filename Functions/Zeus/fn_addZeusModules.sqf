@@ -6,8 +6,6 @@ _prefix = _prefixMain + "Main\";
 {[] execVM (_prefix + _x)} forEach [
 	"addShadecArsenal.sqf",
 	"endMission.sqf",
-	"assignStorage.sqf",
-	"removeStorage.sqf",
 	"playersList.sqf",
 	"promoteToZeus.sqf"
 ];
@@ -24,10 +22,18 @@ _prefix = _prefixMain + "Radio\";
 // Respawn
 _prefix = _prefixMain + "Respawn\";
 {[] execVM (_prefix + _x)} forEach [
-	"addRemoveRespawnTickets.sqf",
+	"changeRespawnTickets.sqf",
 	"forceRespawnTimer.sqf",
 	"createRespawnPoint.sqf",
 	"removeRespawnPoint.sqf"
+];
+
+// Storage
+_prefix = _prefixMain + "Storage\";
+{[] execVM (_prefix + _x)} forEach [
+	"assignStorage.sqf",
+	"removeStorage.sqf",
+	"restrictStorageAccess.sqf"
 ];
 
 // Utilities

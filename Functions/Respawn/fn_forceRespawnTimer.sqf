@@ -10,7 +10,7 @@ if (_target isEqualTo "AllDead") then {
 
 {
 	[_time] remoteExec ["setPlayerRespawnTime", _x # 1];
-	[format["%1, %2 %3.", _x # 0, localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_HINT_SYSTEMCHAT", round _time]] remoteExec ["systemChat"];
+	[format["%1, %2 %3.", _x # 0, localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_SHOWHINT_SYSTEMCHAT", round _time]] remoteExec ["systemChat"];
 } forEach _target;
 
 //return

@@ -48,6 +48,16 @@
         <Russian>Осталось тикетов</Russian> 
     </Key>
 
+    <Key ID="SAA_SHOWTICKETS_CHANGETICKETS_CHATMESSAGE"> 
+        <Original>Amount of respawn tickets was changed</Original> 
+        <Russian>Количество тикетов было изменено</Russian> 
+    </Key>
+
+    <Key ID="SAA_SHOWTICKETS_CHANGETICKETS_UPDATEDTICKETSAMOUNT"> 
+        <Original>Updated value</Original> 
+        <Russian>Новое значение</Russian> 
+    </Key>
+
 </Container>
 
 <Container name="Force Join To Squad">
@@ -139,6 +149,16 @@
         <Russian>Экипировка</Russian> 
     </Key>
 
+    <Key ID="SAA_GENERAL_EACH"> 
+        <Original>Each</Original> 
+        <Russian>Каждый</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_PLAYER"> 
+        <Original>Player</Original> 
+        <Russian>Игрок</Russian> 
+    </Key>
+
     <Key ID="SAA_GENERAL_ZEUS"> 
         <Original>Zeus</Original> 
         <Russian>Зевс</Russian> 
@@ -187,6 +207,31 @@
     <Key ID="SAA_GENERAL_ALL"> 
         <Original>All</Original> 
         <Russian>Все</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_SIDE"> 
+        <Original>Side</Original> 
+        <Russian>Сторона</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_WEST"> 
+        <Original>West</Original> 
+        <Russian>Синие</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_EAST"> 
+        <Original>East</Original> 
+        <Russian>Красные</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_GUER"> 
+        <Original>Independent</Original> 
+        <Russian>Независимые</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_CIV"> 
+        <Original>Civilian</Original> 
+        <Russian>Гражданские</Russian> 
     </Key>
 
 </Container>
@@ -311,6 +356,11 @@
             <Original>[SAA] Respawn</Original> 
             <Russian>[SAA] Возрождение</Russian> 
         </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_CATEGORIES_STORAGE"> 
+            <Original>[SAA] Storage</Original> 
+            <Russian>[SAA] Хранилище</Russian> 
+        </Key>
     
         <Key ID="SAA_ZEUS_MODULES_CATEGORIES_RADIO"> 
             <Original>[SAA] Radio</Original> 
@@ -331,19 +381,29 @@
             <Russian>ОШИБКА: Введите корректные данные</Russian> 
         </Key>
         
-        <Key ID="SAA_ZEUS_MESSAGES_MUSTBEAMAN"> 
+        <Key ID="SAA_ZEUS_MESSAGES_ERRORMUSTBEAMAN"> 
             <Original>ERROR: Selected Object must be a Man</Original> 
             <Russian>ОШИБКА: Выберите человека</Russian> 
         </Key>
         
-        <Key ID="SAA_ZEUS_MESSAGES_MUSTBEAPLAYER"> 
+        <Key ID="SAA_ZEUS_MESSAGES_ERRORMUSTBEAPLAYER"> 
             <Original>ERROR: Selected Object must be a Player</Original> 
             <Russian>ОШИБКА: Выберите игрока</Russian> 
         </Key>
+
+        <Key ID="SAA_ZEUS_MESSAGES_ERRORMUSTBEANONZEUSPLAYER"> 
+            <Original>ERROR: Selected Object must be a non-zeus player</Original> 
+            <Russian>ОШИБКА: Выберите игрока, не имеющего Зевса</Russian> 
+        </Key>
         
-        <Key ID="SAA_ZEUS_MESSAGES_ALREADYZEUS"> 
+        <Key ID="SAA_ZEUS_MESSAGES_ERRORALREADYZEUS"> 
             <Original>ERROR: Selected player is already SAA-Zeus</Original> 
             <Russian>ОШИБКА: Выбранный игрок уже SAA-Зевс</Russian> 
+        </Key>
+        
+        <Key ID="SAA_ZEUS_MESSAGES_ERRORNONONZEUSPLAYERS"> 
+            <Original>ERROR: There are no non-zeus players</Original> 
+            <Russian>ОШИБКА: Кроме зевсов игроков нет</Russian> 
         </Key>
     
     </Container>
@@ -421,40 +481,40 @@
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_MAIN_ADDARSENAL_ZEUSMESSAGE_SUCCESS"> 
-            <Original>Arsenal has been successfully added</Original> 
-            <Russian>Арсенал успешно добавлен</Russian> 
+            <Original>Arsenal has been assigned</Original> 
+            <Russian>Арсенал назначен</Russian> 
         </Key>
     
     </Container>
     
     <Container name="Zeus Module Assign Storage">
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_MODULENAME"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_MODULENAME"> 
             <Original>Assign Personal Storage Proxy</Original> 
             <Russian>Добавить доступ к хранилищу</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_HEADER"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_DIALOG_HEADER"> 
             <Original>Assign Storage-proxy</Original> 
             <Russian>Назначить точку доступа к хранилищу</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
             <Original>Notify players</Original> 
             <Russian>Уведомить игроков</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
             <Original>Player will recieve notification about personal storage position and type</Original> 
             <Russian>Игроки получат информацию об относительном местонахождении точки доступа к личному хранилищу</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_ZEUSMESSAGE_SUCCESS"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_ZEUSMESSAGE_SUCCESS"> 
             <Original>Storage-Proxy has been assigned</Original> 
             <Russian>Точка доступа к хранилищу добавлена</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_ASSIGNSTORAGE_MESSAGES_ALREADYSTORAGEPROXY"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_MESSAGES_ALREADYSTORAGEPROXY"> 
             <Original>ERROR: Selected object is already SAA-StorageProxy</Original> 
             <Russian>ОШИБКА: Выбранный объект уже является объектом доступа к хранилищу</Russian> 
         </Key>
@@ -463,34 +523,98 @@
     
     <Container name="Zeus Module Remove Storage">
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_MODULENAME"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_MODULENAME"> 
             <Original>Remove Personal Storage Proxy</Original> 
             <Russian>Удалить доступ к хранилищу</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_HEADER"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_DIALOG_HEADER"> 
             <Original>Remove Storage-proxy</Original> 
             <Russian>Удалить доступ к хранилищу с объекта</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
             <Original>Notify players</Original> 
             <Russian>Уведомить игроков</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
             <Original>Player will recieve notification about personal storage position and type</Original> 
             <Russian>Игроки получат информацию об относительном местонахождении объекта, больше не являющегося доступом к личному хранилищу</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS"> 
             <Original>Storage-proxy removed</Original> 
             <Russian>Точка доступа к личному хранилищу удалена</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_MESSAGES_NOTASTORAGEPROXY"> 
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_MESSAGES_NOTASTORAGEPROXY"> 
             <Original>ERROR: Selected object is not a SAA-StorageProxy</Original> 
             <Russian>ОШИБКА: Выбранный объект не назначен объектом доступа к хранилищу</Russian> 
+        </Key>
+    
+    </Container>
+
+    <Container name="Zeus Module Restrict Storage Access">
+    
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_MODULENAME"> 
+            <Original>Restrict Personal Storage Access</Original> 
+            <Russian>Ограничить доступ к хранилищу</Russian> 
+        </Key>
+    
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_HEADER"> 
+            <Original>Restrict Player Storage Access</Original> 
+            <Russian>Ограничить игроку доступ к хранилищу</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_TARGET_DISPLAYNAME"> 
+            <Original>Target</Original> 
+            <Russian>Цель</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_TARGET_TOOLTIP"> 
+            <Original>The selected player will be prohibited from opening his private storage</Original> 
+            <Russian>Выбранному игроку будет запрещено открывать своё личное хранилище</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_RESTRICT_DISPLAYNAME"> 
+            <Original>Restrict</Original> 
+            <Russian>Запретить</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_RESTRICT_TOOLTIP"> 
+            <Original>If checked - player will lose access to his storage, otherwise - access will be granted</Original> 
+            <Russian>Если отмечено - игрок потеряет доступ к личному хранилищу, иначе - доступ будет возвращён</Russian> 
+        </Key>
+    
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_SHOWHINT_DISPLAYNAME"> 
+            <Original>Notify players</Original> 
+            <Russian>Уведомить игроков</Russian> 
+        </Key>
+    
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_DIALOG_SHOWHINT_TOOLTIP"> 
+            <Original>Players will receive information about storage restriction for selected player</Original> 
+            <Russian>Игроки получат информацию об ограничении на пользование хранилищем для этого игрока</Russian> 
+        </Key>
+    
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_ZEUSMESSAGE_RESTRICTED"> 
+            <Original> has been restricted in access to the personal storage</Original> 
+            <Russian> был ограничен в доступе к личному хранилищу</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_ZEUSMESSAGE_GRANTED"> 
+            <Original> has been restored access to the personal storage</Original> 
+            <Russian> был восстановлен в доступе к личному хранилищу</Russian> 
+        </Key>
+
+        <Key ID="SAA_STORAGE_ACCESS_STRANGER"> 
+            <Original>This storage does not belong to you</Original> 
+            <Russian>Это хранилище не принадлежит вам</Russian> 
+        </Key>
+
+        <Key ID="SAA_STORAGE_ACCESS_RESTRICTED"> 
+            <Original>You are not allowed to open your personal storage</Original> 
+            <Russian>Вам запрещено открывать личное хранилище</Russian> 
         </Key>
     
     </Container>
@@ -615,6 +739,11 @@
             <Original>Group the players by their ranks</Original> 
             <Russian>Сгруппировать игроков по их рангам</Russian> 
         </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SIDE_TOOLTIP"> 
+            <Original>Display the players list of the selected side</Original> 
+            <Russian>Отобразить список игроков выбранной стороны</Russian> 
+        </Key>
                
         <Key ID="SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SHOWTO_DISPLAYNAME"> 
             <Original>Show only to Zeus</Original> 
@@ -668,6 +797,16 @@
             <Original>Selected side tickets amount will be affected</Original> 
             <Russian>Тикеты выбранной стороны будут изменены</Russian> 
         </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_SHOWHINT_DISPLAYNAME"> 
+            <Original>Display hint to every side</Original> 
+            <Russian>Показать уведомление каждой стороне</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_SHOWHINT_TOOLTIP"> 
+            <Original>If checked - all players of every side will get notification about number of tickets and availiability to respawn of selected side, in other case - only players of selected side.</Original> 
+            <Russian>Если включено, то уведомление об изменении количества тикетов и наличии точки возрождения получат все, в обратном случае - только игроки целевой стороны.</Russian> 
+        </Key>
     
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_TICKETSLEFT"> 
             <Original>Tickets Left</Original> 
@@ -675,12 +814,12 @@
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_SUCCESS"> 
-            <Original>Amount of tickets successfully changed</Original> 
-            <Russian>Количество тикетов успешно изменено</Russian> 
+            <Original>Amount of tickets has been changed</Original> 
+            <Russian>Количество тикетов изменено</Russian> 
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_FAILED"> 
-            <Original>Error: Enter value between -99 and 99 exluding 0</Original> 
+            <Original>Error: Enter value between -99 and 99 excluding 0</Original> 
             <Russian>Ошибка: Введите значение между -99 и 99, исключая 0</Russian> 
         </Key>
     
@@ -728,7 +867,7 @@
             <Russian>Ошибка: Мёртвых игроков нет!</Russian> 
         </Key>
     
-        <Key ID="SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_HINT_SYSTEMCHAT"> 
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_SHOWHINT_SYSTEMCHAT"> 
             <Original>seconds until respawn is possible:</Original> 
             <Russian>секунд до возможности возрождения:</Russian> 
         </Key>

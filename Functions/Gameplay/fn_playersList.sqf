@@ -32,10 +32,11 @@ fnc_NoReturn = {
 };
 
 
-params ["_status", "_groupBy", "_isOnlyToCaller", ["_caller", objNull]];
+params ["_status", "_groupBy", "_side", "_isOnlyToCaller", ["_caller", objNull]];
 disableSerialization;
 
-private _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
+private _players = ["all", "object"] call Shadec_fnc_usersIDs;
+_players = _players select {(side _x) isEqualTo _side};
 
 private _playersCount = count _players;
 
@@ -117,7 +118,6 @@ _structuredText = format["<t size='2.0' color='#ff0000' align='center' font='Pur
 
 // Show composed text
 if (_isOnlyToCaller) then {
-	// [[_structuredText, "Plain", 2, false, true]] remoteExec ["cutText", remoteExecutedOwner];
 	[parseText _structuredText] remoteExec ["hintSilent", remoteExecutedOwner];
 } else {
 	[parseText _structuredText] remoteExec ["hint"];

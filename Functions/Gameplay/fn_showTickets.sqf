@@ -1,8 +1,14 @@
-//
-params ["_unit"];
-private _side = side _unit;
+// Server Side Only
+params ["_unit", "_side"];
+if (!isServer) exitWith {diag_log "fnc_showTickets | Error: Executed not on server side."};
 
-private _sidesInfo = [[east, "#800000", "\A3\UI_F\data\Map\Markers\NATO\o_unknown"], [west, "#004D99", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"], [independent, "#008000", "\A3\UI_F\data\Map\Markers\NATO\n_unknown"], [civilian, "#660080", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"]];
+private _sidesInfo = [
+	[east, "#800000", "\A3\UI_F\data\Map\Markers\NATO\o_unknown"], 
+	[west, "#004D99", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"], 
+	[independent, "#008000", "\A3\UI_F\data\Map\Markers\NATO\n_unknown"], 
+	[civilian, "#660080", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"]
+];
+
 private _info = _sidesInfo # ([_side] call BIS_fnc_sideID);
 _info params ["_side", "_color", "_picture"];
 
@@ -13,7 +19,6 @@ if (count (_side call BIS_fnc_getRespawnPositions) < 1) then {
 	}] remoteExec ["call", remoteExecutedOwner];
 } else {
 	private _tickets = [_side, 0] call BIS_fnc_respawnTickets;
-	
 	[[_picture, _color, _tickets], {
 		params ["_sidePicturePath", "_color", "_tickets"];
 		private _hasTickets = false;

@@ -34,15 +34,18 @@ missionNamespace setVariable ["playersListDeclared", true, true];
 					2
 				]
 			],
+			["SIDES", [localize "SAA_GENERAL_SIDE", localize "SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SIDE_TOOLTIP"],
+				west
+			],
 			["CHECKBOX", [localize "SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SHOWTO_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_GROUPING_TOOLTIP"],
 				true
 			]
 		],
 		{ // On Confirmation
 			params ["_dialogResult", "_args"];
-			_dialogResult params ["_status", "_groupBy", "_isOnlyToZeus"];
+			_dialogResult params ["_status", "_groupBy", "_side", "_isOnlyToZeus"];
 
-			[[_status, _groupBy, _isOnlyToZeus], Shadec_fnc_playersList] remoteExec ["call", 2];
+			[[_status, _groupBy, _side, _isOnlyToZeus], Shadec_fnc_playersList] remoteExec ["call", 2];
 		},
 		{},
 		[]

@@ -1,0 +1,20 @@
+//
+params ["_target", "_isRestricted", "_showInfo"];
+
+if (_target isEqualType []) then {
+	{
+		_x setVariable ["SAA_storageRestricted", _isRestricted , true];
+	} forEach _target;
+} else {
+	_target setVariable ["SAA_storageRestricted", _isRestricted , true];
+};
+
+if (_showInfo) then {
+	[
+		[_target, _isRestricted],
+		{
+			params ["_target", "_isRestricted"];
+			systemChat format ["%1 %2", [name _target, localize "SAA_GENERAL_EACH" + " " + toLower localize "SAA_GENERAL_PLAYER"] select (_target isEqualType []), [localize "SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_ZEUSMESSAGE_GRANTED", localize "SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_ZEUSMESSAGE_RESTRICTED"] select _isRestricted];
+		}
+	] remoteExec ["call", -2];
+};

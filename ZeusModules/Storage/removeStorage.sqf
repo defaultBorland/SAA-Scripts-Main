@@ -1,6 +1,6 @@
 //
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_MODULENAME",
+[localize "SAA_ZEUS_MODULES_CATEGORIES_STORAGE", localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
@@ -10,12 +10,12 @@
 	};
 
 	if !(_objectUnderCursor getVariable ["SAA_isStorageProxy", false]) exitWith {
-		[objNull, localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_MESSAGES_NOTASTORAGEPROXY"] call bis_fnc_showCuratorFeedbackMessage
+		[objNull, localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_MESSAGES_NOTASTORAGEPROXY"] call bis_fnc_showCuratorFeedbackMessage
 	};
 
-	[localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_HEADER",
+	[localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_DIALOG_HEADER",
 		[
-			["CHECKBOX", [localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_SHOWHINT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_DIALOG_SHOWHINT_TOOLTIP"],
+			["CHECKBOX", [localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_DIALOG_SHOWHINT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_DIALOG_SHOWHINT_TOOLTIP"],
 				true
 			]
 		],
@@ -25,7 +25,7 @@
 			_args params ["_selectedObject"];
 
 			[[_selectedObject, _showInfo], Shadec_fnc_removeStorage] remoteExec ["call", 2];
-			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},
 		[_objectUnderCursor]

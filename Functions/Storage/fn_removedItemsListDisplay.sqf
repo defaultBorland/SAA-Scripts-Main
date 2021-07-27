@@ -3,7 +3,7 @@ params["_array", "_ctrl"];
 private ["_weaponsRemoved", "_magazinesRemoved", "_itemsRemoved", "_equipmentRemoved", "_strings"];
 
 _weaponsRemoved = _array select {((_x call BIS_fnc_itemType) # 0) isEqualTo "Weapon"};
-_magazinesRemoved = _array select {((_x call BIS_fnc_itemType) # 0) isEqualTo "Magazine"};
+_magazinesRemoved = _array select {(((_x call BIS_fnc_itemType) # 0) isEqualTo "Magazine") || (((_x call BIS_fnc_itemType) # 0) isEqualTo "Mine")};
 _itemsRemoved = _array select {((_x call BIS_fnc_itemType) # 0) isEqualTo "Item"};
 _equipmentRemoved = _array select {((_x call BIS_fnc_itemType) # 0) isEqualTo "Equipment"};
 

@@ -84,7 +84,7 @@ class Dialog_RemovedItemsList
 			y = safeZoneY + safeZoneH * 0.30185186;
 			w = safeZoneW * 0.39166667;
 			h = safeZoneH * 0.39351852;
-			style = 16;
+			style = 16; // + 2 (Center) + 512 (No borders)
 			colorBackground[] = {0.102,0.102,0.102,0};
 			colorDisabled[] = {0.102,0.102,0.102,0};
 			colorSelect[] = {1,0,0,1};

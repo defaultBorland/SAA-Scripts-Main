@@ -2,16 +2,11 @@
 
 //Player disconnected handler with _unit passed
 _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
-	params ["_unit", "_id", "_uid", "_name"];
-
-	_unit = _this select 0;
-	_pcid = _this select 1;
-	_uid = _this select 2;
-	_pname = _this select 3;
+	params ["_unit", "_pcid", "_uid", "_name"];
 
 	// If player equipment didn't load for some reason - don't save
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then {
-		[_unit, _uid, _pname] spawn Shadec_fnc_savePlayer;
+		[_unit, _uid, _name] spawn Shadec_fnc_savePlayer;
 		[_uid] spawn Shadec_fnc_deleteStorage;
 		
 		if !(alive _unit) then {

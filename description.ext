@@ -9,7 +9,7 @@ respawnOnStart = -1;
 respawnTemplates[] = {"MenuPosition", "Spectator", "Autorespawn", "Tickets", "Wave"};
 saving = 0;
 disabledAI = 1;
-enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198066438612"};
 debriefing = 0;
 allowProfileGlasses = 0;
 
@@ -50,6 +50,7 @@ class CfgFunctions
 			class playersList {};
 			class respawnTeleport {};
 			class rolesAssign {};
+			class showTickets {};
 			class showUserInfo {};
 		};
 		class Generic {
@@ -90,6 +91,7 @@ class CfgFunctions
 			class removedItemsListDisplay {};
 			class removeStorage {};
 			class removingRestrictingItems {};
+			class restrictStorageAccess {};
 		};
 		class Zeus {
 			class addZeusModules {};
@@ -98,7 +100,6 @@ class CfgFunctions
 		};
 		class Mechanics {
 			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
-			class showTickets {file = "Mechanics\ShowTickets\fn_showTickets.sqf"}
 		};
     };
 };
@@ -148,8 +149,8 @@ class CfgDebriefing
 
 	class missingMap {
 		title = "Missing Map";
-		subtitle = "Server and Client Map missmatch";
-		description = "Go to Arma 3 Launcher and activate neccessary map.";
+		subtitle = "You have not loaded required map for this mission";
+		description = "Go to the Arma 3 Launcher and activate neccessary map, then come back.";
 		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};

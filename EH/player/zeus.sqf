@@ -18,6 +18,12 @@ _EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", {
 		clearMagazineCargoGlobal _entity;
 		clearItemCargoGlobal _entity;
 	};
+	if (_entity isKindOf "Ship") then {
+		clearWeaponCargoGlobal _entity;
+		clearMagazineCargoGlobal _entity;
+		clearItemCargoGlobal _entity;
+		clearBackpackCargoGlobal _entity;
+	};
 	if (_entity isKindOf "Man") then {
 		if !((groupOwner group _entity) isEqualTo 2) then {
 			[{

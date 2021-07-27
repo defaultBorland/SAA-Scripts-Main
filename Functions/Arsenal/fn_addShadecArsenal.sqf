@@ -49,8 +49,7 @@ _allSAAArrays append _items;
 if (_showInfo) then {
 	[[_box, _uniformType], {
 		_this params ["_arsenal", "_uniformType"];
+		format ["> Server: %1", localize "SAA_ZEUS_MODULES_MAIN_ADDARSENAL_ZEUSMESSAGE_SUCCESS"];
 		hint parseText format ["<t align='center'>Arsenal was assigned</t><br/><t align='center' shadow='1' shadowColor='#000000'>%1</t><br/><t align='center'><t align='center' shadow='1' shadowColor='#000000'>Uniform Type: %2</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction from you: %3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %4</t>", getText (configFile >> "CfgVehicles" >> typeOf _arsenal >> "displayName"), _uniformType, floor ([player, _arsenal] call BIS_fnc_dirTo), round (player distance _arsenal)]
 	}] remoteExec ["call", -2];
 };
-
-["> Server: Arsenal added."] remoteExec ["systemChat"];

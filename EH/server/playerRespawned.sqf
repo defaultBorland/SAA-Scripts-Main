@@ -2,9 +2,8 @@
 
 //Player respawn event handler
 "playerRespawned" addPublicVariableEventHandler {
-	_unit = _this select 1 select 0;
+	(_this # 1) params ["_unit", "_uid"];
 	_pcid = owner _unit;
-	_uid = _this select 1 select 1;
 
 	_remainingTickets = [side _unit, 0] call BIS_fnc_respawnTickets;
 

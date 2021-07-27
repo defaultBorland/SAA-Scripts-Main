@@ -10,15 +10,15 @@
 	};
 
 	if !(_objectUnderCursor isKindOf "Man") exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_MUSTBEAMAN"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_MUSTBEAMAN
+		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORMUSTBEAMAN"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORMUSTBEAMAN
 	};
 
 	if !(isPlayer _objectUnderCursor) exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_MUSTBEAPLAYER"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_MUSTBEAPLAYER
+		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORMUSTBEAPLAYER"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORMUSTBEAPLAYER
 	};
 
 	if (_objectUnderCursor getVariable ["SAA_isZeus", false]) exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_ALREADYZEUS"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ALREADYZEUS
+		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORALREADYZEUS"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORALREADYZEUS
 	};
 
 	[_objectUnderCursor] call Shadec_fnc_promoteToZeus;

@@ -4,8 +4,15 @@
 _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
     if !((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
-        hint format ["That's storage not belongs to You"];
+        cutText [localize "SAA_STORAGE_ACCESS_STRANGER", "PLAIN", 2];
         closeDialog 602; true;
+    };
+
+    if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
+        if (player getVariable ["SAA_storageRestricted", false]) exitWith {
+            cutText [localize "SAA_STORAGE_ACCESS_RESTRICTED", "PLAIN", 2];
+            closeDialog 602; true;
+        };
     };
 }];
 

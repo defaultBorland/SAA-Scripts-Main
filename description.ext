@@ -1,4 +1,4 @@
-#include "GUI\Dialog_RemovedItemsList.h"
+#include "GUI\ListNBox_dialog.h"
 
 onLoadName = "SAA Project [dev]";
 //loadScreen 		= "img\logo.jpg";
@@ -68,13 +68,9 @@ class CfgFunctions
 		};
 		class Respawn {
 			class assignFob {};
-			class changeRespawnState {};
 			class changeRespawnTickets {};
-			class changeRespawnTime {};
 			class createRespawnPoint {};
 			class forceRespawnTimer {};
-			class moveRespawnMarker {};
-			class playersRespawnInfo {};
 			class removeFob {};
 			class removeRespawnPoint {};
 		};
@@ -97,6 +93,9 @@ class CfgFunctions
 			class addZeusModules {};
 			class manageCurators {};
 			class promoteToZeus {};
+		};
+		class GUI {
+			class fillListNBox {file = "GUI\fn_fillListNBox.sqf"};
 		};
 		class Mechanics {
 			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
@@ -167,8 +166,8 @@ class CfgDebriefing
 		title = "Promoted To Zeus";
 		subtitle = "You have been promoted to SAA-Zeus";
 		description = "Your data was saved. Please, reselect playable slot and proceed.";
-		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
-		pictureColor[] = {0.1,0.6,0.1,1};
+		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Zeus_ca";
+		pictureColor[] = {1,1,1,1};
 	};
 };
 

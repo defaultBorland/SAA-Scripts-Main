@@ -50,8 +50,9 @@ if !(player getVariable ["KIA_onExit", false]) then {
 // Execute EHs
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
-[] execVM "EH\player\itemsRemovedDisplay.sqf";
 [] execVM "EH\player\serverFps.sqf";
+[] execVM "EH\player\itemsDelivered.sqf";
+[] execVM "EH\player\itemsRemoved.sqf";
 
 if (player getVariable ["SAA_isZeus", false]) then {
 	[] execVM "EH\player\zeus.sqf";

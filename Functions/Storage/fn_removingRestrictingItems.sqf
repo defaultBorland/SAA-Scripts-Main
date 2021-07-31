@@ -42,7 +42,6 @@ fnc_keepInStorage = {
 };
 
 //
-
 params ["_arrays", "_uid"];
 _arrays params ["_weapons", "_magazines", "_items"]; 
 (missionNamespace getVariable [format["%1_DATA", _uid], ["PVT", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
@@ -59,12 +58,13 @@ private _itemsRemoved = (_items - _itemsAllowed);
 
 private _allRemoved = _weaponsRemoved + _magazinesRemoved + _itemsRemoved;
 
-_allRemoved append (missionNamespace getVariable [format["removedItems_%1", _uid], []]);
-missionNamespace setVariable [format["removedItems_%1", _uid], _allRemoved];
-
-private _id = owner ((allPlayers select {(getPlayerUID _x) isEqualTo _uid}) # 0);
-
 if !(_allRemoved isEqualTo []) then {
+	
+	_allRemoved append (missionNamespace getVariable [format["removedItems_%1", _uid], []]);
+	missionNamespace setVariable [format["removedItems_%1", _uid], _allRemoved];
+
+	private _id = owner ((allPlayers select {(getPlayerUID _x) isEqualTo _uid}) # 0);
+
 	removedItems = _allRemoved;
 	_id publicVariableClient "removedItems";
 	removedItems = nil;

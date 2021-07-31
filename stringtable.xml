@@ -14,12 +14,17 @@
 
 <Container name="Group Naming">
 
-    <Key ID="STR_GROUPNAMING_TITLE_ENTERNAME"> 
+    <Key ID="SAA_GROUPNAMING_ACTION_NAME"> 
+        <Original>Rename Group</Original> 
+        <Russian>Переименовать Группу</Russian> 
+    </Key> 
+
+    <Key ID="SAA_GROUPNAMING_TITLE_ENTERNAME"> 
         <Original>Enter Group Name: </Original> 
         <Russian>Введите имя группы: </Russian> 
     </Key>
 
-    <Key ID="STR_GROUPNAMING_ERROR_ALREADYEXISTS"> 
+    <Key ID="SAA_GROUPNAMING_ERROR_ALREADYEXISTS"> 
         <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
         <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
     </Key>
@@ -51,11 +56,6 @@
     <Key ID="SAA_SHOWTICKETS_CHANGETICKETS_CHATMESSAGE"> 
         <Original>Amount of respawn tickets was changed</Original> 
         <Russian>Количество тикетов было изменено</Russian> 
-    </Key>
-
-    <Key ID="SAA_SHOWTICKETS_CHANGETICKETS_UPDATEDTICKETSAMOUNT"> 
-        <Original>Updated value</Original> 
-        <Russian>Новое значение</Russian> 
     </Key>
 
 </Container>
@@ -90,20 +90,15 @@
 
 <Container name="Actions">
 
-    <Key ID="SAA_SAA_STORAGE_ACTION"> 
+    <Key ID="SAA_STORAGE_ACTION"> 
         <Original>Personal Storage</Original> 
         <Russian>Личное Хранилище</Russian> 
     </Key>
 
-    <Key ID="SAA_SAA_ASSIGN_ZEUS_ACTION"> 
+    <Key ID="SAA_ASSIGN_ZEUS_ACTION"> 
         <Original>Re-Assign Zeus</Original> 
         <Russian>Получить Зевса</Russian> 
     </Key>
-
-    <Key ID="SAA_GROUPNAMING_ACTION_NAME"> 
-        <Original>Rename Group</Original> 
-        <Russian>Переименовать Группу</Russian> 
-    </Key> 
 
     <Key ID="SAA_SQUADLIST_ACTION_NAME"> 
         <Original>Squad Info</Original> 
@@ -112,7 +107,7 @@
 
 </Container>
 
-<Container name="General Words">
+<Container name="General">
 
     <Key ID="SAA_GENERAL_YES"> 
         <Original>Yes</Original> 
@@ -124,24 +119,44 @@
         <Russian>Нет</Russian> 
     </Key>
 
-    <Key ID="SAA_GENERAL_HIDE"> 
-        <Original>Hide</Original> 
-        <Russian>Скрыть</Russian> 
+    <Key ID="SAA_GENERAL_BY"> 
+        <Original>By</Original> 
+        <Russian>На</Russian> 
     </Key>
 
-    <Key ID="SAA_GENERAL_WEAPONS"> 
-        <Original>Weapons</Original> 
+    <Key ID="SAA_GENERAL_HIDE"> 
+        <Original>Hide</Original> 
+        <Russian>Свернуть</Russian> 
+    </Key>
+    
+    <Key ID="SAA_GENERAL_CLOSE"> 
+        <Original>Close</Original> 
+        <Russian>Закрыть</Russian> 
+    </Key>
+    
+    <Key ID="SAA_GENERAL_HELP"> 
+        <Original>Help</Original> 
+        <Russian>Помощь</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_WEAPON"> 
+        <Original>Weapon</Original> 
         <Russian>Оружие</Russian> 
     </Key>
 
-    <Key ID="SAA_GENERAL_MAGAZINES"> 
+    <Key ID="SAA_GENERAL_MAGAZINE"> 
         <Original>Ammunition</Original> 
         <Russian>Аммуниция</Russian> 
     </Key>
 
-    <Key ID="SAA_GENERAL_ITEMS"> 
-        <Original>Items</Original> 
-        <Russian>Предметы</Russian> 
+    <Key ID="SAA_GENERAL_MINE"> 
+        <Original>Mine</Original> 
+        <Russian>Мина</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_ITEM"> 
+        <Original>Item</Original> 
+        <Russian>Предмет</Russian> 
     </Key>
 
     <Key ID="SAA_GENERAL_EQUIPMENT"> 
@@ -162,6 +177,36 @@
     <Key ID="SAA_GENERAL_ZEUS"> 
         <Original>Zeus</Original> 
         <Russian>Зевс</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_CV"> 
+        <Original>Respawn CV</Original> 
+        <Russian>КШМ</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_RESPAWNPOINT"> 
+        <Original>Respawn Point</Original> 
+        <Russian>Точка возрождения</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_DIRECTION"> 
+        <Original>Direction</Original> 
+        <Russian>Направление</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_DISTANCE"> 
+        <Original>Distance</Original> 
+        <Russian>Расстояние</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_CREATED"> 
+        <Original>Created</Original> 
+        <Russian>Создана</Russian> 
+    </Key>
+
+    <Key ID="SAA_GENERAL_REMOVED"> 
+        <Original>Removed</Original> 
+        <Russian>Удалена</Russian> 
     </Key>
 
     <Key ID="SAA_GENERAL_STATUS"> 
@@ -232,6 +277,41 @@
     <Key ID="SAA_GENERAL_CIV"> 
         <Original>Civilian</Original> 
         <Russian>Гражданские</Russian> 
+    </Key>
+    
+    <Key ID="SAA_GENERAL_DISPLAYNAME">
+        <Original>Name</Original>
+        <Russian>Название</Russian>
+    </Key>
+
+    <Key ID="SAA_GENERAL_COUNT">
+        <Original>#</Original>
+        <Russian>#</Russian>
+    </Key>
+
+    <Key ID="SAA_GENERAL_TYPE">
+        <Original>Type</Original>
+        <Russian>Тип</Russian>
+    </Key>
+
+    <Key ID="SAA_GENERAL_CLASSNAME">
+        <Original>Classname</Original>
+        <Russian>Имя класса</Russian>
+    </Key>
+
+    <Key ID="SAA_GENERAL_NOSORTING">
+        <Original>No active sorting</Original>
+        <Russian>Сейчас не сортируется</Russian>
+    </Key>
+
+    <Key ID="SAA_GENERAL_ASCENDING">
+        <Original>Ascending</Original>
+        <Russian>По возрастанию</Russian>
+    </Key>
+
+    <Key ID="SAA_GENERAL_DESCENDING">
+        <Original>Descending</Original>
+        <Russian>По убыванию</Russian>
     </Key>
 
 </Container>
@@ -436,8 +516,8 @@
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_MAIN_ADDARSENAL_UNIFORMTYPE_SEMIARID"> 
-            <Original>Semi-Arid</Original> 
-            <Russian>Полупустынная</Russian> 
+            <Original>Multicam</Original> 
+            <Russian>Мультикам</Russian> 
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_MAIN_ADDARSENAL_UNIFORMTYPE_FOREST"> 
@@ -451,7 +531,7 @@
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_MAIN_ADDARSENAL_UNIFORMTYPE_BLACK"> 
-            <Original>Spec-Ops</Original> 
+            <Original>Black</Original> 
             <Russian>Чёрная</Russian> 
         </Key>
     
@@ -511,7 +591,7 @@
     
         <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_ZEUSMESSAGE_SUCCESS"> 
             <Original>Storage-Proxy has been assigned</Original> 
-            <Russian>Точка доступа к хранилищу добавлена</Russian> 
+            <Russian>Точка доступа к хранилищу назначена</Russian> 
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_MESSAGES_ALREADYSTORAGEPROXY"> 
@@ -815,12 +895,17 @@
     
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_SUCCESS"> 
             <Original>Amount of tickets has been changed</Original> 
-            <Russian>Количество тикетов изменено</Russian> 
+            <Russian>Количество тикетов было изменено</Russian> 
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_FAILED"> 
             <Original>Error: Enter value between -99 and 99 excluding 0</Original> 
             <Russian>Ошибка: Введите значение между -99 и 99, исключая 0</Russian> 
+        </Key>
+        
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_MESSAGE_UPDATEDVALUE"> 
+            <Original>Updated value</Original> 
+            <Russian>Новое значение</Russian> 
         </Key>
     
     </Container>
@@ -942,7 +1027,7 @@
         </Key>
     
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_SHOWHINT_TOOLTIP"> 
-            <Original>Player will recieve notification about arsenal position and type</Original> 
+            <Original>Player will recieve notification about new Respawn Point.</Original> 
             <Russian>Игроки получат информацию о появлении новой точки возрождения</Russian> 
         </Key>
     
@@ -954,6 +1039,16 @@
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_ERRORZEUSMESSAGE_ALREADYCV"> 
             <Original>Selected Respawn Vehicle is Command Vehicle Already</Original> 
             <Russian>Выбранный транспорт уже является КШМом</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNCVCREATED"> 
+            <Original>New CV have been assigned</Original> 
+            <Russian>Новая КШМ назначена</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNPOINTCREATED"> 
+            <Original>New Respawn Point has been assigned</Original> 
+            <Russian>Новая точка возрождения назначена</Russian> 
         </Key>
     
     </Container>
@@ -983,6 +1078,16 @@
         <Key ID="SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_ZEUSMESSAGE_SUCCESS"> 
             <Original>Respawn Point Successfully Removed</Original> 
             <Russian>Точка возрождения успешно удалена</Russian> 
+        </Key>
+
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_DIALOG_SHOWHINT_DISPLAYNAME"> 
+            <Original>Notify players</Original> 
+            <Russian>Уведомить игроков</Russian> 
+        </Key>
+    
+        <Key ID="SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_DIALOG_SHOWHINT_TOOLTIP"> 
+            <Original>Player will recieve notification about removed Respawn Point.</Original> 
+            <Russian>Игроки получат информацию об удалении точки возрождения</Russian> 
         </Key>
     
     </Container>
@@ -1124,31 +1229,88 @@
     </Container>
 </Container>
 
+<Container name = "Messages">
+    <Key ID="SAA_MESSAGE_PLAYERBACKPACKRESTRICTED"> 
+        <Original>This player in Arsenal right now. Access to his backpack is restricted.</Original> 
+        <Russian>Этот игрок сейчас в Арсенале. Доступ к его рюкзаку ограничен.</Russian> 
+    </Key>
+
+    <Key ID="SAA_MESSAGE_SIDETICKETSRUNSOUT"> 
+        <Original>side tickets run out</Original> 
+        <Russian>тикеты закончились</Russian> 
+    </Key>
+
+    <Key ID="SAA_MESSAGE_HASBEENDESTROYED"> 
+        <Original>has been destroyed</Original> 
+        <Russian>был уничтожен</Russian> 
+    </Key>
+
+    <Key ID="SAA_MESSAGE_HASBEENASSIGNED"> 
+        <Original>has been assigned</Original> 
+        <Russian>был назначен</Russian> 
+    </Key>
+
+    <Key ID="SAA_MESSAGE_HASBEENCREATED"> 
+        <Original>has been created</Original> 
+        <Russian>был создан</Russian> 
+    </Key>
+
+</Container>
+
 <Container name="Removed Items Dialog">
 
-    <Key ID="SAA_ACTION_REMOVEDITEMSLIST"> 
+    <Key ID="SAA_REMOVEDITEMSLIST_ACTION"> 
         <Original>Removed Items List</Original> 
-        <Russian>Список удаленного снаряжения</Russian> 
+        <Russian>Список удалённого снаряжения</Russian> 
     </Key>
 
-    <Key ID="SAA_DESCRIPTION_REMOVEDITEMSLIST_HEADER"> 
-        <Original>Removed Equipment</Original> 
-        <Russian>Удалённое снаряжение</Russian> 
+    <Key ID="SAA_REMOVEDITEMSLIST_HEADER"> 
+        <Original>Some items from your storage have been removed</Original> 
+        <Russian>Некоторые предметы из вашего хранилища были удалены</Russian> 
     </Key>
 
-    <Key ID="SAA_DESCRIPTION_REMOVEDITEMSLIST_DESC"> 
-        <Original>Some of your Storage equipment were removed due to your class restrictions</Original> 
-        <Russian>Следующее снаряжение было удалено из хранилища в связи с ограничениями Вашего класса</Russian> 
+    <Key ID="SAA_REMOVEDITEMSLIST_HELP_1"> 
+        <Original>Some of your equipment has been removed from storage. This is usually due to the fact that removed equipment is not available for purchase for your set of classes. The filter is sensitive to mods, so weapons from any mod that is not presented in the purchase store will be removed.</Original> 
+        <Russian>Часть вашего снаряжения была удалена из хранилища. Обычно это связано с тем, что удалённое снаряжение недоступно для покупки вашему набору классов. Фильтр чувствителен к модам, поэтому оружие из любого мода, которое не представлено в магазине покупки - будет удалено.</Russian> 
     </Key>
 
-    <Key ID="SAA_DESCRIPTION_REMOVEDITEMSLIST_HINT"> 
-        <Original>Double click on position to post line in global chat and send classname to the server</Original> 
-        <Russian>Двойное нажатие на строку в списке отправит её в глобальный чат и на сервер</Russian> 
+    <Key ID="SAA_REMOVEDITEMSLIST_HELP_2"> 
+        <Original>If you think that some things were deleted by mistake, especially if you recently changed the class, but the things inherent in your class (including those from the list of ordered items) were deleted - contact the administrator.</Original> 
+        <Russian>Если вы считаете, что какие-то вещи были удалены ошибочно, особенно если вы недавно сменили класс, но присущие вашему классу вещи (в том числе из списка заказываемого) были удалены - обратитесь к администратору.</Russian> 
     </Key>
 
-    <Key ID="SAA_DESCRIPTION_REMOVEDITEMSLIST_ITEMSLISTMSG"> 
-        <Original>None of your items were removed. Nothing to see here.</Original> 
-        <Russian>Ничего не было удалено. Можете закрыть это окно.</Russian> 
+    <Key ID="SAA_REMOVEDITEMSLIST_HELP_3"> 
+        <Original>Double-clicking on a line in the list will post it to the global chat.</Original> 
+        <Russian>Двойное нажатие на строку в списке отправит класс предмета в глобальный чат.</Russian> 
+    </Key>
+
+</Container>
+
+<Container name="Delivered Items Dialog">
+
+    <Key ID="SAA_DELIVEREDITEMSLIST_ACTION"> 
+        <Original>Delivered Items List</Original> 
+        <Russian>Список доставленного снаряжения</Russian> 
+    </Key>
+
+    <Key ID="SAA_DELIVEREDITEMSLIST_HEADER"> 
+        <Original>Your order has been delivered</Original> 
+        <Russian>Ваш заказ был доставлен</Russian> 
+    </Key>
+
+    <Key ID="SAA_DELIVEREDITEMSLIST_HELP_1"> 
+        <Original>The specified list of items was ordered by you, paid for and delivered to your personal storage. If the list of items does not include any items you bought that can be found on the deleted items screen, make sure that your order was made correctly for your class set.</Original> 
+        <Russian>Указанный список предметов был заказан, оплачен и доставлен в ваше личное хранилище. Если в списке предметов не числятся какие-то купленные вами вещи, которые можно найти на экране удалённых предметов - убедитесь, что ваш заказ был составлен корректно для вашего набора классов.</Russian> 
+    </Key>
+
+    <Key ID="SAA_DELIVEREDITEMSLIST_HELP_2"> 
+        <Original>If you think that some things were deleted by mistake, especially if you recently changed the class, but the things inherent in your class were deleted - contact the administrator.</Original> 
+        <Russian>Если вы считаете, что какие-то вещи были удалены ошибочно, особенно если вы недавно сменили класс, но присущие вашему классу вещи были удалены - обратитесь к администратору.</Russian> 
+    </Key>
+
+    <Key ID="SAA_DELIVEREDITEMSLIST_HELP_3"> 
+        <Original>Double-clicking on a line in the list will post it to the global chat.</Original> 
+        <Russian>Двойное нажатие на строку в списке отправит её в глобальный чат.</Russian> 
     </Key>
 
 </Container>

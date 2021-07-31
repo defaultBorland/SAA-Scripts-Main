@@ -18,8 +18,8 @@ if (_showInfo) then {
 	[[_object],
 	{
 		params ["_storageProxy"];
-		hint parseText format ["<t align='center' color='#ff0000'>%1</t><t align='center'><img size='4' image='%2'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction: %4</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %5</t>", localize "SAA_ZEUS_MODULES_STORAGE_ASSIGNSTORAGE_ZEUSMESSAGE_SUCCESS", getText(configfile >> "CfgVehicles" >> typeOf _storageProxy >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf _storageProxy >> "displayName"), floor ([player, _storageProxy] call BIS_fnc_dirTo), round (player distance _storageProxy)];
+		hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' image='%2'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%4: %5</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%6: %7</t>", localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS", getText(configfile >> "CfgVehicles" >> typeOf _storageProxy >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf _storageProxy >> "displayName"), localize "SAA_GENERAL_DIRECTION", floor (player getDir _storageProxy), localize "SAA_GENERAL_DISTANCE", round (player distance _storageProxy)];
+
+		systemChat format ["> Server: %1.", localize "SAA_ZEUS_MODULES_STORAGE_REMOVESTORAGE_ZEUSMESSAGE_SUCCESS"];
 	}] remoteExec ["call", -2];
 };
-
-["> Server: Storage was removed."] remoteExec ["systemChat"];

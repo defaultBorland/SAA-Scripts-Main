@@ -16,7 +16,6 @@ if (_clear isEqualTo 1) then {
 	clearBackpackCargoGlobal _vehicle;
 };
 
-//_vehicle setVariable ["ace_medical_medicClass", 1, true];
 _vehicle setVariable ["ace_medical_isMedicalVehicle", true, true];
 
 if (_addPAK isEqualTo 1) then {
@@ -24,13 +23,14 @@ if (_addPAK isEqualTo 1) then {
 };
 
 if (_showNotification) then {
-	[[_vehicle], {
-		params ["_vehicle"];
-		hint parseText format ["<t align='center'>Respawn-medical CV was assigned</t><t align='center'><img size='4' image='%1'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Direction: %3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Distance: %4</t>", getText(configfile >> "CfgVehicles" >> typeOf _vehicle >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), floor ([player, _vehicle] call BIS_fnc_dirTo), round (player distance _vehicle)];
+	[[_vehicle, _marker], {
+		params ["_vehicle", "_marker"];
+		hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' image='%2'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%4: %5</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%6: %7</t>", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNCVCREATED", getText(configfile >> "CfgVehicles" >> typeOf _vehicle >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), localize "SAA_GENERAL_DIRECTION", floor (player getDir _vehicle), localize "SAA_GENERAL_DISTANCE", round (player distance _vehicle)];
+
+		systemChat format ["> Server: %1: '%2'.", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNCVCREATED", markerText _marker];
 	}] remoteExec ["call", -2];
 };
 
-["> Server: New FOB assigned"] remoteExec ["systemChat"];
 _vehicle setVariable ["isFOB", true, true];
 
 [_vehicle, _marker] spawn {
@@ -41,7 +41,9 @@ _vehicle setVariable ["isFOB", true, true];
 	};
 
 	if !(alive _respawnFOB) then {
-		[format["> Server: Respawn CV '%1' were destroyed!", markerText _marker]] remoteExec ["systemChat", -2];
+		[[markerText _marker], {
+			systemChat format ["> Server: %1 '%2' %3!", localize "SAA_GENERAL_CV", _this # 0, localize "SAA_MESSAGE_HASBEENDESTROYED"];
+		}] remoteExec ["call", -2];
 	};
 
 	[_marker] call Shadec_fnc_removeRespawnPoint;

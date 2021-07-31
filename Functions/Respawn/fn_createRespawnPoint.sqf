@@ -9,9 +9,25 @@ _respawnTarget = []; // Object or Position
 if (isNull _objectUnderCursor) then {
 	diag_log format ["fn_createRespawnPos: POSITION TYPE"];
 	_respawnPositionData = [_side, _position, markerText _marker] call BIS_fnc_addRespawnPosition; // Marker -> Position
+	
 	if (_showNotification) then {
-		[format["Respawn Point '%1' added.", markerText _marker]] remoteExec ["hint", -2];
-		[format["> Server: Respawn Point '%1' added.", markerText _marker]] remoteExec ["systemChat", -2];
+
+	private _sidesInfo = [
+		[east, "#800000", "\A3\UI_F\data\Map\Markers\NATO\o_unknown"], 
+		[west, "#004D99", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"], 
+		[independent, "#008000", "\A3\UI_F\data\Map\Markers\NATO\n_unknown"], 
+		[civilian, "#660080", "\A3\UI_F\data\Map\Markers\NATO\b_unknown"]
+	];
+	private _info = _sidesInfo # ([_side] call BIS_fnc_sideID);
+
+		[[_marker, _side, _info], {
+			params ["_marker", "_side", "_sideInfo"];
+			_sideInfo params ["_side", "_color", "_picture"];
+			
+			hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' color='%2' image='%3'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%4</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%5: %6</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%7: %8</t>", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNPOINTCREATED", _color, _picture, markerText _marker, localize "SAA_GENERAL_DIRECTION", floor (player getDir markerPos _marker), localize "SAA_GENERAL_DISTANCE", round (player distance getMarkerPos _marker)];
+
+			systemChat format ["> Server: %1 '%2' %3.",localize "SAA_GENERAL_RESPAWNPOINT", markerText _marker, toLower localize "SAA_GENERAL_CREATED"];
+		}] remoteExec ["call", -2];
 	};
 	_respawnTarget pushBack _position; // КОСТЫЛЬ
 } else {

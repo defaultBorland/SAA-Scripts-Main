@@ -51,7 +51,7 @@ _EH_BackpackRestrict = player addEventHandler ["InventoryOpened",{
     _allUnitBackpackContainers = allUnits select {_x getVariable ["isArsenalOpened", false]} apply {backpackContainer _x};
 
         if (_container in _allUnitBackpackContainers) then {
-            systemchat "> Server: This player in Arsenal right now. Access to his backpack is restricted.";
+            systemchat format ["> Server: %1.", localize "SAA_MESSAGE_PLAYERBACKPACKRESTRICTED"];
             _override = true;
         };
 

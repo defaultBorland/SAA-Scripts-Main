@@ -17,7 +17,7 @@ if (!hasInterface) exitWith {"FNC: renameGroupDisplay | ERROR: Only local execut
 
 	_ctrlBackground ctrlSetPosition [0, 0, 0.43, 0.12];
 	_ctrlBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
-	_ctrlBackground ctrlSetText localize "STR_GROUPNAMING_TITLE_ENTERNAME";
+	_ctrlBackground ctrlSetText localize "SAA_GROUPNAMING_TITLE_ENTERNAME";
 	_ctrlBackground ctrlEnable false;
 	_ctrlBackground ctrlCommit 0;
 
@@ -38,7 +38,7 @@ if (!hasInterface) exitWith {"FNC: renameGroupDisplay | ERROR: Only local execut
 		if (_text != "") then {
 			private _allGroupsWithPlayers = [];
 			{_allGroupsWithPlayers pushBackUnique group _x} forEach allPlayers;
-			if (_text in (_allGroupsWithPlayers apply {groupID _x})) exitWith {cutText [localize "STR_GROUPNAMING_ERROR_ALREADYEXISTS", "PLAIN", 1]};
+			if (_text in (_allGroupsWithPlayers apply {groupID _x})) exitWith {cutText [localize "SAA_GROUPNAMING_ERROR_ALREADYEXISTS", "PLAIN", 1]};
 			(group player) setGroupIdGlobal [trim _text];
 		};
 		_display closeDisplay 1;

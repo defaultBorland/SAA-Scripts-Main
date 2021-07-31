@@ -15,7 +15,7 @@
 	_returnValues = ["AllDead"]; 
 	_returnValues append _players;
 	_displayValues = [localize "SAA_GENERAL_ALL" + " " + localize "SAA_GENERAL_DEAD"]; 
-	_displayValues append _players;
+	_displayValues append (_players apply {name _x});
 
 	[localize "SAA_ZEUS_MODULES_RESPAWN_FORCERESPAWNTIMER_DIALOG_HEADER",
 		[

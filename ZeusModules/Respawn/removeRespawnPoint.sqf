@@ -6,7 +6,7 @@
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	_respawnPositions = missionNamespace getVariable ["respawnPositions", []]; diag_log format ["VARS CHECK RRP | _respawnPositions: %1", _respawnPositions];
-	_markersNames = _respawnPositions apply { markerText (_x # 0)};
+	_markersNames = _respawnPositions apply {markerText (_x # 0)};
 
 	[localize "SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_DIALOG_HEADER",
 		[

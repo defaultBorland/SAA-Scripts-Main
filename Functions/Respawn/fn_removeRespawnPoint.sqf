@@ -13,7 +13,7 @@ if ("FOB" in (_respawnPositions # _respawnPositionIndex # 0)) then {[_respawnPos
 if (_showNotification) then {
 	[[markerText _marker], {
 		params ["_markerText"];
-		systemChat format ["> Server: %1 '%2' %3.", localize "SAA_GENERAL_RESPAWNPOINT", markerText _markerText, toLower localize "SAA_GENERAL_REMOVED"];
+		systemChat format ["> Server: %1 '%2' %3.", localize "SAA_GENERAL_RESPAWNPOINT", _markerText, toLower localize "SAA_GENERAL_REMOVED"];
 	}] remoteExec ["call", -2];
 };
 

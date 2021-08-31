@@ -6,8 +6,8 @@ params ["_storageList", "_pcid", "_uid", "_purchaseOrder"];
 (missionNamespace getVariable [format["%1_DATA", _uid], ["PV1","Rifleman", "None"]]) params ["_rank", "_primClass", "_secClass"];
 private _boxClass = "";
 switch (_primClass) do {
-	case "ATSpec": {_boxClass = "Box_NATO_Equip_F"};
-	case "Machinegunner": {_boxClass = "CargoNet_01_box_F"};
+	case "ATSpec": {_boxClass = "Box_NATO_Equip_F"}; // maximumLoad = 7000
+	case "Machinegunner": {_boxClass = "CargoNet_01_box_F"}; // maximumLoad = 6000
 	case "Rifleman";
 	case "Nurse";
 	case "Medic";
@@ -15,7 +15,7 @@ switch (_primClass) do {
 	case "Engineer";
 	case "Marksman";
 	case "Sniper";
-	default {_boxClass = "B_supplyCrate_F"};
+	default {_boxClass = "B_supplyCrate_F"}; // maximumLoad = 4000
 };
 
 missionNamespace setVariable [format["pStorage_%1", _uid], createVehicle [_boxClass, [0,0,0], [], 0, "CAN_COLLIDE"], true];

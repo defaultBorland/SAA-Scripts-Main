@@ -4,6 +4,15 @@
 _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_pcid", "_uid", "_name"];
 
+	// If player was Unconscious
+	if (_unit getvariable ["ACE_isUnconscious", false]) then {
+		[[_name], {
+			systemChat format["> Server: %1 %2!", _this # 0, localize "SAA_MESSAGE_PLAYERLEFTUNCONSCIOUS"];
+		}] remoteExec ["call", -2];
+
+		"debug_console" callExtension ((_name + " disconnected while unconcsious!") + "#1001");
+	};
+
 	// If player equipment didn't load for some reason - don't save
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then {
 		[_unit, _uid, _name] spawn Shadec_fnc_savePlayer;
@@ -16,14 +25,17 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	} else {
 		diag_log format ["Loadout not loaded, abort player saving: %1", _name];
 	};
-
 	missionNamespace setVariable [format["loadoutLoaded_%1", _uid], nil, true];
+
+	// Unlick server if no players present
+	if (count allPlayers - 1 < 1) then {"f5znFms2" serverCommand "#unlock"};
+
 	false;
 }];
 
 //Player disconnected handler with _owner passed
-_EH_PlayerDisconnected = addMissionEventHandler ["PlayerDisconnected", {
-	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+// _EH_PlayerDisconnected = addMissionEventHandler ["PlayerDisconnected", {
+// 	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
 
-	if (count allPlayers - 1 < 1) then {"f5znFms2" serverCommand "#unlock"};
-}];
+	
+// }];

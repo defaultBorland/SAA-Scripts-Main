@@ -9,6 +9,11 @@
 		[objNull, localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_ERRORZEUSMESSAGE_ALREADYCV"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
+	private _name = "FOB";
+	if (!(isNull _objectUnderCursor)) then {
+		_name = getText (configFile >> "CfgVehicles" >> typeOf _objectUnderCursor >> "displayName");
+	};
+
 	[localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_HEADER",
 		[
 			["COMBO", [localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_MARKERTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_MARKERTYPE_TOOLTIP"],
@@ -28,7 +33,7 @@
 			],
 			["EDIT", [localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_RESPAWNNAME_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_RESPAWNNAME_TOOLTIP"],
 				[
-					"FOB/CV",
+					_name,
 					{
 
 					}

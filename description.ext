@@ -12,6 +12,7 @@ disabledAI = 1;
 enableDebugConsole[] = {"76561198066438612"};
 debriefing = 0;
 allowProfileGlasses = 0;
+// skipLobby = 1;
 
 //Function library definitions
 class CfgFunctions

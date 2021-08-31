@@ -118,7 +118,7 @@ class dialog_ListNBox {
 			autoScrollRewind = 0; 
 			arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)"; 
 			arrowFull = "#(argb,8,8,3)color(1,1,1,1)"; 
-			columns[] = {0, 0.07, 0.45, 0.5, 0.65};
+			columns[] = {0, 0.07, 0.43, 0.5, 0.65};
 			disableOverflow = 1;
 			color[] = {1, 1, 1, 1}; 
 			colorScrollbar[] = {1, 1, 1, 1};

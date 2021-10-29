@@ -24,9 +24,9 @@ if (isNull _objectUnderCursor) then {
 			params ["_marker", "_side", "_sideInfo"];
 			_sideInfo params ["_side", "_color", "_picture"];
 			
-			hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' color='%2' image='%3'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%4</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%5: %6</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%7: %8</t>", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNPOINTCREATED", _color, _picture, markerText _marker, localize "SAA_GENERAL_DIRECTION", floor (player getDir markerPos _marker), localize "SAA_GENERAL_DISTANCE", round (player distance getMarkerPos _marker)];
+			hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' color='%2' image='%3'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%4</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%5: %6</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%7: %8</t>", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNPOINTCREATED", _color, _picture, markerText _marker, localize "STR_SAA_GENERAL_DIRECTION", floor (player getDir markerPos _marker), localize "STR_SAA_GENERAL_DISTANCE", round (player distance getMarkerPos _marker)];
 
-			systemChat format ["> Server: %1 '%2' %3.",localize "SAA_GENERAL_RESPAWNPOINT", markerText _marker, toLower localize "SAA_GENERAL_CREATED"];
+			systemChat format ["> Server: %1 '%2' %3.",localize "STR_SAA_GENERAL_RESPAWN_POINT", markerText _marker, toLower localize "STR_SAA_GENERAL_CREATED"];
 		}] remoteExec ["call", -2];
 	};
 	_respawnTarget pushBack _position; // КОСТЫЛЬ

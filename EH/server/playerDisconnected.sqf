@@ -7,7 +7,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	// If player was Unconscious
 	if (_unit getvariable ["ACE_isUnconscious", false]) then {
 		[[_name], {
-			systemChat format["> Server: %1 %2!", _this # 0, localize "SAA_MESSAGE_PLAYERLEFTUNCONSCIOUS"];
+			systemChat format["> Server: %1 %2!", _this # 0, localize "STR_SAA_MESSAGE_PLAYER_LEFT_UNCONSCIOUS"];
 		}] remoteExec ["call", -2];
 
 		"debug_console" callExtension ((_name + " disconnected while unconcsious!") + "#1001");

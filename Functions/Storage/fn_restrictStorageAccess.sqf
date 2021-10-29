@@ -14,7 +14,7 @@ if (_showInfo) then {
 		[_target, _isRestricted],
 		{
 			params ["_target", "_isRestricted"];
-			systemChat format ["%1 %2", [name _target, localize "SAA_GENERAL_EACH" + " " + toLower localize "SAA_GENERAL_PLAYER"] select (_target isEqualType []), [localize "SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_ZEUSMESSAGE_GRANTED", localize "SAA_ZEUS_MODULES_STORAGE_RESTRICTSTORAGEACCESS_ZEUSMESSAGE_RESTRICTED"] select _isRestricted];
+			systemChat format ["%1 %2", [name _target, localize "STR_SAA_GENERAL_EACH" + " " + toLower localize "STR_SAA_GENERAL_PLAYER"] select (_target isEqualType []), [localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_GRANTED", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_RESTRICTED"] select _isRestricted];
 		}
 	] remoteExec ["call", -2];
 };

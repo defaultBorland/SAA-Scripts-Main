@@ -7,7 +7,7 @@ private _uid = getPlayerUID player;
 // Check if player has World that loaded on server
 if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {
 	[[(name player) + " have not loaded needed map. Kicking out."], {"debug_console" callExtension ((_this # 0) + "#1001")}] remoteExec ["call", 2];
-	[[name player], {systemChat format ["%1 %2", _this # 0, localize "SAA_MESSAGE_WORLDNOTLOADED"]}] remoteExec ["call", -2];
+	[[name player], {systemChat format ["%1 %2", _this # 0, localize "STR_SAA_MESSAGE_WORLD_NOT_LOADED"]}] remoteExec ["call", -2];
 
 	"missingMap" call BIS_fnc_endMission;
 };
@@ -40,6 +40,9 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [player] spawn Shadec_fnc_loadPlayer;
 
 // Add Actions
+[] execVM "Mechanics\Root\RootActions_init.sqf";
+[] execVM "Mechanics\Reloadout\LoadoutFix_init.sqf";
+
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
 [] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
 [] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
@@ -49,7 +52,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
 
 // Execute EHs
-//[] execVM "EH\player\getOut.sqf";
+[] execVM "EH\player\getOut.sqf";
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
 [] execVM "EH\player\serverFps.sqf";

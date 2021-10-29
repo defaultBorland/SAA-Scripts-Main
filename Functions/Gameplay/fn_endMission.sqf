@@ -6,4 +6,6 @@ params ["_endType"];
 	diag_log format["PLAYER FINISHED:%1", _x];
 } forEach allPlayers;
 
+"debug_console" callExtension (("Mission ended.") + "#0101");
+
 _endType call BIS_fnc_endMissionServer;

@@ -36,7 +36,7 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
 
         // If unit has Long Range Radio - Load Freqs before Respawn
         if (call TFAR_fnc_haveLRRadio) then {
-            if (isNil {_unit getVariable "radioLrSettings"}) exitWith {};
+            if (isNil {player getVariable "radioLrSettings"}) exitWith {};
             [(call TFAR_fnc_activeLrRadio) select 0, (call TFAR_fnc_activeLrRadio) select 1, player getVariable "radioLrSettings"] call TFAR_fnc_setLrSettings;
         };
     };

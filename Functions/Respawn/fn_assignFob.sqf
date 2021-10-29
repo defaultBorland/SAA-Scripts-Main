@@ -25,9 +25,9 @@ if (_addPAK isEqualTo 1) then {
 if (_showNotification) then {
 	[[_vehicle, _marker], {
 		params ["_vehicle", "_marker"];
-		hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' image='%2'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%4: %5</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%6: %7</t>", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNCVCREATED", getText(configfile >> "CfgVehicles" >> typeOf _vehicle >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), localize "SAA_GENERAL_DIRECTION", floor (player getDir _vehicle), localize "SAA_GENERAL_DISTANCE", round (player distance _vehicle)];
+		hint parseText format ["<t align='center'>%1</t><t align='center'><img size='4' image='%2'/></t><br/><br/><t align='center' shadow='1' shadowColor='#000000'>%3</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%4: %5</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%6: %7</t>", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNCVCREATED", getText(configfile >> "CfgVehicles" >> typeOf _vehicle >> "picture"), getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName"), localize "STR_SAA_GENERAL_DIRECTION", floor (player getDir _vehicle), localize "STR_SAA_GENERAL_DISTANCE", round (player distance _vehicle)];
 
-		systemChat format ["> Server: %1: '%2'.", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MESSAGE_RESPAWNCVCREATED", markerText _marker];
+		systemChat format ["> Server: %1: '%2'.", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNCVCREATED", markerText _marker];
 	}] remoteExec ["call", -2];
 };
 
@@ -42,7 +42,7 @@ _vehicle setVariable ["isFOB", true, true];
 
 	if !(alive _respawnFOB) then {
 		[[markerText _marker], {
-			systemChat format ["> Server: %1 '%2' %3!", localize "SAA_GENERAL_CV", _this # 0, localize "SAA_MESSAGE_HASBEENDESTROYED"];
+			systemChat format ["> Server: %1 '%2' %3!", localize "STR_SAA_GENERAL_CV", _this # 0, localize "STR_SAA_MESSAGE_HAS_BEEN_DESTROYED"];
 		}] remoteExec ["call", -2];
 	};
 

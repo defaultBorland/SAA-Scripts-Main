@@ -17,7 +17,7 @@ _rowNumber = 0;
 
 if !(_weaponsRemoved isEqualTo []) then {
 	_rowNumber = _rowNumber + 1;
-	_ctrl lbAdd format ["      > %1 <      ", localize "SAA_GENERAL_WEAPONS"];
+	_ctrl lbAdd format ["      > %1 <      ", localize "STR_SAA_GENERAL_WEAPONS"];
 	{
 		_ctrl lbAdd format ["%1 | x%2", _x # 0, str (_x # 1)];
 		_ctrl lbSetTooltip [_rowNumber, _x # 2];
@@ -30,7 +30,7 @@ if !(_weaponsRemoved isEqualTo []) then {
 
 if !(_magazinesRemoved isEqualTo []) then {
 	_rowNumber = _rowNumber + 1;
-	_ctrl lbAdd format ["      > %1 <      ", localize "SAA_GENERAL_MAGAZINES"];
+	_ctrl lbAdd format ["      > %1 <      ", localize "STR_SAA_GENERAL_MAGAZINES"];
 	{
 		_ctrl lbAdd format ["%1 | x%2", _x # 0, str (_x # 1)];
 		_ctrl lbSetTooltip [_rowNumber, _x # 2];
@@ -43,7 +43,7 @@ if !(_magazinesRemoved isEqualTo []) then {
 
 if !(_itemsRemoved isEqualTo []) then {
 	_rowNumber = _rowNumber + 1;
-	_ctrl lbAdd format ["      > %1 <      ", localize "SAA_GENERAL_ITEMS"];
+	_ctrl lbAdd format ["      > %1 <      ", localize "STR_SAA_GENERAL_ITEMS"];
 	{
 		_ctrl lbAdd format ["%1 | x%2", _x # 0, str (_x # 1)];
 		_ctrl lbSetTooltip [_rowNumber, _x # 2];
@@ -56,7 +56,7 @@ if !(_itemsRemoved isEqualTo []) then {
 
 if !(_equipmentRemoved isEqualTo []) then {
 	_rowNumber = _rowNumber + 1;
-	_ctrl lbAdd format ["      > %1 <      ", localize "SAA_GENERAL_EQUIPMENT"];
+	_ctrl lbAdd format ["      > %1 <      ", localize "STR_SAA_GENERAL_EQUIPMENT"];
 	{
 		_ctrl lbAdd format ["%1 | x%2", _x # 0, str (_x # 1)];
 		_ctrl lbSetTooltip [_rowNumber, _x # 2];

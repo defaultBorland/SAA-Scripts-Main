@@ -1,22 +1,22 @@
 //
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_RADIO", localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_RADIO", localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	if (isNull _objectUnderCursor) exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
-	[localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_HEADER",
+	[localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_HEADER",
 		[
-			["SLIDER", [localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_DISTANCE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_DISTANCE_TOOLTIP"],
+			["SLIDER", [localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_DISTANCE_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_DISTANCE_TOOLTIP"],
 				[
 					1, 20000, 3000, 0
 				]
 			],
-			["SLIDER", [localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_STRENGHT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_STRENGHT_TOOLTIP"],
+			["SLIDER", [localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_STRENGHT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_STRENGHT_TOOLTIP"],
 				[
 					0, 1, 0.5, 1
 				]
@@ -30,7 +30,7 @@
 			_strenght = round (_strenght * 50);
 			
 			[["Add",[_distance, _strenght, _selectedObject]], Shadec_fnc_assignJammer] remoteExec ["spawn", 2];
-			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},
 		[_objectUnderCursor]

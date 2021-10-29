@@ -3,6 +3,8 @@
 private _EH_Index = player addEventHandler ["GetOutMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 
+	sleep 3;
+
 	[{player isEqualTo (vehicle player)}, {
 		params ["_unit", "_vehicle"];
 		[[_unit, getUnitLoadout _unit, _vehicle], {
@@ -10,7 +12,7 @@ private _EH_Index = player addEventHandler ["GetOutMan", {
 			diag_log format ["EH_GETOUT | _localLoadout: %1, _serverLoadout: %2", _localLoadout, getUnitLoadout _unit];
 			if !((getUnitLoadout _unit) isEqualTo _localLoadout) then {
 				// _unit setUnitLoadout _localLoadout;
-				[[name _unit, typeOf _vehicle], {systemChat format["[DEBUG] > Server: %1 getting out of %2 with unmet loadouts on client/server.", _this # 0, _this # 1]}] remoteExec ["call", -2];
+				[[name _unit, typeOf _vehicle], {systemChat format["[DEBUG] > Server: %1 getting out of '%2' with unmet loadouts on client/server.", _this # 0, _this # 1]}] remoteExec ["call", -2];
 			};
 		}] remoteExec ["call", 2];
 	}, [_unit, _vehicle], 10, {}] call CBA_fnc_waitUntilAndExecute;

@@ -1,6 +1,6 @@
 #include "GUI\ListNBox_dialog.h"
 
-onLoadName = "SAA Project [dev]";
+onLoadName = "SAA Project [DEV]";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
 respawnDelay = 120;
@@ -17,8 +17,8 @@ allowProfileGlasses = 0;
 //Function library definitions
 class CfgFunctions
 {
-    class Shadec
-    {
+    class Shadec {
+
 		class Arsenal {
 			class addArsenalSpecificItems {};
 			class addShadecArsenal {};
@@ -102,6 +102,14 @@ class CfgFunctions
 			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
 		};
     };
+
+	class Achilles {
+		class Achilles {
+			class switchUnit_start {};
+			class switchUnit_exit {};
+			class addBreachDoorAction {};
+		};
+	};
 };
 
 //Remote execution config
@@ -117,56 +125,56 @@ class CfgRemoteExec
 class CfgDebriefing
 {  
 	class Win {
-		title = "Mission Complete";
-		subtitle = "Respect+";
+		title = "$STR_SAA_DEBRIEFING_WIN_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_WIN_SUBTITLE";
 		description = "";
 		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca";
 		pictureColor[] = {0.1,0.6,0.2,1};
 	};
 
 	class Lose {
-		title = "Mission Failed";
-		subtitle = "We'll get em next time?...";
+		title = "$STR_SAA_DEBRIEFING_LOSE_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_LOSE_SUBTITLE";
 		description = "";
 		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class toBeContinued {
-		title = "To be continued...";
-		subtitle = "Until next time...";
+		title = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_SUBTITLE";
 		description = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca";
 		pictureColor[] = {1,1,1,1};
 	};
 
 	class allDead {
-		title = "You all died!";
-		subtitle = "Everyone is dead.";
+		title = "$STR_SAA_DEBRIEFING_ALL_DEAD_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_ALL_DEAD_SUBTITLE";
 		description = "";
 		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class missingMap {
-		title = "Missing Map";
-		subtitle = "You have not loaded required map for this mission";
-		description = "Go to the Arma 3 Launcher and activate neccessary map, then come back.";
+		title = "$STR_SAA_DEBRIEFING_MISSING_MAP_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_MISSING_MAP_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_MISSING_MAP_DESCRIPTION";
 		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class somethingWentWrong {
-		title = "Something Went Wrong";
-		subtitle = "Inform administration about your problem";
-		description = "Do not try to rejoin, inform administration first.";
+		title = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_DESCRIPTION";
 		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";
 		pictureColor[] = {1,1,1,1};
 	};
 
 	class promotedToZeus {
-		title = "Promoted To Zeus";
-		subtitle = "You have been promoted to SAA-Zeus";
-		description = "Your data was saved. Please, reselect playable slot and proceed.";
+		title = "$STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_DESCRIPTION";
 		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Zeus_ca";
 		pictureColor[] = {1,1,1,1};
 	};

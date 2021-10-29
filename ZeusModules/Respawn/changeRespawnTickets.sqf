@@ -1,27 +1,27 @@
 //
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_RESPAWN", localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_RESPAWN", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+	// 	[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	// };
 
-	[localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_TICKETSLEFT", format["WEST: %1 | EAST: %2 | GUER: %3 | CIV: %4", [west] call BIS_fnc_respawnTickets, [east] call BIS_fnc_respawnTickets, [independent] call BIS_fnc_respawnTickets, [civilian] call BIS_fnc_respawnTickets], 3] call BIS_fnc_curatorHint;
+	[localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_TICKETSLEFT", format["WEST: %1 | EAST: %2 | GUER: %3 | CIV: %4", [west] call BIS_fnc_respawnTickets, [east] call BIS_fnc_respawnTickets, [independent] call BIS_fnc_respawnTickets, [civilian] call BIS_fnc_respawnTickets], 3] call BIS_fnc_curatorHint;
 
-	[localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_HEADER",
+	[localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_HEADER",
 		[
-			["SLIDER", [localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_TICKETSAMOUNT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_TICKETSAMOUNT_TOOLTIP"],
+			["SLIDER", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_TICKETSAMOUNT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_TICKETSAMOUNT_TOOLTIP"],
 				[
 					-99, 99, 1, 0
 				]
 			],
-			["SIDES", [localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_SIDE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RADIO_ADDJAMMINGOBJECT_DIALOG_SIDE_TOOLTIP"],
+			["SIDES", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_TOOLTIP"],
 				west
 			],
-			["CHECKBOX", [localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_SHOWHINT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_DIALOG_SHOWHINT_TOOLTIP"],
+			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SHOWHINT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SHOWHINT_TOOLTIP"],
 				true
 			]
 		],
@@ -30,14 +30,14 @@
 			_dialogResult params ["_ticketsChange", "_side", "_showToAll"];
 			
 			if (_ticketsChange isEqualTo 0) then {
-				[localize "SAA_GENERAL_FAILURE", localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_FAILED", 3] call BIS_fnc_curatorHint;
+				[localize "STR_SAA_GENERAL_FAILURE", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_FAILED", 3] call BIS_fnc_curatorHint;
 			} else {
 				[[_SIDE, _ticketsChange, _showToAll], Shadec_fnc_changeRespawnTickets] remoteExec ["call", 2];
-				[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+				[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 
 				[ // Update zeus hint with tickets amount
 					{
-						[localize "SAA_ZEUS_MODULES_RESPAWN_CHANGETICKETSAMOUNT_ZEUSMESSAGE_TICKETSLEFT", format ["WEST: %1 | EAST: %2 | GUER: %3 | CIV: %4", [west] call BIS_fnc_respawnTickets, [east] call BIS_fnc_respawnTickets, [independent] call BIS_fnc_respawnTickets, [civilian] call BIS_fnc_respawnTickets], 3] call BIS_fnc_curatorHint;
+						[localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_TICKETSLEFT", format ["WEST: %1 | EAST: %2 | GUER: %3 | CIV: %4", [west] call BIS_fnc_respawnTickets, [east] call BIS_fnc_respawnTickets, [independent] call BIS_fnc_respawnTickets, [civilian] call BIS_fnc_respawnTickets], 3] call BIS_fnc_curatorHint;
 					}, [], 1
 				] call CBA_fnc_waitAndExecute;
 			};

@@ -7,7 +7,7 @@ fnc_keepInStorage = {
 	if !(_class in _availiableEquipment) then {
 		switch (([_class] call BIS_fnc_itemType) # 0) do {
 			case "Weapon": {
-				_additionalWeapons = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold", "rhs_weap_pp2000"];
+				_additionalWeapons = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold", "rhsusf_weap_MP7A2_folded", "rhsusf_weap_MP7A2_folded_winter", "rhsusf_weap_MP7A2_folded_aor1", "rhsusf_weap_MP7A2_folded_desert"];
 				if (_class in _additionalWeapons) exitWith {_return = true};
 				
 				_class = [_class] call BIS_fnc_baseWeapon;

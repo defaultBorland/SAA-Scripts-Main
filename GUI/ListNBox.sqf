@@ -5,7 +5,7 @@ fnc_resetHeadersTooltips = {
 	params [["_exclude", [0]]];
 	private _ids = [1011, 1012, 1013, 1014] - _exclude;
 	{
-		((findDisplay 1000) displayCtrl _x) ctrlSetTooltip localize "SAA_GENERAL_NOSORTING";
+		((findDisplay 1000) displayCtrl _x) ctrlSetTooltip localize "STR_SAA_GENERAL_NO_SORTING";
 	} forEach _ids;
 };
 
@@ -20,16 +20,16 @@ _listNBox ctrlAddEventHandler ["LBDblClick", {
 }];
 
 private _coloumnHeader1 = _display displayCtrl 1011;
-_coloumnHeader1 ctrlSetText localize "SAA_GENERAL_DISPLAYNAME";
+_coloumnHeader1 ctrlSetText localize "STR_SAA_GENERAL_DISPLAYNAME";
 
 private _coloumnHeader2 = _display displayCtrl 1012;
-_coloumnHeader2 ctrlSetText localize "SAA_GENERAL_COUNT";
+_coloumnHeader2 ctrlSetText localize "STR_SAA_GENERAL_COUNT";
 
 private _coloumnHeader3 = _display displayCtrl 1013;
-_coloumnHeader3 ctrlSetText localize "SAA_GENERAL_TYPE";
+_coloumnHeader3 ctrlSetText localize "STR_SAA_GENERAL_TYPE";
 
 private _coloumnHeader4 = _display displayCtrl 1014;
-_coloumnHeader4 ctrlSetText localize "SAA_GENERAL_CLASSNAME";
+_coloumnHeader4 ctrlSetText localize "STR_SAA_GENERAL_CLASSNAME";
 
 { // ctrl EH for 1-4 coloumn headers
 	_x ctrlAddEventHandler ["ButtonDown",	{	
@@ -39,12 +39,12 @@ _coloumnHeader4 ctrlSetText localize "SAA_GENERAL_CLASSNAME";
 		[[ctrlIDC _ctrl]] call fnc_resetHeadersTooltips;
 
 		private _reverse = false;
-		if ((ctrlTooltip _ctrl) isEqualTo localize "SAA_GENERAL_ASCENDING") then {
+		if ((ctrlTooltip _ctrl) isEqualTo localize "STR_SAA_GENERAL_ASCENDING") then {
 			_reverse = true;
-			_ctrl ctrlSetTooltip localize "SAA_GENERAL_DESCENDING";
+			_ctrl ctrlSetTooltip localize "STR_SAA_GENERAL_DESCENDING";
 		} else {
 			_reverse = false;
-			_ctrl ctrlSetTooltip localize "SAA_GENERAL_ASCENDING";
+			_ctrl ctrlSetTooltip localize "STR_SAA_GENERAL_ASCENDING";
 		};
 
 		private _coloumn = (ctrlIDC _ctrl) % 10;
@@ -58,7 +58,7 @@ _coloumnHeader4 ctrlSetText localize "SAA_GENERAL_CLASSNAME";
 
 
 private _buttonHide = _display displayCtrl 1070;
-_buttonHide ctrlSetText localize "SAA_GENERAL_HIDE";
+_buttonHide ctrlSetText localize "STR_SAA_GENERAL_HIDE";
 _buttonHide ctrlAddEventHandler ["ButtonDown",	{	
 	params ["_ctrl"];
 	closeDialog 0;

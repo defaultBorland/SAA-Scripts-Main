@@ -1,24 +1,24 @@
 // Zeus End Mission Module (SCENARIO FLOW TAB)
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_SCENARIOFLOW", localize "SAA_ZEUS_MODULES_SCENARIOFLOW_ENDMISION_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_SCENARIO_FLOW", localize "STR_SAA_ZEUS_MODULES_SCENARIO_FLOW_END_MISSION_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+	// 	[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	// };
 
-	[localize "SAA_ZEUS_MODULES_MAIN_ENDMISION_DIALOG_HEADER",
+	[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_HEADER",
 		[
-			["COMBO", [localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_TOOLTIP"],
+			["COMBO", [localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_TOOLTIP"],
 				[
 					["Win", "Lose", "toBeContinued", "allDead"],
 					[
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca"], 
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca"], 
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED_TOOLTIP", "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca"], 
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP", "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca"]
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca"], 
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca"], 
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED_TOOLTIP", "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca"], 
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP", "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca"]
 					],
 					0
 				]
@@ -30,7 +30,7 @@
 
 			[[_endType], Shadec_fnc_endMission] remoteExec ["call", 2];
 	
-			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},
 		[]
@@ -39,25 +39,25 @@
 
 
 // Zeus End Mission Module (SAA MAIN TAB)
-[localize "SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "SAA_ZEUS_MODULES_MAIN_ENDMISION_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+	// 	[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	// };
 
-	[localize "SAA_ZEUS_MODULES_MAIN_ENDMISION_DIALOG_HEADER",
+	[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_HEADER",
 		[
-			["COMBO", [localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_DIALOG_ENDTYPE_TOOLTIP"],
+			["COMBO", [localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_TOOLTIP"],
 				[
 					["Win", "Lose", "toBeContinued", "allDead"],
 					[
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_WIN_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca"], 
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_LOSE_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca"], 
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_TOBECONTINUED_TOOLTIP", "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca"], 
-						[localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP", "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca"]
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca"], 
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE_TOOLTIP", "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca"], 
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED_TOOLTIP", "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca"], 
+						[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP", "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca"]
 					],
 					0
 				]
@@ -69,7 +69,7 @@
 
 			[[_endType], Shadec_fnc_endMission] remoteExec ["call", 2];
 	
-			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_MAIN_ENDMISSION_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},
 		[]

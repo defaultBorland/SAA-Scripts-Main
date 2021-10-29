@@ -6,7 +6,7 @@ _data = [_uid,_unit];
 if (_unit getVariable ["SAA_isZeus", false]) exitWith {
 	[] call Shadec_fnc_addZeusModules;
     [[player, "assign"], Shadec_fnc_manageCurators] remoteExec ["call", 2];
-    _unit addAction [ localize "SAA_ASSIGN_ZEUS_ACTION", {
+    _unit addAction [ localize "STR_SAA_ASSIGN_ZEUS_ACTION", {
         [[player, "assign"], Shadec_fnc_manageCurators] remoteExec ["call", 2];
     }];
 };

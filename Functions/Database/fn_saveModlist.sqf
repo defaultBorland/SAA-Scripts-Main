@@ -43,7 +43,7 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 	} forEach _clientModlist;
 
 	if (_isRestrictedModsFounded) then {
-		[[name player], {systemChat format["> Server: %1! %2 %3:", localize "SAA_GENERAL_WARNING", _this # 0, localize "SAA_MESSAGE_RESTRICTEDMODSFOUND"]}] remoteExec ["call"];
+		[[name player], {systemChat format["> Server: %1! %2 %3:", localize "STR_SAA_GENERAL_WARNING", _this # 0, localize "STR_SAA_MESSAGE_RESTRICTED_MODS_FOUND"]}] remoteExec ["call"];
 		[[(name player) + " sus/restr mods:"], {"debug_console" callExtension ((_this # 0) + "#1001")}] remoteExec ["call", 2];
 		{
 			[[_x],{systemChat format["%1", _this # 0]}] remoteExec ["call"];

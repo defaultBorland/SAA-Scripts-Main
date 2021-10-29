@@ -95,8 +95,7 @@ switch (_groupBy) do {
 		if (_caller isEqualTo objNull) exitWith {diag_log format ["playersList FNC ERROR | No object passed into squad case"]};
 		_status = "Squad";
 		_playersGrouped pushBack [format ["%1 (%2)", groupID group _caller, name leader group _caller], _players select {(_x # 5) isEqualTo (group _caller)}];
-		_targetsCount = "-";
-		_playersCount = "-";
+		_targetsCount = count (_playersGrouped # 0 # 1);
 	};
 	default {};
 };

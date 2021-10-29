@@ -42,7 +42,9 @@ _prefix = _prefixMain + "Utilities\";
 	
 ];
 
-// Utilities
-// [] execVM "Functions\ZeusModules\Utilites\spawnSoldiers.sqf";
-// [] execVM "Functions\ZeusModules\Utilites\clearVehicleInventory.sqf";
-// [] execVM "Functions\ZeusModules\Utilites\healAllPlayers.sqf";
+// Achilles
+_prefix = _prefixMain + "Achilles\";
+{[] execVM (_prefix + _x)} forEach [
+	//"switchUnit.sqf",
+	//"spawnExplosives.sqf"
+];

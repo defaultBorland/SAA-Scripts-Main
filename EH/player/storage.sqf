@@ -4,13 +4,13 @@
 _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
     if !((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
-        cutText [localize "SAA_STORAGE_ACCESS_STRANGER", "PLAIN", 2];
+        cutText [localize "STR_SAA_STORAGE_ACCESS_STRANGER", "PLAIN", 2];
         closeDialog 602; true;
     };
 
     if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
         if (player getVariable ["SAA_storageRestricted", false]) exitWith {
-            cutText [localize "SAA_STORAGE_ACCESS_RESTRICTED", "PLAIN", 2];
+            cutText [localize "STR_SAA_STORAGE_ACCESS_RESTRICTED", "PLAIN", 2];
             closeDialog 602; true;
         };
     };

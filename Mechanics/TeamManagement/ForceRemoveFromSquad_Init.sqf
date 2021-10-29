@@ -12,7 +12,7 @@ _insertChildren = {
 			params ["_target", "_player", "_actionParams"];
 			_actionParams params ["_commander", "_slave"];
 
-			[[_slave, _commander], {systemChat format ["> Server: %1 %2 %3.", name (_this # 0), localize "SAA_FORCEREMOVEFROMSQUAD_CHATINFO", name (_this # 1)]}] remoteExec ["call", -2];
+			[[_slave, _commander], {systemChat format ["> Server: %1 %2 %3.", name (_this # 0), localize "STR_SAA_FORCE_REMOVE_FROM_SQUAD_CHATINFO", name (_this # 1)]}] remoteExec ["call", -2];
 			[_slave] joinSilent grpNull;
 			[{
 				[["All", "Groups", side (_this # 0), true], Shadec_fnc_playersList] remoteExec ["call", 2];
@@ -26,7 +26,7 @@ _insertChildren = {
 };
 
 //
-_action = ["forceRemoveFromSquad", localize "SAA_FORCEREMOVEFROMSQUAD_ACTIONNAME", "img\SAA_logo_256.paa",
+_action = ["forceRemoveFromSquad", localize "STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTIONNAME", "img\removeFromSquad.paa",
 	{
 		params ["_target", "_player", "_actionParams"];
 		[["All", "Groups", side _player, true], Shadec_fnc_playersList] remoteExec ["call", 2];
@@ -40,4 +40,4 @@ _action = ["forceRemoveFromSquad", localize "SAA_FORCEREMOVEFROMSQUAD_ACTIONNAME
 	{}
 ] call ace_interact_menu_fnc_createAction;
 
-[player, 1, ["ACE_SelfActions", "ACE_TeamManagement"], _action] call ace_interact_menu_fnc_addActionToObject;
+[player, 1, ["ACE_SelfActions", "SAA_root", "SAA_rootTeamManagement"], _action] call ace_interact_menu_fnc_addActionToObject;

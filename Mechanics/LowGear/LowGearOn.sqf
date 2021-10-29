@@ -26,7 +26,7 @@ RIP_LOWGEARACTON = nil;
 RIP_LOWGEARACTOFF = _veh addAction [localize "STR_RIP_LOWGEAROFF", "Mechanics\LowGear\LowGearOff.sqf", "", 0, true, true, "", "driver  _target == _this"];
 
 
-while {(player != _veh) && (player==(driver _veh)) && (RIPLOWGEARON) && (canMove _veh)} do
+while {(player != _veh) && (player==(driver _veh)) && (RIPLOWGEARON) && (canMove _veh) && !(surfaceIsWater getPos _veh)} do
 {
 	_speed=speed _veh;
 	_vel=velocity _veh;	

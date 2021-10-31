@@ -13,22 +13,25 @@ switch _act do {
 	case "loadAll" : { 
 		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:loadPlayer:%2", PROTOCOL, _info # 0])) # 1) # 0;
 		if !(isNil {_getData}) then {
-			private _uid = _info # 0;
-			private _unit = _info # 1;
-			private _rank = _getData # 0; _unit setVariable ["SAA_Rank", _rank, true];
-			private _pclass = _getData # 1; _unit setVariable ["SAA_PrimaryClass", _pclass, true];
-			private _sclass = _getData # 2; _unit setVariable ["SAA_SecondaryClass", _sclass, true];
-			private _inventory = _getData # 3;
+
+			_info params ["_uid", "_unit"];
+			_getData params ["_rank", "_pclass", "_sclass", "_inventory", "_storage"];
+
+			_unit setVariable ["SAA_Rank", _rank, true];
+			_unit setVariable ["SAA_PrimaryClass", _pclass, true];
+			_unit setVariable ["SAA_SecondaryClass", _sclass, true];
 			missionNamespace setVariable [format["%1_DATA", _uid], [_rank, _pclass, _sclass], true];
 
-			[_getData # 4, owner _unit, _uid, _getData # 5] spawn Shadec_fnc_createStorage;
+			private _order = [_uid] call Shadec_fnc_getOrdersServer;
+
+			[_storage, owner _unit, _uid, _order] spawn Shadec_fnc_createStorage;
 			[_unit, _uid, "Assign"] spawn Shadec_fnc_rolesAssign;
 			_unit setUnitLoadout _inventory;
 			
-			//_unit setVariable ["LoadoutLoaded", true, true];
+			_unit setVariable ["LoadoutLoaded", true, true];
 			missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
 			
-			// diag_log format ["%1's info was loaded. Rank:%2 | PClass:%3 | SClass:%4 | Inventory:%5 | Storage:%6 | PurchaseOrder:%7 | UID:%8", name _unit, _rank, _pclass, _sclass, _inventory, _getData # 4, _getData # 5, _uid];
+			//diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _order, _uid];
 		} else {
 			private _unit = _info # 1; //unit
 			"Extdb3" callExtension format  ["0:%1:newPlayer:%2:%3", PROTOCOL, getPlayerUID _unit, str name _unit];
@@ -60,22 +63,23 @@ switch _act do {
 			_info # 1, //storage array
 			_info # 0 //UID
 		];
-		//diag_log format ["Storage was saved. Storage:%1 | UID:%2", _info # 1, _info # 0];
 	};
 	
 	case "loadStorage" : {
 		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:getStorage:%2", PROTOCOL, _info # 0])) # 1) # 0;
 		if !(isNil {_getData}) then {
-			private _storage = _getData # 0;
-			private _purchaseOrder = _getData # 1;
-			private _uid = _info # 0;
-			diag_log format ["loadStorage params: %1 | %2 | %3", owner (_info # 1), _uid, _purchaseOrder];
-			[_storage, owner (_info # 1), _uid, _purchaseOrder] spawn Shadec_fnc_createStorage;
+			_info params ["_uid", "_player"];
+			_getData params ["_storage"];
+
+			private _order = [_uid] call Shadec_fnc_getOrdersServer;
+
+			diag_log format ["loadStorage params: %1 | %2 | %3", owner _player, _uid, _order];
+			[_storage, owner _player, _uid, _order] spawn Shadec_fnc_createStorage;
 		};
 	};
 	
 	case "erasePurchaseOrder" : {
-		"Extdb3" callExtension format ["0:%1:erasePurchaseOrder:%2", PROTOCOL, 
+		"Extdb3" callExtension format ["0:%1:erasePurchaseOrders:%2", PROTOCOL, 
 			_info # 0 //UID
 		];
 		//diag_log format ["PurchaseOrder was erased. UID:%1", _info # 0];

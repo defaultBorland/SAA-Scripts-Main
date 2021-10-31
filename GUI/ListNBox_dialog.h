@@ -79,7 +79,7 @@ class dialog_ListNBox {
 		};
 		class CHeader_Count: CHeader_Name {
 			idc = 1012;
-			x = safeZoneX + safeZoneW * 0.47510981;
+			x = safeZoneX + safeZoneW * 0.46510981;
 			y = safeZoneY + safeZoneH * 0.26203704;
 			w = safeZoneW * 0.02781845;
 			h = safeZoneH * 0.02222223;
@@ -87,7 +87,7 @@ class dialog_ListNBox {
 		};
 		class CHeader_Type: CHeader_Name {
 			idc = 1013;
-			x = safeZoneX + safeZoneW * 0.50366033;
+			x = safeZoneX + safeZoneW * 0.49366033;
 			y = safeZoneY + safeZoneH * 0.26203704;
 			w = safeZoneW * 0.0658858;
 			h = safeZoneH * 0.02222223;

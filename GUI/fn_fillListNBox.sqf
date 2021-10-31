@@ -13,7 +13,7 @@ params ["_listNBox", "_items"];
 		case "Magazine": {_cfg = "CfgMagazines"};
 	};
 
-	_type = localize ("SAA_GENERAL_" + _type);
+	_type = localize ("STR_SAA_GENERAL_" + _type);
 
 	_listNBox lnbAddRow ["", "", ""];
 	_listNBox lnbSetPicture [[_forEachIndex, 0], getText(configfile >> _cfg >> _class >> "picture")];

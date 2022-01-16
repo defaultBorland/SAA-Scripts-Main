@@ -52,7 +52,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
 
 // Execute EHs
-[] execVM "EH\player\getOut.sqf";
+//[] execVM "EH\player\getOut.sqf";
 [] execVM "EH\player\arsenal.sqf";
 [] execVM "EH\player\storage.sqf";
 [] execVM "EH\player\serverFps.sqf";
@@ -89,11 +89,3 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 
 // Reset player group
 [player] joinSilent grpNull;
-
-// Remove restricted items from player inventory
-while {[player, "MineDetector"] call BIS_fnc_hasItem} do {player removeItem "MineDetector"};
-if !((player getVariable ["SAA_PrimaryClass", "Rifleman"]) isEqualTo "Engineer") then {
-	{
-		while {[player, _x] call BIS_fnc_hasItem} do {player removeItem _x};
-	} forEach ["I_UavTerminal","C_UavTerminal","O_UavTerminal","B_UavTerminal"];
-};

@@ -8,7 +8,7 @@ _respawnTarget = []; // Object or Position
 
 if (isNull _objectUnderCursor) then {
 	diag_log format ["fn_createRespawnPos: POSITION TYPE"];
-	_respawnPositionData = [_side, _position, markerText _marker] call BIS_fnc_addRespawnPosition; // Marker -> Position
+	_respawnPositionData = [_side, [_position # 0, _position # 1], markerText _marker] call BIS_fnc_addRespawnPosition; // Marker -> Position
 	
 	if (_showNotification) then {
 

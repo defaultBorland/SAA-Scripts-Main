@@ -37,9 +37,9 @@ _prefix = _prefixMain + "Storage\";
 ];
 
 // Utilities
-_prefix = _prefixMain + "Utilities\";
+_prefix = _prefixMain + "Other\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
-	
+	"spawnUnits"
 ];
 
 // Achilles

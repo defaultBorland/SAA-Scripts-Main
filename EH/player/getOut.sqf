@@ -3,8 +3,6 @@
 private _EH_Index = player addEventHandler ["GetOutMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 
-	sleep 3;
-
 	[{player isEqualTo (vehicle player)}, {
 		params ["_unit", "_vehicle"];
 		[[_unit, getUnitLoadout _unit, _vehicle], {

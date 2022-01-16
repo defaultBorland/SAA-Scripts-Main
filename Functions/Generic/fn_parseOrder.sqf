@@ -8,6 +8,7 @@ private _finalArray = [[], [], []];
 	{	
 		switch (([_x] call BIS_fnc_itemType) # 0) do {
 			case "Weapon": {(_finalArray # 0) pushBack [_x, _currentArray # 1 # _forEachIndex]};
+			case "Mine";
 			case "Magazine": {(_finalArray # 1) pushBack [_x, _currentArray # 1 # _forEachIndex]};
 			case "Item": {(_finalArray # 2) pushBack [_x, _currentArray # 1 # _forEachIndex]};
 		};

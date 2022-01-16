@@ -544,6 +544,11 @@
             <Original>[SAA] Achilles</Original> 
             <Russian>[SAA] Achilles</Russian> 
         </Key>
+
+        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_OTHER"> 
+            <Original>[SAA] Other</Original> 
+            <Russian>[SAA] Другое</Russian> 
+        </Key>
     
     </Container>
 
@@ -1294,12 +1299,31 @@
                 <Original>Switch Unit</Original> 
                 <Russian>Вселиться в юнита</Russian> 
             </Key>
+        
+        </Container>
 
-            <Key ID="STR_SAA_ZEUS_MODULES_SWITCH_UNIT_MODULENAME"> 
-                <Original>Switch Unit</Original> 
-                <Russian>Вселиться в юнита</Russian> 
+        <Container name = "Spawn Units">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_MODULENAME"> 
+                <Original>Spawn Units</Original> 
+                <Russian>Спавн юнитов</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_TYPE"> 
+                <Original>Type</Original> 
+                <Russian>Тип</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER"> 
+                <Original>#</Original> 
+                <Russian>#</Russian> 
             </Key>
         
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER_TOOLTIP"> 
+                <Original>Number of units</Original> 
+                <Russian>Количество юнитов</Russian> 
+            </Key>
+
         </Container>
     </Container> 
 
@@ -1344,6 +1368,11 @@
     <Key ID="STR_SAA_MESSAGE_HAS_BEEN_CREATED"> 
         <Original>has been created</Original> 
         <Russian>был создан</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_MESSAGE_LOADOUT_WAS_FIXED"> 
+        <Original>Loadout Fix has been applied</Original> 
+        <Russian>Исправление лодаута было применено</Russian> 
     </Key>
 
 </Container>

@@ -11,4 +11,6 @@ _EH_PlayerConnected = addMissionEventHandler ["PlayerConnected", {
         15,
         {}
     ] call CBA_fnc_waitUntilAndExecute;
+
+    systemChat "SERVER_EH_PLAYERCONNECTED";
 }];

@@ -7,6 +7,8 @@ _action = ["fixLocalLoadout", localize "STR_SAA_FIX_LOADOUT_ACTION", "",
 
 		[[getUnitLoadout player, player], {(_this # 1) setUnitLoadout (_this # 0)}] remoteExec ["call",2];
 
+		cutText [localize "STR_SAA_MESSAGE_LOADOUT_WAS_FIXED", "PLAIN", 1];
+
 		[{
 			if (call TFAR_fnc_haveLRRadio) then {
 				[(call TFAR_fnc_activeLrRadio) select 0, (call TFAR_fnc_activeLrRadio) select 1, player getVariable "radioLrSettings"] call TFAR_fnc_setLrSettings

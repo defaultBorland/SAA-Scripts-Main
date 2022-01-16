@@ -10,7 +10,7 @@
 
 	if (_remainingTickets isEqualTo 0) then {
 		[[_side], {
-			systemChat format["> Server: %1 - %2!", toUpper localize format["SAA_GENERAL_%1", _this # 0], localize "STR_SAA_MESSAGE_SIDE_TICKETS_RUNS_OUT"];
+			systemChat format["> Server: %1 - %2!", toUpper localize format["STR_SAA_GENERAL_%1", _this # 0], localize "STR_SAA_MESSAGE_SIDE_TICKETS_RUNS_OUT"];
 		}] remoteExec ["call", -2];
 	};
 };

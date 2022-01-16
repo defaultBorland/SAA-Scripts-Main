@@ -27,6 +27,16 @@ switch _act do {
 			[_storage, owner _unit, _uid, _order] spawn Shadec_fnc_createStorage;
 			[_unit, _uid, "Assign"] spawn Shadec_fnc_rolesAssign;
 			_unit setUnitLoadout _inventory;
+
+			// Try to achieve restricted items removing...
+			[{ // Condition
+				params ["_unit", "_inventory"];
+				(getUnitLoadout _unit) isEqualTo _inventory;
+			}, { // Statement
+				params ["_unit", "_inventory"];
+				[_unit] call Shadec_fnc_removeInventoryRestrictedItems
+			}, [_unit, _inventory], 15, {diag_log format ["Warning | fnc_call_db: loadAll DB action inventory comparing timeout."]}] call CBA_fnc_waitUntilAndExecute;
+			
 			
 			_unit setVariable ["LoadoutLoaded", true, true];
 			missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];

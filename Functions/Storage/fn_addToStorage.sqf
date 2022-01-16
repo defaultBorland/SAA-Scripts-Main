@@ -5,7 +5,7 @@ if !(count _arrays > 0) exitWith {diag_log format ["fn_AddToStorage | Empty arra
 _storage = missionNamespace getVariable [format["pStorage_%1", _uid], nil];
 if (isNil {_storage}) exitWith {diag_log format ["fn_AddToStorage |  Can't find the storage."]};
 
-_arrays = [_arrays, _uid] call Shadec_fnc_removingRestrictingItems;
+_arrays = [_arrays, _uid] call Shadec_fnc_removeStorageRestrictedItems;
 _arrays params ["_weapons", "_magazines", "_items"];
 
 if !(typeName _action == "STRING") exitWith {diag_log format  ["Invalid action type."]};

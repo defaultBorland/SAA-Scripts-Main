@@ -62,6 +62,7 @@ class CfgFunctions
 			class getPlayersNames {};
 			class parseOrder {};
 			class reLoadoutUnit {};
+			class removeInventoryRestrictedItems {};
 			class usersIDs {};
 		};
 		class Radio {
@@ -90,7 +91,7 @@ class CfgFunctions
 			class removeActionFromStorage {};
 			class removedItemsListDisplay {};
 			class removeStorage {};
-			class removingRestrictingItems {};
+			class removeStorageRestrictedItems {};
 			class restrictStorageAccess {};
 		};
 		class Zeus {

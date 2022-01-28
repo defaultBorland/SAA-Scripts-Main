@@ -89,3 +89,12 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 
 // Reset player group
 [player] joinSilent grpNull;
+
+
+//Spectator
+{
+	missionNamespace setVariable [_x, true];
+} forEach [
+	"BIS_respSpecShowHeader",			// Top bar of the spectator UI including mission time
+	"BIS_respSpecLists"					// Show list of available units and locations on the left hand side
+];

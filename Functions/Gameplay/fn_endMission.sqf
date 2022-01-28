@@ -6,6 +6,7 @@ params ["_endType"];
 	diag_log format["PLAYER FINISHED:%1", _x];
 
 	{	// Saving Inventory to local profile to show in ShopMission
+		if (player getVariable ["SAA_isZeus", false]) exitWith {}; // Disable for zeus
 		_inventory = getUnitLoadout player;
 		profileNamespace setVariable ["SAA_Project_Inventory", _inventory];
 	} remoteExec ["call", _x];

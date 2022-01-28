@@ -2,6 +2,17 @@
 params ["_vehicle", "_side", "_showNotification"];
 
 [[_vehicle, _side], {(_this # 0) setVariable ["tf_side", toLower str (_this # 1), false]}] remoteExec ["call"];
+_vehicle setVariable ["tf_side", toLower str _side, true];
+
+private _radios = [
+	[west, "tf_rt1523g"],
+	[east, "tf_mr3000"],
+	[independent, "tf_anprc155"],
+	[civilian, "tf_mr3000"]
+];
+
+private _radioType = (_radios select {_x # 0 isEqualTo _side}) # 0 # 1;
+_vehicle setVariable ["TF_RadioType", _radioType, true];
 
 if (_showNotification) then {
 	private _sidesColors = [[west, "#004D99"], [east, "#800000"], [independent, "#008000"], [civilian, "#660080"]];

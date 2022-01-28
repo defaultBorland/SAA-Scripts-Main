@@ -18,7 +18,7 @@
 
 	private _returnValues = [_players];
 	_returnValues append _players;
-	private _displayValues = [localize "STR_SAA_GENERAL_EACH"];
+	private _displayValues = [localize "STR_SAA_GENERAL_ALL_PLAYERS"];
 	_displayValues append (_players apply {name _x});
 
 	private _targetIndex = 0;
@@ -30,12 +30,10 @@
 
 	[localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_HEADER",
 		[
-			["COMBO", [localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_SHOWHINT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_SHOWHINT_TOOLTIP"],
+			["COMBO", [localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_TOOLTIP"],
 				[
 					_returnValues,
-					[
-						_displayValues
-					],
+					_displayValues,
 					_targetIndex
 				]
 			],
@@ -58,7 +56,7 @@
 				_target = name _target;
 			};
 
-			[localize "STR_SAA_GENERAL_SUCCESS", _target + " " + [localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_GRANTED", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_RESTRICTED"] select _isRestricted, 3] call BIS_fnc_curatorHint;
+			[localize "STR_SAA_GENERAL_SUCCESS", _target + " " + ([localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_GRANTED", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_RESTRICTED"] select _isRestricted), 3] call BIS_fnc_curatorHint;
 		},
 		{},
 		[]

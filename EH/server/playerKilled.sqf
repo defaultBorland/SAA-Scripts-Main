@@ -3,11 +3,10 @@
 //Player killed event handler
 "playerKilled" addPublicVariableEventHandler {
 	(_this # 1) params ["_unit", "_uid"];
-	private _pcid = owner _unit;
 
-	// If player was a Zeus - set respawn time at 3 seconds
+	// If player was a Zeus - instant respawn
 	if (_uid in (missionNamespace getVariable "ZeusArray")) exitWith { // Replace with unit getVar isZeus?
-		{setPlayerRespawnTime 3} remoteExec ["call", _pcid];
+		{setPlayerRespawnTime 0} remoteExec ["call", _unit];
 	};
 
 	private _players = ["all", "object"] call Shadec_fnc_usersIDs; // Get non-zeus players

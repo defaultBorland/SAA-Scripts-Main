@@ -63,7 +63,11 @@
 			_marker setMarkerColor _color;
 			_marker setMarkerText _markerText;
 
-			[[_position, _objectUnderCursor, _side, _marker, _showNotification], Shadec_fnc_createRespawnPoint] remoteExec ["spawn", 2];	
+			if !(isNull _objectUnderCursor) then {
+				[[_objectUnderCursor, west, false], Shadec_fnc_replaceVehicleRadio] remoteExec ["spawn", 2];
+			};
+
+			[[_position, _objectUnderCursor, _side, _marker, _showNotification], Shadec_fnc_createRespawnPoint] remoteExec ["spawn", 2];
 			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},

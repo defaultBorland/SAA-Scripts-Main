@@ -23,7 +23,7 @@ _prefix = _prefixMain + "Radio\";
 _prefix = _prefixMain + "Respawn\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"changeRespawnTickets",
-	"forceRespawnTimer",
+	"forcedRespawn",
 	"createRespawnPoint",
 	"removeRespawnPoint"
 ];

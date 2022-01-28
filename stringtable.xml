@@ -217,9 +217,19 @@
         <Russian>Зевс</Russian> 
     </Key>
 
-    <Key ID="STR_SAA_GENERAL_CV"> 
+    <Key ID="STR_SAA_GENERAL_RESPAWN_CV"> 
         <Original>Respawn CV</Original> 
         <Russian>КШМ</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_GENERAL_CV"> 
+        <Original>CV</Original> 
+        <Russian>КШМ</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_GENERAL_FOB"> 
+        <Original>FOB</Original> 
+        <Russian>ФОБ</Russian> 
     </Key>
 
     <Key ID="STR_SAA_GENERAL_RESPAWN_POINT"> 
@@ -975,51 +985,91 @@
         
         </Container>
         
-        <Container name = "Force Respawn Timer">
+        <Container name = "Forced Respawn">
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_MODULENAME"> 
-                <Original>Force Respawn Timer</Original> 
-                <Russian>Ускорить время возрождения</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_MODULENAME"> 
+                <Original>Forced Respawn</Original> 
+                <Russian>Принудительный респавн</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_DIALOG_HEADER"> 
-                <Original>Setting Respawn Timer</Original> 
-                <Russian>Установка времени возрождения</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_HEADER"> 
+                <Original>Forced Player Respawn</Original> 
+                <Russian>Принудительный респавн игрока</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_DIALOG_TARGET_DISPLAYNAME"> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_TARGET_DISPLAYNAME"> 
                 <Original>Target</Original> 
                 <Russian>Цель</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_DIALOG_TARGET_TOOLTIP"> 
-                <Original>Selected players respawn timer will be changed</Original> 
-                <Russian>Таймер возрождения выбранного игрока будет изменён</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_TARGET_TOOLTIP"> 
+                <Original>Selected player will be respawned at your/his chosen respawn point or at his corpse.</Original> 
+                <Russian>Выбранный игрок будет возрождён на выбранной вами/им точке возрождения, либо на трупе.</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_DIALOG_TIME_DISPLAYNAME"> 
-                <Original>Respawn Time</Original> 
-                <Russian>Время до возрождения</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_RESPAWN_POINT_DISPLAYNAME"> 
+                <Original>Respawn Point</Original> 
+                <Russian>Место возрождения</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_DIALOG_TIME_TOOLTIP"> 
-                <Original>The number of seconds before the player can respawn</Original> 
-                <Russian>Количество секунд до того как игрок сможет возродиться</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_RESPAWN_POINT_TOOLTIP"> 
+                <Original>Position to teleport player after respawn</Original> 
+                <Russian>Позиция, куда будет направлен игрок при возрождении</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_PLAYER_CHOICE_DISPLAYNAME"> 
+                <Original>Player Choice</Original> 
+                <Russian>По выбору игрока</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_PLAYER_CHOICE_TOOLTIP"> 
+                <Original>Player will be respawned at selected point in respawn interface</Original> 
+                <Russian>Позицией будет являться выбранная точка респавна в интерфейсе целевого игрока</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_MODULE_POSITION_DISPLAYNAME"> 
+                <Original>Module Position</Original> 
+                <Russian>Позиция модуля</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_MODULE_POSITION_TOOLTIP"> 
+                <Original>Player will be respawned at module position</Original> 
+                <Russian>Игрок будет возрождён на месте установки модуля</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_AT_BODY_DISPLAYNAME"> 
+                <Original>At Body</Original> 
+                <Russian>На месте смерти</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_AT_BODY_TOOLTIP"> 
+                <Original>Player will be respawned at spot where he died</Original> 
+                <Russian>Игрок будет возрождён на месте своей смерти</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                <Original>Notify players</Original> 
+                <Russian>Уведомить игроков</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"> 
+                <Original>All players will recieve notification about forcibly spawned ones</Original> 
+                <Russian>Все игроки получат информацию о принудительном респавне цели</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Respawn Time was changed</Original> 
-                <Russian>Время возрождение было изменено</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_SUCCESS"> 
+                <Original>Player was forcibly respawned</Original> 
+                <Russian>Игрок был принудительно возрождён</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_ZEUSMESSAGE_NODEADPLAYERS"> 
-                <Original>Error: There are no dead players!</Original> 
-                <Russian>Ошибка: Мёртвых игроков нет!</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_NODEADPLAYERS"> 
+                <Original>There are no dead players!</Original> 
+                <Russian>Мёртвых игроков нет!</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_SHOWHINT_SYSTEMCHAT"> 
-                <Original>seconds until respawn is possible:</Original> 
-                <Russian>секунд до возможности возрождения:</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_SHOWHINT_SYSTEMCHAT"> 
+                <Original>was forcibly respawned</Original> 
+                <Russian>был принудительно возрождён</Russian> 
             </Key>
         
         </Container>

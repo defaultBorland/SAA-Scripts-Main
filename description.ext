@@ -27,7 +27,6 @@ class CfgFunctions
 		class Classes {
 			class classSwitcher {};
 			class Rifleman {};
-			class Nurse {};
 			class Machinegunner {};
 			class Grenadier {};
 			class Engineer {};

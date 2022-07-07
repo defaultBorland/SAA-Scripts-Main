@@ -5,8 +5,7 @@ private _uid = _this # 1;
 missionNamespace getVariable [format["%1_DATA", _uid], ["PVT", "Rifleman", "None"]] params ["_rank", "_firstClass", "_secondClass"];
 
 switch (_firstClass) do {
-	case "Medic";
-	case "Nurse": {
+	case "Medic": {
 		if (_action isEqualTo "Assign") then {
 			_unit setVariable ["ace_medical_medicclass", 1, true];
 		} else {

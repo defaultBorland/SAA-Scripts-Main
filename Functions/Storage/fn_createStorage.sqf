@@ -9,7 +9,6 @@ switch (_primClass) do {
 	case "ATSpec": {_boxClass = "Box_NATO_Equip_F"}; // maximumLoad = 7000
 	case "Machinegunner": {_boxClass = "CargoNet_01_box_F"}; // maximumLoad = 6000
 	case "Rifleman";
-	case "Nurse";
 	case "Medic";
 	case "Grenadier";
 	case "Engineer";

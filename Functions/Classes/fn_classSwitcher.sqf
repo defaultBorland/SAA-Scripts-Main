@@ -9,12 +9,6 @@ switch (_class) do {
 		if (_lang isEqualTo "EN") then {_convertedClass = "Rifleman"};
 		if (_lang isEqualTo "LS") then {_convertedClass = "STR_SAA_CLASSES_RIFLEMAN"};
 	};
-	case "Nurse";
-	case "Медбрат": {
-		if (_lang isEqualTo "RU") then {_convertedClass = "Медбрат"};
-		if (_lang isEqualTo "EN") then {_convertedClass = "Nurse"};
-		if (_lang isEqualTo "LS") then {_convertedClass = "STR_SAA_CLASSES_NURSE"};
-	};
 	case "Machinegunner";
 	case "Machine Gunner";
 	case "Пулемётчик": {

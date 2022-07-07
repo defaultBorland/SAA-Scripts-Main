@@ -6,6 +6,11 @@
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	_respawnPositions = missionNamespace getVariable ["respawnPositions", []]; //diag_log format ["VARS CHECK RRP | _respawnPositions: %1", _respawnPositions];
+
+	if (count _respawnPositions < 1) exitWith {
+		[objNull, localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ERRORZEUSMESSAGE_NOCVORFOBS"] call bis_fnc_showCuratorFeedbackMessage;
+	};
+
 	_markersNames = _respawnPositions apply {markerText (_x # 0)};
 
 	[localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_HEADER",

@@ -1,4 +1,4 @@
-params ["_box", "_uniformType", "_clearInventory","_showInfo"];
+params ["_box", "_uniformType", "_clearInventory", "_showInfo"];
 
 [_box, true] call ace_arsenal_fnc_removeBox;
 
@@ -43,14 +43,23 @@ switch (_uniformType) do {
 _allSAAArrays append _items;
 
 [_box, _allSAAArrays, true] call ace_arsenal_fnc_initBox;
-[[_box, _specificUniform], {_this call Shadec_fnc_addArsenalSpecificItems}] remoteExec ["spawn", -2, true];
+private _jipID = [[_box, _specificUniform], {_this call Shadec_fnc_addArsenalSpecificItems}] remoteExec ["spawn", -2, true];
 
+_box setVariable ["SAA_isArsenal", true, true];
+_box setVariable ["SAA_arsenalJIP", _jipID, true];
+
+_box addEventHandler ["Deleted", {
+	params ["_box"];
+
+	private _jipID = _box getVariable ["SAA_arsenalJIP", ""];
+	remoteExec ["", _jipID];
+}];
 
 if (_showInfo) then {
 	[[_box, _uniformType], {
 		_this params ["_arsenal", "_uniformType"];
 
-		hint parseText format ["<t align='center'>%1</t><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center'><t align='center' shadow='1' shadowColor='#000000'>%3: %4</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%5 from you: %6</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%7: %8</t>", localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS", getText (configFile >> "CfgVehicles" >> typeOf _arsenal >> "displayName"), localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_UNIFORMTYPE_DISPLAYNAME", localize ("SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_" + toUpper _uniformType), localize "STR_SAA_GENERAL_DIRECTION", floor (player getDir _arsenal), localize "STR_SAA_GENERAL_DISTANCE", round (player distance _arsenal)];
+		hint parseText format ["<t align='center'>%1</t><br/><t align='center' shadow='1' shadowColor='#000000'>%2</t><br/><t align='center'><t align='center' shadow='1' shadowColor='#000000'>%3: %4</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%5 from you: %6</t><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>%7: %8</t>", localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS", getText (configFile >> "CfgVehicles" >> typeOf _arsenal >> "displayName"), localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_UNIFORMTYPE_DISPLAYNAME", localize ("STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_" + toUpper _uniformType), localize "STR_SAA_GENERAL_DIRECTION", floor (player getDir _arsenal), localize "STR_SAA_GENERAL_DISTANCE", round (player distance _arsenal)];
 		
 		systemChat format ["> Server: %1.", localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS"];
 	}] remoteExec ["call", -2];

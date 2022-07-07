@@ -97,6 +97,20 @@
 
 </Container>
 
+<Container name = "Show Garage Vehicles">
+
+    <Key ID="STR_SAA_SHOW_GARAGE_VEHICLES_ACTION_NAME"> 
+        <Original>Vehicles on FOB</Original> 
+        <Russian>Техника на ФОБе</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_SHOW_GARAGE_VEHICLES_ERROR_NO_VEHICLES"> 
+        <Original>There are no vehicles at company FOB!</Original> 
+        <Russian>На ФОБе компании нету техники!</Russian> 
+    </Key>
+
+</Container>
+
 <Container name = "Release UAV Control">
 
     <Key ID="STR_SAA_RELEASE_UAV_CONTROL"> 
@@ -209,6 +223,11 @@
     <Key ID="STR_SAA_GENERAL_PLAYER"> 
         <Original>Player</Original> 
         <Russian>Игрок</Russian> 
+    </Key>
+    
+    <Key ID="STR_SAA_GENERAL_SQUAD"> 
+        <Original>Squad</Original> 
+        <Russian>Отряд</Russian> 
     </Key>
 
     <Key ID="STR_SAA_GENERAL_ZEUS"> 
@@ -368,6 +387,50 @@
 
 </Container>
 
+<Container name = "Vehicle Types">
+
+    <Key ID="STR_SAA_VEHICLES_CAR"> 
+        <Original>Car</Original> 
+        <Russian>Автомобиль</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_CV"> 
+        <Original>CV</Original> 
+        <Russian>КШМ</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_APC"> 
+        <Original>APC</Original> 
+        <Russian>БТР</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_IFV"> 
+        <Original>IFV</Original> 
+        <Russian>БМП</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_TANK"> 
+        <Original>Tank</Original> 
+        <Russian>Танк</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_HELICOPTER"> 
+        <Original>Helicopter</Original> 
+        <Russian>Вертолёт</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_VESSEL"> 
+        <Original>Vessel</Original> 
+        <Russian>Судно</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_VEHICLES_OTHER"> 
+        <Original>Other</Original> 
+        <Russian>Другое</Russian> 
+    </Key>
+
+</Container>
+
 <Container name = "Ranks">
 
     <Key ID="STR_SAA_RANKS_RANK"> 
@@ -407,11 +470,6 @@
     <Key ID="STR_SAA_CLASSES_RIFLEMAN"> 
         <Original>Rifleman</Original> 
         <Russian>Стрелок</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_NURSE"> 
-        <Original>Nurse</Original> 
-        <Russian>Медбрат</Russian> 
     </Key>
 
     <Key ID="STR_SAA_CLASSES_MACHINEGUNNER"> 
@@ -562,6 +620,7 @@
     </Container>
 
     <Container name = "Modules">
+        
         <Container name = "Add Arsenal">
     
             <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_MODULENAME"> 
@@ -641,6 +700,20 @@
         
         </Container>
         
+        <Container name = "Remove Arsenal">
+    
+            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_MODULENAME"> 
+                <Original>Remove Arsenal</Original> 
+                <Russian>Удалить Арсенал</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
+                <Original>Arsenal has been removed</Original> 
+                <Russian>Арсенал удалён</Russian> 
+            </Key>
+        
+        </Container>
+
         <Container name = "Assign Storage">
         
             <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_MODULENAME"> 
@@ -776,8 +849,8 @@
         <Container name = "End Scenario">
         
             <Key ID="STR_SAA_ZEUS_MODULES_SCENARIO_FLOW_END_MISSION_MODULENAME"> 
-                <Original>End Scenario (SAA)</Original> 
-                <Russian>Завершить миссию (SAA)</Russian> 
+                <Original>End Scenario</Original> 
+                <Russian>Завершить миссию</Russian> 
             </Key>
         
             <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_MODULENAME"> 
@@ -1210,6 +1283,11 @@
                 <Original>Respawn Point Successfully Removed</Original> 
                 <Russian>Точка возрождения успешно удалена</Russian> 
             </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ERRORZEUSMESSAGE_NOCVORFOBS"> 
+                <Original>ERROR: There are no assigned CVs of FOBs!</Original> 
+                <Russian>ОШИБКА: Нету назначенных КШМ или ФОБов!</Russian> 
+            </Key>
     
             <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME"> 
                 <Original>Notify players</Original> 
@@ -1391,6 +1469,81 @@
             </Key>
 
         </Container>
+    
+    </Container> 
+
+    <Container name = "Context Actions">
+
+        <Container name = "Toggle Context Actions">
+    
+            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_SHOW_ACTIONS_ACTIONNAME"> 
+                <Original>Show SAA Context Menu Options</Original> 
+                <Russian>Показать контекстные действия SAA</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_HIDE_ACTIONS_ACTIONNAME"> 
+                <Original>Hide SAA Context Menu Options</Original> 
+                <Russian>Скрыть контекстные действия SAA</Russian> 
+            </Key>
+        
+        </Container>
+
+        <Container name = "Spawn SAA Vehicles">
+    
+            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_SPAWN_VEHICLES_ACTIONNAME"> 
+                <Original>Spawn SAA Vehicles</Original> 
+                <Russian>Спавн техники SAA</Russian> 
+            </Key>
+        
+        </Container>
+
+        <Container name = "Load Loadout">
+    
+            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_LOAD_LOADOUT_ACTIONNAME"> 
+                <Original>Load SAA Loadout</Original> 
+                <Russian>Загрузить лодаут SAA</Russian> 
+            </Key>
+        
+        </Container>
+        
+        <Container name = "Remove Arsenal">
+    
+            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_MODULENAME"> 
+                <Original>Remove Arsenal</Original> 
+                <Russian>Удалить Арсенал</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
+                <Original>Arsenal has been removed</Original> 
+                <Russian>Арсенал удалён</Russian> 
+            </Key>
+        
+        </Container>
+
+        <Container name = "Spawn Units">
+
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_MODULENAME"> 
+                <Original>Spawn Units</Original> 
+                <Russian>Спавн юнитов</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_TYPE"> 
+                <Original>Type</Original> 
+                <Russian>Тип</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER"> 
+                <Original>#</Original> 
+                <Russian>#</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER_TOOLTIP"> 
+                <Original>Number of units</Original> 
+                <Russian>Количество юнитов</Russian> 
+            </Key>
+
+        </Container>
+
     </Container> 
 
 </Container>

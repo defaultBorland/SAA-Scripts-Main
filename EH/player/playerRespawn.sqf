@@ -14,7 +14,6 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
     
     // If player was zeus - reassign modules
     if ((getPlayerUID player) in (missionNamespace getVariable "ZeusArray")) then {
-        [] call Shadec_fnc_addZeusModules;
         [[player, "assign"], Shadec_fnc_manageCurators] remoteExec ["call", 2];
     };
     

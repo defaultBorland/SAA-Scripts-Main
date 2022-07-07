@@ -113,4 +113,27 @@ switch _act do {
 		];
 		diag_log format ["modlist was saved. UID:%1 | MODLIST: %2", _info # 0, _info # 1];
 	};
+
+	case "getGarageVehicles" : {
+		_garageVehiclesData = (call compile ("Extdb3" callExtension format ["0:%1:getGarageVehicles", PROTOCOL])) # 1;
+		if !(isNil {_garageVehiclesData}) then {
+
+			// Another call for all loadouts
+			_loadoutsData = (call compile ("Extdb3" callExtension format ["0:%1:getVehiclesLoadouts", PROTOCOL])) # 1;
+			if !(isNil {_loadoutsData}) then {
+
+				{
+					private _tablename = _x # 1;
+
+					private _index = _loadoutsData findIf {(_x # 1) isEqualTo _tablename};
+					if (_index > 0) then {
+						_x pushBack ((_loadoutsData # _index) select [2, 2]);
+					};
+				} forEach _garageVehiclesData;
+				missionNamespace setVariable ["SAA_vehiclesLoadouts", _loadoutsData, true];
+			};
+
+			missionNamespace setVariable ["SAA_garageVehicles", _garageVehiclesData, true];
+		};
+	};
 };

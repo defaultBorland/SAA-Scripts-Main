@@ -17,6 +17,9 @@ missionNamespace setVariable ["ServerMods", [] call Shadec_fnc_getModList, true]
 respawnTime = getNumber (missionConfigFile >> "respawnDelay");
 missionNamespace setVariable ["respawnTime", respawnTime, true];
 
+[{
+	["getGarageVehicles", []] call Shadec_fnc_call_db;
+}, [], 3] call CBA_fnc_waitAndExecute;
 
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 

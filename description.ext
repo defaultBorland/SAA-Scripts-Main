@@ -56,6 +56,7 @@ class CfgFunctions
 			class showUserInfo {};
 		};
 		class Generic {
+			class clearVehicleInventory {};
 			class createLogServer {};
 			class gearList {};
 			class getModList {};
@@ -95,6 +96,7 @@ class CfgFunctions
 			class restrictStorageAccess {};
 		};
 		class Zeus {
+			class addContextActions {};
 			class addZeusModules {};
 			class manageCurators {};
 			class promoteToZeus {};
@@ -104,6 +106,11 @@ class CfgFunctions
 		};
 		class Mechanics {
 			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
+			class showGarageVehicles {file = "Mechanics\ShowGarageVehicles\fn_showGarageVehicles.sqf"};
+		};
+		class ZeusContextMenu {
+			class spawnVehicle {file = "ZeusContextMenu\Garage\fn_spawnVehicle.sqf"};
+			class applyLoadout {file = "ZeusContextMenu\Garage\fn_applyLoadout.sqf"};
 		};
     };
 

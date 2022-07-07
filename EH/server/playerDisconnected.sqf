@@ -14,7 +14,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 					systemChat format["> Server: %1 %2!", _this # 0, localize "STR_SAA_MESSAGE_PLAYER_LEFT_UNCONSCIOUS"];
 				}] remoteExec ["call", -2];
 
-				"debug_console" callExtension ((_name + " disconnected while unconcsious!") + "#1001");
+				[_name + " disconnected while unconcsious!", "Warning"] call Shadec_fnc_createLogServer;
 			};
 		} else {	// If player was dead
 			private _isTicketsRemain = [false, true] select (([side _unit, 0] call BIS_fnc_respawnTickets) > 0);

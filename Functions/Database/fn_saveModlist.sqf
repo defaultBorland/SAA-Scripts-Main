@@ -45,10 +45,10 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 
 	if (_isRestrictedModsFounded) then {
 		[[name player], {systemChat format["> Server: %1! %2 %3:", localize "STR_SAA_GENERAL_WARNING", _this # 0, localize "STR_SAA_MESSAGE_RESTRICTED_MODS_FOUND"]}] remoteExec ["call"];
-		[[(name player) + " suspicious/restricted mods:"], {"debug_console" callExtension ((_this # 0) + "#1001")}] remoteExec ["call", 2];
+		[(name player) + " suspicious/restricted mods:", "Warning"] call Shadec_fnc_createLogServer;
 		{
 			[[_x],{systemChat format["%1", _this # 0]}] remoteExec ["call"];
-			[[_x],{"debug_console" callExtension ((_this # 0) + "#1000")}] remoteExec ["call", 2];
+			[_x, "Warning"] call Shadec_fnc_createLogServer;
 		} forEach _foundedRestrictedMods;
 		
 		missionNamespace setVariable [format ["%1_lastLoginRestrictedModsFounded", getPlayerUID player], true, true];
@@ -56,7 +56,7 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 		[[name player], {diag_log format["WARNING! Possibly restricted mods on player %1!", _this # 0]}] remoteExec ["spawn", 2];
 	} else {
 		if (_lastLoginRestrictedModsFounded) then {
-			[[(name player) + " reloged without earlier suspected mods."], {"debug_console" callExtension ((_this # 0) + "#0101")}] remoteExec ["call", 2];
+			[(name player) + " reloged without earlier suspected mods.", "Info"] call Shadec_fnc_createLogServer;
 		};
 	};
 };

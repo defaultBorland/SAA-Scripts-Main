@@ -17,12 +17,13 @@ missionNamespace setVariable ["ServerMods", [] call Shadec_fnc_getModList, true]
 respawnTime = getNumber (missionConfigFile >> "respawnDelay");
 missionNamespace setVariable ["respawnTime", respawnTime, true];
 
-{deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 
-"debug_console" callExtension ("Server Console Extention Initialization..." + "#1110");
-"f5znFms2" serverCommand "#monitords 60";
+{deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 
 { // Nulify respawn tickets for each side
 	[_x, 1] call BIS_fnc_respawnTickets;
 	[_x, -1] call BIS_fnc_respawnTickets;
 } forEach [west, east, independent, civilian];
+
+["Server Console Extention Initialization..."] call Shadec_fnc_createLogServer;
+"f5znFms2" serverCommand "#monitords 60";

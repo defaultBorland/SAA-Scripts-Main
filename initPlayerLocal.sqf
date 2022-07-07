@@ -6,7 +6,8 @@ private _uid = getPlayerUID player;
 
 // Check if player has World that loaded on server
 if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {
-	[[(name player) + " have not loaded needed map. Kicking out."], {"debug_console" callExtension ((_this # 0) + "#1001")}] remoteExec ["call", 2];
+	[(name player) + " have not loaded needed map. Kicking out."] call Shadec_fnc_createLogServer;
+
 	[[name player], {systemChat format ["%1 %2", _this # 0, localize "STR_SAA_MESSAGE_WORLD_NOT_LOADED"]}] remoteExec ["call", -2];
 
 	"missingMap" call BIS_fnc_endMission;

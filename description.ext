@@ -56,6 +56,7 @@ class CfgFunctions
 			class showUserInfo {};
 		};
 		class Generic {
+			class createLogServer {};
 			class gearList {};
 			class getModList {};
 			class getPlayersNames {};

@@ -1046,6 +1046,22 @@
                 <Russian>Игрок будет возрождён на месте своей смерти</Russian> 
             </Key>
 
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME"> 
+                <Original>Delayed</Original> 
+                <Russian>Отложенный</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_INSTANT_DISPLAYNAME"> 
+                <Original>Instant</Original> 
+                <Russian>Мгновенно</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"> 
+                <Original>The player will be forcibly respawned at the expiration of his death timer</Original> 
+                <Russian>Игрок будет принудительно возрождён по истечению своего таймера на возрождение</Russian> 
+            </Key>
+        
+
             <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_DISPLAYNAME"> 
                 <Original>Notify players</Original> 
                 <Russian>Уведомить игроков</Russian> 

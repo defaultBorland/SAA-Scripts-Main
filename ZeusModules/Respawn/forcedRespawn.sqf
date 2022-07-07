@@ -63,15 +63,18 @@
 					0
 				]
 			],
+			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"],
+				true
+			],
 			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"],
 				true
 			]
 		],
 		{ // On Confirmation
 			params ["_dialogResult", "_args"];
-			_dialogResult params ["_target", "_position", "_showNotification"];
+			_dialogResult params ["_target", "_position", "_isDelayed", "_showNotification"];
 
-			[[_target, _position, _showNotification], Shadec_fnc_forcedRespawn] remoteExec ["call", 2];
+			[[_target, _position, _isDelayed, _showNotification], Shadec_fnc_forcedRespawn] remoteExec ["call", 2];
 
 			//[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCE_RESPAWN_TIMER_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},

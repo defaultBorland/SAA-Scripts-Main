@@ -1,4 +1,4 @@
-params ["_target", "_destination", "_showNotification"];
+params ["_target", "_destination", "_isDelayed", "_showNotification"];
 
 private _targetsArray = [];
 if (_target isEqualTo "AllDead") then {
@@ -25,17 +25,18 @@ if (_destination isEqualTo "AtBody") then {
 };
 
 if (_showNotification) then {
-	
-	[format["> Server: %1: %2.", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_MODULENAME", (_targetsArray apply {name _x}) joinString ", "]] remoteExec ["systemChat"];
+	[format["> Server: %1 (%3): %2.", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_MODULENAME", (_targetsArray apply {name _x}) joinString ", ", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_INSTANT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME"] select _isDelayed]] remoteExec ["systemChat"];
 };
 
 {
-	[[_positionsArray # _forEachIndex], {
-		params ["_position"];
-		if (playerRespawnTime < 1) exitWith {};
+	[[_positionsArray # _forEachIndex, _isDelayed], {
+		params ["_position", "_isDelayed"];
+		if (playerRespawnTime < 0) exitWith {};
 
-		[_position] spawn {
-			params ["_position"];
+		[_position, _isDelayed] spawn {
+			params ["_position", "_isDelayed"];
+
+			if (_isDelayed) then {sleep playerRespawnTime};
 
 			player setVariable ["SAA_forcedRespawnPosition", _position];
 			if !(_position isEqualType "someString") then {
@@ -44,6 +45,7 @@ if (_showNotification) then {
 					[] spawn {
 						sleep 1;
 						[player getVariable "SAA_forcedRespawnPosition"] call Shadec_fnc_respawnTeleport;
+						setPlayerRespawnTime getNumber(missionConfigFile >> 'respawnDelay');
 					};
 					player removeEventHandler ["Respawn", _thisEventHandler];
 				}];

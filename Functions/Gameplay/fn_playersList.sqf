@@ -52,7 +52,6 @@ if (_players isEqualTo []) exitWith {[_status, _isOnlyToCaller] call fnc_NoRetur
 
 private _targetsCount = count _players;
 
-diag_log format ["playersList FNC | _players to show: %1", _players];
 
 _players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x])) + [_x, [grpNull, group _x] select ((count units group _x) > 1)]};
 // [Name, Rank, Class1, Class2, Unit, Group or grpNull if alone]
@@ -99,8 +98,6 @@ switch (_groupBy) do {
 	};
 	default {};
 };
-
-diag_log format ["playersList FNC | _players modified: %1", _playersGrouped];
 
 // Compose Structured Text
 _structuredText = "";

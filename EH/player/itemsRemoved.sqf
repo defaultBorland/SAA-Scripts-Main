@@ -1,8 +1,8 @@
 //
 "removedItems" addPublicVariableEventHandler {
-	diag_log format ["removed_EH params: %1", _this];
+	//diag_log format ["removed_EH params: %1", _this];
 	private _removedItemsArray = _this # 1;	
-	diag_log format["REMOVEDITEMS_EH | _removedItemsArray: %1", _removedItemsArray];
+	//diag_log format["REMOVEDITEMS_EH | _removedItemsArray: %1", _removedItemsArray];
 
 	//
 	if !(_removedItemsArray isEqualTo []) then {

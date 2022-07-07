@@ -3,7 +3,6 @@ params ["_endType"];
 {
 	[_x, getPlayerUID _x, name _x] call Shadec_fnc_savePlayer;
 	[getPlayerUID _x] call Shadec_fnc_saveStorage;
-	diag_log format["PLAYER FINISHED:%1", _x];
 
 	{	// Saving Inventory to local profile to show in ShopMission
 		if (player getVariable ["SAA_isZeus", false]) exitWith {}; // Disable for zeus
@@ -13,6 +12,6 @@ params ["_endType"];
 
 } forEach allPlayers;
 
-"debug_console" callExtension (("Mission ended.") + "#0101");
+["Mission ended.", "Info"] call Shadec_fnc_createLogServer;
 
 _endType call BIS_fnc_endMissionServer;

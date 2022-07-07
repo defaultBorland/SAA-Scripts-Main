@@ -1,8 +1,8 @@
 //
 "deliveredItems" addPublicVariableEventHandler {
-	diag_log format ["delivered_EH params: %1", _this];
+	//diag_log format ["delivered_EH params: %1", _this];
 	private _deliveredItemsArray = _this # 1;	
-	diag_log format["DELIVEREDITEMS_EH | _deliveredItemsArray: %1", _deliveredItemsArray];
+	//diag_log format["DELIVEREDITEMS_EH | _deliveredItemsArray: %1", _deliveredItemsArray];
 
 	//
 	if !(_deliveredItemsArray isEqualTo []) then {

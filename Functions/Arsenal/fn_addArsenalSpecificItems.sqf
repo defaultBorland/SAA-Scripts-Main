@@ -1,8 +1,6 @@
 //
 params ["_box", "_uniform"];
 
-diag_log format["fnc_addArsenalSpecificItems | Params: %1", _this];
-
 [{missionNamespace getVariable format["loadoutLoaded_%1", getPlayerUID player]}, {
 	_this params ["_box", "_uniform"];
 

@@ -5,7 +5,6 @@ fnc_FormatClasses = {
 	_returnString = "";
 	switch (_class) do {
 		case "Rifleman": {_returnString = "RIFLE"};
-		case "Nurse": {_returnString = "NURSE"};
 		case "Machinegunner": {_returnString = "MG"};
 		case "Engineer": {_returnString = "ENG"};
 		case "ATSpec": {_returnString = "AT/AA"};
@@ -50,8 +49,9 @@ switch (_status) do {
 // If no players with selected status - exit with message
 if (_players isEqualTo []) exitWith {[_status, _isOnlyToCaller] call fnc_NoReturn};
 
-private _targetsCount = count _players;
+_status = localize ("STR_SAA_GENERAL_" + toUpper _status);
 
+private _targetsCount = count _players;
 
 _players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x])) + [_x, [grpNull, group _x] select ((count units group _x) > 1)]};
 // [Name, Rank, Class1, Class2, Unit, Group or grpNull if alone]
@@ -92,7 +92,7 @@ switch (_groupBy) do {
 	};
 	case "Squad": {
 		if (_caller isEqualTo objNull) exitWith {diag_log format ["playersList FNC ERROR | No object passed into squad case"]};
-		_status = "Squad";
+		_status = localize "STR_SAA_GENERAL_SQUAD";
 		_playersGrouped pushBack [format ["%1 (%2)", groupID group _caller, name leader group _caller], _players select {(_x # 5) isEqualTo (group _caller)}];
 		_targetsCount = count (_playersGrouped # 0 # 1);
 	};

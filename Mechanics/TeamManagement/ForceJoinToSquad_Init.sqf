@@ -26,7 +26,7 @@ _insertChildren = {
 };
 
 //
-_action = ["forceJoinToSquad", localize "STR_SAA_FORCE_JOIN_TO_SQUAD_ACTIONNAME", "img\joinToSquad.paa",
+_action = ["forceJoinToSquad", localize "STR_SAA_FORCE_JOIN_TO_SQUAD_ACTION_NAME", "img\joinToSquad.paa",
 	{
 		params ["_target", "_player", "_actionParams"];
 		[["All", "Groups", side _player, true], Shadec_fnc_playersList] remoteExec ["call", 2];

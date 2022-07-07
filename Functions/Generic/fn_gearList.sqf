@@ -197,10 +197,12 @@ switch (_action) do {
 					_changesTexts pushBack "Вторичное оружие/Модули/Магазин";
 				};
 				case 6: { //Assigned Items  // [_map, _compass, _watch, _radio, _gps, _nvg]
-				if ((_newAssigned # 3) != "") then {_savedAssigned set [3, _newAssigned # 3]}; // Allow radio changes
+					//if ((_newAssigned # 3) != "") then {_savedAssigned set [3, _newAssigned # 3]}; // Allow radio changes
+					//if ((_newAssigned # 0) == "itemMap") then {_savedAssigned set [0, _newAssigned # 0]}; // Allow map changes
 					{
 						if !((_savedAssigned # _forEachIndex) isEqualTo _x) then {
-							if (_forEachIndex isEqualTo 3) then {continue};
+							if (_forEachIndex isEqualTo 0) then {continue}; // Skip if map
+							if (_forEachIndex isEqualTo 3) then {continue}; // Skip if radio
 							player unlinkItem _x;
 							player linkItem (_savedAssigned # _forEachIndex);
 						}

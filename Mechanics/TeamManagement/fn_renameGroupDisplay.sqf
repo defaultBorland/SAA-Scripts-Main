@@ -1,7 +1,6 @@
 if (!hasInterface) exitWith {"FNC: renameGroupDisplay | ERROR: Only local execution is allowed"};
 
 [] spawn {
-	private _unit = _this # 0;
 	disableSerialization;
 	
 	_display = (findDisplay 46) createDisplay "RscDisplayEmpty";

@@ -14,8 +14,8 @@ Array - Array with certain players id/uid/object or all of this.
 
 params ["_target", "_type"];
 
-if !((typeName _target) in ["OBJECT", "SCALAR", "STRING"]) exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"};
-if !(_type isEqualType "String") exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"};
+if !((typeName _target) in ["OBJECT", "SCALAR", "STRING"]) exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"; []};
+if !(_type isEqualType "String") exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"; []};
 
 private _players = allPlayers select {!(_x getVariable ["SAA_isZeus", false])};
 
@@ -36,7 +36,7 @@ switch (typeName _target) do {
 	default {[]};
 };
 
-if (_players isEqualTo []) exitWith {diag_log "fnc_usersIDs | ERROR: No users with requested data"};
+if (_players isEqualTo []) exitWith {diag_log "fnc_usersIDs | ERROR: No users with requested data"; []};
 
 switch (toLower _type) do {
 	case "name": {

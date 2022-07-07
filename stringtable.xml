@@ -33,7 +33,7 @@
 
 <Container name = "Check Tickets">
 
-    <Key ID="STR_SAA_SHOWTICKETS_ACTIONNAME"> 
+    <Key ID="STR_SAA_SHOWTICKETS_ACTION_NAME"> 
         <Original>Tickets</Original> 
         <Russian>Тикеты</Russian> 
     </Key>
@@ -62,7 +62,7 @@
 
 <Container name = "Force Join To Squad">
 
-    <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_ACTIONNAME"> 
+    <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_ACTION_NAME"> 
         <Original>Join to squad</Original> 
         <Russian>Добавить в отряд</Russian> 
     </Key>
@@ -76,7 +76,7 @@
 
 <Container name = "Force Remove From Squad">
 
-    <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTIONNAME"> 
+    <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTION_NAME"> 
         <Original>Remove from squad</Original> 
         <Russian>Удалить из отряда</Russian> 
     </Key>
@@ -119,7 +119,6 @@
     </Key> 
 
 </Container>
-
 
 <Container name = "Actions">
 
@@ -1152,8 +1151,8 @@
             </Key>
         
             <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ERRORZEUSMESSAGE_ALREADYCV"> 
-                <Original>Selected Respawn Vehicle is Command Vehicle Already</Original> 
-                <Russian>Выбранный транспорт уже является КШМом</Russian> 
+                <Original>ERROR: Selected Respawn Vehicle is Command Vehicle Already</Original> 
+                <Russian>ОШИБКА: Выбранный транспорт уже является КШМом</Russian> 
             </Key>
     
             <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNCVCREATED"> 
@@ -1186,10 +1185,11 @@
             </Key>
         
             <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_TOOLTIP"> 
+                
                     <Original>Selected Respawn Point will be removed</Original> 
                     <Russian>Выбранная точка возрождения будет удалена</Russian> 
             </Key>
-        
+
             <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS"> 
                 <Original>Respawn Point Successfully Removed</Original> 
                 <Russian>Точка возрождения успешно удалена</Russian> 

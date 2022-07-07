@@ -36,7 +36,7 @@ _vehicle setVariable ["isFOB", true, true];
 [_vehicle, _marker] spawn {
 	params ["_respawnFOB", "_marker"];
 	while {(alive _respawnFOB) and (_respawnFOB getVariable "isFOB")} do {
-		_marker setMarkerPos getPos _respawnFOB;
+		_marker setMarkerPos getPos _respawnFOB; // Make client side
 		sleep 1;
 	};
 

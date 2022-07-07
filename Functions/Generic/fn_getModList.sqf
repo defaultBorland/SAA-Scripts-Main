@@ -1,6 +1,4 @@
 //
-params [""];
-
 _addons = getLoadedModsInfo;
 
 _modlist = _addons select {(_x # 2) isEqualTo false}; // Cut off arma 3 dlcs and default mods

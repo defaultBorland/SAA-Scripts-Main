@@ -45,7 +45,6 @@ class CfgFunctions
             class savePlayer {};
 			class changeClasses {};
 			class saveModlist {};
-
 			class getOrdersServer {};
         };
 		class Gameplay {

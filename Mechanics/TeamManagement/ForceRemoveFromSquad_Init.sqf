@@ -26,7 +26,7 @@ _insertChildren = {
 };
 
 //
-_action = ["forceRemoveFromSquad", localize "STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTIONNAME", "img\removeFromSquad.paa",
+_action = ["forceRemoveFromSquad", localize "STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTION_NAME", "img\removeFromSquad.paa",
 	{
 		params ["_target", "_player", "_actionParams"];
 		[["All", "Groups", side _player, true], Shadec_fnc_playersList] remoteExec ["call", 2];

@@ -59,9 +59,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "EH\player\itemsDelivered.sqf";
 [] execVM "EH\player\itemsRemoved.sqf";
 
-if (player getVariable ["SAA_isZeus", false]) then {
-	[] execVM "EH\player\zeus.sqf";
-} else {
+if !(player getVariable ["SAA_isZeus", false]) then {
 	[] execVM "EH\player\profileSavings.sqf";
 };
 

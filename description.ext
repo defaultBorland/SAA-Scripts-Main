@@ -23,6 +23,12 @@ class CfgFunctions
 		class Arsenal {
 			class addArsenalSpecificItems {};
 			class addShadecArsenal {};
+			class hideBottomButtons {};
+			class toggleLeftPanel {};
+			class hideLeftPanelButtons {};
+			class hideRightPanel {};
+			class gearList {};
+			class addCapacityTooltips {};
 		};
 		class Classes {
 			class classSwitcher {};

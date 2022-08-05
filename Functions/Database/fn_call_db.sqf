@@ -47,7 +47,9 @@ switch _act do {
 			// diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _order, _uid];
 		} else {
 			private _unit = _info # 1;// unit
-			"Extdb3" callExtension format ["0:%1:newPlayer:%2:%3", PROTOCOL, getPlayerUID _unit, str name _unit];
+			private _loadout = call Shadec_fnc_selectRandomLoadout;
+
+			"Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, getPlayerUID _unit, str name _unit, _loadout];
 			sleep 3;
 			[_act, _info] spawn Shadec_fnc_call_db;
 		};

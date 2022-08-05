@@ -60,6 +60,7 @@ class CfgFunctions
 			class rolesAssign {};
 			class showTickets {};
 			class showUserInfo {};
+			class selectRandomLoadout {};
 		};
 		class Generic {
 			class clearVehicleInventory {};

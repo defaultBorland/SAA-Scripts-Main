@@ -16,4 +16,9 @@
 			{titleText [format["<t color='#ff0000' size='1.5' align='center' valign='middle' font='PuristaBold'>%1</t>", localize "STR_SAA_DEBRIEFING_ALL_DEAD_SUBTITLE"], "PLAIN", 2, true, true]} remoteExec ["call", _x];
 		} forEach _zeuses;
 	};
+
+	// Save each death inventory to array with player uid identifier as part of variable name, just in case
+	private _deaths = missionNamespace getVariable [format["SAA_deaths_%1", _uid], []];
+	_deaths pushBack [str serverTime, getUnitLoadout _unit];
+	missionNamespace setVariable [format["SAA_deaths_%1", _uid], _deaths];
 };

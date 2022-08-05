@@ -12,14 +12,14 @@
 * None
 *
 * Example:
-* [_vehicle, true, true, true, false] call Shadec_fnc_clearVehicleInventory
+* [_vehicle, true, true, true, false] call Shadec_fnc_clearContainerInventory
 *
 */
 
 params ["_vehicle", "_clearWeapons", "_clearMagazines", "_clearItems", "_clearBackpacks"];
 
 if (_vehicle isKindOf "CAManBase") exitWith { // If object is kind of Man
-	["fnc_clearVehicleInventory | Error: Trying to clear inventory of a man.", "Info"] call Shadec_fnc_createLogServer;
+	["fnc_clearContainerInventory | Error: Trying to clear inventory of a man.", "Info"] call Shadec_fnc_createLogServer;
 }; 
 
 if (!(isNil "_clearWeapons") && {_clearWeapons}) then {

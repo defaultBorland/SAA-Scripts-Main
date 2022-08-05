@@ -1,5 +1,6 @@
 #include "GUI\ListNBox_dialog.h"
 
+briefingName = "SAA Server";
 onLoadName = "SAA Project [DEV]";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
@@ -67,9 +68,8 @@ class CfgFunctions
 			class selectRandomLoadout {};
 		};
 		class Generic {
-			class clearVehicleInventory {};
+			class clearContainerInventory {};
 			class createLogServer {};
-			class gearList {};
 			class getModList {};
 			class getPlayersNames {};
 			class parseOrder {};
@@ -126,14 +126,6 @@ class CfgFunctions
 			class applyLoadout {file = "ZeusContextMenu\Garage\fn_applyLoadout.sqf"};
 		};
     };
-
-	class Achilles {
-		class Achilles {
-			class switchUnit_start {};
-			class switchUnit_exit {};
-			class addBreachDoorAction {};
-		};
-	};
 };
 
 //Remote execution config

@@ -4,7 +4,7 @@ _action = ["showGarageVehicles", localize "STR_SAA_SHOW_GARAGE_VEHICLES_ACTION_N
 		[[], Shadec_fnc_showGarageVehicles] remoteExec ["call", 2];
 	},	
 	{	// Condition
-		(player isEqualTo (leader group player)) and {(player getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC"]}
+		(player getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC"]
 	},
 	{},
 	[],

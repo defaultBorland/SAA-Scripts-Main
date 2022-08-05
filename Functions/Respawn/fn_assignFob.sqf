@@ -40,7 +40,7 @@ _vehicle setVariable ["isFOB", true, true];
 		sleep 1;
 	};
 
-	if !(alive _respawnFOB) then {
+	if !(alive _respawnFOB) then { //if isNil -> deleted else -> destroyed
 		[[markerText _marker], {
 			systemChat format ["> Server: %1 '%2' %3!", localize "STR_SAA_GENERAL_RESPAWN_CV", _this # 0, localize "STR_SAA_MESSAGE_HAS_BEEN_DESTROYED"];
 		}] remoteExec ["call", -2];

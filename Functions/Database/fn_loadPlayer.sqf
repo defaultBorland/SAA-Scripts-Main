@@ -1,7 +1,7 @@
-params ["_unit","_uid","_data"];
-_unit = _this # 0;
+params ["_unit"];
+
 _uid = getPlayerUID _unit;
-_data = [_uid,_unit];
+_data = [_uid, _unit];
 
 if (_unit getVariable ["SAA_isZeus", false]) exitWith {
     [[player, "assign"], Shadec_fnc_manageCurators] remoteExec ["call", 2];
@@ -10,6 +10,4 @@ if (_unit getVariable ["SAA_isZeus", false]) exitWith {
     }];
 };
 
-[["loadAll", _data],Shadec_fnc_call_db] remoteExec ["spawn", 2];
-
-// _unit in (allCurators apply {getAssignedCuratorUnit _x})
+[["loadAll", _data], Shadec_fnc_call_db] remoteExec ["spawn", 2];

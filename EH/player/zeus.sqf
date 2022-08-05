@@ -10,16 +10,16 @@ _EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", {
 	params ["_curator", "_entity"];
 
 	if (_entity isKindOf "LandVehicle") then {
-		[_entity, true, true, true, true] call Shadec_fnc_clearVehicleInventory;
+		[_entity, true, true, true, true] call Shadec_fnc_clearContainerInventory;
 		_entity setFuel (100 / (random [18, 33, 65]));
 	};
 
 	if (_entity isKindOf "Air") then {
-		[_entity, true, true, true, false] call Shadec_fnc_clearVehicleInventory;
-
+		[_entity, true, true, true, true] call Shadec_fnc_clearContainerInventory;
+		_entity addBackpackCargoGlobal ["B_Parachute", 8];
 	};
 	if (_entity isKindOf "Ship") then {
-		[_entity, true, true, true, true] call Shadec_fnc_clearVehicleInventory;
+		[_entity, true, true, true, true] call Shadec_fnc_clearContainerInventory;
 		_entity setFuel (100 / (random [24, 39, 65]));
 		
 	};

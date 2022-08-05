@@ -60,7 +60,7 @@ _coloumnHeader4 ctrlSetText localize "STR_SAA_GENERAL_CLASSNAME";
 
 private _buttonHide = _display displayCtrl 1070;
 _buttonHide ctrlSetText localize "STR_SAA_GENERAL_HIDE";
-_buttonHide ctrlAddEventHandler ["ButtonDown",	{	
+_buttonHide ctrlAddEventHandler ["ButtonDown", {	
 	params ["_ctrl"];
 	closeDialog 0;
 }];

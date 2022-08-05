@@ -1,6 +1,8 @@
-_act = _this # 0;// "saveAll", "loadAll"...
-_info = _this # 1;// player info
-switch _act do {
+params ["_act", "_info"];
+_act = _this # 0; // "saveAll", "loadAll"...
+_info = _this # 1; // player info
+
+switch (_act) do {
 	case "saveAll" : {
 		private _name = str(_info # 0);
 		"Extdb3" callExtension format ["0:%1:savePlayer:%2:%3:%4", PROTOCOL,

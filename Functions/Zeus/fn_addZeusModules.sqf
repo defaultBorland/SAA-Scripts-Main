@@ -48,3 +48,10 @@ _prefix = _prefixMain + "Achilles\";
 	//"switchUnit",
 	//"spawnExplosives"
 ];
+
+// Fuel
+_prefix = _prefixMain + "Fuel\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"spawnCanister",
+	"setStationsFuel"
+];

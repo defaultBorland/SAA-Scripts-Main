@@ -1903,3 +1903,37 @@
     </Key>
 
 </Container>
+
+<Container name = "Arsenal">
+
+    <Key ID="STR_SAA_ARSENAL_INSUFFICIENT_CAPACITY"> 
+        <Original>Insufficient capacity considering the current inventory</Original> 
+        <Russian>Недостаточная вместимость с учётом текущего инвентаря</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_ARSENAL_RESTORED_HEADER"> 
+        <Original>Returned to the original state</Original> 
+        <Russian>Возвращено к изначальному состоянию</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_ARSENAL_RESTORED_UNIFORM"> 
+        <Original>Uniform and its contents</Original> 
+        <Russian>Униформа и её содержимое</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_ARSENAL_RESTORED_VEST"> 
+        <Original>Vest and its contents</Original> 
+        <Russian>Разгрузка и её содержимое</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_ARSENAL_RESTORED_BACKPACK"> 
+        <Original>Backpack and its contents</Original> 
+        <Russian>Рюкзак и его содержимое</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_ARSENAL_RESTORED_HINT"> 
+        <Original>Reason: The specified type of uniform has been changed to another one that cannot fit the contents of the current one.</Original> 
+        <Russian>Причина: Указанный вид обмундирования был изменён на другой, который не может вместить содержимое текущего.</Russian> 
+    </Key>
+
+</Container>

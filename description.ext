@@ -53,6 +53,10 @@ class CfgFunctions
 			class saveModlist {};
 			class getOrdersServer {};
         };
+		class Fuel {
+			class setStationsFuel {};
+			class spawnCanister {};
+		};
 		class Gameplay {
 			class endMission {};
 			class playersList {};

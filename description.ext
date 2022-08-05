@@ -30,7 +30,7 @@ class CfgFunctions
 			class Machinegunner {};
 			class Grenadier {};
 			class Engineer {};
-			class ATSpec {};
+			class AT {};
 			class Medic {};
 			class Marksman {};
 			class Sniper {};
@@ -84,6 +84,7 @@ class CfgFunctions
 			class addActionToStorage {};
 			class addToStorage {};
 			class assignStorage {};
+			class calcStorageSize {};
 			class composeAvailiableItems {};
 			class createStorage {};
 			class deleteStorage {};
@@ -92,6 +93,7 @@ class CfgFunctions
 			class removeActionFromStorage {};
 			class removedItemsListDisplay {};
 			class removeStorage {};
+			class isItemAllowed {};
 			class removeStorageRestrictedItems {};
 			class restrictStorageAccess {};
 		};

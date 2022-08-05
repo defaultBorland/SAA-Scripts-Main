@@ -487,7 +487,7 @@
         <Russian>Сапёр-Инженер</Russian> 
     </Key>
 
-    <Key ID="STR_SAA_CLASSES_ATSPEC"> 
+    <Key ID="STR_SAA_CLASSES_AT"> 
         <Original>AT/AA-Specialist</Original> 
         <Russian>ПТ/ПВО-Специалист</Russian> 
     </Key>

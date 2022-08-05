@@ -7,7 +7,7 @@ fnc_FormatClasses = {
 		case "Rifleman": {_returnString = "RIFLE"};
 		case "Machinegunner": {_returnString = "MG"};
 		case "Engineer": {_returnString = "ENG"};
-		case "ATSpec": {_returnString = "AT/AA"};
+		case "AT": {_returnString = "AT/AA"};
 		case "Medic": {_returnString = "MED"};
 		case "Grenadier": {_returnString = "GREN"};
 		case "Marksman": {_returnString = "MARKS"};
@@ -73,7 +73,7 @@ switch (_groupBy) do {
 	case "Classes": {
 		_groupOrder = _players apply {_x # 2};
 		_groupOrder = _groupOrder arrayIntersect _groupOrder;
-		_groupOrder sort true; // ex: ["ATSpec", "Engineer", "Rifleman"];
+		_groupOrder sort true; // ex: ["AT", "Engineer", "Rifleman"];
 
 		{
 			_groupOrderCurrent = _x;

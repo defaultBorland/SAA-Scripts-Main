@@ -1,24 +1,24 @@
 //
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "SAA_ZEUS_MODULES_MAIN_PROMOTETOZEUS_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_MAIN", localize "STR_SAA_ZEUS_MODULES_MAIN_PROMOTE_TO_ZEUS_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	if (isNull _objectUnderCursor) exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
 	if !(_objectUnderCursor isKindOf "Man") exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_MUSTBEAMAN"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_MUSTBEAMAN
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_MAN"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORMUSTBEAMAN
 	};
 
 	if !(isPlayer _objectUnderCursor) exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_MUSTBEAPLAYER"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_MUSTBEAPLAYER
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_PLAYER"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORMUSTBEAPLAYER
 	};
 
 	if (_objectUnderCursor getVariable ["SAA_isZeus", false]) exitWith {
-		[objNull, localize "SAA_ZEUS_MESSAGES_ALREADYZEUS"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ALREADYZEUS
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_ALREADY_ZEUS"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORALREADYZEUS
 	};
 
 	[_objectUnderCursor] call Shadec_fnc_promoteToZeus;

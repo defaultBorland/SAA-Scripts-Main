@@ -1,38 +1,41 @@
 //
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_RESPAWN", localize "SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_RESPAWN", localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "SAA_ZEUS_MESSAGES_ERRORNOOBJECTSELECTED"] call bis_fnc_showCuratorFeedbackMessage;
-	// };
+	_respawnPositions = missionNamespace getVariable ["respawnPositions", []]; //diag_log format ["VARS CHECK RRP | _respawnPositions: %1", _respawnPositions];
 
-	_respawnPositions = missionNamespace getVariable ["respawnPositions", []]; diag_log format ["VARS CHECK RRP | _respawnPositions: %1", _respawnPositions];
-	_markersNames = _respawnPositions apply { markerText (_x # 0)};
+	if (count _respawnPositions < 1) exitWith {
+		[objNull, localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ERRORZEUSMESSAGE_NOCVORFOBS"] call bis_fnc_showCuratorFeedbackMessage;
+	};
 
-	[localize "SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_DIALOG_HEADER",
+	_markersNames = _respawnPositions apply {markerText (_x # 0)};
+
+	[localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_HEADER",
 		[
-			["COMBO", [localize "SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_DIALOG_SELECTMARKER_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_DIALOG_SELECTMARKER_TOOLTIP"],
+			["COMBO", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_TOOLTIP"],
 				[
 					_respawnPositions,
 					_markersNames,
 					0
 				]
+			],
+			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_TOOLTIP"],
+				true
 			]
 		],
 		{ // On Confirmation
 			params ["_dialogResult", "_args"];
-			_dialogResult params ["_respawnPosition"];
+			_dialogResult params ["_respawnPosition", "_showNotification"];
 			_args params ["_respawnPositions"];
 
-			[[_respawnPosition # 0], Shadec_fnc_removeRespawnPoint] remoteExec ["spawn", 2];
-			[format["> Server: Respawn '%1' was removed.", markerText (_respawnPosition # 0)]] remoteExec ["systemChat", -2];
+			[[_respawnPosition # 0, _showNotification], Shadec_fnc_removeRespawnPoint] remoteExec ["spawn", 2];
 
-			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_RESPAWN_REMOVERESPAWNPOINT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},
-		[_markersNames]
+		[]
 	] call zen_dialog_fnc_create;
 }, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;

@@ -1,8 +1,6 @@
 //
 params ["_box", "_uniform"];
 
-diag_log format["fnc_addArsenalSpecificItems | Params: %1", _this];
-
 [{missionNamespace getVariable format["loadoutLoaded_%1", getPlayerUID player]}, {
 	_this params ["_box", "_uniform"];
 
@@ -11,7 +9,7 @@ diag_log format["fnc_addArsenalSpecificItems | Params: %1", _this];
 	
 	_arsenalItems = [];
 	switch (_firstClass) do {
-		case "ATSpec": {_arsenalItems = _uniform # 0};
+		case "AT": {_arsenalItems = _uniform # 0};
 		case "Machinegunner": {_arsenalItems = _uniform # 1};
 		case "Sniper": {_arsenalItems = _uniform # 2};
 		default {};

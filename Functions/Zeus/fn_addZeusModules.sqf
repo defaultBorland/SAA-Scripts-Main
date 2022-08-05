@@ -3,40 +3,55 @@ private _prefixMain = "ZeusModules\";
 
 // Main
 _prefix = _prefixMain + "Main\";
-{[] execVM (_prefix + _x)} forEach [
-	"addShadecArsenal.sqf",
-	"endMission.sqf",
-	"assignStorage.sqf",
-	"removeStorage.sqf",
-	"playersList.sqf",
-	"promoteToZeus.sqf"
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"addShadecArsenal",
+	"endMission",
+	"playersList",
+	"promoteToZeus"
 ];
 
 // Radio
 _prefix = _prefixMain + "Radio\";
-{[] execVM (_prefix + _x)} forEach [
-	"addJammingVehicle.sqf",
-	"removeJammingVehicle.sqf",
-	"changeSignalQuality.sqf",
-	"replaceVehicleRadio.sqf"
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"addJammingVehicle",
+	"removeJammingVehicle",
+	"changeSignalQuality",
+	"replaceVehicleRadio"
 ];
 
 // Respawn
 _prefix = _prefixMain + "Respawn\";
-{[] execVM (_prefix + _x)} forEach [
-	"addRemoveRespawnTickets.sqf",
-	"forceRespawnTimer.sqf",
-	"createRespawnPoint.sqf",
-	"removeRespawnPoint.sqf"
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"changeRespawnTickets",
+	"forcedRespawn",
+	"createRespawnPoint",
+	"removeRespawnPoint"
+];
+
+// Storage
+_prefix = _prefixMain + "Storage\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"assignStorage",
+	"removeStorage",
+	"restrictStorageAccess"
 ];
 
 // Utilities
-_prefix = _prefixMain + "Utilities\";
-{[] execVM (_prefix + _x)} forEach [
-	
+_prefix = _prefixMain + "Other\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"spawnUnits"
 ];
 
-// Utilities
-// [] execVM "Functions\ZeusModules\Utilites\spawnSoldiers.sqf";
-// [] execVM "Functions\ZeusModules\Utilites\clearVehicleInventory.sqf";
-// [] execVM "Functions\ZeusModules\Utilites\healAllPlayers.sqf";
+// Achilles
+_prefix = _prefixMain + "Achilles\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	//"switchUnit",
+	//"spawnExplosives"
+];
+
+// Fuel
+_prefix = _prefixMain + "Fuel\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"spawnCanister",
+	"setStationsFuel"
+];

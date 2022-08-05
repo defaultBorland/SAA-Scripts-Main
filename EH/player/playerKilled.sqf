@@ -23,7 +23,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 
 	// Exit if unit wasn't a player 
 	if !(isPlayer _unit) exitWith {};
-	
+
 	// Creating variable to reLoadout person from serverside after respawn if player wasnt KIA on rejoin
 	if !(_unit getVariable ["KIA_onExit", false]) then {
     	missionNamespace setVariable [format["%1_INVENTORY", getPlayerUID _unit], getUnitLoadout _unit, true];

@@ -1,3 +1,4 @@
+// Array kind of [["A","B"], [2,5]] of provided item type to [["A",2], ["B",2]] 
 params ["_type","_getCargoArrays"];
 
 if (isNil {_getCargoArrays}) exitWith {[]};

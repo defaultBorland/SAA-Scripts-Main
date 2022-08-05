@@ -1,7 +1,8 @@
 // - OnlyTeamLeaders, OnlyWithoutSquad, OnlySquadMembers, All
 params ["_type", "_player"];
 
-private _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
+private _players = ["all", "object"] call Shadec_fnc_usersIDs;
+_players = _players select {(side _x) isEqualTo (side _player)};
 
 switch (_type) do {
 	case "OnlyTeamLeaders": {

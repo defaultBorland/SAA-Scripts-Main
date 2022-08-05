@@ -14,6 +14,8 @@ if (missionNamespace getVariable [format["availiableItems_%1_%2", _firstClass, _
 	_array append _arrayP;
 	_array append _arrayS;
 	_array = _array arrayIntersect _array;
+	_array = _array apply {toLower _x};
+	
 	missionNamespace setVariable [format["availiableItems_%1_%2", _firstClass, _secondClass], _array];
 };
 

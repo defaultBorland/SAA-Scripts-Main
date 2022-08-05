@@ -2,16 +2,15 @@
 
 //Player connected handler
 _EH_PlayerConnected = addMissionEventHandler ["PlayerConnected", {
-	params["_id", "_uid", "_name", "_jip", "_owner"];
-    _pcid = _this select 0;
-    _uid = _this select 1;
-    _pname = _this select 2;
+	params["_pcid", "_uid", "_name", "_jip", "_owner"];
 
     [
-        {missionNamespace getVariable [format["loadoutLoaded_%1", _this # 0], false]},
-        {[_this # 0] call Shadec_fnc_composeAvailiableItems},
+        {missionNamespace getVariable [format["loadoutLoaded_%1", _this # 0], false]}, // Wait when players loadout will be loaded
+        {[_this # 0] call Shadec_fnc_composeAvailiableItems}, // Generate list with available items for player classes
         [_uid],
         15,
         {}
     ] call CBA_fnc_waitUntilAndExecute;
+
+    systemChat "SERVER_EH_PLAYERCONNECTED";
 }];

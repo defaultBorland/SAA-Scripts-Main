@@ -2,7 +2,7 @@
 params ["_storageProxy"];
 _pStorage = missionNamespace getVariable (format["pStorage_%1", getPlayerUID player]);
 _storageProxy addAction [
-	localize "SAA_SAA_STORAGE_ACTION",
+	localize "STR_SAA_STORAGE_ACTION",
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		_arguments params ["_pStorage"];
@@ -13,7 +13,7 @@ _storageProxy addAction [
 ];
 
 _action = [
-	"openStorage", localize "SAA_SAA_STORAGE_ACTION", "", {
+	"openStorage", localize "STR_SAA_STORAGE_ACTION", "", {
 		params ["_target", "_player", "_params"];
 		_params params ["_pStorage"];
 

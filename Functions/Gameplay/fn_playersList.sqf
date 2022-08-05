@@ -5,10 +5,9 @@ fnc_FormatClasses = {
 	_returnString = "";
 	switch (_class) do {
 		case "Rifleman": {_returnString = "RIFLE"};
-		case "Nurse": {_returnString = "NURSE"};
 		case "Machinegunner": {_returnString = "MG"};
 		case "Engineer": {_returnString = "ENG"};
-		case "ATSpec": {_returnString = "AT/AA"};
+		case "AT": {_returnString = "AT/AA"};
 		case "Medic": {_returnString = "MED"};
 		case "Grenadier": {_returnString = "GREN"};
 		case "Marksman": {_returnString = "MARKS"};
@@ -32,10 +31,11 @@ fnc_NoReturn = {
 };
 
 
-params ["_status", "_groupBy", "_isOnlyToCaller", ["_caller", objNull]];
+params ["_status", "_groupBy", "_side", "_isOnlyToCaller", ["_caller", objNull]];
 disableSerialization;
 
-private _players = allPlayers - (allCurators apply {getAssignedCuratorUnit _x});
+private _players = ["all", "object"] call Shadec_fnc_usersIDs;
+_players = _players select {(side _x) isEqualTo _side};
 
 private _playersCount = count _players;
 
@@ -49,9 +49,9 @@ switch (_status) do {
 // If no players with selected status - exit with message
 if (_players isEqualTo []) exitWith {[_status, _isOnlyToCaller] call fnc_NoReturn};
 
-private _targetsCount = count _players;
+_status = localize ("STR_SAA_GENERAL_" + toUpper _status);
 
-diag_log format ["playersList FNC | _players to show: %1", _players];
+private _targetsCount = count _players;
 
 _players = _players apply {[name _x] + (missionNamespace getVariable (format["%1_DATA", getPlayerUID _x])) + [_x, [grpNull, group _x] select ((count units group _x) > 1)]};
 // [Name, Rank, Class1, Class2, Unit, Group or grpNull if alone]
@@ -73,7 +73,7 @@ switch (_groupBy) do {
 	case "Classes": {
 		_groupOrder = _players apply {_x # 2};
 		_groupOrder = _groupOrder arrayIntersect _groupOrder;
-		_groupOrder sort true; // ex: ["ATSpec", "Engineer", "Rifleman"];
+		_groupOrder sort true; // ex: ["AT", "Engineer", "Rifleman"];
 
 		{
 			_groupOrderCurrent = _x;
@@ -92,15 +92,12 @@ switch (_groupBy) do {
 	};
 	case "Squad": {
 		if (_caller isEqualTo objNull) exitWith {diag_log format ["playersList FNC ERROR | No object passed into squad case"]};
-		_status = "Squad";
+		_status = localize "STR_SAA_GENERAL_SQUAD";
 		_playersGrouped pushBack [format ["%1 (%2)", groupID group _caller, name leader group _caller], _players select {(_x # 5) isEqualTo (group _caller)}];
-		_targetsCount = "-";
-		_playersCount = "-";
+		_targetsCount = count (_playersGrouped # 0 # 1);
 	};
 	default {};
 };
-
-diag_log format ["playersList FNC | _players modified: %1", _playersGrouped];
 
 // Compose Structured Text
 _structuredText = "";
@@ -117,7 +114,6 @@ _structuredText = format["<t size='2.0' color='#ff0000' align='center' font='Pur
 
 // Show composed text
 if (_isOnlyToCaller) then {
-	// [[_structuredText, "Plain", 2, false, true]] remoteExec ["cutText", remoteExecutedOwner];
 	[parseText _structuredText] remoteExec ["hintSilent", remoteExecutedOwner];
 } else {
 	[parseText _structuredText] remoteExec ["hint"];

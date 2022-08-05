@@ -1,35 +1,43 @@
-#include "GUI\Dialog_RemovedItemsList.h"
+#include "GUI\ListNBox_dialog.h"
 
-onLoadName = "SAA Project [dev]";
+briefingName = "SAA Server";
+onLoadName = "SAA Project [DEV]";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
 respawnDelay = 120;
 respawnButton = 0;
 respawnOnStart = -1;
-respawnTemplates[] = {"MenuPosition", "Spectator", "Autorespawn", "Tickets", "Wave"};
+respawnTemplates[] = {"MenuPosition", "Spectator", "Tickets", "Wave"}; // "Spectator"
 saving = 0;
 disabledAI = 1;
-enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198066438612"};
 debriefing = 0;
 allowProfileGlasses = 0;
+zeusCompositionScriptLevel = 2;
+// skipLobby = 1;
 
 //Function library definitions
 class CfgFunctions
 {
-    class Shadec
-    {
+    class Shadec {
+
 		class Arsenal {
 			class addArsenalSpecificItems {};
 			class addShadecArsenal {};
+			class hideBottomButtons {};
+			class toggleLeftPanel {};
+			class hideLeftPanelButtons {};
+			class hideRightPanel {};
+			class gearList {};
+			class addCapacityTooltips {};
 		};
 		class Classes {
 			class classSwitcher {};
 			class Rifleman {};
-			class Nurse {};
 			class Machinegunner {};
 			class Grenadier {};
 			class Engineer {};
-			class ATSpec {};
+			class AT {};
 			class Medic {};
 			class Marksman {};
 			class Sniper {};
@@ -44,19 +52,29 @@ class CfgFunctions
             class savePlayer {};
 			class changeClasses {};
 			class saveModlist {};
+			class getOrdersServer {};
         };
+		class Fuel {
+			class setStationsFuel {};
+			class spawnCanister {};
+		};
 		class Gameplay {
 			class endMission {};
 			class playersList {};
 			class respawnTeleport {};
 			class rolesAssign {};
+			class showTickets {};
 			class showUserInfo {};
+			class selectRandomLoadout {};
 		};
 		class Generic {
-			class gearList {};
+			class clearContainerInventory {};
+			class createLogServer {};
 			class getModList {};
 			class getPlayersNames {};
+			class parseOrder {};
 			class reLoadoutUnit {};
+			class removeInventoryRestrictedItems {};
 			class usersIDs {};
 		};
 		class Radio {
@@ -67,13 +85,9 @@ class CfgFunctions
 		};
 		class Respawn {
 			class assignFob {};
-			class changeRespawnState {};
 			class changeRespawnTickets {};
-			class changeRespawnTime {};
 			class createRespawnPoint {};
-			class forceRespawnTimer {};
-			class moveRespawnMarker {};
-			class playersRespawnInfo {};
+			class forcedRespawn {};
 			class removeFob {};
 			class removeRespawnPoint {};
 		};
@@ -81,6 +95,7 @@ class CfgFunctions
 			class addActionToStorage {};
 			class addToStorage {};
 			class assignStorage {};
+			class calcStorageSize {};
 			class composeAvailiableItems {};
 			class createStorage {};
 			class deleteStorage {};
@@ -89,16 +104,26 @@ class CfgFunctions
 			class removeActionFromStorage {};
 			class removedItemsListDisplay {};
 			class removeStorage {};
-			class removingRestrictingItems {};
+			class isItemAllowed {};
+			class removeStorageRestrictedItems {};
+			class restrictStorageAccess {};
 		};
 		class Zeus {
+			class addContextActions {};
 			class addZeusModules {};
 			class manageCurators {};
 			class promoteToZeus {};
 		};
+		class GUI {
+			class fillListNBox {file = "GUI\fn_fillListNBox.sqf"};
+		};
 		class Mechanics {
 			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
-			class showTickets {file = "Mechanics\ShowTickets\fn_showTickets.sqf"}
+			class showGarageVehicles {file = "Mechanics\ShowGarageVehicles\fn_showGarageVehicles.sqf"};
+		};
+		class ZeusContextMenu {
+			class spawnVehicle {file = "ZeusContextMenu\Garage\fn_spawnVehicle.sqf"};
+			class applyLoadout {file = "ZeusContextMenu\Garage\fn_applyLoadout.sqf"};
 		};
     };
 };
@@ -116,58 +141,58 @@ class CfgRemoteExec
 class CfgDebriefing
 {  
 	class Win {
-		title = "Mission Complete";
-		subtitle = "Respect+";
+		title = "$STR_SAA_DEBRIEFING_WIN_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_WIN_SUBTITLE";
 		description = "";
 		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsUp_ca";
 		pictureColor[] = {0.1,0.6,0.2,1};
 	};
 
 	class Lose {
-		title = "Mission Failed";
-		subtitle = "We'll get em next time?...";
+		title = "$STR_SAA_DEBRIEFING_LOSE_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_LOSE_SUBTITLE";
 		description = "";
 		picture = "\A3\UI_F\data\IGUI\Cfg\HoldActions\holdAction_thumbsDown_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class toBeContinued {
-		title = "To be continued...";
-		subtitle = "Until next time...";
+		title = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_SUBTITLE";
 		description = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca";
 		pictureColor[] = {1,1,1,1};
 	};
 
 	class allDead {
-		title = "You all died!";
-		subtitle = "Everyone is dead.";
+		title = "$STR_SAA_DEBRIEFING_ALL_DEAD_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_ALL_DEAD_SUBTITLE";
 		description = "";
 		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDeath_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class missingMap {
-		title = "Missing Map";
-		subtitle = "Server and Client Map missmatch";
-		description = "Go to Arma 3 Launcher and activate neccessary map.";
+		title = "$STR_SAA_DEBRIEFING_MISSING_MAP_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_MISSING_MAP_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_MISSING_MAP_DESCRIPTION";
 		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class somethingWentWrong {
-		title = "Something Went Wrong";
-		subtitle = "Inform administration about your problem";
-		description = "Do not try to rejoin, inform administration first.";
+		title = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_DESCRIPTION";
 		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";
 		pictureColor[] = {1,1,1,1};
 	};
 
 	class promotedToZeus {
-		title = "Promoted To Zeus";
-		subtitle = "You have been promoted to SAA-Zeus";
-		description = "Your data was saved. Please, reselect playable slot and proceed.";
-		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
-		pictureColor[] = {0.1,0.6,0.1,1};
+		title = "$STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_DESCRIPTION";
+		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Zeus_ca";
+		pictureColor[] = {1,1,1,1};
 	};
 };
 

@@ -4,8 +4,8 @@ Description: Function compose array of users on mission by passed parametrs on s
 Syntax:
 ["Targets", "Type"] call Shadec_fnc_usersIDs;
 Parameters:
-["Targets", "Type"]: Array
-Targets: String
+[Targets, "Type"]: Array
+Targets: string ("All", name, uid), object, id (cliend id)
 Type: String
 
 Return Value:
@@ -14,36 +14,43 @@ Array - Array with certain players id/uid/object or all of this.
 
 params ["_target", "_type"];
 
-if !(_target isEqualType "STRING") exitWith {diag_log "fn_UsersIDs wrong 1 parametr"};
-if !(_type isEqualType "STRING") exitWith {diag_log "fn_UsersIDs wrong 2 parametr"};
+if !((typeName _target) in ["OBJECT", "SCALAR", "STRING"]) exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"; []};
+if !(_type isEqualType "String") exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"; []};
 
-_players = [];
+private _players = allPlayers select {!(_x getVariable ["SAA_isZeus", false])};
 
-if (_target isEqualTo "All") then {
-	_players = [] + allPlayers apply {[owner _x, getPlayerUID _x, _x]};
-	_players = _players select {!((_x # 1) in (missionNamespace getVariable "ZeusArray"))};
-	if (_players isEqualTo []) exitWith {[]};
-
-	switch (_type) do {
-		case "ID": {_players = _players apply {_x # 0}};
-		case "UID": {_players = _players apply {_x # 1}};
-		case "OBJ": {_players = _players apply {_x # 2}};
-		case "All";
-		default {[]};
+switch (typeName _target) do {
+	case "OBJECT": {	// unit
+		_players = _players select {_x isEqualTo _target};
 	};
-} else {
-	_index = allPlayers findIF {_target isEqualTo name _x};
-	if (_index < 0) exitWith {diag_log format ["User with name %1 not found.", _target]};
-	switch (_type) do {
-		case "ID": {_players pushBack owner(allPlayers # _index)};
-		case "UID": {_players pushBack getPlayerUID(allPlayers # _index)};
-		case "OBJ": {_players pushBack (allPlayers # _index)};
-		case "All": {_players pushBack owner(allPlayers # _index)}; //?
-		default {[]};
+	case "SCALAR": {	// cliend id
+		_players = _players select {(owner _x) isEqualTo _target};
 	};
+	case "STRING": {	// name, uid, all
+		if ((toLower _target) isEqualTo "all") exitWith {}; // If All - no additional actions needed
+		if ((count str (parseNumber _target)) isEqualTo 17) exitWith { // If string was 17-digit UID
+			_players = _players select {(getPlayerUID _x) isEqualTo _target};
+		};
+		_players = _players select {(name _x) isEqualTo _target}; // Overwise _target is player name
+	};
+	default {[]};
 };
 
-// diag_log format ["fnc_usersIDs | return: %1", _players];
+if (_players isEqualTo []) exitWith {diag_log "fnc_usersIDs | ERROR: No users with requested data"; []};
+
+switch (toLower _type) do {
+	case "name": {
+		_players = _players apply {name _x};
+	};
+	case "uid": {
+		_players = _players apply {getPlayerUID _x};
+	};
+	case "id": {
+		_players = _players apply {owner _x};
+	};
+	case "object";
+	default {};
+};
 
 //return
 _players

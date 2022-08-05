@@ -4,6 +4,15 @@ waitUntil {!isNull player};
 
 private _uid = getPlayerUID player;
 
+// Check if player has World that loaded on server
+if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {
+	[(name player) + " have not loaded needed map. Kicking out."] call Shadec_fnc_createLogServer;
+
+	[[name player], {systemChat format ["%1 %2", _this # 0, localize "STR_SAA_MESSAGE_WORLD_NOT_LOADED"]}] remoteExec ["call", -2];
+
+	"missingMap" call BIS_fnc_endMission;
+};
+
 player setVariable ["SAA_isZeus", _uid in (missionNamespace getVariable "ZeusArray"), true];
 player setVariable ["SAA_isArsenalUnrestricted", player getVariable ["SAA_isZeus", false], true];
 player setVariable ["SAA_storageRestricted", player getVariable ["SAA_isZeus", false], true];
@@ -31,35 +40,40 @@ if !(player getVariable ["KIA_onExit", false]) then {
 // Loading player data from db or assign zeus (if uid in ZeusArray)
 [player] spawn Shadec_fnc_loadPlayer;
 
-// Wait untill loadout is loaded by server or skip if zeus
-// [{player getVariable ["LoadoutLoaded", player getVariable ["SAA_isZeus", false]]}, {}, _uid, 30, {"somethingGoneWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
-
 // Add Actions
+[] execVM "Mechanics\Root\RootActions_init.sqf";
+[] execVM "Mechanics\Reloadout\LoadoutFix_init.sqf";
+
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
 [] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
 [] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
 [] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
 [] execVM "Mechanics\TeamManagement\ForceJoinToSquad_Init.sqf";
+[] execVM "Mechanics\TeamManagement\ForceRemoveFromSquad_Init.sqf";
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
+[] execVM "Mechanics\ShowGarageVehicles\ShowGarageVehicles_Init.sqf";
+
 // Execute EHs
-[] execVM "EH\player\arsenal.sqf";
-[] execVM "EH\player\storage.sqf";
 //[] execVM "EH\player\getOut.sqf";
 [] execVM "EH\player\serverFps.sqf";
+
+if !(player getVariable ["SAA_isZeus", false]) then {
+	[] execVM "EH\player\profileSavings.sqf";
+	[] execVM "EH\player\arsenal.sqf";
+	[] execVM "EH\player\storage.sqf";
+	[] execVM "EH\player\itemsDelivered.sqf";
+	[] execVM "EH\player\itemsRemoved.sqf";
+};
+
 script_handler = [] execVM "EH\player\playerKilled.sqf";
 [] execVM "EH\player\playerRespawn.sqf";
-if (player getVariable ["SAA_isZeus", false]) then {
-	[] execVM "EH\player\zeus.sqf";
-} else {
-	[] execVM "EH\player\profileSavings.sqf";
-};
 
 waitUntil {scriptDone script_handler};
 // If player was KIA - kill him
 if (player getVariable ["KIA_onExit", false]) then {player setDamage 1} else {
 	
 	script_handler = [] spawn {sleep 6; [] call BIS_fnc_VRFadeIn;};
-	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 15, {"somethingWentWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
+	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 30, {"somethingWentWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 };
 
 // Saving Player Modlist to db
@@ -76,27 +90,11 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 // Reset player group
 [player] joinSilent grpNull;
 
-// Remove restricted items from player inventory
-while {[player, "MineDetector"] call BIS_fnc_hasItem} do {player removeItem "MineDetector"};
-if !((player getVariable ["SAA_PrimaryClass", "Rifleman"]) isEqualTo "Engineer") then {
-	{
-		while {[player, _x] call BIS_fnc_hasItem} do {player removeItem _x};
-	} forEach ["I_UavTerminal","C_UavTerminal","O_UavTerminal","B_UavTerminal"];
-};
 
-// Display removed restricted items from player storage
-_itemsRemoved = missionNamespace getVariable [format["removedItems_%1", _uid], []];
-if !(_itemsRemoved isEqualTo []) then {
-	player addAction [localize "SAA_ACTION_REMOVEDITEMSLIST", {
-		createDialog "Dialog_RemovedItemsList";
-		((findDisplay 100) displayCtrl 102) ctrlSetText localize "SAA_DESCRIPTION_REMOVEDITEMSLIST_HEADER";
-		((findDisplay 100) displayCtrl 103) ctrlSetText localize "SAA_DESCRIPTION_REMOVEDITEMSLIST_DESC";
-		((findDisplay 100) displayCtrl 104) ctrlSetText localize "SAA_DESCRIPTION_REMOVEDITEMSLIST_HINT";
-		((findDisplay 100) displayCtrl 106) ctrlSetText localize "SAA_GENERAL_HIDE";
-
-		_ctrl = (findDisplay 100) displayCtrl 101;
-
-		_itemsRemoved = missionNamespace getVariable [format["removedItems_%1", getPlayerUID player], []];
-		[_itemsRemoved, _ctrl] call Shadec_fnc_removedItemsListDisplay;
-	}];
-};
+//Spectator
+{
+	missionNamespace setVariable [_x, true];
+} forEach [
+	"BIS_respSpecShowHeader",			// Top bar of the spectator UI including mission time
+	"BIS_respSpecLists"					// Show list of available units and locations on the left hand side
+];

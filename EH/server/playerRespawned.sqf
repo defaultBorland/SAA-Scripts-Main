@@ -2,13 +2,15 @@
 
 //Player respawn event handler
 "playerRespawned" addPublicVariableEventHandler {
-	_unit = _this select 1 select 0;
-	_pcid = owner _unit;
-	_uid = _this select 1 select 1;
+	(_this # 1) params ["_unit", "_uid"];
+	private _pcid = owner _unit;
+	private _side = side _unit;
 
-	_remainingTickets = [side _unit, 0] call BIS_fnc_respawnTickets;
+	private _remainingTickets = [_side, 0] call BIS_fnc_respawnTickets;
 
 	if (_remainingTickets isEqualTo 0) then {
-		[format["> Server: %1 side tickets run out!"], toUpper str(side _unit)] remoteExec ["systemChat", -2];
+		[[_side], {
+			systemChat format["> Server: %1 - %2!", toUpper localize format["STR_SAA_GENERAL_%1", _this # 0], localize "STR_SAA_MESSAGE_SIDE_TICKETS_RUNS_OUT"];
+		}] remoteExec ["call", -2];
 	};
 };

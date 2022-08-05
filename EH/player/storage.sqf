@@ -4,8 +4,15 @@
 _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
     if !((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
-        hint format ["That's storage not belongs to You"];
+        cutText [localize "STR_SAA_STORAGE_ACCESS_STRANGER", "PLAIN", 2];
         closeDialog 602; true;
+    };
+
+    if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
+        if (player getVariable ["SAA_storageRestricted", false]) exitWith {
+            cutText [localize "STR_SAA_STORAGE_ACCESS_RESTRICTED", "PLAIN", 2];
+            closeDialog 602; true;
+        };
     };
 }];
 
@@ -13,8 +20,6 @@ _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 // Save Storage and Inventory on exit
 _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
-    _unit = _this select 0;
-    _container = _this select 1;
 
     if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
         _container setPos [0,0,0];
@@ -42,8 +47,6 @@ _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 // when putting in storage
 _EH_StoragePut = player addEventHandler ["Put", {
     params ["_unit", "_container", "_item"];
-    _container = _this select 1;
-    _item = _this select 2;
 
     if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
         if ([_item] call BIS_fnc_itemType select 0 isEqualTo "Weapon") then {
@@ -70,8 +73,7 @@ _EH_StoragePut = player addEventHandler ["Put", {
 // Flag if weapon/equipment in inventory were replaced from storage
 _EH_StorageTake = player addEventHandler ["Take", {
     params ["_unit", "_container", "_item"];
-    _container = _this select 1;
-    _item = _this select 2;
+
     if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
         if ([_item] call BIS_fnc_itemType select 0 isEqualTo "Weapon") then {
             _container setVariable ["Take", true];

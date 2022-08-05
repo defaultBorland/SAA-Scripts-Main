@@ -1,40 +1,45 @@
 //
 
-[localize "SAA_ZEUS_MODULES_CATEGORIES_RESPAWN", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_RESPAWN", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	if (!(isNull _objectUnderCursor) and {_objectUnderCursor getVariable ["isFOB", false]}) exitWith {
-		[objNull, localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_ERRORZEUSMESSAGE_ALREADYCV"] call bis_fnc_showCuratorFeedbackMessage;
+		[objNull, localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ERRORZEUSMESSAGE_ALREADYCV"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
-	[localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_HEADER",
+	private _name = "FOB";
+	if (!(isNull _objectUnderCursor)) then {
+		_name = getText (configFile >> "CfgVehicles" >> typeOf _objectUnderCursor >> "displayName");
+	};
+
+	[localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_HEADER",
 		[
-			["COMBO", [localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_MARKERTYPE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_MARKERTYPE_TOOLTIP"],
+			["COMBO", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_MARKERTYPE_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_MARKERTYPE_TOOLTIP"],
 				[
 					["respawn_unknown","respawn_inf","respawn_air", "respawn_para"],
 					[
-						["Respawn", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MARKERTYPE_RESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_unknown_ca"], 
-						["Infantry Respawn", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MARKERTYPE_INFANTRYRESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_inf_ca"], 
-						["Air Respawn", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MARKERTYPE_AIRRESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_air_ca"], 
-						["Paradrop Respawn", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_MARKERTYPE_PARADROPRESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_para_ca"]
+						["Respawn", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_RESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_unknown_ca"], 
+						["Infantry Respawn", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_INFANTRYRESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_inf_ca"], 
+						["Air Respawn", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_AIRRESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_air_ca"], 
+						["Paradrop Respawn", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_PARADROPRESPAWN", "\A3\UI_F\data\Map\Markers\NATO\respawn_para_ca"]
 					],
 					0
 				]
 			],
-			["SIDES", [localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_SIDE_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_TICKETSAMOUNT_TOOLTIP"],
+			["SIDES", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SIDE_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_TICKETSAMOUNT_TOOLTIP"],
 				west
 			],
-			["EDIT", [localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_RESPAWNNAME_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_RESPAWNNAME_TOOLTIP"],
+			["EDIT", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_RESPAWNNAME_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_RESPAWNNAME_TOOLTIP"],
 				[
-					"FOB/CV",
+					_name,
 					{
 
 					}
 				]
 			],
-			["CHECKBOX", [localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_SHOWHINT_DISPLAYNAME", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_DIALOG_SHOWHINT_TOOLTIP"],
+			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SHOWHINT_TOOLTIP"],
 				true
 			]
 		],
@@ -58,8 +63,12 @@
 			_marker setMarkerColor _color;
 			_marker setMarkerText _markerText;
 
-			[[_position, _objectUnderCursor, _side, _marker, _showNotification], Shadec_fnc_createRespawnPoint] remoteExec ["spawn", 2];	
-			[localize "SAA_GENERAL_SUCCESS", localize "SAA_ZEUS_MODULES_RESPAWN_CREATERESPAWNPOINT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+			if !(isNull _objectUnderCursor) then {
+				[[_objectUnderCursor, west, false], Shadec_fnc_replaceVehicleRadio] remoteExec ["spawn", 2];
+			};
+
+			[[_position, _objectUnderCursor, _side, _marker, _showNotification], Shadec_fnc_createRespawnPoint] remoteExec ["spawn", 2];
+			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
 		},
 		{},
 		[_position, _objectUnderCursor]

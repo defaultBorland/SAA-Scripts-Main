@@ -12,48 +12,78 @@
 
 // ACE Arsenal Handler Opened
 _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
+    params ["_display"];
+    disableSerialization;
+
     hint "";
     player setVariable["isArsenalOpened", true, true];
-	private _uid = getPlayerUID player;
-	if !(player getVariable ["SAA_isArsenalUnrestricted", false]) then {["save"] call Shadec_fnc_gearList};
+	["save"] call Shadec_fnc_gearList;
 
-    [_this # 0] spawn {
-        params ["_display"];
-        private _textsArray = [
-            "ЕСЛИ У ВАС В ОБМУНДИРОВАНИИ ЕСТЬ НЕПОЛНЫЕ МАГАЗИНЫ - ВЫ НЕ СМОЖЕТЕ ЕГО СМЕНИТЬ, ВЫЛОЖИТЕ ИХ.",
-            "АРСЕНАЛ ПРЕДНАЗНАЧЕН ТОЛЬКО ДЛЯ СМЕНЫ ОДЕЖДЫ. ПРИ ПОПЫТКЕ ИЗМЕНИТЬ СНАРЯЖЕНИЕ - ЕГО ВЕРНЕТ К ИСХОДНОМУ СОСТОЯНИЮ.",
-            "ЕСЛИ У ВАС В ОБМУНДИРОВАНИИ ЕСТЬ ОРУЖИЕ С МОДУЛЯМИ - СНИМИТЕ ИХ, СМЕНА ЭКИПИРОВКИ ПРИВЕДЕТ К ИХ ПОТЕРЕ.",
-            "ВО ИЗБЕЖАНИЕ 'НЕДОПОНИМАНИЯ' - НОСИТЕ ОДИНАКОВУЮ ФОРМУ, ПРЕДЛОЖЕННУЮ В АРСЕНАЛЕ, И НЕ НАДЕВАЙТЕ ФОРМУ ПРОТИВНИКА."
-        ];
-        private _counter = 0;
-        
-        while {player getVariable ["isArsenalOpened", false]} do {
-            if (_counter isEqualTo count _textsArray) then {_counter = 0};
-            sleep 1;
-            [_display, _textsArray # _counter] call ace_arsenal_fnc_message;
-            _counter = _counter + 1;
-            sleep 5;
-        };
+    _display call Shadec_fnc_hideBottomButtons;
+
+    [[player], {
+        backpackContainer (_this # 0) lockInventory true;
+    }] remoteExec ["call", -2];
+    
+}] call CBA_fnc_addEventHandler;
+
+_EH_LeftPanelFilled = ["ace_arsenal_leftPanelFilled", {
+	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
+	disableSerialization;
+
+    _display call Shadec_fnc_hideLeftPanelButtons;
+    if (_leftPanelIDC isEqualTo 2002) then {
+        [_display] call ace_arsenal_fnc_buttonStats;
+        [_display, false] call Shadec_fnc_toggleLeftPanel;
+    } else {
+        [_display, true] call Shadec_fnc_toggleLeftPanel;
     };
+
+    if (_leftPanelIDC in [2010, 2012, 2014]) then { // Uniforms, Vests, Backpacks
+        private _ctrlLbLeftPanel = _display displayCtrl 13;
+        [_ctrlLbLeftPanel, (_leftPanelIDC - 2010) / 2] call Shadec_fnc_addCapacityTooltips;
+    };
+
+}] call CBA_fnc_addEventHandler;
+
+_EH_RightPanelFilled = ["ace_arsenal_rightPanelFilled", {
+	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
+	disableSerialization;
+
+    _display call Shadec_fnc_hideRightPanel;
+
 }] call CBA_fnc_addEventHandler;
 
 // ACE Arsenal Handler Closed
 _EH_ArsenalClose = ["ace_arsenal_displayClosed", {
     player setVariable ["isArsenalOpened", false, true];
-    private _uid = getPlayerUID player;
-   if !(player getVariable ["SAA_isArsenalUnrestricted", false]) then {["load"] call Shadec_fnc_gearList};
+
+    ["load"] call Shadec_fnc_gearList;
+    player setSpeaker "ACE_NoVoice";
+
+    [[player], {
+        backpackContainer (_this # 0) lockInventory false;
+    }] remoteExec ["call", -2];
+
 }] call CBA_fnc_addEventHandler;
 
-// Restrict "Open backpack" action on players who in ACE Arsenal;
-_EH_BackpackRestrict = player addEventHandler ["InventoryOpened",{
-    params ["_unit","_container"];
-    _override = false;
-    _allUnitBackpackContainers = allUnits select {_x getVariable ["isArsenalOpened", false]} apply {backpackContainer _x};
 
-        if (_container in _allUnitBackpackContainers) then {
-            systemchat "> Server: This player in Arsenal right now. Access to his backpack is restricted.";
-            _override = true;
+_EH_BackpackOpened = player addEventHandler ["InventoryOpened", {
+	params ["_unit", "_container"];
+
+    private _allPlayersBackpacks = allPlayers apply {backpackContainer _x};
+    if !(_container in _allPlayersBackpacks) exitWith {};
+    private _player = (allPlayers select {(backpackContainer _x) isEqualTo _container}) # 0;
+    private _display = findDisplay 602;
+
+    [_player, _display] spawn {
+        params ["_player", "_display"];
+
+        while {!isNull _display} do {
+            if (_player getVariable ["isArsenalOpened", false]) exitWith {
+                closeDialog 602; true;
+            };
+            sleep 0.5;
         };
-
-    _override
+    };
 }];

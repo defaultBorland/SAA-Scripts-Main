@@ -8,8 +8,11 @@ with uiNamespace do {
 	{	
 		params ["_ctrl"];
 		{
-			[format["> Server: FPS - %1 (OK > 25)", diag_fps]] remoteExec ["systemChat", remoteExecutedOwner];
-			"debug_console" callExtension (("Server FPS: " + str diag_fps) + "#1111");
+			private _fps = round diag_fps;
+			private _text = if (_fps > 24) then {"OK"} else {"BAD"};
+
+			[format["> Server: FPS - %1 (%2)", _fps, _text]] remoteExec ["systemChat", remoteExecutedOwner];
+			["Server FPS: " + str _fps] call Shadec_fnc_createLogServer;
 		} remoteExec ["call", 2];
 	}];
 };

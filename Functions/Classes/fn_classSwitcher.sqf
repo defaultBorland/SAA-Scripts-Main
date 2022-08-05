@@ -28,12 +28,12 @@ switch (_class) do {
 		if (_lang isEqualTo "EN") then {_convertedClass = "Engineer"};
 		if (_lang isEqualTo "LS") then {_convertedClass = "STR_SAA_CLASSES_ENGINEER"};
 	};
-	case "ATSpec";
+	case "AT";
 	case "AT/AA-Specialist";
 	case "ПТ/ПВО-Специалист": {
 		if (_lang isEqualTo "RU") then {_convertedClass = "ПТ/ПВО-Специалист"};
-		if (_lang isEqualTo "EN") then {_convertedClass = "ATSpec"};
-		if (_lang isEqualTo "LS") then {_convertedClass = "STR_SAA_CLASSES_ATSPEC"};
+		if (_lang isEqualTo "EN") then {_convertedClass = "AT"};
+		if (_lang isEqualTo "LS") then {_convertedClass = "STR_SAA_CLASSES_AT"};
 	};
 	case "Medic";
 	case "Медик": {

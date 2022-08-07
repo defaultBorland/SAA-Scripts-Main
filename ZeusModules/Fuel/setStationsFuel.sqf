@@ -14,7 +14,7 @@
 			],
 			["SLIDER:RADIUS", [localize "STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_RADIUS_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_RADIUS_TOOLTIP"],
 				[
-					1, _mapSize, 30, 0, AGLtoASL _position, [1,0,0,1]
+					1, _mapSize, 30, 0, ASLToAGL _position, [1,0,0,1]
 				]
 			]
 		],

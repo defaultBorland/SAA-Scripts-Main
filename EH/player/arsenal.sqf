@@ -74,16 +74,24 @@ _EH_BackpackOpened = player addEventHandler ["InventoryOpened", {
     private _allPlayersBackpacks = allPlayers apply {backpackContainer _x};
     if !(_container in _allPlayersBackpacks) exitWith {};
     private _player = (allPlayers select {(backpackContainer _x) isEqualTo _container}) # 0;
-    private _display = findDisplay 602;
 
-    [_player, _display] spawn {
-        params ["_player", "_display"];
+    [_player] spawn {
+        params ["_player"];
+        [{ // condition
+            !(isNull (findDisplay 602))
+        }, { // statement
+            params ["_player"];
 
-        while {!isNull _display} do {
-            if (_player getVariable ["isArsenalOpened", false]) exitWith {
-                closeDialog 602; true;
-            };
-            sleep 0.5;
-        };
+            [_player] spawn {
+                params ["_player"];
+
+                while {!isNull (findDisplay 602)} do {
+                    if (_player getVariable ["isArsenalOpened", false]) exitWith {
+                        closeDialog 602; true;
+                    };
+                    sleep 0.5;
+                };
+            };           
+        }, [_player], 3, {}] call CBA_fnc_waitUntilAndExecute;
     };
 }];

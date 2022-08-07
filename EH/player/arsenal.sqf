@@ -20,6 +20,8 @@ _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
 	["save"] call Shadec_fnc_gearList;
 
     _display call Shadec_fnc_hideBottomButtons;
+    _display call Shadec_fnc_hideLeftPanelButtons;
+    _display call Shadec_fnc_repositionArsenalButtons;
 
     [[player], {
         backpackContainer (_this # 0) lockInventory true;
@@ -31,7 +33,6 @@ _EH_LeftPanelFilled = ["ace_arsenal_leftPanelFilled", {
 	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
 	disableSerialization;
 
-    _display call Shadec_fnc_hideLeftPanelButtons;
     if (_leftPanelIDC isEqualTo 2002) then {
         [_display] call ace_arsenal_fnc_buttonStats;
         [_display, false] call Shadec_fnc_toggleLeftPanel;
@@ -67,7 +68,7 @@ _EH_ArsenalClose = ["ace_arsenal_displayClosed", {
 
 }] call CBA_fnc_addEventHandler;
 
-
+//
 _EH_BackpackOpened = player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
 

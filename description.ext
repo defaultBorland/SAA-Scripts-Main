@@ -30,6 +30,7 @@ class CfgFunctions
 			class hideRightPanel {};
 			class gearList {};
 			class addCapacityTooltips {};
+			class repositionArsenalButtons {};
 		};
 		class Classes {
 			class classSwitcher {};

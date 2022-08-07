@@ -577,6 +577,11 @@
             <Original>ERROR: Unit is a drone!</Original>
             <Russian>ОШИБКА: Это беспилотник!</Russian>
         </Key>
+
+        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_PLAYERS_WAITING_TO_RESPAWN"> 
+            <Original>WARNING: There are players waiting to respawn!</Original>
+            <Russian>ВНИМАНИЕ: Есть ещё игроки, ожидающие возрождения!</Russian>
+        </Key>
     
     </Container>
 

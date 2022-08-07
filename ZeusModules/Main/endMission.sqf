@@ -5,9 +5,19 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
-	// };
+	// Check if any player is dead with tickets present
+	private _isAnyPlayerWaitForRespawn = false;
+	if (
+		({!alive _x} count allPlayers) > 0 &&
+		{({(_x call BIS_fnc_respawnTickets) > 0} count [west, east, independent, civilian]) > 0} &&
+		{count (missionNamespace getVariable ["respawnPositions", []]) > 0}
+	) then {
+		_isAnyPlayerWaitForRespawn = true;
+	};
+
+	if (_isAnyPlayerWaitForRespawn) exitWith {
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_PLAYERS_WAITING_TO_RESPAWN"] call bis_fnc_showCuratorFeedbackMessage;
+	};
 
 	[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_HEADER",
 		[
@@ -44,9 +54,19 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	// if (isNull _objectUnderCursor) exitWith {
-	// 	[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"] call bis_fnc_showCuratorFeedbackMessage;
-	// };
+	// Check if any player is dead with tickets present
+	private _isAnyPlayerWaitForRespawn = false;
+	if (
+		({!alive _x} count allPlayers) > 0 &&
+		{({(_x call BIS_fnc_respawnTickets) > 0} count [west, east, independent, civilian]) > 0} &&
+		{count (missionNamespace getVariable ["respawnPositions", []]) > 0}
+	) then {
+		_isAnyPlayerWaitForRespawn = true;
+	};
+
+	if (_isAnyPlayerWaitForRespawn) exitWith {
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_PLAYERS_WAITING_TO_RESPAWN"] call bis_fnc_showCuratorFeedbackMessage;
+	};
 
 	[localize "STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_HEADER",
 		[

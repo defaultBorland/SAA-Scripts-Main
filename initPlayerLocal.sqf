@@ -66,6 +66,8 @@ if !(player getVariable ["SAA_isZeus", false]) then {
 	[] execVM "EH\player\storage.sqf";
 	[] execVM "EH\player\itemsDelivered.sqf";
 	[] execVM "EH\player\itemsRemoved.sqf";
+} else {
+	[] execVM "Mechanics\ZeusAccess\ZeusAccess_Init.sqf";
 };
 
 script_handler = [] execVM "EH\player\playerKilled.sqf";

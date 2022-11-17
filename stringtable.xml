@@ -142,8 +142,13 @@
     </Key>
 
     <Key ID="STR_SAA_ASSIGN_ZEUS_ACTION"> 
-        <Original>Re-Assign Zeus</Original> 
+        <Original>Assign Zeus</Original> 
         <Russian>Получить Зевса</Russian> 
+    </Key>
+
+    <Key ID="STR_SAA_UNASSIGN_ZEUS_ACTION"> 
+        <Original>Unassign Zeus</Original> 
+        <Russian>Снять Зевса</Russian> 
     </Key>
 
     <Key ID="STR_SAA_TEAM_MANAGEMENT_ACTION"> 

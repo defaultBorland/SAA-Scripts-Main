@@ -1606,7 +1606,266 @@
                 <Russian>Количества топлива на заправках в радиусе успешно изменено</Russian> 
             </Key>
         
-        </Container>        
+        </Container>
+
+        <Container name = "Fortify Toggle">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_MODULENAME"> 
+                <Original>Fortify Toggle</Original> 
+                <Russian>Возможность Фортификации</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_HEADER"> 
+                <Original>Fortify Ability Toggle</Original> 
+                <Russian>Переключение возможности фортификации</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_PRESETS_DISPLAYNAME"> 
+                <Original>Enabled</Original> 
+                <Russian>Включено</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_PRESETS_TOOLTIP"> 
+                <Original>Switching the possibility of fortification (tool required).</Original> 
+                <Russian>Переключение возможности фортификации (требуется инструмент).</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_ZEUSMESSAGE_ON"> 
+                <Original>Fortifications is enabled</Original> 
+                <Russian>Возможность фортификаций включена</Russian>
+            </Key>
+            
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_ZEUSMESSAGE_OFF"> 
+                <Original>Fortifications is disabled</Original> 
+                <Russian>Возможность фортификаций отключена</Russian> 
+            </Key>
+        
+        </Container> 
+
+        <Container name = "Fortify Settings">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_MODULENAME"> 
+                <Original>Configure Fortify</Original> 
+                <Russian>Настроить Фортификации</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_HEADER"> 
+                <Original>Fortify Settings</Original> 
+                <Russian>Настройка фортификаций</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_SIDE_TOOLTIP"> 
+                <Original>The side for which the settings will be set, as well as the possibility of fortifications will automatically turn on. The construction of fortifications will be available anywhere on the map, unless areas are assigned, otherwise only within these areas.</Original> 
+                <Russian>Сторона, для которой будут установлены настройки, а также автоматически включится возможность фортификаций. Строительство фортификаций будет доступно в любом месте карты, если не назначены зоны, иначе - только в пределах этих зон.</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_PRESETS_DISPLAYNAME"> 
+                <Original>Presets</Original> 
+                <Russian>Пресеты</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_PRESETS_TOOLTIP"> 
+                <Original>Preset of fortifications available to the side for construction.</Original> 
+                <Russian>Пресет укреплений, доступный стороне для постройки.</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_SMALL"> 
+                <Original>Sandbags</Original> 
+                <Russian>Мешки с песком</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_SMALL_GREEN"> 
+                <Original>Sandbags (Green)</Original> 
+                <Russian>Мешки с песком (Зелёные)</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_COSTS_TOOLTIP"> 
+                <Original>Costs</Original> 
+                <Russian>Стоимости</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_BUDGET_DISPLAYNAME"> 
+                <Original>Budget</Original> 
+                <Russian>Бюджет</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_BUDGET_TOOLTIP"> 
+                <Original>The initial budget for the selected side. (-1 = Infinite)</Original> 
+                <Russian>Изначальный бюджет для выбранной стороны. (-1 = Бесконечно)</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_ZEUSMESSAGE_SUCCESS"> 
+                <Original>The fortifications settings are set</Original> 
+                <Russian>Настройки фортификаций установлены</Russian> 
+            </Key>
+        
+        </Container>
+
+        <Container name = "Assign Fortify Supply">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MODULENAME"> 
+                <Original>Assign Fortify Supply</Original> 
+                <Russian>Назначить снабжение</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_HEADER"> 
+                <Original>Assigning Fortify Supply</Original> 
+                <Russian>Назначение объекта снабжения</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_SIDE_TOOLTIP"> 
+                <Original>The side for which the fortifications budget will be added when interacting with the object.</Original> 
+                <Russian>Сторона, для которой будет добавлен бюджет для фортификации при взаимодействии с объектом.</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_BUDGET_DISPLAYNAME"> 
+                <Original>Budget</Original> 
+                <Russian>Бюджет</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_BUDGET_TOOLTIP"> 
+                <Original>Additional fortification budget for the selected side.</Original> 
+                <Russian>Дополнительный фортификационный бюджет для выбранной стороны.</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_PRESETS_DISPLAYNAME"> 
+                <Original>Number of tools</Original> 
+                <Russian>Количество инструментов</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_PRESETS_TOOLTIP"> 
+                <Original>How many tools for the construction of fortifications to add to the supplies (Max: number of players).</Original> 
+                <Russian>Сколько инструментов для возведения фортификаций добавить в припасы (Макс: количество игроков).</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MESSAGES_ALREADYSUPPLY"> 
+                <Original>ERROR: Selected object is already Fortify-Supply</Original> 
+                <Russian>ОШИБКА: Выбранный объект уже является Фортификационными припасами</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MESSAGES_FORTIFY_NOT_SET"> 
+                <Original>ERROR: Configure fortify setting at first!</Original> 
+                <Russian>ОШИБКА: Настройте условия строительства фортификаций!</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SUPPLY_ZEUSMESSAGE_SUCCESS"> 
+                <Original>Object with supplies for fortifications has been successfully assigned</Original> 
+                <Russian>Объект с припасами для фортификаций успешно назначен</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_TAKE_FORTIFY_SUPPLY_ACTION_NAME"> 
+                <Original>Get supplies for construction</Original> 
+                <Russian>Получить припасы для строительства</Russian> 
+            </Key>
+        
+        </Container>
+
+        <Container name = "Add Fortify Area">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_MODULENAME"> 
+                <Original>Add Fortify Area</Original> 
+                <Russian>Добавить зону</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_HEADER"> 
+                <Original>Adding Fortify Area</Original> 
+                <Russian>Добавление зоны для фортификаций</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_NAME_DISPLAYNAME"> 
+                <Original>Area Name</Original> 
+                <Russian>Название</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_NAME_TOOLTIP"> 
+                <Original>The name of the area for its future removing.</Original> 
+                <Russian>Название зоны для будущего её удаления.</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_RADIUS_DISPLAYNAME"> 
+                <Original>Radius</Original> 
+                <Russian>Радиус</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_RADIUS_TOOLTIP"> 
+                <Original>The radius of the area from the module position or object under cursor.</Original> 
+                <Russian>Радиус зоны от места установки модуля или объекта под курсором.</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_KEEP_DRAW_DISPLAYNAME"> 
+                <Original>Area Visualisation</Original> 
+                <Russian>Отображение зоны</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_KEEP_DRAW_TOOLTIP"> 
+                <Original>Leaves the radius displayed as points for Zeus.</Original> 
+                <Russian>Оставляет отображаемым радиус в виде точек для Зевса.</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_MESSAGES_NAME_ALREADY_EXIST"> 
+                <Original>ERROR: Area with this name already exists!</Original> 
+                <Russian>ОШИБКА: Зона с данным именем уже существует!</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_SUCCESS"> 
+                <Original>Area for fortifications has been successfully assigned</Original> 
+                <Russian>Зона для фортификаций успешно назначена</Russian>
+            </Key>
+        
+        </Container>
+
+        <Container name = "Remove Fortify Area">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_MODULENAME"> 
+                <Original>Remove Fortify Area</Original> 
+                <Russian>Удалить зону</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_HEADER"> 
+                <Original>Removing Fortify Area</Original> 
+                <Russian>Удаление зоны для фортификаций</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_NAME_DISPLAYNAME"> 
+                <Original>Area Name</Original> 
+                <Russian>Название</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_NAME_TOOLTIP"> 
+                <Original>The name of the area for its removing.</Original> 
+                <Russian>Название зоны для её удаления.</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_MESSAGES_NO_AREAS"> 
+                <Original>ERROR: There are no designated areas for the construction of fortifications!</Original> 
+                <Russian>ОШИБКА: Нету назначеных зон для строительства фортификаций!</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_SUCCESS"> 
+                <Original>Area for fortifications has been successfully removed</Original> 
+                <Russian>Зона для фортификаций успешно удалена</Russian>
+            </Key>
+        
+        </Container>
+
+        <Container name = "Fortify Areas Visualization">
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_MODULENAME"> 
+                <Original>Areas Visualization</Original> 
+                <Russian>Визуализация зон</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_DIALOG_HEADER"> 
+                <Original>Toggling Areas Visualization</Original> 
+                <Russian>Переключение видимости зон</Russian>
+            </Key>
+        
+            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_DIALOG_NAME_TOOLTIP"> 
+                <Original>Toggling checked areas visualization (Only to Zeus).</Original> 
+                <Russian>Переключение отрисовки отмеченных зон (Только для Зевса).</Russian>
+            </Key>
+        
+        </Container>
     
     </Container> 
 

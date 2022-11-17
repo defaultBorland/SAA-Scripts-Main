@@ -53,6 +53,9 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";
 [] execVM "Mechanics\ShowGarageVehicles\ShowGarageVehicles_Init.sqf";
 
+// Add chat commands
+[] execVM "Mechanics\ChatCommands\randomCommander.sqf";
+
 // Execute EHs
 //[] execVM "EH\player\getOut.sqf";
 [] execVM "EH\player\serverFps.sqf";

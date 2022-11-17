@@ -40,7 +40,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 // Loading player data from db or assign zeus (if uid in ZeusArray)
 [player] spawn Shadec_fnc_loadPlayer;
 
-// Add Actions
+// Add ACE Actions
 [] execVM "Mechanics\Root\RootActions_init.sqf";
 [] execVM "Mechanics\Reloadout\LoadoutFix_init.sqf";
 
@@ -75,7 +75,7 @@ waitUntil {scriptDone script_handler};
 // If player was KIA - kill him
 if (player getVariable ["KIA_onExit", false]) then {player setDamage 1} else {
 	
-	script_handler = [] spawn {sleep 6; [] call BIS_fnc_VRFadeIn;};
+	script_handler = [] spawn {sleep 6; [] call BIS_fnc_VRFadeIn};
 	[{scriptDone script_handler}, {[player] call Shadec_fnc_showUserInfo}, _uid, 30, {"somethingWentWrong" call BIS_fnc_endMission}] call CBA_fnc_waitUntilAndExecute;
 };
 

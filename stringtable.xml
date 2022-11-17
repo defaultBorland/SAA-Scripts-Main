@@ -385,6 +385,11 @@
         <Russian>Внимание</Russian>
     </Key>
 
+    <Key ID="STR_SAA_GENERAL_NUMBER">
+        <Original>Number</Original>
+        <Russian>Число</Russian>
+    </Key>
+
 </Container>
 
 <Container name = "Vehicle Types">
@@ -546,6 +551,11 @@
         <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_MAN"> 
             <Original>ERROR: Selected Object must be a Man</Original> 
             <Russian>ОШИБКА: Выберите человека</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_NOT_BE_A_MAN"> 
+            <Original>ERROR: Selected Object must not be a Man</Original> 
+            <Russian>ОШИБКА: Выберите не человека</Russian> 
         </Key>
         
         <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_PLAYER"> 
@@ -864,12 +874,12 @@
         <Container name = "End Scenario">
         
             <Key ID="STR_SAA_ZEUS_MODULES_SCENARIO_FLOW_END_MISSION_MODULENAME"> 
-                <Original>End Scenario</Original> 
+                <Original>End Mission</Original> 
                 <Russian>Завершить миссию</Russian> 
             </Key>
         
             <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_MODULENAME"> 
-                <Original>End Scenario</Original> 
+                <Original>End Mission</Original> 
                 <Russian>Завершить миссию</Russian> 
             </Key>
         
@@ -1448,15 +1458,6 @@
             <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_ZEUSMESSAGE_SUCCESS"> 
                 <Original>Signal quality changed succesfully</Original> 
                 <Russian>Качество сигнала успешно изменено</Russian> 
-            </Key>
-        
-        </Container>
-    
-        <Container name = "Switch Unit">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_SWITCH_UNIT_MODULENAME"> 
-                <Original>Switch Unit</Original> 
-                <Russian>Вселиться в юнита</Russian> 
             </Key>
         
         </Container>

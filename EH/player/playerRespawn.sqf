@@ -19,7 +19,7 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
     
     [] spawn {
         waitUntil {!isNull player};
-        sleep 3;
+        sleep 2;
 
         // Reapply player loadout (In other case some items are local to player and don't save correctly on server)
         [[player, getPlayerUID player], Shadec_fnc_reLoadoutUnit] remoteExec ["call", 2];
@@ -31,7 +31,7 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
         // Reenable fatigue (ace bug)
         player enableFatigue true;
         
-        sleep 5;
+        sleep 2;
 
         // Restore Radio Settings On Respawn
         call Shadec_fnc_loadPlayerRadioSettings;

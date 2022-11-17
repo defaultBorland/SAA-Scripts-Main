@@ -38,7 +38,7 @@ switch (_act) do {
 			}, {
 				// Statement
 				params ["_unit", "_inventory"];
-				[_unit] call Shadec_fnc_removeInventoryRestrictedItems
+				[_unit] call Shadec_fnc_removeInventoryRestrictedItems;
 				[_unit] call Shadec_fnc_reassignUnitRadios;
 			}, [_unit, _inventory], 15, {
 				diag_log format ["Warning | fnc_call_db: loadAll DB action inventory comparing timeout."]

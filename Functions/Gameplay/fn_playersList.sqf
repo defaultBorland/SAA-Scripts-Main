@@ -1,6 +1,5 @@
 fnc_FormatClasses = {
 	params ["_class"];
-	disableSerialization;
 
 	_returnString = "";
 	switch (_class) do {
@@ -27,7 +26,6 @@ fnc_NoReturn = {
 	} else {
 		[format["There are no %1 players!", toLower _status]] remoteExec ["hint"]
 	};
-
 };
 
 

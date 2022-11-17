@@ -172,7 +172,8 @@ class CfgDebriefing
 	class toBeContinued {
 		title = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_TITLE";
 		subtitle = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_SUBTITLE";
-		description = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca";
+		description = "";
+		picture = "\A3\UI_F\data\GUI\Rsc\RscDisplayDLCPreview\browseNext_ca.paa";
 		pictureColor[] = {1,1,1,1};
 	};
 

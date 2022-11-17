@@ -1941,6 +1941,23 @@
 
         </Container>
 
+        <Container name = "Spawn SAA Vehicles">
+    
+            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_DO_WATCH_ACTIONNAME"> 
+                <Original>Watch Position</Original> 
+                <Russian>Наблюдать позицию</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_DO_WATCH_ACTIONNAME"> 
+                <Original>Stop Watching</Original> 
+                <Russian>Прекратить наблюдение</Russian> 
+            </Key>
+        
+        </Container>
+
+    </Container> 
+
+</Container>
 
 <Container name = "Chat Commands">
 

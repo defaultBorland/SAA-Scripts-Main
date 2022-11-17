@@ -30,3 +30,23 @@ missionNamespace setVariable ["respawnTime", respawnTime, true];
 
 ["Server Console Extention Initialization..."] call Shadec_fnc_createLogServer;
 "f5znFms2" serverCommand "#monitords 60";
+
+//
+[] spawn {
+	while {
+		missionNamespace getVariable ["SAA_PlayersTimedSaving...", true];
+	} do {
+		sleep 300;
+		private _players = ["All", "Id"] call Shadec_fnc_usersIDs;
+		if (count _players > 0) then {
+			{
+				{
+					[player, getPlayerUID player, name player] call Shadec_fnc_savePlayer;
+					[getPlayerUID player] call Shadec_fnc_saveStorage;
+					profileNamespace setVariable ["SAA_Project_Inventory", getUnitLoadout player];
+				} remoteExec ["call", _x];
+			} forEach _players;
+			["Players data saving...", "Info"] call Shadec_fnc_createLogServer;
+		};
+	};
+};

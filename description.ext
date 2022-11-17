@@ -59,6 +59,13 @@ class CfgFunctions
 			class setStationsFuel {};
 			class spawnCanister {};
 		};
+		class Fortify {
+			class setFortifySettings {};
+			class assignFortifySupply {};
+			class addFortifyArea {};
+			class removeFortifyArea {};
+			class drawArea {};
+		};
 		class Gameplay {
 			class endMission {};
 			class playersList {};
@@ -77,6 +84,7 @@ class CfgFunctions
 			class reLoadoutUnit {};
 			class removeInventoryRestrictedItems {};
 			class usersIDs {};
+			class objectHasInventory {};
 		};
 		class Radio {
 			class assignJammer {};

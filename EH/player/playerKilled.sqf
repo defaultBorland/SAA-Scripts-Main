@@ -36,8 +36,8 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		[{[_this] call Shadec_fnc_showUserInfo;}, player, 5] call CBA_fnc_waitAndExecute;
 	};
 
-	// If unit has Long Range Radio - Save Freqs to Load it after Respawn
-    if (call TFAR_fnc_haveLRRadio) then {_unit setVariable ["radioLrSettings", (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSettings]};
+	// Save radio settings to load after respawn
+    call Shadec_fnc_savePlayerRadioSettings;
 
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
 	[{

@@ -91,6 +91,9 @@ class CfgFunctions
 			class objectJamming {};
 			class replaceVehicleRadio {};
 			class radioSignalQuality {};
+			class reassignUnitRadios {};
+			class savePlayerRadioSettings {};
+			class loadPlayerRadioSettings {};
 		};
 		class Respawn {
 			class assignFob {};

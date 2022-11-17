@@ -13,4 +13,6 @@ waituntil {!(IsNull (findDisplay 46))};
     profileNamespace setVariable ["SAA_Project_PrimaryClass", player getVariable ["SAA_PrimaryClass", "Rifleman"]];
     profileNamespace setVariable ["SAA_Project_SecondaryClass", player getVariable ["SAA_SecondaryClass", "None"]];
     profileNamespace setVariable ["SAA_Project_Rank", player getVariable ["SAA_Rank", "PV1"]];
+
+    call Shadec_fnc_savePlayerRadioSettings;
 }];

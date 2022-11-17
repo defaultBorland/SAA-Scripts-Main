@@ -39,9 +39,12 @@ switch (_act) do {
 				// Statement
 				params ["_unit", "_inventory"];
 				[_unit] call Shadec_fnc_removeInventoryRestrictedItems
+				[_unit] call Shadec_fnc_reassignUnitRadios;
 			}, [_unit, _inventory], 15, {
 				diag_log format ["Warning | fnc_call_db: loadAll DB action inventory comparing timeout."]
 			}] call CBA_fnc_waitUntilAndExecute;
+
+			[[], Shadec_fnc_loadPlayerRadioSettings] remoteExec ["call", _unit];
 
 			_unit setVariable ["LoadoutLoaded", true, true];
 			missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];

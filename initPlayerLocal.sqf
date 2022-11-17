@@ -55,6 +55,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 
 // Add chat commands
 [] execVM "Mechanics\ChatCommands\randomCommander.sqf";
+[] execVM "Mechanics\ChatCommands\help.sqf";
 
 // Execute EHs
 //[] execVM "EH\player\getOut.sqf";

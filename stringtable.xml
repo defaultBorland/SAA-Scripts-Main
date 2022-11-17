@@ -1972,6 +1972,21 @@
 
 <Container name = "Chat Commands">
 
+        <Container name = "Random Commanders">
+
+        <Key ID="STR_SAA_CHAT_COMMANDS_HELP_NO_AVAILABLE_COMMANDS"> 
+            <Original>There are no chat commands available for you!</Original> 
+            <Russian>Для Вас нет доступных чат-команд!</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CHAT_COMMANDS_HELP_AVAILABLE_COMMANDS"> 
+            <Original>Chat commands available to you:</Original> 
+            <Russian>Доступные для Вас чат-команды:</Russian> 
+        </Key>
+
+    </Container> 
+
+
     <Container name = "Random Commanders">
 
         <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_TIME_LIMIT_LOCAL"> 
@@ -1987,6 +2002,11 @@
         <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_WRONG_USAGE"> 
             <Original>Error: Wrong parameter after command. Usage:</Original> 
             <Russian>Ошибка: Неверный параметр после команды. Использование:</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_DESCRIPTION"> 
+            <Original>Picking specified number of commanders from the list of suitable players.</Original> 
+            <Russian>Рандомизация указанного количества командиров из списка подходящих игроков.</Russian> 
         </Key>
 
         <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_BE_GREATER_THAN_ONE"> 

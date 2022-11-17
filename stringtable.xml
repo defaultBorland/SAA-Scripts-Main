@@ -627,6 +627,11 @@
             <Russian>[SAA] Топливо</Russian> 
         </Key>
 
+        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FORTIFY"> 
+            <Original>[SAA] Fortify</Original> 
+            <Russian>[SAA] Фортификация</Russian> 
+        </Key>
+
     </Container>
 
     <Container name = "Modules">

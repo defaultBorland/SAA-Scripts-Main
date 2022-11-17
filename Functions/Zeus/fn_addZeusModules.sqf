@@ -55,3 +55,14 @@ _prefix = _prefixMain + "Fuel\";
 	"spawnCanister",
 	"setStationsFuel"
 ];
+
+// Fortify
+_prefix = _prefixMain + "Fortify\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"fortifyToggle",
+	"fortifySettings",
+	"assignSupply",
+	"addFortifyArea",
+	"removeFortifyArea",
+	"toggleAreaVisualization"
+];

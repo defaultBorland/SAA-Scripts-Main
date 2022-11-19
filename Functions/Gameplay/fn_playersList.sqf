@@ -1,21 +1,3 @@
-fnc_FormatClasses = {
-	params ["_class"];
-
-	_returnString = "";
-	switch (_class) do {
-		case "Rifleman": {_returnString = "RIFLE"};
-		case "Machinegunner": {_returnString = "MG"};
-		case "Engineer": {_returnString = "ENG"};
-		case "AT": {_returnString = "AT/AA"};
-		case "Medic": {_returnString = "MED"};
-		case "Grenadier": {_returnString = "GREN"};
-		case "Marksman": {_returnString = "MARKS"};
-		case "Sniper": {_returnString = "SNIP"};
-		case "None": {_returnString = "NONE"};
-	};
-	_returnString
-};
-
 fnc_NoReturn = {
 	params ["_status", "_isOnlyToCaller"];
 
@@ -30,7 +12,6 @@ fnc_NoReturn = {
 
 
 params ["_status", "_groupBy", "_side", "_isOnlyToCaller", ["_caller", objNull]];
-disableSerialization;
 
 private _players = ["all", "object"] call Shadec_fnc_usersIDs;
 _players = _players select {(side _x) isEqualTo _side};

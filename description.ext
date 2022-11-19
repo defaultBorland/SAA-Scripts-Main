@@ -1,3 +1,4 @@
+#include "GUI\Base_Classes.hpp"
 #include "GUI\ListNBox_dialog.h"
 
 briefingName = "SAA Server";

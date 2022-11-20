@@ -82,6 +82,7 @@ class CfgFunctions
 			class createLogServer {};
 			class getModList {};
 			class getPlayersNames {};
+			class getPlayers {};
 			class parseOrder {};
 			class reLoadoutUnit {};
 			class removeInventoryRestrictedItems {};

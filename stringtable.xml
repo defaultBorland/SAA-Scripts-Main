@@ -88,6 +88,20 @@
 
 </Container>
 
+<Container name = "Players List">
+
+    <Key ID="STR_SAA_PLAYERSLIST_ACTION_NAME"> 
+        <Original>Players List</Original> 
+        <Russian>Список игроков</Russian> 
+    </Key> 
+
+    <Key ID="STR_SAA_PLAYERSLIST_NO_SUCH_PLAYERS"> 
+        <Original>There are no %1 players!</Original> 
+        <Russian>%1 Игроки отсутствуют!</Russian> 
+    </Key> 
+
+</Container>
+
 <Container name = "Squad List">
 
     <Key ID="STR_SAA_SQUADLIST_ACTION_NAME"> 
@@ -946,70 +960,6 @@
             <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ZEUSMESSAGE_SUCCESS"> 
                 <Original>Mission Ended</Original> 
                 <Russian>Миссия завершена</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Players List">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_MODULENAME"> 
-                <Original>Players List</Original> 
-                <Russian>Список игроков</Russian> 
-            </Key>
-                
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_HEADER"> 
-                <Original>Show filtered list of non-zeus players</Original> 
-                <Russian>Показать отфильтрованный список игроков без Зевсов</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_STATUS_TOOLTIP"> 
-                <Original>Players with only selected status will be displayed</Original> 
-                <Russian>Только игроки выбранного статуса будут отображены</Russian> 
-            </Key>
-                 
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_GROUPING_DISPLAYNAME"> 
-                <Original>Grouping by</Original> 
-                <Russian>Сгруппировать</Russian> 
-            </Key>
-                
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_GROUPING_TOOLTIP"> 
-                <Original>Grouping type for players list</Original> 
-                <Russian>По какому признаку сгруппировать игроков в списке</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERLIST_GROUPING_GROUPS"> 
-                <Original>Groups</Original> 
-                <Russian>Группы</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERLIST_GROUPING_GROUPS_TOOLTIP"> 
-                <Original>Sort the players by their assigned groups</Original> 
-                <Russian>Отсортировать игроков по их текущим группам</Russian> 
-            </Key>
-            
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERLIST_GROUPING_CLASSES_TOOLTIP"> 
-                <Original>Sort the players by their classes</Original> 
-                <Russian>Отсортировать игроков по их классам</Russian> 
-            </Key>
-            
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERLIST_GROUPING_RANKS_TOOLTIP"> 
-                <Original>Group the players by their ranks</Original> 
-                <Russian>Сгруппировать игроков по их рангам</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SIDE_TOOLTIP"> 
-                <Original>Display the players list of the selected side</Original> 
-                <Russian>Отобразить список игроков выбранной стороны</Russian> 
-            </Key>
-                   
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SHOWTO_DISPLAYNAME"> 
-                <Original>Show only to Zeus</Original> 
-                <Russian>Отобразить только для Зевса</Russian> 
-            </Key>
-                
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PLAYERSLIST_DIALOG_SHOWTO_DISPLAYNAME_TOOLTIP"> 
-                <Original>Only you will recieve info</Original> 
-                <Russian>Только Вы получите информацию</Russian> 
             </Key>
         
         </Container>

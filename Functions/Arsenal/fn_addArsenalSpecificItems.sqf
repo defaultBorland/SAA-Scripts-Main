@@ -4,8 +4,11 @@ params ["_box", "_uniform"];
 [{missionNamespace getVariable format["loadoutLoaded_%1", getPlayerUID player]}, {
 	_this params ["_box", "_uniform"];
 
-	if ((_box isEqualTo objNull) || (!alive _box)) exitWith {diag_log format ["fnc_addArsenalSpecificItems | _box not alive or nil"]};
-	missionNamespace getVariable [format["%1_DATA", getPlayerUID player], ["PVT", "Rifleman", "None"]] params ["_rank", "_firstClass", "_secondClass"];
+	if ((_box isEqualTo objNull) || (!alive _box)) exitWith {diag_log format ["fnc_addArsenalSpecificItems | Error: _box not alive or nil"]};
+	
+	//private _rank = player getVariable ["SAA_Rank", "PV1"];
+	private _firstClass = player getVariable ["SAA_PrimaryClass", "Rifleman"];
+	private _secondClass = player getVariable ["SAA_SecondaryClass", "None"];
 	
 	_arsenalItems = [];
 	switch (_firstClass) do {

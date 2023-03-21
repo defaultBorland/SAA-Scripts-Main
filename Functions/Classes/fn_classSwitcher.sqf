@@ -1,4 +1,4 @@
-params["_class", "_lang"];
+params["_class", ["_lang", "EN"]];
 
 _convertedClass = "";
 
@@ -61,7 +61,7 @@ switch (_class) do {
 	};
 	case "None";
 	case "Отсутствует": {
-		if (_lang isEqualTo "RU") then {_convertedClass = "Отсутствует"};
+		if (_lang isEqualTo "RU") then {_convertedClass = "Нету"};
 		if (_lang isEqualTo "EN") then {_convertedClass = "None"};
 		if (_lang isEqualTo "LS") then {_convertedClass = "STR_SAA_CLASSES_NONE"};
 	};

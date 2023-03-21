@@ -6,7 +6,6 @@ _prefix = _prefixMain + "Main\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"addShadecArsenal",
 	"endMission",
-	"playersList",
 	"promoteToZeus"
 ];
 
@@ -39,7 +38,7 @@ _prefix = _prefixMain + "Storage\";
 // Utilities
 _prefix = _prefixMain + "Other\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
-	"spawnUnits"
+	//"spawnUnits"
 ];
 
 // Achilles
@@ -54,4 +53,15 @@ _prefix = _prefixMain + "Fuel\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"spawnCanister",
 	"setStationsFuel"
+];
+
+// Fortify
+_prefix = _prefixMain + "Fortify\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"fortifyToggle",
+	"fortifySettings",
+	"assignSupply",
+	"addFortifyArea",
+	"removeFortifyArea",
+	"toggleAreaVisualization"
 ];

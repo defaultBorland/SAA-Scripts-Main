@@ -1,8 +1,8 @@
-params ["_unit", "_uid", "_action"];
-private _unit = _this # 0;
-private _uid = _this # 1;
+params ["_unit", "_action"];
 
-missionNamespace getVariable [format["%1_DATA", _uid], ["PVT", "Rifleman", "None"]] params ["_rank", "_firstClass", "_secondClass"];
+private _rank = _unit getVariable ["SAA_Rank", "PV1"];
+private _firstClass = _unit getVariable ["SAA_PrimaryClass", "Rifleman"];
+private _secondClass = _unit getVariable ["SAA_SecondaryClass", "None"];
 
 switch (_firstClass) do {
 	case "Medic": {

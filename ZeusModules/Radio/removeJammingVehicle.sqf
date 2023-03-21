@@ -12,4 +12,4 @@
 	[["Remove",[_objectUnderCursor]], Shadec_fnc_assignJammer] remoteExec ["spawn", 2];
 	[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_RADIO_REMOVE_JAMMING_OBJECT_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;	
 
-}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
+}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;

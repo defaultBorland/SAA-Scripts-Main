@@ -1,16 +1,28 @@
 params ["_endType"];
 
-{
-	[_x, getPlayerUID _x, name _x] call Shadec_fnc_savePlayer;
-	[getPlayerUID _x] call Shadec_fnc_saveStorage;
+["Mission ending started...", "Info"] call Shadec_fnc_createLogServer;
 
-	{	// Saving Inventory to local profile to show in ShopMission
-		if (player getVariable ["SAA_isZeus", false]) exitWith {}; // Disable for zeus
-		_inventory = getUnitLoadout player;
-		profileNamespace setVariable ["SAA_Project_Inventory", _inventory];
-	} remoteExec ["call", _x];
+{
+	[[_forEachIndex], {	
+		params["_forEachI"];
+
+		[getPlayerUID player] call Shadec_fnc_updateConnectionRecord;
+
+		if (player getVariable ["SAA_isZeus", false]) exitWith {};
+		
+		if (dialog) then {closeDialog 602; true};
+		[player] call Shadec_fnc_savePlayer; //
+		[getPlayerUID player] call Shadec_fnc_updateConnectionRecord;
+		
+		[[_forEachI, name player],{
+			params["_index", "_name"];
+			[format["%1. %2 was saved...", _index, _name]] call Shadec_fnc_createLogServer;
+		}] remoteExec ["call", 2];
+	}] remoteExec ["call", _x];
 
 } forEach allPlayers;
+
+[] call Shadec_fnc_endMissionDB;
 
 ["Mission ended.", "Info"] call Shadec_fnc_createLogServer;
 

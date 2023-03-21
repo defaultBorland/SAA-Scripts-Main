@@ -11,25 +11,29 @@ _EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", {
 
 	if (_entity isKindOf "LandVehicle") then {
 		[_entity, true, true, true, true] call Shadec_fnc_clearContainerInventory;
-		_entity setFuel (100 / (random [18, 33, 65]));
+		_entity setFuel ((random [18, 33, 65]) / 100);
 	};
 
 	if (_entity isKindOf "Air") then {
 		[_entity, true, true, true, true] call Shadec_fnc_clearContainerInventory;
 		_entity addBackpackCargoGlobal ["B_Parachute", 8];
 	};
+
 	if (_entity isKindOf "Ship") then {
 		[_entity, true, true, true, true] call Shadec_fnc_clearContainerInventory;
-		_entity setFuel (100 / (random [24, 39, 65]));
-		
+		_entity setFuel ((random [18, 33, 65]) / 100);
 	};
 
 	if (_entity isKindOf "Man") then {
-		if !((groupOwner group _entity) isEqualTo 2) then {
-			[{
-				[[group effectiveCommander (_this # 0)], {(_this # 0) setGroupOwner 2}] remoteExec ["call", 2];
-			}, [_entity], 1] call CBA_fnc_waitAndExecute;
-		};
+		private _group = group effectiveCommander _entity;
+		[{
+			params ["_group"];
+			[[_group], {
+				if !((groupOwner (_this # 0)) isEqualTo 2) then {
+				(_this # 0) setGroupOwner 2;
+			};
+			}] remoteExec ["call", 2];
+		}, [_group], 1] call CBA_fnc_waitAndExecute;
 	};
 }];
 
@@ -57,8 +61,9 @@ _EH_CuratorRegistered = _zeusLogic addEventHandler ["CuratorObjectRegistered", {
 [] call Shadec_fnc_addContextActions;
 [] call Shadec_fnc_addZeusModules;
 
-[] execVM "Mechanics\ZeusContextActions\ZeusContextActions_On.sqf";
-[] execVM "Mechanics\ZeusContextActions\ZeusContextActions_Off.sqf";
+[] execVM "Mechanics\Zeus\ContextActions\ZeusContextActions_On.sqf";
+[] execVM "Mechanics\Zeus\ContextActions\ZeusContextActions_Off.sqf";
+[] execVM "Mechanics\Zeus\PlayersList\PlayersList_Init.sqf";
 
 //
 with uiNamespace do {

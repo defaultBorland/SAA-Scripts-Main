@@ -1,4 +1,7 @@
+#include "GUI\Base_Classes.hpp"
 #include "GUI\ListNBox_dialog.h"
+#include "GUI\TeamManagement\Menu_dialog.h"
+
 
 briefingName = "SAA Server";
 onLoadName = "SAA Project [DEV]";
@@ -30,6 +33,7 @@ class CfgFunctions
 			class hideRightPanel {};
 			class gearList {};
 			class addCapacityTooltips {};
+			class repositionArsenalButtons {};
 		};
 		class Classes {
 			class classSwitcher {};
@@ -50,13 +54,27 @@ class CfgFunctions
 			class saveStorage {};
             class loadPlayer {};
             class savePlayer {};
-			class changeClasses {};
 			class saveModlist {};
 			class getOrdersServer {};
+			class createMissionDB {};
+			class endMissionDB {};
+			class createDeadRecord {};
+			class updateDeadRecord {};
+			class getRespawnInventory {};
+			class createConnectionRecord {};
+			class updateConnectionRecord {};
+			class getRespawnTimeDB {};
         };
 		class Fuel {
 			class setStationsFuel {};
 			class spawnCanister {};
+		};
+		class Fortify {
+			class setFortifySettings {};
+			class assignFortifySupply {};
+			class addFortifyArea {};
+			class removeFortifyArea {};
+			class drawArea {};
 		};
 		class Gameplay {
 			class endMission {};
@@ -66,22 +84,32 @@ class CfgFunctions
 			class showTickets {};
 			class showUserInfo {};
 			class selectRandomLoadout {};
+			class randomCommanders {};
+			class selectPlayerFitGroup {};
 		};
 		class Generic {
 			class clearContainerInventory {};
 			class createLogServer {};
 			class getModList {};
-			class getPlayersNames {};
+			class getPlayers {};
 			class parseOrder {};
-			class reLoadoutUnit {};
 			class removeInventoryRestrictedItems {};
 			class usersIDs {};
+			class objectHasInventory {};
+			class sortByRank {};
+			class getPlayer {};
+			class isStringNumberValid {};
+			class leftPad {};
+			class hasNavigationItem {};
 		};
 		class Radio {
 			class assignJammer {};
 			class objectJamming {};
 			class replaceVehicleRadio {};
 			class radioSignalQuality {};
+			class reassignUnitRadios {};
+			class savePlayerRadioSettings {};
+			class loadPlayerRadioSettings {};
 		};
 		class Respawn {
 			class assignFob {};
@@ -90,6 +118,7 @@ class CfgFunctions
 			class forcedRespawn {};
 			class removeFob {};
 			class removeRespawnPoint {};
+			class respawnMarkerTracking {};
 		};
 		class Storage {
 			class addActionToStorage {};
@@ -115,15 +144,21 @@ class CfgFunctions
 			class promoteToZeus {};
 		};
 		class GUI {
-			class fillListNBox {file = "GUI\fn_fillListNBox.sqf"};
+			class fillListNBox {file = "GUI\fn_fillListNBox.sqf";};
+
+			class getComboListRows {};
+			class nulifyListNBoxRow {file = "GUI\TeamManagement\fn_nulifyListNBoxRow.sqf";}; 
+			class fillGroupListNBox {file = "GUI\TeamManagement\fn_fillGroupListNBox.sqf";}
+			class refreshPanel {file = "GUI\TeamManagement\fn_refreshPanel.sqf";};
+			class getGroups {file = "GUI\TeamManagement\fn_getGroups.sqf";};
 		};
 		class Mechanics {
-			class renameGroupDisplay {file = "Mechanics\TeamManagement\fn_renameGroupDisplay.sqf"};
-			class showGarageVehicles {file = "Mechanics\ShowGarageVehicles\fn_showGarageVehicles.sqf"};
+			class getPlayersByGroupState {file = "Mechanics\TeamManagement\fn_getPlayersByGroupState.sqf";};
+			class showGarageVehicles {file = "Mechanics\ShowGarageVehicles\fn_showGarageVehicles.sqf";};
 		};
 		class ZeusContextMenu {
-			class spawnVehicle {file = "ZeusContextMenu\Garage\fn_spawnVehicle.sqf"};
-			class applyLoadout {file = "ZeusContextMenu\Garage\fn_applyLoadout.sqf"};
+			class spawnVehicle {file = "ZeusContextMenu\Garage\fn_spawnVehicle.sqf";};
+			class applyLoadout {file = "ZeusContextMenu\Garage\fn_applyLoadout.sqf";};
 		};
     };
 };
@@ -159,7 +194,8 @@ class CfgDebriefing
 	class toBeContinued {
 		title = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_TITLE";
 		subtitle = "$STR_SAA_DEBRIEFING_TO_BE_CONTINUED_SUBTITLE";
-		description = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca";
+		description = "";
+		picture = "\A3\UI_F\data\Map\Diary\Icons\unitGroupPlayable_ca.paa";
 		pictureColor[] = {1,1,1,1};
 	};
 

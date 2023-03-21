@@ -2,7 +2,7 @@
 params ["_arrays", "_uid"];
 
 _arrays params ["_weapons", "_magazines", "_items"]; 
-(missionNamespace getVariable [format["%1_DATA", _uid], ["PVT", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
+(missionNamespace getVariable [format["%1_DATA", _uid], ["PV1", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
 
 _availiableEquipment = missionNamespace getVariable [format["availiableItems_%1_%2", _firstClass, _secondClass], [_uid] call Shadec_fnc_composeAvailiableItems];
 

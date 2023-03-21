@@ -1,7 +1,7 @@
 //
 params["_orders"];
 
-diag_log format ["fnc_parseOrders| _orders: %1", _orders];
+// diag_log format ["fnc_parseOrders| _orders: %1", _orders];
 
 private _finalArray = [[], [], []];
 {

@@ -3,16 +3,20 @@
 // Restrict player access to other storages
 _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
-    if !((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
+
+    // If not storage - exit
+    if !(_container getVariable ["SAA_isPersonalStorage", false]) exitWith {};
+
+    // Close inventory if player is not owner 
+    if !((_container getVariable ["SAA_storageOwner", "00000000000000000"]) isEqualTo (getPlayerUID player)) then {
         cutText [localize "STR_SAA_STORAGE_ACCESS_STRANGER", "PLAIN", 2];
-        closeDialog 602; true;
+        closeDialog 602; true
     };
 
-    if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
-        if (player getVariable ["SAA_storageRestricted", false]) exitWith {
-            cutText [localize "STR_SAA_STORAGE_ACCESS_RESTRICTED", "PLAIN", 2];
-            closeDialog 602; true;
-        };
+    // Check if player was storage-restricted
+    if (player getVariable ["SAA_storageRestricted", false]) then {
+        cutText [localize "STR_SAA_STORAGE_ACCESS_RESTRICTED", "PLAIN", 2];
+        closeDialog 602; true
     };
 }];
 
@@ -21,8 +25,20 @@ _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 
-    if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
+    // Save inventory
+    [player, getPlayerUID player, name player] spawn Shadec_fnc_saveInventory;
+
+    // If not storage - exit
+    if !(_container getVariable ["SAA_isPersonalStorage", false]) exitWith {};
+
+    // Check if player is owner 
+    if ((_container getVariable ["SAA_storageOwner", "00000000000000000"]) isEqualTo (getPlayerUID player)) then {
         _container setPos [0,0,0];
+
+        [[_container], {
+			(_this # 0) lockInventory false;
+		}] remoteExec ["call", -2, format["SAA_isStorageLocked_%1", _container getVariable "SAA_storageOwner"]];
+
         _take = _container getVariable ["Take", false];
         if (_take) then {
             private _weapons = [];
@@ -38,8 +54,8 @@ _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 
             _container setVariable ["Take", false];
         };
+
         [getPlayerUID player] spawn Shadec_fnc_saveStorage;
-        [player, getPlayerUID player, name player] spawn Shadec_fnc_saveInventory;
     };
 }];
 
@@ -48,7 +64,11 @@ _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 _EH_StoragePut = player addEventHandler ["Put", {
     params ["_unit", "_container", "_item"];
 
-    if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
+    // If not storage - exit
+    if !(_container getVariable ["SAA_isPersonalStorage", false]) exitWith {};
+
+    // Check if player is owner
+    if ((_container getVariable ["SAA_storageOwner", "00000000000000000"]) isEqualTo (getPlayerUID player)) then {
         if ([_item] call BIS_fnc_itemType select 0 isEqualTo "Weapon") then {
             [_container, _item, 1, true] call CBA_fnc_removeWeaponCargo;
             [_container, [_item] call BIS_fnc_baseWeapon, 1, true] call CBA_fnc_addWeaponCargo;
@@ -74,7 +94,11 @@ _EH_StoragePut = player addEventHandler ["Put", {
 _EH_StorageTake = player addEventHandler ["Take", {
     params ["_unit", "_container", "_item"];
 
-    if ((_container getVariable "storageName") isEqualTo format["%1_%2", "pStorage", getPlayerUID player]) then {
+    // If not storage - exit
+    if !(_container getVariable ["SAA_isPersonalStorage", false]) exitWith {};
+
+    // Check if player is owner
+    if ((_container getVariable ["SAA_storageOwner", "00000000000000000"]) isEqualTo (getPlayerUID player)) then {
         if ([_item] call BIS_fnc_itemType select 0 isEqualTo "Weapon") then {
             _container setVariable ["Take", true];
         } else {

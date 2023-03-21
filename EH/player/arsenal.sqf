@@ -20,6 +20,8 @@ _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
 	["save"] call Shadec_fnc_gearList;
 
     _display call Shadec_fnc_hideBottomButtons;
+    _display call Shadec_fnc_hideLeftPanelButtons;
+    _display call Shadec_fnc_repositionArsenalButtons;
 
     [[player], {
         backpackContainer (_this # 0) lockInventory true;
@@ -31,7 +33,6 @@ _EH_LeftPanelFilled = ["ace_arsenal_leftPanelFilled", {
 	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
 	disableSerialization;
 
-    _display call Shadec_fnc_hideLeftPanelButtons;
     if (_leftPanelIDC isEqualTo 2002) then {
         [_display] call ace_arsenal_fnc_buttonStats;
         [_display, false] call Shadec_fnc_toggleLeftPanel;
@@ -67,23 +68,31 @@ _EH_ArsenalClose = ["ace_arsenal_displayClosed", {
 
 }] call CBA_fnc_addEventHandler;
 
-
+//
 _EH_BackpackOpened = player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
 
     private _allPlayersBackpacks = allPlayers apply {backpackContainer _x};
     if !(_container in _allPlayersBackpacks) exitWith {};
     private _player = (allPlayers select {(backpackContainer _x) isEqualTo _container}) # 0;
-    private _display = findDisplay 602;
 
-    [_player, _display] spawn {
-        params ["_player", "_display"];
+    [_player] spawn {
+        params ["_player"];
+        [{ // condition
+            !(isNull (findDisplay 602))
+        }, { // statement
+            params ["_player"];
 
-        while {!isNull _display} do {
-            if (_player getVariable ["isArsenalOpened", false]) exitWith {
-                closeDialog 602; true;
-            };
-            sleep 0.5;
-        };
+            [_player] spawn {
+                params ["_player"];
+
+                while {!isNull (findDisplay 602)} do {
+                    if (_player getVariable ["isArsenalOpened", false]) exitWith {
+                        closeDialog 602; true;
+                    };
+                    sleep 0.5;
+                };
+            };           
+        }, [_player], 3, {}] call CBA_fnc_waitUntilAndExecute;
     };
 }];

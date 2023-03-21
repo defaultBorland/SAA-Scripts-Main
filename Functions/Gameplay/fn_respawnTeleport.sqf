@@ -27,7 +27,7 @@ if (_destination isEqualType []) then { // TP to position
 } else { // TP in vehicle or near object
 	private _vehicle = _destination;
 
-	if (!isNil {_vehicle} and alive _vehicle) then {
+	if (!isNil {_vehicle} && {alive _vehicle}) then {
 		switch ([_vehicle] call fnc_getEmptyVehiclePlace) do {
 			case "Cargo": {player moveInCargo _vehicle};
 			case "Commander": {player moveInCommander _vehicle};

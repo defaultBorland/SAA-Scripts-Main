@@ -3,7 +3,7 @@ _insertChildren = {
     params ["_target", "_player", "_actionParams"];
 
 	// Compose list of players
-	_players = ["OnlySquadMembers", _player] call Shadec_fnc_getPlayersNames;
+	_players = ["OnlySquadMembers", _player] call Shadec_fnc_getPlayersByGroupState;
 
     // Add children to this action	
     private _actions = [];
@@ -26,7 +26,7 @@ _insertChildren = {
 };
 
 //
-_action = ["forceRemoveFromSquad", localize "STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTION_NAME", "img\removeFromSquad.paa",
+_action = ["forceRemoveFromSquad", localize "STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTION_NAME", "img\Actions\removeFromSquad.paa",
 	{
 		params ["_target", "_player", "_actionParams"];
 		[["All", "Groups", side _player, true], Shadec_fnc_playersList] remoteExec ["call", 2];

@@ -12,5 +12,6 @@ _EH_PlayerConnected = addMissionEventHandler ["PlayerConnected", {
         {}
     ] call CBA_fnc_waitUntilAndExecute;
 
-    systemChat "SERVER_EH_PLAYERCONNECTED";
+    // Create connection record
+    [_uid, _name] call Shadec_fnc_createConnectionRecord;
 }];

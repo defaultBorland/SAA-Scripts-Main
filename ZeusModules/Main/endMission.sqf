@@ -10,7 +10,7 @@
 	if (
 		({!alive _x} count allPlayers) > 0 &&
 		{({(_x call BIS_fnc_respawnTickets) > 0} count [west, east, independent, civilian]) > 0} &&
-		{count (missionNamespace getVariable ["respawnPositions", []]) > 0}
+		{count (missionNamespace getVariable ["SAA_respawnPoints", []]) > 0}
 	) then {
 		_isAnyPlayerWaitForRespawn = true;
 	};
@@ -45,7 +45,7 @@
 		{},
 		[]
 	] call zen_dialog_fnc_create;
-}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
+}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;
 
 
 // Zeus End Mission Module (SAA MAIN TAB)
@@ -59,7 +59,7 @@
 	if (
 		({!alive _x} count allPlayers) > 0 &&
 		{({(_x call BIS_fnc_respawnTickets) > 0} count [west, east, independent, civilian]) > 0} &&
-		{count (missionNamespace getVariable ["respawnPositions", []]) > 0}
+		{count (missionNamespace getVariable ["SAA_respawnPoints", []]) > 0}
 	) then {
 		_isAnyPlayerWaitForRespawn = true;
 	};
@@ -94,4 +94,4 @@
 		{},
 		[]
 	] call zen_dialog_fnc_create;
-}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
+}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;

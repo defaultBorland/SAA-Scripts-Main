@@ -19,7 +19,7 @@
 	_displayValuesPlayers append _players;
 
 
-	_respawnPositions = missionNamespace getVariable ["respawnPositions", []];
+	_respawnPositions = missionNamespace getVariable ["SAA_respawnPoints", []];
 	_positions = _respawnPositions apply {_x # 1}; // positions or objects
 	_positionsNames = _respawnPositions apply {
 		private _prefix = [localize "STR_SAA_GENERAL_CV", localize "STR_SAA_GENERAL_FOB"] select ((_x # 1) isEqualType []); // CV or FOB
@@ -63,7 +63,7 @@
 					0
 				]
 			],
-			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"],
+			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_SHOWHINT_TOOLTIP"],
 				true
 			],
 			["CHECKBOX", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"],
@@ -81,4 +81,4 @@
 		{},
 		[]
 	] call zen_dialog_fnc_create;
-}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
+}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;

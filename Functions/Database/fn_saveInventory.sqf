@@ -1,17 +1,19 @@
-params ["_unit", "_uid"];
-_unit = _this # 0;
-_uid = _this # 1;
+//local exec only
+params ["_unit"];
 
-if (_uid in (missionNamespace getVariable "ZeusArray")) exitWith {};
+if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+
+private _uid = getPlayerUID _unit;
+
+if (_unit getVariable ["SAA_isZeus", false]) exitWith {diag_log "This is Zeus, abort saving."; false};
 if !(missionNamespace getVariable (format["loadoutLoaded_%1", _uid])) exitWith {};
-if (((missionNamespace getVariable (format["%1_DATA", _uid])) # 0) isEqualTo "GUEST") exitWith {};
+if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {};
 
-_inventory = getUnitLoadout _unit;
+private _inventory = getUnitLoadout _unit;
 
 // Saving Inventory to local profile to show in ShopMission
 profileNamespace setVariable ["SAA_Project_Inventory", _inventory];
 
-_data = [_inventory,_uid];
-diag_log format["SAVE PLAYER INVENTORY:%1", _data];
+private _data = [_uid, _inventory];
 
-[["saveInventory",_data], Shadec_fnc_call_db] remoteExec ["spawn", 2];
+[["saveInventory", _data], Shadec_fnc_call_db] remoteExec ["spawn", 2];

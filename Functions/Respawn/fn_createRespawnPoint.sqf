@@ -40,6 +40,7 @@ if (isNull _objectUnderCursor) then {
 _respawnPositions pushBack [_marker, _respawnTarget # 0, _respawnPositionData]; //diag_log format ["VARS CHECK CRP | _respawnPositions: %1", _respawnPositions];
 missionNamespace setVariable ["SAA_respawnPoints", _respawnPositions, true];
 
+[[_position, _objectUnderCursor, _marker, _side], Shadec_fnc_respawnMarkerTracking] remoteExec ["spawn", -2, format["SAA_respawnPoint_%1", _marker]];
 
 //return
 true

@@ -6,7 +6,6 @@ _prefix = _prefixMain + "Main\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"addShadecArsenal",
 	"endMission",
-	"playersList",
 	"promoteToZeus"
 ];
 
@@ -39,7 +38,7 @@ _prefix = _prefixMain + "Storage\";
 // Utilities
 _prefix = _prefixMain + "Other\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
-	"spawnUnits"
+	//"spawnUnits"
 ];
 
 // Achilles

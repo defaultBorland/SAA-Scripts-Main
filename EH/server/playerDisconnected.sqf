@@ -5,7 +5,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_pcid", "_uid", "_name"];
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
-		[_unit, _uid, _name] spawn Shadec_fnc_savePlayer;
+		[_unit] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
 		[_uid] spawn Shadec_fnc_deleteStorage;
 
 		if (alive _unit) then {
@@ -25,6 +25,9 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 		diag_log format ["Loadout not loaded, abort player saving: %1", _name];
 	};
 	missionNamespace setVariable [format["loadoutLoaded_%1", _uid], nil, true];
+
+	// Update connection record
+	[_uid] call Shadec_fnc_updateConnectionRecord;
 
 	// Unlock server if no zeus or administrator present
 

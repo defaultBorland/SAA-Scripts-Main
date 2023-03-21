@@ -1,6 +1,8 @@
 // FNC EXEC LOCALLY
 params [];
 
+if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+
 _uid = getPlayerUID player;
 
 if !(hasInterface) exitWith {"fnc_saveModlist: Player only local function"};
@@ -64,7 +66,7 @@ if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "765611980664
 _clientModlist = _clientModlist apply {format["%1/%2/%3", _x # 0, _x # 1, _x # 2]};
 _clientModlist = [format["%1 | %2 | CLIENTMODS = %3 | SUSPICIOUS = %4", ["SAFE","WARN"] select _isRestrictedModsFounded, count _clientModlist, _clientModlist joinString ", ", _foundedRestrictedMods joinString ", "]];
 
-_data = [_clientModlist, _uid];
+_data = [_uid, _clientModlist];
 diag_log format["SAVE PLAYER MODLIST:%1", _data];
 
 [["saveModlist",_data], Shadec_fnc_call_db] remoteExec ["spawn", 2];

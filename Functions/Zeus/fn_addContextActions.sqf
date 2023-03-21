@@ -20,9 +20,3 @@ _prefix = _prefixMain + "Storage\";
 	"assignStorage",
 	"removeStorage"
 ];
-
-_prefix = _prefixMain + "Watch\";
-{[] execVM (_prefix + _x + ".sqf")} forEach [
-	"DoWatch",
-	"StopWatch"
-];

@@ -3,7 +3,7 @@ _insertChildren = {
     params ["_target", "_player", "_actionParams"];
 
 	// Compose list of players
-	_players = ["OnlySquadMembers", _player] call Shadec_fnc_getPlayersNames;
+	_players = ["OnlySquadMembers", _player] call Shadec_fnc_getPlayersByGroupState;
 
     // Add children to this action	
     private _actions = [];

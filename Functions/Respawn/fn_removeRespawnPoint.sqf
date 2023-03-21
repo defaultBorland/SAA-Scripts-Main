@@ -22,6 +22,8 @@ deleteMarker _marker;
 _respawnPositions deleteAt _respawnPositionIndex; //diag_log format ["VARS CHECK RRP | _respawnPositions: %1", _respawnPositions];
 missionNamespace setVariable ["SAA_respawnPoints", _respawnPositions, true];
 
+// Remove from JIP queue
+remoteExec ["", format["SAA_respawnPoint_%1", _marker]];
 
 //return
 true

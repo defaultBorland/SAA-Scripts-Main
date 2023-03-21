@@ -47,11 +47,10 @@ if !(player getVariable ["KIA_onExit", false]) then {
 // Add ACE Actions
 [] execVM "Mechanics\Root\RootActions_init.sqf";
 [] execVM "Mechanics\Reloadout\LoadoutFix_init.sqf";
+[] execVM "GUI\TeamManagement\action_init.sqf";
 
 [] execVM "Mechanics\LowGear\LowGear_Init.sqf";
 [] execVM "Mechanics\TeamManagement\PlayersList_Init.sqf";
-[] execVM "Mechanics\TeamManagement\SquadList_Init.sqf";
-[] execVM "Mechanics\TeamManagement\GroupNaming_Init.sqf";
 [] execVM "Mechanics\TeamManagement\ForceJoinToSquad_Init.sqf";
 [] execVM "Mechanics\TeamManagement\ForceRemoveFromSquad_Init.sqf";
 [] execVM "Mechanics\ShowTickets\ShowTickets_Init.sqf";

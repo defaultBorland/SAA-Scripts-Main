@@ -1,0 +1,20 @@
+//
+params [""];
+
+if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+
+{
+	systemTime params ["_year", "_month", "_day", "_hours", "_minutes"];
+
+	private _missionID = format["%1-%2-%3-%4", 
+		_year, 
+		[_month, 2, "0"] call Shadec_fnc_leftPad, 
+		[_day, 2, "0"] call Shadec_fnc_leftPad, 
+		([_hours, 2, "0"] call Shadec_fnc_leftPad) + ([_minutes, 2, "0"] call Shadec_fnc_leftPad)];
+	missionNamespace setVariable ["MissionID", _missionID];
+
+	private _map = toUpper getText(configFile >> "CfgWorlds" >> worldName >> "description");
+
+	private _data = [_missionID, _map];
+	["createMission", _data] call Shadec_fnc_call_db;
+} remoteExec ["call", 2];

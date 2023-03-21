@@ -1,2251 +1,2274 @@
-﻿<Container name = "Low Gear">
-
-    <Key ID="STR_RIP_LOWGEARON"> 
-        <Original>High-climbing gear (on)</Original> 
-        <Russian>Включить пониженную</Russian> 
-    </Key> 
-
-    <Key ID="STR_RIP_LOWGEAROFF"> 
-        <Original>High-climbing gear (off)</Original> 
-        <Russian>Включить стандартную</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Group Naming">
-
-    <Key ID="STR_SAA_GROUPNAMING_ACTION_NAME"> 
-        <Original>Rename Group</Original> 
-        <Russian>Переименовать Группу</Russian> 
-    </Key> 
-
-    <Key ID="STR_SAA_GROUPNAMING_TITLE_ENTERNAME"> 
-        <Original>Enter Group Name: </Original> 
-        <Russian>Введите имя группы: </Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GROUPNAMING_ERROR_GROUPNAME_ALREADY_EXISTS"> 
-        <Original>ERROR: This Group Name is already selected, choose another one.</Original> 
-        <Russian>ОШИБКА: Название группы уже кем-то занято, выберите другое.</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Check Tickets">
-
-    <Key ID="STR_SAA_SHOWTICKETS_ACTION_NAME"> 
-        <Original>Tickets</Original> 
-        <Russian>Тикеты</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_SHOWTICKETS_NO_RESPAWN_POINT_AVAILIABLE"> 
-        <Original>No respawn points available</Original> 
-        <Russian>Нет доступных точек возрождения</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_SHOWTICKETS_UNLIMITED"> 
-        <Original>Неограничено</Original> 
-        <Russian>Unlimited</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_SHOWTICKETS_TICKETS_LEFT"> 
-        <Original>Tickets left</Original> 
-        <Russian>Осталось тикетов</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_SHOWTICKETS_TICKETS_CHANGE_CHATMESSAGE"> 
-        <Original>Amount of respawn tickets was changed</Original> 
-        <Russian>Количество тикетов было изменено</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Force Join To Squad">
-
-    <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_ACTION_NAME"> 
-        <Original>Join to squad</Original> 
-        <Russian>Добавить в отряд</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_CHATINFO"> 
-        <Original>was joined to squad by</Original> 
-        <Russian>был присоединён в отряд</Russian>
-    </Key>
-
-</Container>
-
-<Container name = "Force Remove From Squad">
-
-    <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTION_NAME"> 
-        <Original>Remove from squad</Original> 
-        <Russian>Удалить из отряда</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_CHATINFO"> 
-        <Original>was removed from squad by</Original> 
-        <Russian>был удалён из отряда</Russian>
-    </Key>
-
-</Container>
-
-<Container name = "Players List">
-
-    <Key ID="STR_SAA_PLAYERSLIST_ACTION_NAME"> 
-        <Original>Players List</Original> 
-        <Russian>Список игроков</Russian> 
-    </Key> 
-
-    <Key ID="STR_SAA_PLAYERSLIST_NO_SUCH_PLAYERS"> 
-        <Original>There are no %1 players!</Original> 
-        <Russian>%1 Игроки отсутствуют!</Russian> 
-    </Key> 
-
-</Container>
-
-<Container name = "Squad List">
-
-    <Key ID="STR_SAA_SQUADLIST_ACTION_NAME"> 
-        <Original>Squad Info</Original> 
-        <Russian>Мой отряд</Russian> 
-    </Key> 
-
-</Container>
-
-<Container name = "Show Garage Vehicles">
-
-    <Key ID="STR_SAA_SHOW_GARAGE_VEHICLES_ACTION_NAME"> 
-        <Original>Vehicles on FOB</Original> 
-        <Russian>Техника на ФОБе</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_SHOW_GARAGE_VEHICLES_ERROR_NO_VEHICLES"> 
-        <Original>There are no vehicles at company FOB!</Original> 
-        <Russian>На ФОБе компании нету техники!</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Release UAV Control">
-
-    <Key ID="STR_SAA_RELEASE_UAV_CONTROL"> 
-        <Original>Release UAV controls</Original> 
-        <Russian>Бросить управление БПА</Russian> 
-    </Key> 
-
-</Container>
-
-<Container name = "Door Breaching">
-
-    <Key ID="STR_SAA_SET_A_BREACHING_CHARGE"> 
-        <Original>Set a breaching charge</Original> 
-        <Russian>Установить подрывной заряд</Russian> 
-    </Key> 
-
-    <Key ID="STR_SAA_TOUCH_OFF_BREACH"> 
-        <Original>Touch off (breach)</Original> 
-        <Russian>Взорвать (проломить)</Russian> 
-    </Key> 
-
-</Container>
-
-<Container name = "Actions">
-
-    <Key ID="STR_SAA_STORAGE_ACTION"> 
-        <Original>Personal Storage</Original> 
-        <Russian>Личное Хранилище</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_ASSIGN_ZEUS_ACTION"> 
-        <Original>Assign Zeus</Original> 
-        <Russian>Получить Зевса</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_UNASSIGN_ZEUS_ACTION"> 
-        <Original>Unassign Zeus</Original> 
-        <Russian>Снять Зевса</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_TEAM_MANAGEMENT_ACTION"> 
-        <Original>Team Management</Original> 
-        <Russian>Управление отрядом</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_FIX_LOADOUT_ACTION"> 
-        <Original>Fix Loadout</Original> 
-        <Russian>Исправить лодаут</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "General">
-
-    <Key ID="STR_SAA_GENERAL_YES"> 
-        <Original>Yes</Original> 
-        <Russian>Да</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_NO"> 
-        <Original>No</Original> 
-        <Russian>Нет</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_BY"> 
-        <Original>By</Original> 
-        <Russian>На</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_HIDE"> 
-        <Original>Hide</Original> 
-        <Russian>Свернуть</Russian> 
-    </Key>
-    
-    <Key ID="STR_SAA_GENERAL_CLOSE"> 
-        <Original>Close</Original> 
-        <Russian>Закрыть</Russian> 
-    </Key>
-    
-    <Key ID="STR_SAA_GENERAL_HELP"> 
-        <Original>Help</Original> 
-        <Russian>Помощь</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_WEAPON"> 
-        <Original>Weapon</Original> 
-        <Russian>Оружие</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_MAGAZINE"> 
-        <Original>Ammunition</Original> 
-        <Russian>Аммуниция</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_MINE"> 
-        <Original>Mine</Original> 
-        <Russian>Мина</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_ITEM"> 
-        <Original>Item</Original> 
-        <Russian>Предмет</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_EQUIPMENT"> 
-        <Original>Equipment</Original> 
-        <Russian>Экипировка</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_EACH"> 
-        <Original>Each</Original> 
-        <Russian>Каждый</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_PLAYER"> 
-        <Original>Player</Original> 
-        <Russian>Игрок</Russian> 
-    </Key>
-    
-    <Key ID="STR_SAA_GENERAL_SQUAD"> 
-        <Original>Squad</Original> 
-        <Russian>Отряд</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_ZEUS"> 
-        <Original>Zeus</Original> 
-        <Russian>Зевс</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_RESPAWN_CV"> 
-        <Original>Respawn CV</Original> 
-        <Russian>КШМ</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_CV"> 
-        <Original>CV</Original> 
-        <Russian>КШМ</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_FOB"> 
-        <Original>FOB</Original> 
-        <Russian>ФОБ</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_RESPAWN_POINT"> 
-        <Original>Respawn Point</Original> 
-        <Russian>Точка возрождения</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_DIRECTION"> 
-        <Original>Direction</Original> 
-        <Russian>Направление</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_DISTANCE"> 
-        <Original>Distance</Original> 
-        <Russian>Расстояние</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_CREATED"> 
-        <Original>Created</Original> 
-        <Russian>Создана</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_REMOVED"> 
-        <Original>Removed</Original> 
-        <Russian>Удалена</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_STATUS"> 
-        <Original>Status</Original> 
-        <Russian>Статус</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_IN_ACTION"> 
-        <Original>In Action</Original> 
-        <Russian>В строю</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_KIA"> 
-        <Original>K.I.A.</Original> 
-        <Russian>Убит</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_SUCCESS"> 
-        <Original>Success</Original> 
-        <Russian>Успех</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_FAILURE"> 
-        <Original>Failure</Original> 
-        <Russian>Провал</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_ALL_PLAYERS"> 
-        <Original>All players</Original> 
-        <Russian>Все игроки</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_ALIVE"> 
-        <Original>Alive</Original> 
-        <Russian>Живые</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_DEAD"> 
-        <Original>Dead</Original> 
-        <Russian>Мёртвые</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_ALL"> 
-        <Original>All</Original> 
-        <Russian>Все</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_SIDE"> 
-        <Original>Side</Original> 
-        <Russian>Сторона</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_WEST"> 
-        <Original>West</Original> 
-        <Russian>Синие</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_EAST"> 
-        <Original>East</Original> 
-        <Russian>Красные</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_GUER"> 
-        <Original>Independent</Original> 
-        <Russian>Независимые</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_CIV"> 
-        <Original>Civilian</Original> 
-        <Russian>Гражданские</Russian> 
-    </Key>
-    
-    <Key ID="STR_SAA_GENERAL_DISPLAYNAME">
-        <Original>Name</Original>
-        <Russian>Название</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_COUNT">
-        <Original>#</Original>
-        <Russian>#</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_TYPE">
-        <Original>Type</Original>
-        <Russian>Тип</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_CLASSNAME">
-        <Original>Classname</Original>
-        <Russian>Имя класса</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_NO_SORTING">
-        <Original>No active sorting</Original>
-        <Russian>Сейчас не сортируется</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_ASCENDING">
-        <Original>Ascending</Original>
-        <Russian>По возрастанию</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_DESCENDING">
-        <Original>Descending</Original>
-        <Russian>По убыванию</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_WARNING">
-        <Original>Warning</Original>
-        <Russian>Внимание</Russian>
-    </Key>
-
-    <Key ID="STR_SAA_GENERAL_NUMBER">
-        <Original>Number</Original>
-        <Russian>Число</Russian>
-    </Key>
-
-</Container>
-
-<Container name = "Vehicle Types">
-
-    <Key ID="STR_SAA_VEHICLES_CAR"> 
-        <Original>Car</Original> 
-        <Russian>Автомобиль</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_CV"> 
-        <Original>CV</Original> 
-        <Russian>КШМ</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_APC"> 
-        <Original>APC</Original> 
-        <Russian>БТР</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_IFV"> 
-        <Original>IFV</Original> 
-        <Russian>БМП</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_TANK"> 
-        <Original>Tank</Original> 
-        <Russian>Танк</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_HELICOPTER"> 
-        <Original>Helicopter</Original> 
-        <Russian>Вертолёт</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_VESSEL"> 
-        <Original>Vessel</Original> 
-        <Russian>Судно</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_VEHICLES_OTHER"> 
-        <Original>Other</Original> 
-        <Russian>Другое</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Ranks">
-
-    <Key ID="STR_SAA_RANKS_RANK"> 
-        <Original>Rank</Original> 
-        <Russian>Звание</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_RANKS_RANKS"> 
-        <Original>Ranks</Original> 
-        <Russian>Звания</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Classes">
-
-    <Key ID="STR_SAA_CLASSES_CLASS"> 
-        <Original>Class</Original> 
-        <Russian>Класс</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_CLASSES"> 
-        <Original>Classes</Original> 
-        <Russian>Классы</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_PRIMARY"> 
-        <Original>Primary</Original> 
-        <Russian>Основной</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_SECONDARY"> 
-        <Original>Additional</Original> 
-        <Russian>Дополнительный</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_RIFLEMAN"> 
-        <Original>Rifleman</Original> 
-        <Russian>Стрелок</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_MACHINEGUNNER"> 
-        <Original>Machinegunner</Original> 
-        <Russian>Пулемётчик</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_GRENADIER"> 
-        <Original>Grenadier</Original> 
-        <Russian>Гренадёр</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_ENGINEER"> 
-        <Original>Engineer</Original> 
-        <Russian>Сапёр-Инженер</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_AT"> 
-        <Original>AT/AA-Specialist</Original> 
-        <Russian>ПТ/ПВО-Специалист</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_MEDIC"> 
-        <Original>Medic</Original> 
-        <Russian>Медик</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_MARKSMAN"> 
-        <Original>Marksman</Original> 
-        <Russian>Марксман</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_SNIPER"> 
-        <Original>Sniper</Original> 
-        <Russian>Снайпер</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_CLASSES_NA"> 
-        <Original>N/A</Original> 
-        <Russian>Отсутствует</Russian>
-    </Key>
-	
-	<Key ID="STR_SAA_CLASSES_NONE"> 
-        <Original>None</Original> 
-        <Russian>Отсутствует</Russian>
-    </Key>
-
-
-</Container>
-
-<Container name = "Roles">
-
-    <Key ID="STR_SAA_ROLES_ROLE"> 
-        <Original>Role</Original> 
-        <Russian>Роль</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Zeus">
-        
-    <Container name = "Zeus Messages">
-    
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"> 
-            <Original>ERROR: Select an object</Original> 
-            <Russian>ОШИБКА: Выберите объект</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_INVALID_DATA"> 
-            <Original>ERROR: Input Valid Data</Original> 
-            <Russian>ОШИБКА: Введите корректные данные</Russian> 
-        </Key>
-        
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_MAN"> 
-            <Original>ERROR: Selected Object must be a Man</Original> 
-            <Russian>ОШИБКА: Выберите человека</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_NOT_BE_A_MAN"> 
-            <Original>ERROR: Selected Object must not be a Man</Original> 
-            <Russian>ОШИБКА: Выберите не человека</Russian> 
-        </Key>
-        
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_PLAYER"> 
-            <Original>ERROR: Selected Object must be a Player</Original> 
-            <Russian>ОШИБКА: Выберите игрока</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_NONZEUS_PLAYER"> 
-            <Original>ERROR: Selected Object must be a non-zeus player</Original> 
-            <Russian>ОШИБКА: Выберите игрока, не имеющего Зевса</Russian> 
-        </Key>
-        
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_ALREADY_ZEUS"> 
-            <Original>ERROR: Selected player is already SAA-Zeus</Original> 
-            <Russian>ОШИБКА: Выбранный игрок уже SAA-Зевс</Russian> 
-        </Key>
-        
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_NO_NONZEUS_PLAYERS"> 
-            <Original>ERROR: There are no non-zeus players</Original> 
-            <Russian>ОШИБКА: Кроме зевсов игроков нет</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_UNIT_IS_UNCONSCIOUS"> 
-            <Original>ERROR: Unit is unconscious!</Original>
-            <Russian>ОШИБКА: Человек без сознания!</Russian>
-        </Key>
-        
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_VEHICLE_IS_A_DRONE"> 
-            <Original>ERROR: Unit is a drone!</Original>
-            <Russian>ОШИБКА: Это беспилотник!</Russian>
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_PLAYERS_WAITING_TO_RESPAWN"> 
-            <Original>WARNING: There are players waiting to respawn!</Original>
-            <Russian>ВНИМАНИЕ: Есть ещё игроки, ожидающие возрождения!</Russian>
-        </Key>
-    
-    </Container>
-
-    <Container name = "Modules Categories">
-
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_MAIN"> 
-            <Original>[SAA] Main</Original> 
-            <Russian>[SAA] Основные</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_SCENARIO_FLOW"> 
-            <Original>Scenario Flow</Original> 
-            <Russian>Ход сценария</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_RESPAWN"> 
-            <Original>[SAA] Respawn</Original> 
-            <Russian>[SAA] Возрождение</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_STORAGE"> 
-            <Original>[SAA] Storage</Original> 
-            <Russian>[SAA] Хранилище</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_RADIO"> 
-            <Original>[SAA] Radio</Original> 
-            <Russian>[SAA] Связь</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_ACHILLES"> 
-            <Original>[SAA] Achilles</Original> 
-            <Russian>[SAA] Achilles</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_OTHER"> 
-            <Original>[SAA] Other</Original> 
-            <Russian>[SAA] Другое</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FUEL"> 
-            <Original>[SAA] Fuel</Original> 
-            <Russian>[SAA] Топливо</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FORTIFY"> 
-            <Original>[SAA] Fortify</Original> 
-            <Russian>[SAA] Фортификация</Russian> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project name="SAA">
+
+    <Container name = "Low Gear">
+
+        <Key ID="STR_RIP_LOWGEARON"> 
+            <Original>High-climbing gear (on)</Original> 
+            <Russian>Включить пониженную</Russian> 
+        </Key> 
+
+        <Key ID="STR_RIP_LOWGEAROFF"> 
+            <Original>High-climbing gear (off)</Original> 
+            <Russian>Включить стандартную</Russian> 
         </Key>
 
     </Container>
 
-    <Container name = "Modules">
-        
-        <Container name = "Add Arsenal">
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_MODULENAME"> 
-                <Original>Add SAA Arsenal</Original> 
-                <Russian>Добавить SAA Арсенал</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_HEADER"> 
-                <Original>Add Arsenal</Original> 
-                <Russian>Назначить Арсенал</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_UNIFORMTYPE_DISPLAYNAME"> 
-                <Original>Uniform Type</Original> 
-                <Russian>Тип Униформы</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_UNIFORMTYPE_TOOLTIP"> 
-                <Original>Uniform camouflage corresponding to map prevail terrain type</Original> 
-                <Russian>Камуфляж униформы, соответствующий преобладающей местности на карте</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_ARID"> 
-                <Original>Arid</Original> 
-                <Russian>Пустынная</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_SEMIARID"> 
-                <Original>Multicam</Original> 
-                <Russian>Мультикам</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_FOREST"> 
-                <Original>Forest</Original> 
-                <Russian>Лесная</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_WINTER"> 
-                <Original>Winter</Original> 
-                <Russian>Зимняя</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_BLACK"> 
-                <Original>Black</Original> 
-                <Russian>Чёрная</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_ALL"> 
-                <Original>All of above</Original> 
-                <Russian>Вся вышеперечисленная</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_CLEAROBJECT_DISPLAYNAME"> 
-                <Original>Clear object inventory</Original> 
-                <Russian>Очистить инвентарь обекта</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_CLEAROBJECT_TOOLTIP"> 
-                <Original>Make the inventory of selected object empty</Original> 
-                <Russian>Очистить инвентарь выбранного объекта</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Player will recieve notification about arsenal position and type</Original> 
-                <Russian>Игроки получат информацию об относительном местонахождении арсенала и типе униформы</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Arsenal has been assigned</Original> 
-                <Russian>Арсенал назначен</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Remove Arsenal">
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_MODULENAME"> 
-                <Original>Remove Arsenal</Original> 
-                <Russian>Удалить Арсенал</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Arsenal has been removed</Original> 
-                <Russian>Арсенал удалён</Russian> 
-            </Key>
-        
-        </Container>
+    <Container name = "Check Tickets">
 
-        <Container name = "Assign Storage">
+        <Key ID="STR_SAA_SHOWTICKETS_ACTION_NAME"> 
+            <Original>Tickets</Original> 
+            <Russian>Тикеты</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_SHOWTICKETS_NO_RESPAWN_POINT_AVAILIABLE"> 
+            <Original>No respawn points available</Original> 
+            <Russian>Нет доступных точек возрождения</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_SHOWTICKETS_UNLIMITED"> 
+            <Original>Неограничено</Original> 
+            <Russian>Unlimited</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_SHOWTICKETS_TICKETS_LEFT"> 
+            <Original>Tickets left</Original> 
+            <Russian>Осталось тикетов</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_SHOWTICKETS_TICKETS_CHANGE_CHATMESSAGE"> 
+            <Original>Amount of respawn tickets was changed</Original> 
+            <Russian>Количество тикетов было изменено</Russian> 
+        </Key>
+
+    </Container>
+
+    <Container name = "Force Join To Squad">
+
+        <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_ACTION_NAME"> 
+            <Original>Join to squad</Original> 
+            <Russian>Добавить в отряд</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_FORCE_JOIN_TO_SQUAD_CHATINFO"> 
+            <Original>was joined to squad by</Original> 
+            <Russian>был присоединён в отряд</Russian>
+        </Key>
+
+    </Container>
+
+    <Container name = "Force Remove From Squad">
+
+        <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_ACTION_NAME"> 
+            <Original>Remove from squad</Original> 
+            <Russian>Удалить из отряда</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_FORCE_REMOVE_FROM_SQUAD_CHATINFO"> 
+            <Original>was removed from squad by</Original> 
+            <Russian>был удалён из отряда</Russian>
+        </Key>
+
+    </Container>
+
+    <Container name = "Players List">
+
+        <Key ID="STR_SAA_PLAYERSLIST_ACTION_NAME"> 
+            <Original>Players List</Original> 
+            <Russian>Список игроков</Russian> 
+        </Key> 
+
+        <Key ID="STR_SAA_PLAYERSLIST_NO_SUCH_PLAYERS"> 
+            <Original>There are no players with such status!</Original> 
+            <Russian>Игроков с таким статусом нет!</Russian> 
+        </Key> 
+
+    </Container>
+
+    <Container name = "Show Garage Vehicles">
+
+        <Key ID="STR_SAA_SHOW_GARAGE_VEHICLES_ACTION_NAME"> 
+            <Original>Vehicles on FOB</Original> 
+            <Russian>Техника на ФОБе</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_SHOW_GARAGE_VEHICLES_ERROR_NO_VEHICLES"> 
+            <Original>There are no vehicles at company FOB!</Original> 
+            <Russian>На ФОБе компании нету техники!</Russian> 
+        </Key>
+
+    </Container>
+
+    <Container name = "Release UAV Control">
+
+        <Key ID="STR_SAA_RELEASE_UAV_CONTROL"> 
+            <Original>Release UAV controls</Original> 
+            <Russian>Бросить управление БПА</Russian> 
+        </Key> 
+
+    </Container>
+
+    <Container name = "Door Breaching">
+
+        <Key ID="STR_SAA_SET_A_BREACHING_CHARGE"> 
+            <Original>Set a breaching charge</Original> 
+            <Russian>Установить подрывной заряд</Russian> 
+        </Key> 
+
+        <Key ID="STR_SAA_TOUCH_OFF_BREACH"> 
+            <Original>Touch off (breach)</Original> 
+            <Russian>Взорвать (проломить)</Russian> 
+        </Key> 
+
+    </Container>
+
+    <Container name = "Actions">
+
+        <Key ID="STR_SAA_STORAGE_ACTION"> 
+            <Original>Personal Storage</Original> 
+            <Russian>Личное Хранилище</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_ASSIGN_ZEUS_ACTION"> 
+            <Original>Assign Zeus</Original> 
+            <Russian>Получить Зевса</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_UNASSIGN_ZEUS_ACTION"> 
+            <Original>Unassign Zeus</Original> 
+            <Russian>Снять Зевса</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TEAM_MANAGEMENT_ACTION"> 
+            <Original>Team Management</Original> 
+            <Russian>Управление отрядом</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_FIX_LOADOUT_ACTION"> 
+            <Original>Fix Loadout</Original> 
+            <Russian>Исправить лодаут</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_SQUADLIST_ACTION_NAME"> 
+            <Original>My Squad</Original> 
+            <Russian>Мой отряд</Russian> 
+        </Key> 
+
+    </Container>
+
+    <Container name = "General">
+
+        <Key ID="STR_SAA_GENERAL_YES"> 
+            <Original>Yes</Original> 
+            <Russian>Да</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_NO"> 
+            <Original>No</Original> 
+            <Russian>Нет</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_BY"> 
+            <Original>By</Original> 
+            <Russian>На</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_HIDE"> 
+            <Original>Hide</Original> 
+            <Russian>Свернуть</Russian> 
+        </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_MODULENAME"> 
-                <Original>Assign Personal Storage Proxy</Original> 
-                <Russian>Добавить доступ к хранилищу</Russian> 
+        <Key ID="STR_SAA_GENERAL_CLOSE"> 
+            <Original>Close</Original> 
+            <Russian>Закрыть</Russian> 
+        </Key>
+        
+        <Key ID="STR_SAA_GENERAL_HELP"> 
+            <Original>Help</Original> 
+            <Russian>Помощь</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_WEAPON"> 
+            <Original>Weapon</Original> 
+            <Russian>Оружие</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_MAGAZINE"> 
+            <Original>Ammunition</Original> 
+            <Russian>Аммуниция</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_MINE"> 
+            <Original>Mine</Original> 
+            <Russian>Мина</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ITEM"> 
+            <Original>Item</Original> 
+            <Russian>Предмет</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_EQUIPMENT"> 
+            <Original>Equipment</Original> 
+            <Russian>Экипировка</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_EACH"> 
+            <Original>Each</Original> 
+            <Russian>Каждый</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_PLAYER"> 
+            <Original>Player</Original> 
+            <Russian>Игрок</Russian> 
+        </Key>
+        
+        <Key ID="STR_SAA_GENERAL_SQUAD"> 
+            <Original>Squad</Original> 
+            <Russian>Отряд</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ZEUS"> 
+            <Original>Zeus</Original> 
+            <Russian>Зевс</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_RESPAWN_CV"> 
+            <Original>Respawn CV</Original> 
+            <Russian>КШМ</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_CV"> 
+            <Original>CV</Original> 
+            <Russian>КШМ</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_FOB"> 
+            <Original>FOB</Original> 
+            <Russian>ФОБ</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_RESPAWN_POINT"> 
+            <Original>Respawn Point</Original> 
+            <Russian>Точка возрождения</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_DIRECTION"> 
+            <Original>Direction</Original> 
+            <Russian>Направление</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_DISTANCE"> 
+            <Original>Distance</Original> 
+            <Russian>Расстояние</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_CREATED"> 
+            <Original>Created</Original> 
+            <Russian>Создана</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_REMOVED"> 
+            <Original>Removed</Original> 
+            <Russian>Удалена</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_STATUS"> 
+            <Original>Status</Original> 
+            <Russian>Статус</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_IN_ACTION"> 
+            <Original>In Action</Original> 
+            <Russian>В строю</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_KIA"> 
+            <Original>K.I.A.</Original> 
+            <Russian>Убит</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_SUCCESS"> 
+            <Original>Success</Original> 
+            <Russian>Успех</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_FAILURE"> 
+            <Original>Failure</Original> 
+            <Russian>Провал</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ALL_PLAYERS"> 
+            <Original>All players</Original> 
+            <Russian>Все игроки</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ALIVE"> 
+            <Original>Alive</Original> 
+            <Russian>Живые</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_DEAD"> 
+            <Original>Dead</Original> 
+            <Russian>Мёртвые</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ALL"> 
+            <Original>All</Original> 
+            <Russian>Все</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_SIDE"> 
+            <Original>Side</Original> 
+            <Russian>Сторона</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_WEST"> 
+            <Original>West</Original> 
+            <Russian>Синие</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_EAST"> 
+            <Original>East</Original> 
+            <Russian>Красные</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_GUER"> 
+            <Original>Independent</Original> 
+            <Russian>Независимые</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_CIV"> 
+            <Original>Civilian</Original> 
+            <Russian>Гражданские</Russian> 
+        </Key>
+        
+        <Key ID="STR_SAA_GENERAL_DISPLAYNAME">
+            <Original>Name</Original>
+            <Russian>Название</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_COUNT">
+            <Original>#</Original>
+            <Russian>#</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_TYPE">
+            <Original>Type</Original>
+            <Russian>Тип</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_CLASSNAME">
+            <Original>Classname</Original>
+            <Russian>Имя класса</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_NO_SORTING">
+            <Original>No active sorting</Original>
+            <Russian>Сейчас не сортируется</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ASCENDING">
+            <Original>Ascending</Original>
+            <Russian>По возрастанию</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_DESCENDING">
+            <Original>Descending</Original>
+            <Russian>По убыванию</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_WARNING">
+            <Original>Warning</Original>
+            <Russian>Внимание</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_NUMBER">
+            <Original>Number</Original>
+            <Russian>Число</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_ERROR">
+            <Original>Error</Original>
+            <Russian>Ошибка</Russian>
+        </Key>
+
+        <Key ID="STR_SAA_GENERAL_MENU">
+            <Original>Menu</Original>
+            <Russian>Меню</Russian>
+        </Key>
+
+    </Container>
+
+    <Container name = "Vehicle Types">
+
+        <Key ID="STR_SAA_VEHICLES_CAR"> 
+            <Original>Car</Original> 
+            <Russian>Автомобиль</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_CV"> 
+            <Original>CV</Original> 
+            <Russian>КШМ</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_APC"> 
+            <Original>APC</Original> 
+            <Russian>БТР</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_IFV"> 
+            <Original>IFV</Original> 
+            <Russian>БМП</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_TANK"> 
+            <Original>Tank</Original> 
+            <Russian>Танк</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_HELICOPTER"> 
+            <Original>Helicopter</Original> 
+            <Russian>Вертолёт</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_VESSEL"> 
+            <Original>Vessel</Original> 
+            <Russian>Судно</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_VEHICLES_OTHER"> 
+            <Original>Other</Original> 
+            <Russian>Другое</Russian> 
+        </Key>
+
+    </Container>
+
+    <Container name = "Ranks">
+
+        <Key ID="STR_SAA_RANKS_RANK"> 
+            <Original>Rank</Original> 
+            <Russian>Звание</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_RANKS_RANKS"> 
+            <Original>Ranks</Original> 
+            <Russian>Звания</Russian> 
+        </Key>
+
+    </Container>
+
+    <Container name = "Classes">
+
+        <Key ID="STR_SAA_CLASSES_CLASS"> 
+            <Original>Class</Original> 
+            <Russian>Класс</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_CLASSES"> 
+            <Original>Classes</Original> 
+            <Russian>Классы</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_PRIMARY"> 
+            <Original>Primary</Original> 
+            <Russian>Основной</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_SECONDARY"> 
+            <Original>Additional</Original> 
+            <Russian>Дополнительный</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_RIFLEMAN"> 
+            <Original>Rifleman</Original> 
+            <Russian>Стрелок</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_MACHINEGUNNER"> 
+            <Original>Machinegunner</Original> 
+            <Russian>Пулемётчик</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_GRENADIER"> 
+            <Original>Grenadier</Original> 
+            <Russian>Гренадёр</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_ENGINEER"> 
+            <Original>Engineer</Original> 
+            <Russian>Сапёр-Инженер</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_AT"> 
+            <Original>AT/AA-Specialist</Original> 
+            <Russian>ПТ/ПВО-Специалист</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_MEDIC"> 
+            <Original>Medic</Original> 
+            <Russian>Медик</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_MARKSMAN"> 
+            <Original>Marksman</Original> 
+            <Russian>Марксман</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_SNIPER"> 
+            <Original>Sniper</Original> 
+            <Russian>Снайпер</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_CLASSES_NA"> 
+            <Original>N/A</Original> 
+            <Russian>Отсутствует</Russian>
+        </Key>
+        
+        <Key ID="STR_SAA_CLASSES_NONE"> 
+            <Original>None</Original> 
+            <Russian>Отсутствует</Russian>
+        </Key>
+
+
+    </Container>
+
+    <Container name = "Roles">
+
+        <Key ID="STR_SAA_ROLES_ROLE"> 
+            <Original>Role</Original> 
+            <Russian>Роль</Russian> 
+        </Key>
+
+    </Container>
+
+    <Container name = "Zeus">
+            
+        <Container name = "Zeus Messages">
+        
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_NO_OBJECT_SELECTED"> 
+                <Original>ERROR: Select an object</Original> 
+                <Russian>ОШИБКА: Выберите объект</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_DIALOG_HEADER"> 
-                <Original>Assign Storage-proxy</Original> 
-                <Russian>Назначить точку доступа к хранилищу</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Player will recieve notification about personal storage position and type</Original> 
-                <Russian>Игроки получат информацию об относительном местонахождении точки доступа к личному хранилищу</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Storage-Proxy has been assigned</Original> 
-                <Russian>Точка доступа к хранилищу назначена</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_MESSAGES_ALREADYSTORAGEPROXY"> 
-                <Original>ERROR: Selected object is already SAA-StorageProxy</Original> 
-                <Russian>ОШИБКА: Выбранный объект уже является объектом доступа к хранилищу</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Remove Storage">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_MODULENAME"> 
-                <Original>Remove Personal Storage Proxy</Original> 
-                <Russian>Удалить доступ к хранилищу</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_DIALOG_HEADER"> 
-                <Original>Remove Storage-proxy</Original> 
-                <Russian>Удалить доступ к хранилищу с объекта</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Player will recieve notification about personal storage position and type</Original> 
-                <Russian>Игроки получат информацию об относительном местонахождении объекта, больше не являющегося доступом к личному хранилищу</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Storage-proxy removed</Original> 
-                <Russian>Точка доступа к личному хранилищу удалена</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_MESSAGES_NOTASTORAGEPROXY"> 
-                <Original>ERROR: Selected object is not a SAA-StorageProxy</Original> 
-                <Russian>ОШИБКА: Выбранный объект не назначен объектом доступа к хранилищу</Russian> 
-            </Key>
-        
-        </Container>
-    
-        <Container name = "Restrict Storage Access">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_MODULENAME"> 
-                <Original>Restrict Personal Storage Access</Original> 
-                <Russian>Ограничить доступ к хранилищу</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_HEADER"> 
-                <Original>Restrict Player Storage Access</Original> 
-                <Russian>Ограничить игроку доступ к хранилищу</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_DISPLAYNAME"> 
-                <Original>Target</Original> 
-                <Russian>Цель</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_TOOLTIP"> 
-                <Original>The selected player will be prohibited from opening his private storage</Original> 
-                <Russian>Выбранному игроку будет запрещено открывать своё личное хранилище</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_RESTRICT_DISPLAYNAME"> 
-                <Original>Restrict</Original> 
-                <Russian>Запретить</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_RESTRICT_TOOLTIP"> 
-                <Original>If checked - player will lose access to his storage, otherwise - access will be granted</Original> 
-                <Russian>Если отмечено - игрок потеряет доступ к личному хранилищу, иначе - доступ будет возвращён</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Players will receive information about storage restriction for selected player</Original> 
-                <Russian>Игроки получат информацию об ограничении на пользование хранилищем для этого игрока</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_RESTRICTED"> 
-                <Original>has been restricted in access to the personal storage</Original> 
-                <Russian>был ограничен в доступе к личному хранилищу</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_GRANTED"> 
-                <Original>has been restored access to the personal storage</Original> 
-                <Russian>был восстановлен в доступе к личному хранилищу</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_STORAGE_ACCESS_STRANGER"> 
-                <Original>This storage does not belong to you</Original> 
-                <Russian>Это хранилище не принадлежит вам</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_STORAGE_ACCESS_RESTRICTED"> 
-                <Original>You are not allowed to open your personal storage</Original> 
-                <Russian>Вам запрещено открывать личное хранилище</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "End Scenario">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_SCENARIO_FLOW_END_MISSION_MODULENAME"> 
-                <Original>End Mission</Original> 
-                <Russian>Завершить миссию</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_MODULENAME"> 
-                <Original>End Mission</Original> 
-                <Russian>Завершить миссию</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_HEADER"> 
-                <Original>Mission Ending</Original> 
-                <Russian>Завершение миссии</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_DISPLAYNAME"> 
-                <Original>End Type</Original> 
-                <Russian>Тип Завершения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_TOOLTIP"> 
-                <Original>Choose the type of the Mission End depending on the completion of the Main Task</Original> 
-                <Russian>Выберите тип конца миссии в зависимости от степени выполнения основной задачи</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN"> 
-                <Original>Win</Original> 
-                <Russian>Победа</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN_TOOLTIP"> 
-                <Original>Main Task is completed in full or for the most part</Original> 
-                <Russian>Основная задача выполнена в полной мере или по большей части</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE"> 
-                <Original>Lose</Original> 
-                <Russian>Поражение</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE_TOOLTIP"> 
-                <Original>Main Task is not completed/failed</Original> 
-                <Russian>Основная задача не выполнена/провалена</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED"> 
-                <Original>To Be Continued...</Original> 
-                <Russian>Продолжение следует...</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED_TOOLTIP"> 
-                <Original>The Task will continue in the next mission</Original> 
-                <Russian>Выполнение задачи продолжится в следующей миссии</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD"> 
-                <Original>Everyone is Dead</Original> 
-                <Russian>Все погибли</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP"> 
-                <Original>All Died During The Mission (FAILURE, WIPE)</Original> 
-                <Russian>Все оперативники погибли в ходе миссии (Поражение, Вайп)</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Mission Ended</Original> 
-                <Russian>Миссия завершена</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Promote To Zeus">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PROMOTE_TO_ZEUS_MODULENAME"> 
-                <Original>Promote To SAA-Zeus</Original> 
-                <Russian>Назначить SAA-Зевса</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Change Tickets Amount">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_MODULENAME"> 
-                <Original>Change Tickets Amount</Original> 
-                <Russian>Изменить количество тикетов</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_HEADER"> 
-                <Original>Changing The Number of Tickets</Original> 
-                <Russian>Изменение количества тикетов</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_TICKETSAMOUNT_DISPLAYNAME"> 
-                <Original>Change by</Original> 
-                <Russian>Изменить на</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_TICKETSAMOUNT_TOOLTIP"> 
-                <Original>Current amount of tickets will be changed by this value (negative - subtract, positive - add)</Original> 
-                <Russian>Текущее количество тикетов изменится на это значение (отрицательное - убавить, положительное - прибавить)</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_DISPLAYNAME"> 
-                <Original>Target side</Original> 
-                <Russian>Сторона</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_TOOLTIP"> 
-                <Original>Selected side tickets amount will be affected</Original> 
-                <Russian>Тикеты выбранной стороны будут изменены</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Display hint to every side</Original> 
-                <Russian>Показать уведомление каждой стороне</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>If checked - all players of every side will get notification about number of tickets and availiability to respawn of selected side, in other case - only players of selected side.</Original> 
-                <Russian>Если включено, то уведомление об изменении количества тикетов и наличии точки возрождения получат все, в обратном случае - только игроки целевой стороны.</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_TICKETSLEFT"> 
-                <Original>Tickets Left</Original> 
-                <Russian>Остаток Тикетов</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Amount of tickets has been changed</Original> 
-                <Russian>Количество тикетов было изменено</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_FAILED"> 
-                <Original>Error: Enter value between -99 and 99 excluding 0</Original> 
-                <Russian>Ошибка: Введите значение между -99 и 99, исключая 0</Russian> 
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_INVALID_DATA"> 
+                <Original>ERROR: Input Valid Data</Original> 
+                <Russian>ОШИБКА: Введите корректные данные</Russian> 
             </Key>
             
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_MESSAGE_UPDATEDVALUE"> 
-                <Original>Updated value</Original> 
-                <Russian>Новое значение</Russian> 
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_MAN"> 
+                <Original>ERROR: Selected Object must be a Man</Original> 
+                <Russian>ОШИБКА: Выберите человека</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_NOT_BE_A_MAN"> 
+                <Original>ERROR: Selected Object must not be a Man</Original> 
+                <Russian>ОШИБКА: Выберите не человека</Russian> 
+            </Key>
+            
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_PLAYER"> 
+                <Original>ERROR: Selected Object must be a Player</Original> 
+                <Russian>ОШИБКА: Выберите игрока</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_MUST_BE_A_NONZEUS_PLAYER"> 
+                <Original>ERROR: Selected Object must be a non-zeus player</Original> 
+                <Russian>ОШИБКА: Выберите игрока, не имеющего Зевса</Russian> 
+            </Key>
+            
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_ALREADY_ZEUS"> 
+                <Original>ERROR: Selected player is already SAA-Zeus</Original> 
+                <Russian>ОШИБКА: Выбранный игрок уже SAA-Зевс</Russian> 
+            </Key>
+            
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_NO_NONZEUS_PLAYERS"> 
+                <Original>ERROR: There are no non-zeus players</Original> 
+                <Russian>ОШИБКА: Кроме зевсов игроков нет</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_UNIT_IS_UNCONSCIOUS"> 
+                <Original>ERROR: Unit is unconscious!</Original>
+                <Russian>ОШИБКА: Человек без сознания!</Russian>
+            </Key>
+            
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_VEHICLE_IS_A_DRONE"> 
+                <Original>ERROR: Unit is a drone!</Original>
+                <Russian>ОШИБКА: Это беспилотник!</Russian>
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_PLAYERS_WAITING_TO_RESPAWN"> 
+                <Original>WARNING: There are players waiting to respawn!</Original>
+                <Russian>ВНИМАНИЕ: Есть ещё игроки, ожидающие возрождения!</Russian>
             </Key>
         
         </Container>
-        
-        <Container name = "Forced Respawn">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_MODULENAME"> 
-                <Original>Forced Respawn</Original> 
-                <Russian>Принудительный респавн</Russian> 
+
+        <Container name = "Modules Categories">
+
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_MAIN"> 
+                <Original>[SAA] Main</Original> 
+                <Russian>[SAA] Основные</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_HEADER"> 
-                <Original>Forced Player Respawn</Original> 
-                <Russian>Принудительный респавн игрока</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_SCENARIO_FLOW"> 
+                <Original>Scenario Flow</Original> 
+                <Russian>Ход сценария</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_TARGET_DISPLAYNAME"> 
-                <Original>Target</Original> 
-                <Russian>Цель</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_TARGET_TOOLTIP"> 
-                <Original>Selected player will be respawned at your/his chosen respawn point or at his corpse.</Original> 
-                <Russian>Выбранный игрок будет возрождён на выбранной вами/им точке возрождения, либо на трупе.</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_RESPAWN_POINT_DISPLAYNAME"> 
-                <Original>Respawn Point</Original> 
-                <Russian>Место возрождения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_RESPAWN_POINT_TOOLTIP"> 
-                <Original>Position to teleport player after respawn</Original> 
-                <Russian>Позиция, куда будет направлен игрок при возрождении</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_RESPAWN"> 
+                <Original>[SAA] Respawn</Original> 
+                <Russian>[SAA] Возрождение</Russian> 
             </Key>
 
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_PLAYER_CHOICE_DISPLAYNAME"> 
-                <Original>Player Choice</Original> 
-                <Russian>По выбору игрока</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_PLAYER_CHOICE_TOOLTIP"> 
-                <Original>Player will be respawned at selected point in respawn interface</Original> 
-                <Russian>Позицией будет являться выбранная точка респавна в интерфейсе целевого игрока</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_MODULE_POSITION_DISPLAYNAME"> 
-                <Original>Module Position</Original> 
-                <Russian>Позиция модуля</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_MODULE_POSITION_TOOLTIP"> 
-                <Original>Player will be respawned at module position</Original> 
-                <Russian>Игрок будет возрождён на месте установки модуля</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_AT_BODY_DISPLAYNAME"> 
-                <Original>At Body</Original> 
-                <Russian>На месте смерти</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_AT_BODY_TOOLTIP"> 
-                <Original>Player will be respawned at spot where he died</Original> 
-                <Russian>Игрок будет возрождён на месте своей смерти</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME"> 
-                <Original>Delayed</Original> 
-                <Russian>Отложенный</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_INSTANT_DISPLAYNAME"> 
-                <Original>Instant</Original> 
-                <Russian>Мгновенно</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>The player will be forcibly respawned at the expiration of his death timer</Original> 
-                <Russian>Игрок будет принудительно возрождён по истечению своего таймера на возрождение</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_STORAGE"> 
+                <Original>[SAA] Storage</Original> 
+                <Russian>[SAA] Хранилище</Russian> 
             </Key>
         
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_RADIO"> 
+                <Original>[SAA] Radio</Original> 
+                <Russian>[SAA] Связь</Russian> 
             </Key>
 
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>All players will recieve notification about forcibly spawned ones</Original> 
-                <Russian>Все игроки получат информацию о принудительном респавне цели</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_ACHILLES"> 
+                <Original>[SAA] Achilles</Original> 
+                <Russian>[SAA] Achilles</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_OTHER"> 
+                <Original>[SAA] Other</Original> 
+                <Russian>[SAA] Другое</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Player was forcibly respawned</Original> 
-                <Russian>Игрок был принудительно возрождён</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FUEL"> 
+                <Original>[SAA] Fuel</Original> 
+                <Russian>[SAA] Топливо</Russian> 
             </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_NODEADPLAYERS"> 
-                <Original>There are no dead players!</Original> 
-                <Russian>Мёртвых игроков нет!</Russian> 
+
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FORTIFY"> 
+                <Original>[SAA] Fortify</Original> 
+                <Russian>[SAA] Фортификация</Russian> 
             </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_SHOWHINT_SYSTEMCHAT"> 
-                <Original>was forcibly respawned</Original> 
-                <Russian>был принудительно возрождён</Russian> 
-            </Key>
-        
+
         </Container>
+
+        <Container name = "Modules">
+            
+            <Container name = "Add Arsenal">
         
-        <Container name = "Create Respawn Point">
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_MODULENAME"> 
+                    <Original>Add SAA Arsenal</Original> 
+                    <Russian>Добавить SAA Арсенал</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_HEADER"> 
+                    <Original>Add Arsenal</Original> 
+                    <Russian>Назначить Арсенал</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_UNIFORMTYPE_DISPLAYNAME"> 
+                    <Original>Uniform Type</Original> 
+                    <Russian>Тип Униформы</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_UNIFORMTYPE_TOOLTIP"> 
+                    <Original>Uniform camouflage corresponding to map prevail terrain type</Original> 
+                    <Russian>Камуфляж униформы, соответствующий преобладающей местности на карте</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_ARID"> 
+                    <Original>Arid</Original> 
+                    <Russian>Пустынная</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_SEMIARID"> 
+                    <Original>Multicam</Original> 
+                    <Russian>Мультикам</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_FOREST"> 
+                    <Original>Forest</Original> 
+                    <Russian>Лесная</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_WINTER"> 
+                    <Original>Winter</Original> 
+                    <Russian>Зимняя</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_BLACK"> 
+                    <Original>Black</Original> 
+                    <Russian>Чёрная</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_ALL"> 
+                    <Original>All of above</Original> 
+                    <Russian>Вся вышеперечисленная</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_CLEAROBJECT_DISPLAYNAME"> 
+                    <Original>Clear object inventory</Original> 
+                    <Russian>Очистить инвентарь обекта</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_CLEAROBJECT_TOOLTIP"> 
+                    <Original>Make the inventory of selected object empty</Original> 
+                    <Russian>Очистить инвентарь выбранного объекта</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Player will recieve notification about arsenal position and type</Original> 
+                    <Russian>Игроки получат информацию об относительном местонахождении арсенала и типе униформы</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Arsenal has been assigned</Original> 
+                    <Russian>Арсенал назначен</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Remove Arsenal">
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MODULENAME"> 
-                <Original>Create Respawn Point / CV</Original> 
-                <Russian>Создать Точку Возрождения / КШМ</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_MODULENAME"> 
+                    <Original>Remove Arsenal</Original> 
+                    <Russian>Удалить Арсенал</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Arsenal has been removed</Original> 
+                    <Russian>Арсенал удалён</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Assign Storage">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_MODULENAME"> 
+                    <Original>Assign Personal Storage Proxy</Original> 
+                    <Russian>Добавить доступ к хранилищу</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_DIALOG_HEADER"> 
+                    <Original>Assign Storage-proxy</Original> 
+                    <Russian>Назначить точку доступа к хранилищу</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Player will recieve notification about personal storage position and type</Original> 
+                    <Russian>Игроки получат информацию об относительном местонахождении точки доступа к личному хранилищу</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Storage-Proxy has been assigned</Original> 
+                    <Russian>Точка доступа к хранилищу назначена</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_ASSIGN_STORAGE_MESSAGES_ALREADYSTORAGEPROXY"> 
+                    <Original>ERROR: Selected object is already SAA-StorageProxy</Original> 
+                    <Russian>ОШИБКА: Выбранный объект уже является объектом доступа к хранилищу</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Remove Storage">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_MODULENAME"> 
+                    <Original>Remove Personal Storage Proxy</Original> 
+                    <Russian>Удалить доступ к хранилищу</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_DIALOG_HEADER"> 
+                    <Original>Remove Storage-proxy</Original> 
+                    <Russian>Удалить доступ к хранилищу с объекта</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Player will recieve notification about personal storage position and type</Original> 
+                    <Russian>Игроки получат информацию об относительном местонахождении объекта, больше не являющегося доступом к личному хранилищу</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Storage-proxy removed</Original> 
+                    <Russian>Точка доступа к личному хранилищу удалена</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_REMOVE_STORAGE_MESSAGES_NOTASTORAGEPROXY"> 
+                    <Original>ERROR: Selected object is not a SAA-StorageProxy</Original> 
+                    <Russian>ОШИБКА: Выбранный объект не назначен объектом доступа к хранилищу</Russian> 
+                </Key>
+            
+            </Container>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_HEADER"> 
-                <Original>Create Respawn Point</Original> 
-                <Russian>Создать Точку Возрождения</Russian> 
-            </Key>
+            <Container name = "Restrict Storage Access">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_MODULENAME"> 
+                    <Original>Restrict Personal Storage Access</Original> 
+                    <Russian>Ограничить доступ к хранилищу</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_HEADER"> 
+                    <Original>Restrict Player Storage Access</Original> 
+                    <Russian>Ограничить игроку доступ к хранилищу</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_MARKERTYPE_DISPLAYNAME"> 
-                <Original>Marker Type</Original> 
-                <Russian>Тип маркера</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_DISPLAYNAME"> 
+                    <Original>Target</Original> 
+                    <Russian>Цель</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_MARKERTYPE_TOOLTIP"> 
-                <Original>Choose marker type to assign to this point</Original> 
-                <Russian>Этот маркер будет представлять эту точку респавна</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_TOOLTIP"> 
+                    <Original>The selected player will be prohibited from opening his private storage</Original> 
+                    <Russian>Выбранному игроку будет запрещено открывать своё личное хранилище</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_RESPAWN"> 
-                <Original>Respawn</Original> 
-                <Russian>Общий маркер возрождения</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_RESTRICT_DISPLAYNAME"> 
+                    <Original>Restrict</Original> 
+                    <Russian>Запретить</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_INFANTRYRESPAWN"> 
-                <Original>Infantry Respawn</Original> 
-                <Russian>Маркер возрождения пехоты</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_RESTRICT_TOOLTIP"> 
+                    <Original>If checked - player will lose access to his storage, otherwise - access will be granted</Original> 
+                    <Russian>Если отмечено - игрок потеряет доступ к личному хранилищу, иначе - доступ будет возвращён</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Players will receive information about storage restriction for selected player</Original> 
+                    <Russian>Игроки получат информацию об ограничении на пользование хранилищем для этого игрока</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_RESTRICTED"> 
+                    <Original>has been restricted in access to the personal storage</Original> 
+                    <Russian>был ограничен в доступе к личному хранилищу</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_AIRRESPAWN"> 
-                <Original>Air Vehicle Respawn</Original> 
-                <Russian>Маркер возрождения в воздушном транспорте</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_ZEUSMESSAGE_GRANTED"> 
+                    <Original>access to the personal storage has been restored</Original> 
+                    <Russian>был восстановлен в доступе к личному хранилищу</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_PARADROPRESPAWN"> 
-                <Original>Paradrop Respawn</Original> 
-                <Russian>Маркер возрождения для десантирования</Russian> 
-            </Key>
+                <Key ID="STR_SAA_STORAGE_ACCESS_STRANGER"> 
+                    <Original>This storage does not belong to you</Original> 
+                    <Russian>Это хранилище не принадлежит вам</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SIDE_DISPLAYNAME"> 
-                <Original>Target side</Original> 
-                <Russian>Сторона</Russian> 
-            </Key>
+                <Key ID="STR_SAA_STORAGE_ACCESS_RESTRICTED"> 
+                    <Original>You are not allowed to open your personal storage</Original> 
+                    <Russian>Вам запрещено открывать личное хранилище</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "End Scenario">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_SCENARIO_FLOW_END_MISSION_MODULENAME"> 
+                    <Original>End Mission</Original> 
+                    <Russian>Завершить миссию</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_MODULENAME"> 
+                    <Original>End Mission</Original> 
+                    <Russian>Завершить миссию</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_HEADER"> 
+                    <Original>Mission Ending</Original> 
+                    <Russian>Завершение миссии</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_DISPLAYNAME"> 
+                    <Original>End Type</Original> 
+                    <Russian>Тип Завершения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_DIALOG_ENDTYPE_TOOLTIP"> 
+                    <Original>Choose the type of the Mission End depending on the completion of the Main Task</Original> 
+                    <Russian>Выберите тип конца миссии в зависимости от степени выполнения основной задачи</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN"> 
+                    <Original>Win</Original> 
+                    <Russian>Победа</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_WIN_TOOLTIP"> 
+                    <Original>Main Task is completed in full or for the most part</Original> 
+                    <Russian>Основная задача выполнена в полной мере или по большей части</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE"> 
+                    <Original>Lose</Original> 
+                    <Russian>Поражение</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_LOSE_TOOLTIP"> 
+                    <Original>Main Task is not completed/failed</Original> 
+                    <Russian>Основная задача не выполнена/провалена</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED"> 
+                    <Original>To Be Continued...</Original> 
+                    <Russian>Продолжение следует...</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_TOBECONTINUED_TOOLTIP"> 
+                    <Original>The Task will continue in the next mission</Original> 
+                    <Russian>Выполнение задачи продолжится в следующей миссии</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD"> 
+                    <Original>Everyone is Dead</Original> 
+                    <Russian>Все погибли</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ENDTYPE_EVERYONEISDEAD_TOOLTIP"> 
+                    <Original>All Died During The Mission (FAILURE, WIPE)</Original> 
+                    <Russian>Все оперативники погибли в ходе миссии (Поражение, Вайп)</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_END_MISSION_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Mission Ended</Original> 
+                    <Russian>Миссия завершена</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Promote To Zeus">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_PROMOTE_TO_ZEUS_MODULENAME"> 
+                    <Original>Promote To SAA-Zeus</Original> 
+                    <Russian>Назначить SAA-Зевса</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Change Tickets Amount">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_MODULENAME"> 
+                    <Original>Change Tickets Amount</Original> 
+                    <Russian>Изменить количество тикетов</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_HEADER"> 
+                    <Original>Changing The Number of Tickets</Original> 
+                    <Russian>Изменение количества тикетов</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_TICKETSAMOUNT_DISPLAYNAME"> 
+                    <Original>Change by</Original> 
+                    <Russian>Изменить на</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_TICKETSAMOUNT_TOOLTIP"> 
+                    <Original>Current amount of tickets will be changed by this value (negative - subtract, positive - add)</Original> 
+                    <Russian>Текущее количество тикетов изменится на это значение (отрицательное - убавить, положительное - прибавить)</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_DISPLAYNAME"> 
+                    <Original>Target side</Original> 
+                    <Russian>Сторона</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_TOOLTIP"> 
+                    <Original>Selected side tickets amount will be affected</Original> 
+                    <Russian>Тикеты выбранной стороны будут изменены</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_TICKETSAMOUNT_TOOLTIP"> 
-                <Original>This side will be affected by this module</Original> 
-                <Russian>Только выбранная сторона подвергнется действию модуля</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Display hint to every side</Original> 
+                    <Russian>Показать уведомление каждой стороне</Russian> 
+                </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_RESPAWNNAME_DISPLAYNAME"> 
-                <Original>Respawn Point Name</Original> 
-                <Russian>Название точки возрождения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_RESPAWNNAME_TOOLTIP"> 
-                <Original>This text will represent the spawn point when selected by players on the respawn screen</Original> 
-                <Russian>Этот текст будет представлять точку возрождения при выборе игроками на экране возрождения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Player will recieve notification about new Respawn Point.</Original> 
-                <Russian>Игроки получат информацию о появлении новой точки возрождения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Respawn Point Successfully Created</Original> 
-                <Russian>Точка возрождения успешно создана</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ERRORZEUSMESSAGE_ALREADYCV"> 
-                <Original>ERROR: Selected Respawn Vehicle is Command Vehicle Already</Original> 
-                <Russian>ОШИБКА: Выбранный транспорт уже является КШМом</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNCVCREATED"> 
-                <Original>New CV have been assigned</Original> 
-                <Russian>Новая КШМ назначена</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNPOINTCREATED"> 
-                <Original>New Respawn Point has been assigned</Original> 
-                <Russian>Новая точка возрождения назначена</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Remove Respawn Point">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_MODULENAME"> 
-                <Original>Remove Respawn Point / CV</Original> 
-                <Russian>Удалить Точку Возрождения / КШМ</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_HEADER"> 
-                <Original>Remove Respawn Point</Original> 
-                <Russian>Удалить Точку Возрождения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_DISPLAYNAME"> 
-                <Original>Respawn Point</Original> 
-                <Russian>Точка возрождения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_TOOLTIP"> 
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>If checked - all players of every side will get notification about number of tickets and availiability to respawn of selected side, in other case - only players of selected side.</Original> 
+                    <Russian>Если включено, то уведомление об изменении количества тикетов и наличии точки возрождения получат все, в обратном случае - только игроки целевой стороны.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_TICKETSLEFT"> 
+                    <Original>Tickets Left</Original> 
+                    <Russian>Остаток Тикетов</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Amount of tickets has been changed</Original> 
+                    <Russian>Количество тикетов было изменено</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_ZEUSMESSAGE_FAILED"> 
+                    <Original>Error: Enter value between -99 and 99 excluding 0</Original> 
+                    <Russian>Ошибка: Введите значение между -99 и 99, исключая 0</Russian> 
+                </Key>
                 
-                    <Original>Selected Respawn Point will be removed</Original> 
-                    <Russian>Выбранная точка возрождения будет удалена</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Respawn Point Successfully Removed</Original> 
-                <Russian>Точка возрождения успешно удалена</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ERRORZEUSMESSAGE_NOCVORFOBS"> 
-                <Original>ERROR: There are no assigned CVs of FOBs!</Original> 
-                <Russian>ОШИБКА: Нету назначенных КШМ или ФОБов!</Russian> 
-            </Key>
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Player will recieve notification about removed Respawn Point.</Original> 
-                <Russian>Игроки получат информацию об удалении точки возрождения</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Add Jamming Object">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_MODULENAME"> 
-                <Original>Add Jammer</Original> 
-                <Russian>Добавить глушилку</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_HEADER"> 
-                <Original>Assigning Jammer</Original> 
-                <Russian>Назначение постановщика радио-помех</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_DISTANCE_DISPLAYNAME"> 
-                <Original>Distance</Original> 
-                <Russian>Дистанция</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_DISTANCE_TOOLTIP"> 
-                <Original>Radius of jamming, the effect increases closer to the center (object)</Original> 
-                <Russian>Радиус действия, эффект усиливается ближе к центру (источнику)</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_STRENGHT_DISPLAYNAME"> 
-                <Original>Strenght</Original> 
-                <Russian>Мощность</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_STRENGHT_TOOLTIP"> 
-                <Original>The higher the value, the closer to the edge of raduis the effect will reach its maximum impact</Original> 
-                <Russian>Чем выше значение - тем ближе к границе радиуса эффект достигнет максимального воздействия</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Jammer assigned succesfully</Original> 
-                <Russian>Постановщик радио-помех успешно назначен</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Replace Vehicle Radio">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_MODULENAME"> 
-                <Original>Replace Vehicle LR Radio</Original> 
-                <Russian>Заменить ДВ Рацию на технике</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_HEADER"> 
-                <Original>Replacing LR Radio</Original> 
-                <Russian>Изменение ДВ Рации</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_DISTANCE_DISPLAYNAME"> 
-                <Original>Side</Original> 
-                <Russian>Сторона</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_DISTANCE_TOOLTIP"> 
-                <Original>Vehicle LR Radio will change to the LR Radio of selected side</Original> 
-                <Russian>ДВ Рация в технике изменится на рацию выбранной стороны</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_SHOWHINT_DISPLAYNAME"> 
-                <Original>Notify players</Original> 
-                <Russian>Уведомить игроков</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_SHOWHINT_TOOLTIP"> 
-                <Original>Player will recieve notification about replacing radio in selected object</Original> 
-                <Russian>Игроки получат информацию об изменении рации в выбранном объекте</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_ZEUSMESSAGE_SUCCESS"> 
-                <Original>LR Radio has been replaced</Original> 
-                <Russian>Тип ДВ рации изменён</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_MESSAGES_VEHICLEHASNOLRRADIO"> 
-                <Original>ERROR: Selected object doesn't have built-in LR Radio</Original> 
-                <Russian>ОШИБКА: Выбранный объект не имеет встроенной ДВ рации</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Remove Jamming Object">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REMOVE_JAMMING_OBJECT_MODULENAME"> 
-                <Original>Remove Jammer</Original> 
-                <Russian>Удалить глушилку</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REMOVE_JAMMING_OBJECT_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Jammer unassigned succesfully</Original> 
-                <Russian>Постановщик радио-помех успешно удалён</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Change Signal Quality">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_MODULENAME"> 
-                <Original>Signal Quality</Original> 
-                <Russian>Качество сигнала</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_HEADER"> 
-                <Original>Changing Radio Transmission Quality</Original> 
-                <Russian>Изменение качества радио-сигнала</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_DISTANCE_DISPLAYNAME"> 
-                <Original>Transmission Distance Modifier</Original> 
-                <Russian>Модификатор дистанции передачи</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_DISTANCE_TOOLTIP"> 
-                <Original>A multiplier for increasing or lowering the range of transmission (Default: 1)</Original> 
-                <Russian>Множитель увеличивающий или уменьшающий дальность передачи (По умолчанию: 1)</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_TERRAININTERCEPTION_DISPLAYNAME"> 
-                <Original>Terrain Interception</Original> 
-                <Russian>Влияние рельефа</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_TERRAININTERCEPTION_TOOLTIP"> 
-                <Original>A coefficient defining the level of radio signal interruption caused by terrain (Default: 7)</Original> 
-                <Russian>Коэффициент, определяющий с какой силой рельеф мешает передаче по рации (По умолчанию: 7)</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Signal quality changed succesfully</Original> 
-                <Russian>Качество сигнала успешно изменено</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Spawn Units">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_MODULENAME"> 
-                <Original>Spawn Units</Original> 
-                <Russian>Спавн юнитов</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_TYPE"> 
-                <Original>Type</Original> 
-                <Russian>Тип</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER"> 
-                <Original>#</Original> 
-                <Russian>#</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER_TOOLTIP"> 
-                <Original>Number of units</Original> 
-                <Russian>Количество юнитов</Russian> 
-            </Key>
-
-        </Container>
-
-        <Container name = "Spawn Canister">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_MODULENAME"> 
-                <Original>Spawn Canister</Original> 
-                <Russian>Спавн канистры</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_HEADER"> 
-                <Original>Spawning Canister</Original> 
-                <Russian>Спавн канистры</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_CANISTER_DISPLAYNAME"> 
-                <Original>Canister</Original> 
-                <Russian>Канистра</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_CANISTER_TOOLTIP"> 
-                <Original>Canister Model</Original> 
-                <Russian>Внешний вид канистры</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_FUEL_CAPACITY_DISPLAYNAME"> 
-                <Original>Fuel volume</Original> 
-                <Russian>Объём топлива</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_FUEL_CAPACITY_TOOLTIP"> 
-                <Original>Canister fullness</Original> 
-                <Russian>Заполненность канистры топливом</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_PLASTIC_OD"> 
-                <Original>Plastic (OD)</Original>
-                <Russian>Пластиковая (Оливковая)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_PLASTIC_DESERT"> 
-                <Original>Plastic (Desert)</Original>
-                <Russian>Пластиковая (Пустынная)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_GREEN"> 
-                <Original>Metal (Green)</Original>
-                <Russian>Металлическая (Зелёная)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_BLUE"> 
-                <Original>Metal (Blue)</Original>
-                <Russian>Металлическая (Синяя)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_RED"> 
-                <Original>Metal (Red)</Original>
-                <Russian>Металлическая (Красная)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_WHITE"> 
-                <Original>Metal (White)</Original>
-                <Russian>Металлическая (Белая)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_TANK_PLASTIC_OD"> 
-                <Original>Tank (OD)</Original>
-                <Russian>Бак (Оливковый)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_TANK_PLASTIC_DESERT"> 
-                <Original>Tank (Desert)</Original>
-                <Russian>Бак (Пустынный)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_TOOLTIP"> 
-                <Original>20 liters</Original>
-                <Russian>20 литров</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_TANK_TOOLTIP"> 
-                <Original>300 liters</Original>
-                <Russian>300 литров</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Set Stations Fuel">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_MODULENAME"> 
-                <Original>Set Stations Fuel</Original> 
-                <Russian>Топливо на заправках</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_HEADER"> 
-                <Original>Setting Stations Fuel Level</Original> 
-                <Russian>Установить уровень топлива на заправках</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_VOLUME_DISPLAYNAME"> 
-                <Original>Volume</Original> 
-                <Russian>Объём</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_VOLUME_TOOLTIP"> 
-                <Original>The amount of fuel available at gas stations in the radius. (The tank capacity of the car is ~70 liters).</Original> 
-                <Russian>Количество топлива, доступного на заправках в радиусе. (Вместимость бака автомобиля ~ 70 литров).</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_RADIUS_DISPLAYNAME"> 
-                <Original>Radius</Original> 
-                <Russian>Радиус</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_RADIUS_TOOLTIP"> 
-                <Original>The radius of the gas station search.</Original> 
-                <Russian>Радиус поиска заправочных станций.</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_ZEUSMESSAGE_FAIL_NO_GAS_STATIONS"> 
-                <Original>No Fuel Stations Founded</Original> 
-                <Russian>Нет заправочных станций в радиусе</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Stations Fuel Amount Successfully changed</Original> 
-                <Russian>Количества топлива на заправках в радиусе успешно изменено</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Fortify Toggle">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_MODULENAME"> 
-                <Original>Fortify Toggle</Original> 
-                <Russian>Возможность Фортификации</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_HEADER"> 
-                <Original>Fortify Ability Toggle</Original> 
-                <Russian>Переключение возможности фортификации</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_PRESETS_DISPLAYNAME"> 
-                <Original>Enabled</Original> 
-                <Russian>Включено</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_PRESETS_TOOLTIP"> 
-                <Original>Switching the possibility of fortification (tool required).</Original> 
-                <Russian>Переключение возможности фортификации (требуется инструмент).</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_ZEUSMESSAGE_ON"> 
-                <Original>Fortifications is enabled</Original> 
-                <Russian>Возможность фортификаций включена</Russian>
-            </Key>
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_MESSAGE_UPDATEDVALUE"> 
+                    <Original>Updated value</Original> 
+                    <Russian>Новое значение</Russian> 
+                </Key>
             
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_ZEUSMESSAGE_OFF"> 
-                <Original>Fortifications is disabled</Original> 
-                <Russian>Возможность фортификаций отключена</Russian> 
-            </Key>
+            </Container>
+            
+            <Container name = "Forced Respawn">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_MODULENAME"> 
+                    <Original>Forced Respawn</Original> 
+                    <Russian>Принудительный респавн</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_HEADER"> 
+                    <Original>Forced Player Respawn</Original> 
+                    <Russian>Принудительный респавн игрока</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_TARGET_DISPLAYNAME"> 
+                    <Original>Target</Original> 
+                    <Russian>Цель</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_TARGET_TOOLTIP"> 
+                    <Original>Selected player will be respawned at your/his chosen respawn point or at his corpse.</Original> 
+                    <Russian>Выбранный игрок будет возрождён на выбранной вами/им точке возрождения, либо на трупе.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_RESPAWN_POINT_DISPLAYNAME"> 
+                    <Original>Respawn Point</Original> 
+                    <Russian>Место возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_RESPAWN_POINT_TOOLTIP"> 
+                    <Original>Position to teleport player after respawn</Original> 
+                    <Russian>Позиция, куда будет направлен игрок при возрождении</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_PLAYER_CHOICE_DISPLAYNAME"> 
+                    <Original>Player Choice</Original> 
+                    <Russian>По выбору игрока</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_PLAYER_CHOICE_TOOLTIP"> 
+                    <Original>Player will be respawned at selected point in respawn interface</Original> 
+                    <Russian>Позицией будет являться выбранная точка респавна в интерфейсе целевого игрока</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_MODULE_POSITION_DISPLAYNAME"> 
+                    <Original>Module Position</Original> 
+                    <Russian>Позиция модуля</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_MODULE_POSITION_TOOLTIP"> 
+                    <Original>Player will be respawned at module position</Original> 
+                    <Russian>Игрок будет возрождён на месте установки модуля</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_AT_BODY_DISPLAYNAME"> 
+                    <Original>At Body</Original> 
+                    <Russian>На месте смерти</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_AT_BODY_TOOLTIP"> 
+                    <Original>Player will be respawned at spot where he died</Original> 
+                    <Russian>Игрок будет возрождён на месте своей смерти</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_DISPLAYNAME"> 
+                    <Original>Delayed</Original> 
+                    <Russian>Отложенный</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_INSTANT_DISPLAYNAME"> 
+                    <Original>Instant</Original> 
+                    <Russian>Мгновенно</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_IS_DELAYED_SHOWHINT_TOOLTIP"> 
+                    <Original>The player will be forcibly respawned at the expiration of his death timer</Original> 
+                    <Russian>Игрок будет принудительно возрождён по истечению своего таймера на возрождение</Russian> 
+                </Key>
+            
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>All players will recieve notification about forcibly spawned ones</Original> 
+                    <Russian>Все игроки получат информацию о принудительном респавне цели</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Player was forcibly respawned</Original> 
+                    <Russian>Игрок был принудительно возрождён</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_NODEADPLAYERS"> 
+                    <Original>There are no dead players!</Original> 
+                    <Russian>Мёртвых игроков нет!</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_SHOWHINT_SYSTEMCHAT"> 
+                    <Original>was forcibly respawned</Original> 
+                    <Russian>был принудительно возрождён</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Create Respawn Point">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MODULENAME"> 
+                    <Original>Create Respawn Point / CV</Original> 
+                    <Russian>Создать Точку Возрождения / КШМ</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_HEADER"> 
+                    <Original>Create Respawn Point</Original> 
+                    <Russian>Создать Точку Возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_MARKERTYPE_DISPLAYNAME"> 
+                    <Original>Marker Type</Original> 
+                    <Russian>Тип маркера</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_MARKERTYPE_TOOLTIP"> 
+                    <Original>Choose marker type to assign to this point</Original> 
+                    <Russian>Этот маркер будет представлять эту точку респавна</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_RESPAWN"> 
+                    <Original>Respawn</Original> 
+                    <Russian>Общий маркер возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_INFANTRYRESPAWN"> 
+                    <Original>Infantry Respawn</Original> 
+                    <Russian>Маркер возрождения пехоты</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_AIRRESPAWN"> 
+                    <Original>Air Vehicle Respawn</Original> 
+                    <Russian>Маркер возрождения в воздушном транспорте</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MARKERTYPE_PARADROPRESPAWN"> 
+                    <Original>Paradrop Respawn</Original> 
+                    <Russian>Маркер возрождения для десантирования</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SIDE_DISPLAYNAME"> 
+                    <Original>Target side</Original> 
+                    <Russian>Сторона</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_TICKETSAMOUNT_TOOLTIP"> 
+                    <Original>This side will be affected by this module</Original> 
+                    <Russian>Только выбранная сторона подвергнется действию модуля</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_RESPAWNNAME_DISPLAYNAME"> 
+                    <Original>Respawn Point Name</Original> 
+                    <Russian>Название точки возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_RESPAWNNAME_TOOLTIP"> 
+                    <Original>This text will represent the spawn point when selected by players on the respawn screen</Original> 
+                    <Russian>Этот текст будет представлять точку возрождения при выборе игроками на экране возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Player will recieve notification about new Respawn Point.</Original> 
+                    <Russian>Игроки получат информацию о появлении новой точки возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Respawn Point Successfully Created</Original> 
+                    <Russian>Точка возрождения успешно создана</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ERRORZEUSMESSAGE_ALREADYCV"> 
+                    <Original>ERROR: Selected Respawn Vehicle is Command Vehicle Already</Original> 
+                    <Russian>ОШИБКА: Выбранный транспорт уже является КШМом</Russian> 
+                </Key>
+        
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNCVCREATED"> 
+                    <Original>New CV have been assigned</Original> 
+                    <Russian>Новая КШМ назначена</Russian> 
+                </Key>
+        
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_MESSAGE_RESPAWNPOINTCREATED"> 
+                    <Original>New Respawn Point has been assigned</Original> 
+                    <Russian>Новая точка возрождения назначена</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Remove Respawn Point">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_MODULENAME"> 
+                    <Original>Remove Respawn Point / CV</Original> 
+                    <Russian>Удалить Точку Возрождения / КШМ</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_HEADER"> 
+                    <Original>Remove Respawn Point</Original> 
+                    <Russian>Удалить Точку Возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_DISPLAYNAME"> 
+                    <Original>Respawn Point</Original> 
+                    <Russian>Точка возрождения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SELECTMARKER_TOOLTIP"> 
+                    
+                        <Original>Selected Respawn Point will be removed</Original> 
+                        <Russian>Выбранная точка возрождения будет удалена</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Respawn Point Successfully Removed</Original> 
+                    <Russian>Точка возрождения успешно удалена</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_ERRORZEUSMESSAGE_NOCVORFOBS"> 
+                    <Original>ERROR: There are no assigned CVs of FOBs!</Original> 
+                    <Russian>ОШИБКА: Нету назначенных КШМ или ФОБов!</Russian> 
+                </Key>
+        
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RESPAWN_REMOVE_RESPAWN_POINT_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Player will recieve notification about removed Respawn Point.</Original> 
+                    <Russian>Игроки получат информацию об удалении точки возрождения</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Add Jamming Object">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_MODULENAME"> 
+                    <Original>Add Jammer</Original> 
+                    <Russian>Добавить глушилку</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_HEADER"> 
+                    <Original>Assigning Jammer</Original> 
+                    <Russian>Назначение постановщика радио-помех</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_DISTANCE_DISPLAYNAME"> 
+                    <Original>Distance</Original> 
+                    <Russian>Дистанция</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_DISTANCE_TOOLTIP"> 
+                    <Original>Radius of jamming, the effect increases closer to the center (object)</Original> 
+                    <Russian>Радиус действия, эффект усиливается ближе к центру (источнику)</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_STRENGHT_DISPLAYNAME"> 
+                    <Original>Strenght</Original> 
+                    <Russian>Мощность</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_DIALOG_STRENGHT_TOOLTIP"> 
+                    <Original>The higher the value, the closer to the edge of raduis the effect will reach its maximum impact</Original> 
+                    <Russian>Чем выше значение - тем ближе к границе радиуса эффект достигнет максимального воздействия</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_ADD_JAMMING_OBJECT_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Jammer assigned succesfully</Original> 
+                    <Russian>Постановщик радио-помех успешно назначен</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Replace Vehicle Radio">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_MODULENAME"> 
+                    <Original>Replace Vehicle LR Radio</Original> 
+                    <Russian>Заменить ДВ Рацию на технике</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_HEADER"> 
+                    <Original>Replacing LR Radio</Original> 
+                    <Russian>Изменение ДВ Рации</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_DISTANCE_DISPLAYNAME"> 
+                    <Original>Side</Original> 
+                    <Russian>Сторона</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_DISTANCE_TOOLTIP"> 
+                    <Original>Vehicle LR Radio will change to the LR Radio of selected side</Original> 
+                    <Russian>ДВ Рация в технике изменится на рацию выбранной стороны</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_SHOWHINT_DISPLAYNAME"> 
+                    <Original>Notify players</Original> 
+                    <Russian>Уведомить игроков</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_DIALOG_SHOWHINT_TOOLTIP"> 
+                    <Original>Player will recieve notification about replacing radio in selected object</Original> 
+                    <Russian>Игроки получат информацию об изменении рации в выбранном объекте</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>LR Radio has been replaced</Original> 
+                    <Russian>Тип ДВ рации изменён</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REPLACE_VEHICLE_RADIO_MESSAGES_VEHICLEHASNOLRRADIO"> 
+                    <Original>ERROR: Selected object doesn't have built-in LR Radio</Original> 
+                    <Russian>ОШИБКА: Выбранный объект не имеет встроенной ДВ рации</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Remove Jamming Object">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REMOVE_JAMMING_OBJECT_MODULENAME"> 
+                    <Original>Remove Jammer</Original> 
+                    <Russian>Удалить глушилку</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_REMOVE_JAMMING_OBJECT_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Jammer unassigned succesfully</Original> 
+                    <Russian>Постановщик радио-помех успешно удалён</Russian> 
+                </Key>
+            
+            </Container>
+            
+            <Container name = "Change Signal Quality">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_MODULENAME"> 
+                    <Original>Signal Quality</Original> 
+                    <Russian>Качество сигнала</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_HEADER"> 
+                    <Original>Changing Radio Transmission Quality</Original> 
+                    <Russian>Изменение качества радио-сигнала</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_DISTANCE_DISPLAYNAME"> 
+                    <Original>Transmission Distance Modifier</Original> 
+                    <Russian>Модификатор дистанции передачи</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_DISTANCE_TOOLTIP"> 
+                    <Original>A multiplier for increasing or lowering the range of transmission (Default: 1)</Original> 
+                    <Russian>Множитель увеличивающий или уменьшающий дальность передачи (По умолчанию: 1)</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_TERRAININTERCEPTION_DISPLAYNAME"> 
+                    <Original>Terrain Interception</Original> 
+                    <Russian>Влияние рельефа</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_DIALOG_TERRAININTERCEPTION_TOOLTIP"> 
+                    <Original>A coefficient defining the level of radio signal interruption caused by terrain (Default: 7)</Original> 
+                    <Russian>Коэффициент, определяющий с какой силой рельеф мешает передаче по рации (По умолчанию: 7)</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_RADIO_CHANGE_SIGNAL_QUALITY_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Signal quality changed succesfully</Original> 
+                    <Russian>Качество сигнала успешно изменено</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Spawn Units">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_MODULENAME"> 
+                    <Original>Spawn Units</Original> 
+                    <Russian>Спавн юнитов</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_TYPE"> 
+                    <Original>Type</Original> 
+                    <Russian>Тип</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER"> 
+                    <Original>#</Original> 
+                    <Russian>#</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER_TOOLTIP"> 
+                    <Original>Number of units</Original> 
+                    <Russian>Количество юнитов</Russian> 
+                </Key>
+
+            </Container>
+
+            <Container name = "Spawn Canister">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_MODULENAME"> 
+                    <Original>Spawn Canister</Original> 
+                    <Russian>Спавн канистры</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_HEADER"> 
+                    <Original>Spawning Canister</Original> 
+                    <Russian>Спавн канистры</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_CANISTER_DISPLAYNAME"> 
+                    <Original>Canister</Original> 
+                    <Russian>Канистра</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_CANISTER_TOOLTIP"> 
+                    <Original>Canister Model</Original> 
+                    <Russian>Внешний вид канистры</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_DIALOG_FUEL_CAPACITY_DISPLAYNAME"> 
+                    <Original>Fuel volume</Original> 
+                    <Russian>Объём топлива</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_FUEL_CAPACITY_TOOLTIP"> 
+                    <Original>Canister fullness</Original> 
+                    <Russian>Заполненность канистры топливом</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_PLASTIC_OD"> 
+                    <Original>Plastic (OD)</Original>
+                    <Russian>Пластиковая (Оливковая)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_PLASTIC_DESERT"> 
+                    <Original>Plastic (Desert)</Original>
+                    <Russian>Пластиковая (Пустынная)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_GREEN"> 
+                    <Original>Metal (Green)</Original>
+                    <Russian>Металлическая (Зелёная)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_BLUE"> 
+                    <Original>Metal (Blue)</Original>
+                    <Russian>Металлическая (Синяя)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_RED"> 
+                    <Original>Metal (Red)</Original>
+                    <Russian>Металлическая (Красная)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_METAL_WHITE"> 
+                    <Original>Metal (White)</Original>
+                    <Russian>Металлическая (Белая)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_TANK_PLASTIC_OD"> 
+                    <Original>Tank (OD)</Original>
+                    <Russian>Бак (Оливковый)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_TANK_PLASTIC_DESERT"> 
+                    <Original>Tank (Desert)</Original>
+                    <Russian>Бак (Пустынный)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_CANISTER_TOOLTIP"> 
+                    <Original>20 liters</Original>
+                    <Russian>20 литров</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_TANK_TOOLTIP"> 
+                    <Original>300 liters</Original>
+                    <Russian>300 литров</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Set Stations Fuel">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_MODULENAME"> 
+                    <Original>Set Stations Fuel</Original> 
+                    <Russian>Топливо на заправках</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_HEADER"> 
+                    <Original>Setting Stations Fuel Level</Original> 
+                    <Russian>Установить уровень топлива на заправках</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_VOLUME_DISPLAYNAME"> 
+                    <Original>Volume</Original> 
+                    <Russian>Объём</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_VOLUME_TOOLTIP"> 
+                    <Original>The amount of fuel available at gas stations in the radius. (The tank capacity of the car is ~70 liters).</Original> 
+                    <Russian>Количество топлива, доступного на заправках в радиусе. (Вместимость бака автомобиля ~ 70 литров).</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_DIALOG_RADIUS_DISPLAYNAME"> 
+                    <Original>Radius</Original> 
+                    <Russian>Радиус</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_RADIUS_TOOLTIP"> 
+                    <Original>The radius of the gas station search.</Original> 
+                    <Russian>Радиус поиска заправочных станций.</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_ZEUSMESSAGE_FAIL_NO_GAS_STATIONS"> 
+                    <Original>No Fuel Stations Founded</Original> 
+                    <Russian>Нет заправочных станций в радиусе</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FUEL_SET_STATIONS_FUEL_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Stations Fuel Amount Successfully changed</Original> 
+                    <Russian>Количества топлива на заправках в радиусе успешно изменено</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Fortify Toggle">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_MODULENAME"> 
+                    <Original>Fortify Toggle</Original> 
+                    <Russian>Возможность Фортификации</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_HEADER"> 
+                    <Original>Fortify Ability Toggle</Original> 
+                    <Russian>Переключение возможности фортификации</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_PRESETS_DISPLAYNAME"> 
+                    <Original>Enabled</Original> 
+                    <Russian>Включено</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_DIALOG_PRESETS_TOOLTIP"> 
+                    <Original>Switching the possibility of fortification (tool required).</Original> 
+                    <Russian>Переключение возможности фортификации (требуется инструмент).</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_ZEUSMESSAGE_ON"> 
+                    <Original>Fortifications is enabled</Original> 
+                    <Russian>Возможность фортификаций включена</Russian>
+                </Key>
+                
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_TOGGLE_ZEUSMESSAGE_OFF"> 
+                    <Original>Fortifications is disabled</Original> 
+                    <Russian>Возможность фортификаций отключена</Russian> 
+                </Key>
+            
+            </Container> 
+
+            <Container name = "Fortify Settings">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_MODULENAME"> 
+                    <Original>Configure Fortify</Original> 
+                    <Russian>Настроить Фортификации</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_HEADER"> 
+                    <Original>Fortify Settings</Original> 
+                    <Russian>Настройка фортификаций</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_SIDE_TOOLTIP"> 
+                    <Original>The side for which the settings will be set, as well as the possibility of fortifications will automatically turn on. The construction of fortifications will be available anywhere on the map, unless areas are assigned, otherwise only within these areas.</Original> 
+                    <Russian>Сторона, для которой будут установлены настройки, а также автоматически включится возможность фортификаций. Строительство фортификаций будет доступно в любом месте карты, если не назначены зоны, иначе - только в пределах этих зон.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_PRESETS_DISPLAYNAME"> 
+                    <Original>Presets</Original> 
+                    <Russian>Пресеты</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_PRESETS_TOOLTIP"> 
+                    <Original>Preset of fortifications available to the side for construction.</Original> 
+                    <Russian>Пресет укреплений, доступный стороне для постройки.</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_SMALL"> 
+                    <Original>Sandbags</Original> 
+                    <Russian>Мешки с песком</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_SMALL_GREEN"> 
+                    <Original>Sandbags (Green)</Original> 
+                    <Russian>Мешки с песком (Зелёные)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_COSTS_TOOLTIP"> 
+                    <Original>Costs</Original> 
+                    <Russian>Стоимости</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_BUDGET_DISPLAYNAME"> 
+                    <Original>Budget</Original> 
+                    <Russian>Бюджет</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_BUDGET_TOOLTIP"> 
+                    <Original>The initial budget for the selected side. (-1 = Infinite)</Original> 
+                    <Russian>Изначальный бюджет для выбранной стороны. (-1 = Бесконечно)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>The fortifications settings are set</Original> 
+                    <Russian>Настройки фортификаций установлены</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Assign Fortify Supply">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MODULENAME"> 
+                    <Original>Assign Fortify Supply</Original> 
+                    <Russian>Назначить снабжение</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_HEADER"> 
+                    <Original>Assigning Fortify Supply</Original> 
+                    <Russian>Назначение объекта снабжения</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_SIDE_TOOLTIP"> 
+                    <Original>The side for which the fortifications budget will be added when interacting with the object.</Original> 
+                    <Russian>Сторона, для которой будет добавлен бюджет для фортификации при взаимодействии с объектом.</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_BUDGET_DISPLAYNAME"> 
+                    <Original>Budget</Original> 
+                    <Russian>Бюджет</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_BUDGET_TOOLTIP"> 
+                    <Original>Additional fortification budget for the selected side.</Original> 
+                    <Russian>Дополнительный фортификационный бюджет для выбранной стороны.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_PRESETS_DISPLAYNAME"> 
+                    <Original>Number of tools</Original> 
+                    <Russian>Количество инструментов</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_PRESETS_TOOLTIP"> 
+                    <Original>How many tools for the construction of fortifications to add to the supplies (Max: number of players).</Original> 
+                    <Russian>Сколько инструментов для возведения фортификаций добавить в припасы (Макс: количество игроков).</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MESSAGES_ALREADYSUPPLY"> 
+                    <Original>ERROR: Selected object is already Fortify-Supply</Original> 
+                    <Russian>ОШИБКА: Выбранный объект уже является Фортификационными припасами</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MESSAGES_FORTIFY_NOT_SET"> 
+                    <Original>ERROR: Configure fortify setting at first!</Original> 
+                    <Russian>ОШИБКА: Настройте условия строительства фортификаций!</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SUPPLY_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Object with supplies for fortifications has been successfully assigned</Original> 
+                    <Russian>Объект с припасами для фортификаций успешно назначен</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_TAKE_FORTIFY_SUPPLY_ACTION_NAME"> 
+                    <Original>Get supplies for construction</Original> 
+                    <Russian>Получить припасы для строительства</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Add Fortify Area">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_MODULENAME"> 
+                    <Original>Add Fortify Area</Original> 
+                    <Russian>Добавить зону</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_HEADER"> 
+                    <Original>Adding Fortify Area</Original> 
+                    <Russian>Добавление зоны для фортификаций</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_NAME_DISPLAYNAME"> 
+                    <Original>Area Name</Original> 
+                    <Russian>Название</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_NAME_TOOLTIP"> 
+                    <Original>The name of the area for its future removing.</Original> 
+                    <Russian>Название зоны для будущего её удаления.</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_RADIUS_DISPLAYNAME"> 
+                    <Original>Radius</Original> 
+                    <Russian>Радиус</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_RADIUS_TOOLTIP"> 
+                    <Original>The radius of the area from the module position or object under cursor.</Original> 
+                    <Russian>Радиус зоны от места установки модуля или объекта под курсором.</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_KEEP_DRAW_DISPLAYNAME"> 
+                    <Original>Area Visualisation</Original> 
+                    <Russian>Отображение зоны</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_KEEP_DRAW_TOOLTIP"> 
+                    <Original>Leaves the radius displayed as points for Zeus.</Original> 
+                    <Russian>Оставляет отображаемым радиус в виде точек для Зевса.</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_MESSAGES_NAME_ALREADY_EXIST"> 
+                    <Original>ERROR: Area with this name already exists!</Original> 
+                    <Russian>ОШИБКА: Зона с данным именем уже существует!</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_SUCCESS"> 
+                    <Original>Area for fortifications has been successfully assigned</Original> 
+                    <Russian>Зона для фортификаций успешно назначена</Russian>
+                </Key>
+            
+            </Container>
+
+            <Container name = "Remove Fortify Area">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_MODULENAME"> 
+                    <Original>Remove Fortify Area</Original> 
+                    <Russian>Удалить зону</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_HEADER"> 
+                    <Original>Removing Fortify Area</Original> 
+                    <Russian>Удаление зоны для фортификаций</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_NAME_DISPLAYNAME"> 
+                    <Original>Area Name</Original> 
+                    <Russian>Название</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_NAME_TOOLTIP"> 
+                    <Original>The name of the area for its removing.</Original> 
+                    <Russian>Название зоны для её удаления.</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_MESSAGES_NO_AREAS"> 
+                    <Original>ERROR: There are no designated areas for the construction of fortifications!</Original> 
+                    <Russian>ОШИБКА: Нету назначеных зон для строительства фортификаций!</Russian>
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_SUCCESS"> 
+                    <Original>Area for fortifications has been successfully removed</Original> 
+                    <Russian>Зона для фортификаций успешно удалена</Russian>
+                </Key>
+            
+            </Container>
+
+            <Container name = "Fortify Areas Visualization">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_MODULENAME"> 
+                    <Original>Areas Visualization</Original> 
+                    <Russian>Визуализация зон</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_DIALOG_HEADER"> 
+                    <Original>Toggling Areas Visualization</Original> 
+                    <Russian>Переключение видимости зон</Russian>
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_DIALOG_NAME_TOOLTIP"> 
+                    <Original>Toggling checked areas visualization (Only to Zeus).</Original> 
+                    <Russian>Переключение отрисовки отмеченных зон (Только для Зевса).</Russian>
+                </Key>
+            
+            </Container>
         
         </Container> 
 
-        <Container name = "Fortify Settings">
+        <Container name = "Context Actions">
+
+            <Container name = "Toggle Context Actions">
         
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_MODULENAME"> 
-                <Original>Configure Fortify</Original> 
-                <Russian>Настроить Фортификации</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_SHOW_ACTIONS_ACTIONNAME"> 
+                    <Original>Show SAA Context Menu Options</Original> 
+                    <Russian>Показать контекстные действия SAA</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_HIDE_ACTIONS_ACTIONNAME"> 
+                    <Original>Hide SAA Context Menu Options</Original> 
+                    <Russian>Скрыть контекстные действия SAA</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Spawn SAA Vehicles">
         
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_HEADER"> 
-                <Original>Fortify Settings</Original> 
-                <Russian>Настройка фортификаций</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_SPAWN_VEHICLES_ACTIONNAME"> 
+                    <Original>Spawn SAA Vehicles</Original> 
+                    <Russian>Спавн техники SAA</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Load Loadout">
         
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_SIDE_TOOLTIP"> 
-                <Original>The side for which the settings will be set, as well as the possibility of fortifications will automatically turn on. The construction of fortifications will be available anywhere on the map, unless areas are assigned, otherwise only within these areas.</Original> 
-                <Russian>Сторона, для которой будут установлены настройки, а также автоматически включится возможность фортификаций. Строительство фортификаций будет доступно в любом месте карты, если не назначены зоны, иначе - только в пределах этих зон.</Russian> 
-            </Key>
+                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_LOAD_LOADOUT_ACTIONNAME"> 
+                    <Original>Load SAA Loadout</Original> 
+                    <Russian>Загрузить лодаут SAA</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Watching">
         
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_PRESETS_DISPLAYNAME"> 
-                <Original>Presets</Original> 
-                <Russian>Пресеты</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_PRESETS_TOOLTIP"> 
-                <Original>Preset of fortifications available to the side for construction.</Original> 
-                <Russian>Пресет укреплений, доступный стороне для постройки.</Russian> 
+                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_DO_WATCH_ACTIONNAME"> 
+                    <Original>Watch Position</Original> 
+                    <Russian>Наблюдать позицию</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_STOP_WATCH_ACTIONNAME"> 
+                    <Original>Stop Watching</Original> 
+                    <Russian>Прекратить наблюдение</Russian> 
+                </Key>
+            
+            </Container>
+
+        </Container> 
+
+    </Container>
+
+    <Container name = "Chat Commands">
+
+            <Container name = "Help">
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_HELP_NO_AVAILABLE_COMMANDS"> 
+                <Original>There are no chat commands available for you!</Original> 
+                <Russian>Для Вас нет доступных чат-команд!</Russian> 
             </Key>
 
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_SMALL"> 
-                <Original>Sandbags</Original> 
-                <Russian>Мешки с песком</Russian> 
+            <Key ID="STR_SAA_CHAT_COMMANDS_HELP_AVAILABLE_COMMANDS"> 
+                <Original>Chat commands available to you:</Original> 
+                <Russian>Доступные для Вас чат-команды:</Russian> 
             </Key>
 
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_SMALL_GREEN"> 
-                <Original>Sandbags (Green)</Original> 
-                <Russian>Мешки с песком (Зелёные)</Russian> 
-            </Key>
+        </Container> 
 
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_PRESETS_COSTS_TOOLTIP"> 
-                <Original>Costs</Original> 
-                <Russian>Стоимости</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_BUDGET_DISPLAYNAME"> 
-                <Original>Budget</Original> 
-                <Russian>Бюджет</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_DIALOG_BUDGET_TOOLTIP"> 
-                <Original>The initial budget for the selected side. (-1 = Infinite)</Original> 
-                <Russian>Изначальный бюджет для выбранной стороны. (-1 = Бесконечно)</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SETTINGS_ZEUSMESSAGE_SUCCESS"> 
-                <Original>The fortifications settings are set</Original> 
-                <Russian>Настройки фортификаций установлены</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Assign Fortify Supply">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MODULENAME"> 
-                <Original>Assign Fortify Supply</Original> 
-                <Russian>Назначить снабжение</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_HEADER"> 
-                <Original>Assigning Fortify Supply</Original> 
-                <Russian>Назначение объекта снабжения</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_SIDE_TOOLTIP"> 
-                <Original>The side for which the fortifications budget will be added when interacting with the object.</Original> 
-                <Russian>Сторона, для которой будет добавлен бюджет для фортификации при взаимодействии с объектом.</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_BUDGET_DISPLAYNAME"> 
-                <Original>Budget</Original> 
-                <Russian>Бюджет</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_BUDGET_TOOLTIP"> 
-                <Original>Additional fortification budget for the selected side.</Original> 
-                <Russian>Дополнительный фортификационный бюджет для выбранной стороны.</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_PRESETS_DISPLAYNAME"> 
-                <Original>Number of tools</Original> 
-                <Russian>Количество инструментов</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_PRESETS_TOOLTIP"> 
-                <Original>How many tools for the construction of fortifications to add to the supplies (Max: number of players).</Original> 
-                <Russian>Сколько инструментов для возведения фортификаций добавить в припасы (Макс: количество игроков).</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MESSAGES_ALREADYSUPPLY"> 
-                <Original>ERROR: Selected object is already Fortify-Supply</Original> 
-                <Russian>ОШИБКА: Выбранный объект уже является Фортификационными припасами</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_MESSAGES_FORTIFY_NOT_SET"> 
-                <Original>ERROR: Configure fortify setting at first!</Original> 
-                <Russian>ОШИБКА: Настройте условия строительства фортификаций!</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_FORTIFY_SUPPLY_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Object with supplies for fortifications has been successfully assigned</Original> 
-                <Russian>Объект с припасами для фортификаций успешно назначен</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_TAKE_FORTIFY_SUPPLY_ACTION_NAME"> 
-                <Original>Get supplies for construction</Original> 
-                <Russian>Получить припасы для строительства</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Add Fortify Area">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_MODULENAME"> 
-                <Original>Add Fortify Area</Original> 
-                <Russian>Добавить зону</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_HEADER"> 
-                <Original>Adding Fortify Area</Original> 
-                <Russian>Добавление зоны для фортификаций</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_NAME_DISPLAYNAME"> 
-                <Original>Area Name</Original> 
-                <Russian>Название</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_NAME_TOOLTIP"> 
-                <Original>The name of the area for its future removing.</Original> 
-                <Russian>Название зоны для будущего её удаления.</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_RADIUS_DISPLAYNAME"> 
-                <Original>Radius</Original> 
-                <Russian>Радиус</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_RADIUS_TOOLTIP"> 
-                <Original>The radius of the area from the module position or object under cursor.</Original> 
-                <Russian>Радиус зоны от места установки модуля или объекта под курсором.</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_KEEP_DRAW_DISPLAYNAME"> 
-                <Original>Area Visualisation</Original> 
-                <Russian>Отображение зоны</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_DIALOG_KEEP_DRAW_TOOLTIP"> 
-                <Original>Leaves the radius displayed as points for Zeus.</Original> 
-                <Russian>Оставляет отображаемым радиус в виде точек для Зевса.</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_MESSAGES_NAME_ALREADY_EXIST"> 
-                <Original>ERROR: Area with this name already exists!</Original> 
-                <Russian>ОШИБКА: Зона с данным именем уже существует!</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_ADD_FORTIFY_AREA_SUCCESS"> 
-                <Original>Area for fortifications has been successfully assigned</Original> 
-                <Russian>Зона для фортификаций успешно назначена</Russian>
-            </Key>
-        
-        </Container>
-
-        <Container name = "Remove Fortify Area">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_MODULENAME"> 
-                <Original>Remove Fortify Area</Original> 
-                <Russian>Удалить зону</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_HEADER"> 
-                <Original>Removing Fortify Area</Original> 
-                <Russian>Удаление зоны для фортификаций</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_NAME_DISPLAYNAME"> 
-                <Original>Area Name</Original> 
-                <Russian>Название</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_DIALOG_NAME_TOOLTIP"> 
-                <Original>The name of the area for its removing.</Original> 
-                <Russian>Название зоны для её удаления.</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_MESSAGES_NO_AREAS"> 
-                <Original>ERROR: There are no designated areas for the construction of fortifications!</Original> 
-                <Russian>ОШИБКА: Нету назначеных зон для строительства фортификаций!</Russian>
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_REMOVE_FORTIFY_AREA_SUCCESS"> 
-                <Original>Area for fortifications has been successfully removed</Original> 
-                <Russian>Зона для фортификаций успешно удалена</Russian>
-            </Key>
-        
-        </Container>
-
-        <Container name = "Fortify Areas Visualization">
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_MODULENAME"> 
-                <Original>Areas Visualization</Original> 
-                <Russian>Визуализация зон</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_DIALOG_HEADER"> 
-                <Original>Toggling Areas Visualization</Original> 
-                <Russian>Переключение видимости зон</Russian>
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_FORTIFY_VISUALIZE_AREAS_DIALOG_NAME_TOOLTIP"> 
-                <Original>Toggling checked areas visualization (Only to Zeus).</Original> 
-                <Russian>Переключение отрисовки отмеченных зон (Только для Зевса).</Russian>
-            </Key>
-        
-        </Container>
-    
-    </Container> 
-
-    <Container name = "Context Actions">
-
-        <Container name = "Toggle Context Actions">
-    
-            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_SHOW_ACTIONS_ACTIONNAME"> 
-                <Original>Show SAA Context Menu Options</Original> 
-                <Russian>Показать контекстные действия SAA</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_HIDE_ACTIONS_ACTIONNAME"> 
-                <Original>Hide SAA Context Menu Options</Original> 
-                <Russian>Скрыть контекстные действия SAA</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Spawn SAA Vehicles">
-    
-            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_SPAWN_VEHICLES_ACTIONNAME"> 
-                <Original>Spawn SAA Vehicles</Original> 
-                <Russian>Спавн техники SAA</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Load Loadout">
-    
-            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_LOAD_LOADOUT_ACTIONNAME"> 
-                <Original>Load SAA Loadout</Original> 
-                <Russian>Загрузить лодаут SAA</Russian> 
-            </Key>
-        
-        </Container>
-        
-        <Container name = "Remove Arsenal">
-    
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_MODULENAME"> 
-                <Original>Remove Arsenal</Original> 
-                <Russian>Удалить Арсенал</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS"> 
-                <Original>Arsenal has been removed</Original> 
-                <Russian>Арсенал удалён</Russian> 
-            </Key>
-        
-        </Container>
-
-        <Container name = "Spawn Units">
-
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_MODULENAME"> 
-                <Original>Spawn Units</Original> 
-                <Russian>Спавн юнитов</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_TYPE"> 
-                <Original>Type</Original> 
-                <Russian>Тип</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER"> 
-                <Original>#</Original> 
-                <Russian>#</Russian> 
-            </Key>
-        
-            <Key ID="STR_SAA_ZEUS_MODULES_SPAWN_UNITS_DIALOG_NUMBER_TOOLTIP"> 
-                <Original>Number of units</Original> 
-                <Russian>Количество юнитов</Russian> 
-            </Key>
-
-        </Container>
-
-        <Container name = "Spawn SAA Vehicles">
-    
-            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_DO_WATCH_ACTIONNAME"> 
-                <Original>Watch Position</Original> 
-                <Russian>Наблюдать позицию</Russian> 
-            </Key>
-
-            <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_DO_WATCH_ACTIONNAME"> 
-                <Original>Stop Watching</Original> 
-                <Russian>Прекратить наблюдение</Russian> 
-            </Key>
-        
-        </Container>
-
-    </Container> 
-
-</Container>
-
-<Container name = "Chat Commands">
 
         <Container name = "Random Commanders">
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_HELP_NO_AVAILABLE_COMMANDS"> 
-            <Original>There are no chat commands available for you!</Original> 
-            <Russian>Для Вас нет доступных чат-команд!</Russian> 
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_TIME_LIMIT_LOCAL"> 
+                <Original>Error: You can call this command once per %1 seconds (%2s left)</Original> 
+                <Russian>Ошибка: Вы можете вызвать эту команду только один раз в %1 секунд (Осталось %2с)</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_TIME_LIMIT_GLOBAL"> 
+                <Original>Error: The command can only be called once every %1 seconds. Previous call: %2s ago.</Original> 
+                <Russian>Ошибка: Команду можно вызывать только раз в %1 секунд. Предыдущий вызов: %2с назад.</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_WRONG_USAGE"> 
+                <Original>Error: Wrong parameter after command. Usage:</Original> 
+                <Russian>Ошибка: Неверный параметр после команды. Использование:</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_DESCRIPTION"> 
+                <Original>Picking specified number of commanders from the list of suitable players.</Original> 
+                <Russian>Рандомизация указанного количества командиров из списка подходящих игроков.</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_BE_GREATER_THAN_ONE"> 
+                <Original>Error: Number can't be lower than 1</Original> 
+                <Russian>Ошибка: Число не может быть меньше, чем 1</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_NOT_BE_GREATER_THAN_POTENTIAL_COMMANDERS"> 
+                <Original>Error: Number can't be higher than potential commanders: %1</Original> 
+                <Russian>Ошибка: Число не может быть больше количества потенциальных командиров: %1</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_PLAYER_INIT_COMMRAND"> 
+                <Original>%1 initiated the randomization of commanders!</Original> 
+                <Russian>%1 инициировал рандомизацию командиров!</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_POTENTIAL_COMMANDERS"> 
+                <Original>Potential commanders: %1</Original> 
+                <Russian>Потенциальные командиры: %1</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_RANDOMED_COMMANDERS"> 
+                <Original>Randomly selected commanders (%1): %2. GL HF!</Original> 
+                <Russian>Случайно выбранные командиры (%1): %2. Удачи!</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_YOU_WERE_CHOSEN"> 
+                <Original>You have been randomly picked for the commander role.</Original> 
+                <Russian>Вы были выбраны на роль командира случайным образом.</Russian> 
+            </Key>
+
+        </Container> 
+
+    </Container>
+
+    <Container name = "Messages">
+        <Key ID="STR_SAA_MESSAGE_PLAYER_BACKPACK_RESTRICTED"> 
+            <Original>This player in Arsenal right now. Access to his backpack is restricted.</Original> 
+            <Russian>Этот игрок сейчас в Арсенале. Доступ к его рюкзаку ограничен.</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_HELP_AVAILABLE_COMMANDS"> 
-            <Original>Chat commands available to you:</Original> 
-            <Russian>Доступные для Вас чат-команды:</Russian> 
+        <Key ID="STR_SAA_MESSAGE_SIDE_TICKETS_RUNS_OUT"> 
+            <Original>side tickets run out</Original> 
+            <Russian>тикеты закончились</Russian> 
         </Key>
 
-    </Container> 
-
-
-    <Container name = "Random Commanders">
-
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_TIME_LIMIT_LOCAL"> 
-            <Original>Error: You can call this command once per %1 seconds (%2s left)</Original> 
-            <Russian>Ошибка: Вы можете вызвать эту команду только один раз в %1 секунд (Осталось %2с)</Russian> 
+        <Key ID="STR_SAA_MESSAGE_WORLD_NOT_LOADED"> 
+            <Original>have not loaded needed map. Kicking out.</Original> 
+            <Russian>не включил необходимую карту. Выпинываем.</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_TIME_LIMIT_GLOBAL"> 
-            <Original>Error: The command can only be called once every %1 seconds. Previous call: %2s ago.</Original> 
-            <Russian>Ошибка: Команду можно вызывать только раз в %1 секунд. Предыдущий вызов: %2с назад.</Russian> 
+        <Key ID="STR_SAA_MESSAGE_RESTRICTED_MODS_FOUND"> 
+            <Original>modlist contain suspicious or restricted mods</Original> 
+            <Russian>список модов содержит подозрительные или запрещённые модификации</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_WRONG_USAGE"> 
-            <Original>Error: Wrong parameter after command. Usage:</Original> 
-            <Russian>Ошибка: Неверный параметр после команды. Использование:</Russian> 
+        <Key ID="STR_SAA_MESSAGE_PLAYER_LEFT_UNCONSCIOUS"> 
+            <Original>left the server while unconscious</Original> 
+            <Russian>покинул сервер будучи в безсознательном состоянии</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_DESCRIPTION"> 
-            <Original>Picking specified number of commanders from the list of suitable players.</Original> 
-            <Russian>Рандомизация указанного количества командиров из списка подходящих игроков.</Russian> 
+        <Key ID="STR_SAA_MESSAGE_HAS_BEEN_DESTROYED"> 
+            <Original>has been destroyed</Original> 
+            <Russian>был уничтожен</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_BE_GREATER_THAN_ONE"> 
-            <Original>Error: Number can't be lower than 1</Original> 
-            <Russian>Ошибка: Число не может быть меньше, чем 1</Russian> 
+        <Key ID="STR_SAA_MESSAGE_HAS_BEEN_ASSIGNED"> 
+            <Original>has been assigned</Original> 
+            <Russian>был назначен</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_NOT_BE_GREATER_THAN_POTENTIAL_COMMANDERS"> 
-            <Original>Error: Number can't be higher than potential commanders: %1</Original> 
-            <Russian>Ошибка: Число не может быть больше количества потенциальных командиров: %1</Russian> 
+        <Key ID="STR_SAA_MESSAGE_HAS_BEEN_CREATED"> 
+            <Original>has been created</Original> 
+            <Russian>был создан</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_PLAYER_INIT_COMMRAND"> 
-            <Original>%1 initiated the randomization of commanders!</Original> 
-            <Russian>%1 инициировал рандомизацию командиров!</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_POTENTIAL_COMMANDERS"> 
-            <Original>Potential commanders: %1</Original> 
-            <Russian>Потенциальные командиры: %1</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_RANDOMED_COMMANDERS"> 
-            <Original>Randomly selected commanders (%1): %2. GL HF!</Original> 
-            <Russian>Случайно выбранные командиры (%1): %2. Удачи!</Russian> 
-        </Key>
-
-        <Key ID="STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_YOU_WERE_CHOSEN"> 
-            <Original>You were randomly picked for the position of commander.</Original> 
-            <Russian>Вы были выбраны на должность командира случайным образом.</Russian> 
-        </Key>
-
-    </Container> 
-
-</Container>
-
-<Container name = "Messages">
-    <Key ID="STR_SAA_MESSAGE_PLAYER_BACKPACK_RESTRICTED"> 
-        <Original>This player in Arsenal right now. Access to his backpack is restricted.</Original> 
-        <Russian>Этот игрок сейчас в Арсенале. Доступ к его рюкзаку ограничен.</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_SIDE_TICKETS_RUNS_OUT"> 
-        <Original>side tickets run out</Original> 
-        <Russian>тикеты закончились</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_WORLD_NOT_LOADED"> 
-        <Original>have not loaded needed map. Kicking out.</Original> 
-        <Russian>не включил необходимую карту. Выпинываем.</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_RESTRICTED_MODS_FOUND"> 
-        <Original>modlist contain suspicious or restricted mods</Original> 
-        <Russian>список модов содержит подозрительные или запрещённые модификации</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_PLAYER_LEFT_UNCONSCIOUS"> 
-        <Original>left the server while unconscious</Original> 
-        <Russian>покинул сервер будучи в безсознательном состоянии</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_HAS_BEEN_DESTROYED"> 
-        <Original>has been destroyed</Original> 
-        <Russian>был уничтожен</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_HAS_BEEN_ASSIGNED"> 
-        <Original>has been assigned</Original> 
-        <Russian>был назначен</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_HAS_BEEN_CREATED"> 
-        <Original>has been created</Original> 
-        <Russian>был создан</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_MESSAGE_LOADOUT_WAS_FIXED"> 
-        <Original>Loadout Fix has been applied</Original> 
-        <Russian>Исправление лодаута было применено</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Description Debriefing">
-
-    <Container name = "Win">
-
-        <Key ID="STR_SAA_DEBRIEFING_WIN_TITLE">
-            <Original>Mission Complete</Original> 
-            <Russian>Миссия Выполнена</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_WIN_SUBTITLE">
-            <Original>Respect +</Original> 
-            <Russian>Уважение +</Russian> 
+        <Key ID="STR_SAA_MESSAGE_LOADOUT_WAS_FIXED"> 
+            <Original>Loadout Fix has been applied</Original> 
+            <Russian>Исправление лодаута было применено</Russian> 
         </Key>
 
     </Container>
 
-    <Container name = "Lose">
+    <Container name = "Description Debriefing">
 
-        <Key ID="STR_SAA_DEBRIEFING_LOSE_TITLE">
-            <Original>Mission Failed</Original> 
-            <Russian>Миссия провалена</Russian> 
+        <Container name = "Win">
+
+            <Key ID="STR_SAA_DEBRIEFING_WIN_TITLE">
+                <Original>Mission Complete</Original> 
+                <Russian>Миссия Выполнена</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_WIN_SUBTITLE">
+                <Original>Respect +</Original> 
+                <Russian>Уважение +</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "Lose">
+
+            <Key ID="STR_SAA_DEBRIEFING_LOSE_TITLE">
+                <Original>Mission Failed</Original> 
+                <Russian>Миссия провалена</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_LOSE_SUBTITLE">
+                <Original>We'll get em next time?...</Original> 
+                <Russian>Мы достанем их в следующий раз?...</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "TO BE CONTINUED">
+
+            <Key ID="STR_SAA_DEBRIEFING_TO_BE_CONTINUED_TITLE">
+                <Original>To be continued...</Original> 
+                <Russian>Продолжение следует...</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_TO_BE_CONTINUED_SUBTITLE">
+                <Original>Until next time...</Original> 
+                <Russian>До следующего раза...</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "All Dead">
+
+            <Key ID="STR_SAA_DEBRIEFING_ALL_DEAD_TITLE">
+                <Original>You all died!</Original> 
+                <Russian>Вы все погибли!</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_ALL_DEAD_SUBTITLE">
+                <Original>Everyone is dead.</Original> 
+                <Russian>Все оперативники мертвы.</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "Missing Map">
+
+            <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_TITLE">
+                <Original>Missing Map</Original> 
+                <Russian>Отсутствует карта</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_SUBTITLE">
+                <Original>You have not loaded required map for this mission</Original> 
+                <Russian>У вас не загружена требуемая карта для этой миссии</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_DESCRIPTION">
+                <Original>Check mission announcement for additional mods/maps. Go back to the Arma 3 Launcher and activate what is required, then come again.</Original> 
+                <Russian>Проверьте анонс миссии на наличие дополнительных модов/карт. Вернитесь в Arma 3 Launcher и активируйте всё, что необходимо, затем заходите снова.</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "Something Went Wrong">
+
+            <Key ID="STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_TITLE">
+                <Original>Something Went Wrong</Original> 
+                <Russian>Что-то пошло не так</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_SUBTITLE">
+                <Original>Inform administration about your problem</Original> 
+                <Russian>Проинформируйте администрацию о вашей проблеме</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_DESCRIPTION">
+                <Original>Do not try to rejoin, inform administration first.</Original> 
+                <Russian>Не пытайтесь перезаходить, сперва проинформируйте администрацию.</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "Promoted To Zeus">
+
+            <Key ID="STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_TITLE">
+                <Original>Promoted To Zeus</Original> 
+                <Russian>Повышение до Зевса</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_SUBTITLE">
+                <Original>You have been promoted to SAA-Zeus</Original> 
+                <Russian>Вы были назначены SAA-Зевсом</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_DESCRIPTION">
+                <Original>Your data was saved. Please, reselect playable slot and proceed.</Original> 
+                <Russian>Ваши данные были сохранены. Снова выберите играбельный слот и продолжайте.</Russian> 
+            </Key>
+
+        </Container>
+
+    </Container>
+
+    <Container name = "Removed Items Dialog">
+
+        <Key ID="STR_SAA_REMOVEDITEMSLIST_ACTION"> 
+            <Original>Removed Items List</Original> 
+            <Russian>Список удалённого снаряжения</Russian> 
         </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_LOSE_SUBTITLE">
-            <Original>We'll get em next time?...</Original> 
-            <Russian>Мы достанем их в следующий раз?...</Russian> 
+
+        <Key ID="STR_SAA_REMOVEDITEMSLIST_HEADER"> 
+            <Original>Some items from your storage have been removed</Original> 
+            <Russian>Некоторые предметы из вашего хранилища были удалены</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_REMOVEDITEMSLIST_HELP_1"> 
+            <Original>Some of your equipment has been removed from storage. This is usually due to the fact that removed equipment is not available for purchase for your set of classes. The filter is sensitive to mods, so weapons from any mod that is not presented in the purchase store will be removed.</Original> 
+            <Russian>Часть вашего снаряжения была удалена из хранилища. Обычно это связано с тем, что удалённое снаряжение недоступно для покупки вашему набору классов. Фильтр чувствителен к модам, поэтому оружие из любого мода, которое не представлено в магазине покупки - будет удалено.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_REMOVEDITEMSLIST_HELP_2"> 
+            <Original>If you think that some things were deleted by mistake, especially if you recently changed the class, but the things inherent in your class (including those from the list of ordered items) were deleted - contact the administrator.</Original> 
+            <Russian>Если вы считаете, что какие-то вещи были удалены ошибочно, особенно если вы недавно сменили класс, но присущие вашему классу вещи (в том числе из списка заказываемого) были удалены - обратитесь к администратору.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_REMOVEDITEMSLIST_HELP_3"> 
+            <Original>Double-clicking on a line in the list will post it to the global chat.</Original> 
+            <Russian>Двойное нажатие на строку в списке отправит класс предмета в глобальный чат.</Russian> 
         </Key>
 
     </Container>
 
-    <Container name = "TO BE CONTINUED">
+    <Container name = "Delivered Items Dialog">
 
-        <Key ID="STR_SAA_DEBRIEFING_TO_BE_CONTINUED_TITLE">
-            <Original>To be continued...</Original> 
-            <Russian>Продолжение следует...</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_TO_BE_CONTINUED_SUBTITLE">
-            <Original>Until next time...</Original> 
-            <Russian>До следующего раза...</Russian> 
+        <Key ID="STR_SAA_DELIVEREDITEMSLIST_ACTION"> 
+            <Original>Delivered Items List</Original> 
+            <Russian>Список доставленного снаряжения</Russian> 
         </Key>
 
-    </Container>
-
-    <Container name = "All Dead">
-
-        <Key ID="STR_SAA_DEBRIEFING_ALL_DEAD_TITLE">
-            <Original>You all died!</Original> 
-            <Russian>Вы все погибли!</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_ALL_DEAD_SUBTITLE">
-            <Original>Everyone is dead.</Original> 
-            <Russian>Все оперативники мертвы.</Russian> 
+        <Key ID="STR_SAA_DELIVEREDITEMSLIST_HEADER"> 
+            <Original>Your order has been delivered</Original> 
+            <Russian>Ваш заказ был доставлен</Russian> 
         </Key>
 
-    </Container>
-
-    <Container name = "Missing Map">
-
-        <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_TITLE">
-            <Original>Missing Map</Original> 
-            <Russian>Отсутствует карта</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_SUBTITLE">
-            <Original>You have not loaded required map for this mission</Original> 
-            <Russian>У вас не загружена требуемая карта для этой миссии</Russian> 
+        <Key ID="STR_SAA_DELIVEREDITEMSLIST_HELP_1"> 
+            <Original>The specified list of items was ordered by you, paid for and delivered to your personal storage. If the list of items does not include any items you bought that can be found on the deleted items screen, make sure that your order was made correctly for your class set.</Original> 
+            <Russian>Указанный список предметов был заказан, оплачен и доставлен в ваше личное хранилище. Если в списке предметов не числятся какие-то купленные вами вещи, которые можно найти на экране удалённых предметов - убедитесь, что ваш заказ был составлен корректно для вашего набора классов.</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_DESCRIPTION">
-            <Original>Check mission announcement for additional mods/maps. Go back to the Arma 3 Launcher and activate what is required, then come again.</Original> 
-            <Russian>Проверьте анонс миссии на наличие дополнительных модов/карт. Вернитесь в Arma 3 Launcher и активируйте всё, что необходимо, затем заходите снова.</Russian> 
+        <Key ID="STR_SAA_DELIVEREDITEMSLIST_HELP_2"> 
+            <Original>If you think that some things were deleted by mistake, especially if you recently changed the class, but the things inherent in your class were deleted - contact the administrator.</Original> 
+            <Russian>Если вы считаете, что какие-то вещи были удалены ошибочно, особенно если вы недавно сменили класс, но присущие вашему классу вещи были удалены - обратитесь к администратору.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_DELIVEREDITEMSLIST_HELP_3"> 
+            <Original>Double-clicking on a line in the list will post it to the global chat.</Original> 
+            <Russian>Двойное нажатие на строку в списке отправит её в глобальный чат.</Russian> 
         </Key>
 
     </Container>
 
-    <Container name = "Something Went Wrong">
+    <Container name = "Team Management Menu">
 
-        <Key ID="STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_TITLE">
-            <Original>Something Went Wrong</Original> 
-            <Russian>Что-то пошло не так</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_SUBTITLE">
-            <Original>Inform administration about your problem</Original> 
-            <Russian>Проинформируйте администрацию о вашей проблеме</Russian> 
+        <Key ID="STR_SAA_TMM_HEADER"> 
+            <Original>Team Management Menu</Original> 
+            <Russian>Меню Управления Отрядом</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_DESCRIPTION">
-            <Original>Do not try to rejoin, inform administration first.</Original> 
-            <Russian>Не пытайтесь перезаходить, сперва проинформируйте администрацию.</Russian> 
+        <Key ID="STR_SAA_TMM_ALLY_GROUP"> 
+            <Original>Ally Group</Original> 
+            <Russian>Союз. Группы</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_MY_GROUP"> 
+            <Original>My Group</Original> 
+            <Russian>Моя Группа</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_NO_GROUP"> 
+            <Original>No Group</Original> 
+            <Russian>Нет Группы</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_RENAME_GROUP_EDITBOX_TOOLTIP"> 
+            <Original>Group name</Original> 
+            <Russian>Имя группы</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_RENAME_GROUP_BUTTON_TOOLTIP"> 
+            <Original>Rename group</Original> 
+            <Russian>Переименовать группу</Russian> 
+        </Key> 
+
+        <Key ID="STR_SAA_TMM_RENAME_GROUP_GROUPNAME_ALREADY_EXISTS_MESSAGE"> 
+            <Original>This group name is already occupied, choose another one.</Original> 
+            <Russian>Название группы уже кем-то занято, выберите другое.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_PICK_RANDOM_PLAYER_BUTTON_TOOLTIP"> 
+            <Original>Pick random player to your group based on group classes.</Original> 
+            <Russian>Взять случайного игрока в вашу группу на основании классов в группе.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_REFRESH_BUTTON_TOOLTIP"> 
+            <Original>Refresh list deleting empty lines.</Original> 
+            <Russian>Обновить список, удалив пустые строки.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_DISBAND_BUTTON_TOOLTIP"> 
+            <Original>Disband group.\nTwo clicks needed.</Original> 
+            <Russian>Распустить отряд.\nТребуется два клика.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_MESSAGE_YOU_WERE_JOINED"> 
+            <Original>You have been joined by '%1' to group '%2'.</Original> 
+            <Russian>Вы были присоединены '%1' в отряд '%2'.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_MESSAGE_YOU_WERE_REMOVED"> 
+            <Original>You have been removed by '%1' from group '%2'.</Original> 
+            <Russian>Вы были исключены '%1' из отряда '%2'.</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_TMM_MESSAGE_GROUP_DISBANDED"> 
+            <Original>Group '%1' has been disbanded by '%2'.</Original> 
+            <Russian>Отряд '%1' был распущен '%2'.</Russian> 
         </Key>
 
     </Container>
 
-    <Container name = "Promoted To Zeus">
+    <Container name = "Arsenal">
 
-        <Key ID="STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_TITLE">
-            <Original>Promoted To Zeus</Original> 
-            <Russian>Повышение до Зевса</Russian> 
-        </Key>
-    
-        <Key ID="STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_SUBTITLE">
-            <Original>You have been promoted to SAA-Zeus</Original> 
-            <Russian>Вы были назначены SAA-Зевсом</Russian> 
+        <Key ID="STR_SAA_ARSENAL_INSUFFICIENT_CAPACITY"> 
+            <Original>Insufficient capacity considering the current inventory</Original> 
+            <Russian>Недостаточная вместимость с учётом текущего инвентаря</Russian> 
         </Key>
 
-        <Key ID="STR_SAA_DEBRIEFING_PROMOTED_TO_ZEUS_DESCRIPTION">
-            <Original>Your data was saved. Please, reselect playable slot and proceed.</Original> 
-            <Russian>Ваши данные были сохранены. Снова выберите играбельный слот и продолжайте.</Russian> 
+        <Key ID="STR_SAA_ARSENAL_RESTORED_HEADER"> 
+            <Original>Returned to the original state</Original> 
+            <Russian>Возвращено к изначальному состоянию</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_ARSENAL_RESTORED_UNIFORM"> 
+            <Original>Uniform and its contents</Original> 
+            <Russian>Униформа и её содержимое</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_ARSENAL_RESTORED_VEST"> 
+            <Original>Vest and its contents</Original> 
+            <Russian>Разгрузка и её содержимое</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_ARSENAL_RESTORED_BACKPACK"> 
+            <Original>Backpack and its contents</Original> 
+            <Russian>Рюкзак и его содержимое</Russian> 
+        </Key>
+
+        <Key ID="STR_SAA_ARSENAL_RESTORED_HINT"> 
+            <Original>Reason: The specified type of uniform has been changed to another one that cannot fit the contents of the current one.</Original> 
+            <Russian>Причина: Указанный вид обмундирования был изменён на другой, который не может вместить содержимое текущего.</Russian> 
         </Key>
 
     </Container>
 
-</Container>
-
-<Container name = "Removed Items Dialog">
-
-    <Key ID="STR_SAA_REMOVEDITEMSLIST_ACTION"> 
-        <Original>Removed Items List</Original> 
-        <Russian>Список удалённого снаряжения</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_REMOVEDITEMSLIST_HEADER"> 
-        <Original>Some items from your storage have been removed</Original> 
-        <Russian>Некоторые предметы из вашего хранилища были удалены</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_REMOVEDITEMSLIST_HELP_1"> 
-        <Original>Some of your equipment has been removed from storage. This is usually due to the fact that removed equipment is not available for purchase for your set of classes. The filter is sensitive to mods, so weapons from any mod that is not presented in the purchase store will be removed.</Original> 
-        <Russian>Часть вашего снаряжения была удалена из хранилища. Обычно это связано с тем, что удалённое снаряжение недоступно для покупки вашему набору классов. Фильтр чувствителен к модам, поэтому оружие из любого мода, которое не представлено в магазине покупки - будет удалено.</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_REMOVEDITEMSLIST_HELP_2"> 
-        <Original>If you think that some things were deleted by mistake, especially if you recently changed the class, but the things inherent in your class (including those from the list of ordered items) were deleted - contact the administrator.</Original> 
-        <Russian>Если вы считаете, что какие-то вещи были удалены ошибочно, особенно если вы недавно сменили класс, но присущие вашему классу вещи (в том числе из списка заказываемого) были удалены - обратитесь к администратору.</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_REMOVEDITEMSLIST_HELP_3"> 
-        <Original>Double-clicking on a line in the list will post it to the global chat.</Original> 
-        <Russian>Двойное нажатие на строку в списке отправит класс предмета в глобальный чат.</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Delivered Items Dialog">
-
-    <Key ID="STR_SAA_DELIVEREDITEMSLIST_ACTION"> 
-        <Original>Delivered Items List</Original> 
-        <Russian>Список доставленного снаряжения</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_DELIVEREDITEMSLIST_HEADER"> 
-        <Original>Your order has been delivered</Original> 
-        <Russian>Ваш заказ был доставлен</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_DELIVEREDITEMSLIST_HELP_1"> 
-        <Original>The specified list of items was ordered by you, paid for and delivered to your personal storage. If the list of items does not include any items you bought that can be found on the deleted items screen, make sure that your order was made correctly for your class set.</Original> 
-        <Russian>Указанный список предметов был заказан, оплачен и доставлен в ваше личное хранилище. Если в списке предметов не числятся какие-то купленные вами вещи, которые можно найти на экране удалённых предметов - убедитесь, что ваш заказ был составлен корректно для вашего набора классов.</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_DELIVEREDITEMSLIST_HELP_2"> 
-        <Original>If you think that some things were deleted by mistake, especially if you recently changed the class, but the things inherent in your class were deleted - contact the administrator.</Original> 
-        <Russian>Если вы считаете, что какие-то вещи были удалены ошибочно, особенно если вы недавно сменили класс, но присущие вашему классу вещи были удалены - обратитесь к администратору.</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_DELIVEREDITEMSLIST_HELP_3"> 
-        <Original>Double-clicking on a line in the list will post it to the global chat.</Original> 
-        <Russian>Двойное нажатие на строку в списке отправит её в глобальный чат.</Russian> 
-    </Key>
-
-</Container>
-
-<Container name = "Arsenal">
-
-    <Key ID="STR_SAA_ARSENAL_INSUFFICIENT_CAPACITY"> 
-        <Original>Insufficient capacity considering the current inventory</Original> 
-        <Russian>Недостаточная вместимость с учётом текущего инвентаря</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_ARSENAL_RESTORED_HEADER"> 
-        <Original>Returned to the original state</Original> 
-        <Russian>Возвращено к изначальному состоянию</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_ARSENAL_RESTORED_UNIFORM"> 
-        <Original>Uniform and its contents</Original> 
-        <Russian>Униформа и её содержимое</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_ARSENAL_RESTORED_VEST"> 
-        <Original>Vest and its contents</Original> 
-        <Russian>Разгрузка и её содержимое</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_ARSENAL_RESTORED_BACKPACK"> 
-        <Original>Backpack and its contents</Original> 
-        <Russian>Рюкзак и его содержимое</Russian> 
-    </Key>
-
-    <Key ID="STR_SAA_ARSENAL_RESTORED_HINT"> 
-        <Original>Reason: The specified type of uniform has been changed to another one that cannot fit the contents of the current one.</Original> 
-        <Russian>Причина: Указанный вид обмундирования был изменён на другой, который не может вместить содержимое текущего.</Russian> 
-    </Key>
-
-</Container>
+</Project>

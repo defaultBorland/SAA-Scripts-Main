@@ -1,7 +1,5 @@
 // Remove player box with equipment
-
 params ["_uid"];
-_uid = _this # 0;
 
 if !([_uid] call Shadec_fnc_saveStorage) exitWith {diag_log format["fnc_deleteStorage | Error [%1]: Trying to delete Storage that unaccessible", _uid]};
 

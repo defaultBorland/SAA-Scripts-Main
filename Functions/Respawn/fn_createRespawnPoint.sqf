@@ -2,7 +2,7 @@
 
 params ["_position","_objectUnderCursor", "_side", "_marker",  "_showNotification"];
 
-_respawnPositions = missionNamespace getVariable ["respawnPositions", []];
+_respawnPositions = missionNamespace getVariable ["SAA_respawnPoints", []];
 _respawnPositionData = [];
 _respawnTarget = []; // Object or Position
 
@@ -33,12 +33,13 @@ if (isNull _objectUnderCursor) then {
 } else {
 	//diag_log format ["fn_createRespawnPos: OBJECT TYPE"];
 	_respawnPositionData = [_side, _objectUnderCursor, markerText _marker] call BIS_fnc_addRespawnPosition;
-	[[_objectUnderCursor, 1, _marker, 1, _showNotification], Shadec_fnc_assignFob] remoteExec ["spawn", 2];
+	[[_objectUnderCursor, _marker, 1, 1, _showNotification], Shadec_fnc_assignFob] remoteExec ["spawn", 2];
 	_respawnTarget pushBack _objectUnderCursor; // КОСТЫЛЬ
 };
 
 _respawnPositions pushBack [_marker, _respawnTarget # 0, _respawnPositionData]; //diag_log format ["VARS CHECK CRP | _respawnPositions: %1", _respawnPositions];
-missionNamespace setVariable ["respawnPositions", _respawnPositions, true];
+missionNamespace setVariable ["SAA_respawnPoints", _respawnPositions, true];
+
 
 //return
 true

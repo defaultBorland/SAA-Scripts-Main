@@ -34,15 +34,14 @@ missionNamespace setVariable ["respawnTime", respawnTime, true];
 //
 [] spawn {
 	while {
-		missionNamespace getVariable ["SAA_PlayersTimedSaving...", true];
+		missionNamespace getVariable ["SAA_PlayersTimedSaving", true];
 	} do {
-		sleep 300;
+		sleep (10 * 60);
 		private _players = ["All", "Id"] call Shadec_fnc_usersIDs;
 		if (count _players > 0) then {
 			{
 				{
-					[player, getPlayerUID player, name player] call Shadec_fnc_savePlayer;
-					[getPlayerUID player] call Shadec_fnc_saveStorage;
+					[player] call Shadec_fnc_savePlayer;
 					profileNamespace setVariable ["SAA_Project_Inventory", getUnitLoadout player];
 				} remoteExec ["call", _x];
 			} forEach _players;

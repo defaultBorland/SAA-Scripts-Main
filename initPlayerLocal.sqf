@@ -2,7 +2,6 @@
 waitUntil {!isNull player};
 [] call BIS_fnc_VRFadeOut;
 
-private _uid = getPlayerUID player;
 
 // Check if player has World that loaded on server
 if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {
@@ -13,9 +12,13 @@ if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {
 	"missingMap" call BIS_fnc_endMission;
 };
 
+
+// Set variables
+private _uid = getPlayerUID player;
 player setVariable ["SAA_isZeus", _uid in (missionNamespace getVariable "ZeusArray"), true];
 player setVariable ["SAA_isArsenalUnrestricted", player getVariable ["SAA_isZeus", false], true];
 player setVariable ["SAA_storageRestricted", player getVariable ["SAA_isZeus", false], true];
+
 
 // Check if player was KIA
 (missionNamespace getVariable [format["KIAonExit_%1", _uid], [false, false]]) params ["_KIAonExit", "_returnTicket"];
@@ -36,6 +39,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 	//playMusic "EventTrack03a_F_EPB";
 	sleep 3;
 };
+
 
 // Loading player data from db or assign zeus (if uid in ZeusArray)
 [player] spawn Shadec_fnc_loadPlayer;
@@ -58,7 +62,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 [] execVM "Mechanics\ChatCommands\help.sqf";
 
 // Execute EHs
-//[] execVM "EH\player\getOut.sqf";
+//[] execVM "EH\player\getOut.sqf"; Make timed auto-fix (client-server compare)
 [] execVM "EH\player\serverFps.sqf";
 
 if !(player getVariable ["SAA_isZeus", false]) then {
@@ -68,7 +72,7 @@ if !(player getVariable ["SAA_isZeus", false]) then {
 	[] execVM "EH\player\itemsDelivered.sqf";
 	[] execVM "EH\player\itemsRemoved.sqf";
 } else {
-	[] execVM "Mechanics\ZeusAccess\ZeusAccess_Init.sqf";
+	[] execVM "Mechanics\Zeus\Access\ZeusAccess_Init.sqf";
 };
 
 script_handler = [] execVM "EH\player\playerKilled.sqf";

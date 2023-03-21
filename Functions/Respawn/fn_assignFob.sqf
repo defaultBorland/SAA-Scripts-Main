@@ -3,11 +3,6 @@ params ["_vehicle", "_clear", "_marker", "_addPAK", "_showNotification"];
 if !((typeName _vehicle) isEqualTo "OBJECT") exitWith {};
 if (_marker isEqualTo "") exitWith {};
 
-missionNamespace setVariable ["lastFOB", _vehicle, true];
-
-_allFOBs = missionNamespace getVariable ["respawnFOBs", [objNull]];
-_allFOBs pushBack _vehicle;
-missionNamespace setVariable ["respawnFOBs", _allFOBs];
 
 if (_clear isEqualTo 1) then {
 	clearItemCargoGlobal _vehicle;

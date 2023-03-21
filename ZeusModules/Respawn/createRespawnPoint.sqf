@@ -5,7 +5,7 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
-	if (!(isNull _objectUnderCursor) and {_objectUnderCursor getVariable ["isFOB", false]}) exitWith {
+	if (!(isNull _objectUnderCursor) and {_objectUnderCursor getVariable ["SAA_isCV", false]}) exitWith {
 		[objNull, localize "STR_SAA_ZEUS_MODULES_RESPAWN_CREATE_RESPAWN_POINT_ERRORZEUSMESSAGE_ALREADYCV"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
@@ -54,7 +54,7 @@
 			if (isNull _objectUnderCursor) then {
 				_markerPrefix = "POS";
 			} else {
-				_markerPrefix = "FOB";
+				_markerPrefix = "CV";
 			};
 
 			_markerNum = {(str _side) in _x} count allMapMarkers;
@@ -73,4 +73,4 @@
 		{},
 		[_position, _objectUnderCursor]
 	] call zen_dialog_fnc_create;
-}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
+}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;

@@ -35,4 +35,4 @@
 		{},
 		[_objectUnderCursor]
 	] call zen_dialog_fnc_create;
-}, "img\SAA_logo_256.paa"] call zen_custom_modules_fnc_register;
+}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;

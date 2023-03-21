@@ -1,14 +1,15 @@
 params ["_vehicle"];
 
 if (alive _vehicle) then {
-	_allFOBs = missionNamespace getVariable ["respawnFOBs", []];
-	_allFOBs = _allFOBs - [_vehicle];
-	missionNamespace setVariable ["respawnFOBs", _allFOBs, true];
+	private _allCVs = missionNamespace getVariable ["SAA_CVs", []];
+	_allCVs = _allCVs - [_vehicle];
+	missionNamespace setVariable ["SAA_respawnPoints", _allCVs, true];
 	_vehicle setVariable ["ace_medical_medicClass", 0];
-	_vehicle setVariable ["isFOB", false, true];
+	_vehicle setVariable ["SAA_isCV", nil, true];
+	_vehicle setVariable ["SAA_respawnPointName", nil, true];
 } else {
-	_allFOBs = missionNamespace getVariable ["respawnFOBs", []];
-	missionNamespace setVariable ["respawnFOBs", _allFOBs - [objNull], true];
+	_allCVs = missionNamespace getVariable ["SAA_CVs", []];
+	missionNamespace setVariable ["SAA_CVs", _allCVs - [objNull], true];
 };
 
 //return

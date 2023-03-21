@@ -61,8 +61,9 @@ _EH_CuratorRegistered = _zeusLogic addEventHandler ["CuratorObjectRegistered", {
 [] call Shadec_fnc_addContextActions;
 [] call Shadec_fnc_addZeusModules;
 
-[] execVM "Mechanics\ZeusContextActions\ZeusContextActions_On.sqf";
-[] execVM "Mechanics\ZeusContextActions\ZeusContextActions_Off.sqf";
+[] execVM "Mechanics\Zeus\ContextActions\ZeusContextActions_On.sqf";
+[] execVM "Mechanics\Zeus\ContextActions\ZeusContextActions_Off.sqf";
+[] execVM "Mechanics\Zeus\PlayersList\PlayersList_Init.sqf";
 
 //
 with uiNamespace do {

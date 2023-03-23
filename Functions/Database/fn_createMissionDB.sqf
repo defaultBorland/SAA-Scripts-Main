@@ -8,9 +8,9 @@ if (missionNamespace getVariable ["isDebug", false]) exitWith {};
 
 	private _missionID = format["%1-%2-%3-%4", 
 		_year, 
-		[_month, 2, "0"] call Shadec_fnc_leftPad, 
-		[_day, 2, "0"] call Shadec_fnc_leftPad, 
-		([_hours, 2, "0"] call Shadec_fnc_leftPad) + ([_minutes, 2, "0"] call Shadec_fnc_leftPad)];
+		[str _month, 2, "0"] call Shadec_fnc_leftPad, 
+		[str _day, 2, "0"] call Shadec_fnc_leftPad, 
+		([str _hours, 2, "0"] call Shadec_fnc_leftPad) + ([str _minutes, 2, "0"] call Shadec_fnc_leftPad)];
 	missionNamespace setVariable ["MissionID", _missionID];
 
 	private _map = toUpper getText(configFile >> "CfgWorlds" >> worldName >> "description");

@@ -11,8 +11,7 @@ params ["_endType"];
 		if (player getVariable ["SAA_isZeus", false]) exitWith {};
 		
 		if (dialog) then {closeDialog 602; true};
-		[player] call Shadec_fnc_savePlayer; //
-		[getPlayerUID player] call Shadec_fnc_updateConnectionRecord;
+		[player] call Shadec_fnc_savePlayer;
 		
 		[[_forEachI, name player],{
 			params["_index", "_name"];

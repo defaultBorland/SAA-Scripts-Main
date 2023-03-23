@@ -4,8 +4,9 @@
 
 // BIS Arsenal Handler
 [missionNamespace, "arsenalOpened", {
+    params ["_display"];
     disableSerialization;
-    _display = _this select 0;
+
     _display closeDisplay 1;
 	hint "BIS Arsenal is not allowed.";
 }] call BIS_fnc_addScriptedEventHandler;

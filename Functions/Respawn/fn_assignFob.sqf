@@ -17,7 +17,6 @@ if (_clear isEqualTo 1) then {
 _vehicle setVariable ["ace_medical_isMedicalVehicle", true, true];
 _vehicle setVariable ["SAA_isCV", true, true];
 _vehicle setVariable ["SAA_respawnPointName", markerText _marker, true];
-_vehicle setVariable ["SAA_CVSide", _side, true];
 
 if (_addPAK isEqualTo 1) then {
 	_vehicle addItemCargoGlobal ["ACE_personalAidKit", 3];
@@ -49,13 +48,14 @@ if (_showNotification) then {
 	}] remoteExec ["call", -2];
 };
 
-// Monitor CV status (tracking is local side)
+// Monitor CV status (marker-tracking is local side now)
 [_vehicle, _marker] spawn {
 	params ["_respawnVehicle", "_marker"];
 	while {(alive _respawnVehicle) and (_respawnVehicle getVariable ["SAA_isCV", false])} do {
 		sleep 1;
 	};
 
+	// // Notification if vehicle is destroyed but not deleted 
 	// if (!isNil{_respawnVehicle} && {!alive _respawnVehicle}) then { // If not deleted and dead
 	// 	[[_respawnVehicle getVariable ["SAA_respawnPointName", "???"]], {
 	// 		systemChat format ["> Server: %1 '%2' %3!", localize "STR_SAA_GENERAL_RESPAWN_CV", _this # 0, localize "STR_SAA_MESSAGE_HAS_BEEN_DESTROYED"];

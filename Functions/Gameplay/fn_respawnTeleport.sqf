@@ -17,11 +17,6 @@ params["_destination"]; // _destination - position or object
 if (isNil "_destination") exitWith {};
 player setVariable ["SAA_forcedRespawnPosition", nil];
 
-[[_destination], {
-	params["_destination"];
-	diag_log format ["FNC: respawnTeleport | _destination: %1", _destination];
-}] remoteExec ["call", 2];
-
 if (_destination isEqualType []) then { // TP to position
 	player setPos _destination;
 } else { // TP in vehicle or near object

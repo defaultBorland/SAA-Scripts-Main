@@ -40,10 +40,9 @@ missionNamespace setVariable ["isDebug", true, true];
 
 //
 [] spawn {
-	while {
-		missionNamespace getVariable ["SAA_PlayersTimedSaving", true];
-	} do {
+	while {true} do {
 		sleep (10 * 60);
+		if !(missionNamespace getVariable ["SAA_PlayersTimedSaving", true]) exitWith {};
 		private _players = ["All", "Id"] call Shadec_fnc_usersIDs;
 		if (count _players > 0) then {
 			{

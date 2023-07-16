@@ -2,9 +2,9 @@ params ["_target", "_destination", "_isDelayed", "_showNotification"];
 
 private _targetsArray = [];
 if (_target isEqualTo "AllDead") then {
-	_targetsArray = allPlayers select {!alive _x};
+	_targetsArray = ([] call Shadec_fnc_getPlayers) select {!alive _x};
 } else {
-	_targetsArray = allPlayers select {name _x isEqualTo _target};
+	_targetsArray = [[_target] call Shadec_fnc_getPlayer];
 };
 
 private _positionsArray = [];

@@ -6,7 +6,7 @@
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	// All players exclude alive ones
-	private _players = (allPlayers - (allPlayers select {alive _x})) apply {name _x};
+	private _players = allPlayers select {!alive _x} apply {name _x};
 
 	if (count _players < 1) exitWith {
 		[objNull, localize "STR_SAA_ZEUS_MODULES_RESPAWN_FORCED_RESPAWN_ZEUSMESSAGE_NODEADPLAYERS"] call bis_fnc_showCuratorFeedbackMessage;

@@ -21,7 +21,7 @@ if !(_allRemoved isEqualTo []) then {
 	_allRemoved append (missionNamespace getVariable [format["removedItems_%1", _uid], []]);
 	missionNamespace setVariable [format["removedItems_%1", _uid], _allRemoved];
 
-	private _id = owner ((allPlayers select {(getPlayerUID _x) isEqualTo _uid}) # 0);
+	private _id = owner ([_uid] call Shadec_fnc_getPlayer);
 
 	removedItems = _allRemoved;
 	_id publicVariableClient "removedItems";

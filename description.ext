@@ -89,6 +89,8 @@ class CfgFunctions
 		};
 		class Generic {
 			class clearContainerInventory {};
+			class getContainerInventory {};
+			class setContainerInventory {};
 			class createLogServer {};
 			class getModList {};
 			class getPlayers {};

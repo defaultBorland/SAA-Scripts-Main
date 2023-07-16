@@ -21,6 +21,10 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 			private _isTicketsRemain = [false, true] select (([side _unit, 0] call BIS_fnc_respawnTickets) > 0);
 			missionNamespace setVariable [format["KIAonExit_%1", _uid], [true, _isTicketsRemain], true];
 		};
+
+		if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {
+			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
+		};
 		
 	} else { // If player equipment didn't load for some reason - don't save
 		diag_log format ["Loadout not loaded, abort player saving: %1", _name];

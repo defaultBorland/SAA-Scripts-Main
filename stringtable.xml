@@ -1854,16 +1854,20 @@
             
             </Container>
 
-            <Container name = "Watching">
+        </Container> 
+
+        <Container name = "Context Actions">
+
+            <Container name = "Toggle AI Transfer">
         
-                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_DO_WATCH_ACTIONNAME"> 
-                    <Original>Watch Position</Original> 
-                    <Russian>Наблюдать позицию</Russian> 
+                <Key ID="STR_SAA_ZEUS_TRANSFER_AI_ENABLE_ACTIONNAME"> 
+                    <Original>Enable AI Transfer to Server</Original> 
+                    <Russian>Включить передачу ИИ на сервер</Russian> 
                 </Key>
 
-                <Key ID="STR_SAA_ZEUS_CONTEXT_ACTIONS_WATCH_STOP_WATCH_ACTIONNAME"> 
-                    <Original>Stop Watching</Original> 
-                    <Russian>Прекратить наблюдение</Russian> 
+                <Key ID="STR_SAA_ZEUS_TRANSFER_AI_DISABLE_ACTIONNAME"> 
+                    <Original>Disable AI Transfer to Server</Original> 
+                    <Russian>Выключить передачу ИИ на сервер</Russian> 
                 </Key>
             
             </Container>

@@ -19,7 +19,7 @@ params ["_endType"];
 		}] remoteExec ["call", 2];
 	}] remoteExec ["call", _x];
 
-} forEach allPlayers;
+} forEach (allPlayers - entities "HeadlessClient_F");
 
 [] call Shadec_fnc_endMissionDB;
 

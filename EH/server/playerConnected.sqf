@@ -12,6 +12,10 @@ _EH_PlayerConnected = addMissionEventHandler ["PlayerConnected", {
         {}
     ] call CBA_fnc_waitUntilAndExecute;
 
-    // Create connection record
-    [_uid, _name] call Shadec_fnc_createConnectionRecord;
+    // No headless record
+    if (!("headlessclient" in _name)) then {
+		// Create connection record
+		[_uid, _name] call Shadec_fnc_createConnectionRecord;
+	};
+
 }];

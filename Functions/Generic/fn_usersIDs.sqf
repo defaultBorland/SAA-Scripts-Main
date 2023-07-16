@@ -17,7 +17,7 @@ params ["_target", "_type"];
 if !((typeName _target) in ["OBJECT", "SCALAR", "STRING"]) exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"; []};
 if !(_type isEqualType "String") exitWith {diag_log "fnc_usersIDs | ERROR: Invalid parameters"; []};
 
-private _players = allPlayers select {!(_x getVariable ["SAA_isZeus", false])};
+private _players = (allPlayers - entities "HeadlessClient_F") select {!(_x getVariable ["SAA_isZeus", false])};
 
 switch (typeName _target) do {
 	case "OBJECT": {	// unit

@@ -101,6 +101,9 @@ class CfgFunctions
 			class isStringNumberValid {};
 			class leftPad {};
 			class hasNavigationItem {};
+			class transferGroupOwnership {};
+			class transferVehicleOwnership {};
+			class determineBestOwner {};
 		};
 		class Radio {
 			class assignJammer {};

@@ -26,8 +26,11 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	};
 	missionNamespace setVariable [format["loadoutLoaded_%1", _uid], nil, true];
 
-	// Update connection record
-	[_uid] call Shadec_fnc_updateConnectionRecord;
+	// No headless record
+    if (!("headlessclient" in _name)) then {
+		// Update connection record
+		[_uid] call Shadec_fnc_updateConnectionRecord;
+	};
 
 	// Unlock server if no zeus or administrator present
 

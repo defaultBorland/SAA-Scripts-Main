@@ -1,7 +1,11 @@
 //Player init
 waitUntil {!isNull player};
-[] call BIS_fnc_VRFadeOut;
+if (!hasInterface) exitWith {
+	[format["%1 connected", name player]] call Shadec_fnc_createLogServer;
+	[] execVM "initHC.sqf";
+};
 
+[] call BIS_fnc_VRFadeOut;
 
 // Check if player has World that loaded on server
 if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {

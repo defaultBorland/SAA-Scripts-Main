@@ -5,11 +5,12 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_pcid", "_uid", "_name"];
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
-		[_unit] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
+
+		[_unit, _uid] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
 		[_uid] spawn Shadec_fnc_deleteStorage;
 
 		if (alive _unit) then {
-			if ((_unit getvariable ["ACE_isUnconscious", false]) and alive _unit) then { // If player was Unconscious and alive (mechanics abuse)
+			if ((_unit getvariable ["ACE_isUnconscious", false]) && {alive _unit}) then { // If player was Unconscious and alive (mechanics abuse)
 				[[_name], {
 					systemChat format["> Server: %1 %2!", _this # 0, localize "STR_SAA_MESSAGE_PLAYER_LEFT_UNCONSCIOUS"];
 				}] remoteExec ["call", -2];

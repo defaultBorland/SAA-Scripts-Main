@@ -32,7 +32,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
     	call Shadec_fnc_savePlayerRadioSettings;
 
     	[_unit] call Shadec_fnc_createDeadRecord;
-		
+
 		// Fill player display with black screen with text only in case if player was not rejoin being KIA
 		titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
 		
@@ -65,14 +65,15 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		[_unit] spawn {
 			params ["_unit"];
 			
-			sleep 5;
+			sleep 3;
 			while {!([_unit, "ItemMap"] call BIS_fnc_hasItem)} do {
 				sleep 1;
 				_unit linkItem "ItemMap";
 			};
-		};
 
-		titleFadeOut 3;
+			titleFadeOut 3;
+		};
+		
 	}, [_unit], 5] call CBA_fnc_waitAndExecute;
 
 	//
@@ -84,3 +85,17 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	publicVariableServer "playerKilled";
 	playerKilled = nil;
 }];
+
+
+
+
+
+//
+// [{
+// 	[true, 1] call ace_medical_feedback_fnc_effectUnconscious;
+// }, [], 2] call CBA_fnc_waitAndExecute;
+
+// //Fill player display with black screen with text only in case if player was not rejoin being KIA
+// [{
+// 	titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK FADED", 0, false, true];
+// }, [], 4] call CBA_fnc_waitAndExecute;

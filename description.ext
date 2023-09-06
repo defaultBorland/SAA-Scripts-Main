@@ -103,9 +103,12 @@ class CfgFunctions
 			class isStringNumberValid {};
 			class leftPad {};
 			class hasNavigationItem {};
+		};
+		class Headless {
+			class determineBestOwner {};
 			class transferGroupOwnership {};
 			class transferVehicleOwnership {};
-			class determineBestOwner {};
+			class vehicleRandomize {};
 		};
 		class Radio {
 			class assignJammer {};

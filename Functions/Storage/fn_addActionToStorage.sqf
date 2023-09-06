@@ -21,7 +21,7 @@ _action = [
 		params ["_target", "_player", "_params"];
 		_params params ["_pStorage"];
 
-		_pStorage setPos (_target modelToWorld [0,0,-1]);
+		_pStorage setPos (_target modelToWorld [0,0,0]);
 		_player action ["Gear", _pStorage];
 
 		[[_pStorage], {

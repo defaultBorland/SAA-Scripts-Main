@@ -2,7 +2,7 @@
 params ["_unit"];
 
 {
-	if ([_unit, _x] call BIS_fnc_hasItem) then {
+	while {[_unit, _x] call BIS_fnc_hasItem} do {
 		_unit removeItems _x;
 		diag_log format ["fnc_removeInventoryRestrictedItems | %1 has %2 in their inventory. Removing...", name _unit, _x];
 	};
@@ -11,7 +11,7 @@ params ["_unit"];
 // Remove UAV terminals from non-engineer _unit inventory
 if ((_unit getVariable ["SAA_PrimaryClass", "Rifleman"]) isNotEqualTo "Engineer") then {
 	{
-		if ([_unit, _x] call BIS_fnc_hasItem) then {
+		while {[_unit, _x] call BIS_fnc_hasItem} do {
 			_unit removeItems _x;
 			diag_log format ["fnc_removeInventoryRestrictedItems | %1 has %2 in their inventory. Removing...", name _unit, _x];
 		};

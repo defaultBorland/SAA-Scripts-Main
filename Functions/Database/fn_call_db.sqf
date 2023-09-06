@@ -53,9 +53,12 @@ switch (_act) do {
 
 				_unit setVariable ["LoadoutLoaded", true, true];
 				missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
-			}, [_unit, _inventory, _uid], 15, {
+			}, [_unit, _inventory, _uid], 180, {
 				params ["_unit", "_inventory"];
-				[format["%1 | fnc_call_db: loadAll DB action inventory comparing timeout.", name _unit], "Warning"] call Shadec_fnc_createLogServer;
+				diag_log format["fnc_call_db | loadAll DB action inventory comparing timeout: %1", name _unit];
+				diag_log format["Unit Loadout: %1", getUnitLoadout _unit];
+				diag_log format["Loaded loadout: %1", _inventory];
+				[format["fnc_call_db | loadAll DB action inventory comparing timeout: %1", name _unit], "Warning"] call Shadec_fnc_createLogServer;
 			}] call CBA_fnc_waitUntilAndExecute;
 
 			// diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _order, _uid];

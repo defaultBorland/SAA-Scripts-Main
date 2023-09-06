@@ -9,7 +9,7 @@ if (missionNamespace getVariable ["isDebug", false]) exitWith {};
 
 	private _commanders = ([] call Shadec_fnc_getPlayers) select {
 		(leader group _x) isEqualTo _x
-		&& {({isPlayer _x} count units group _x) > 4}
+		&& {({isPlayer _x} count units group _x) > 3}
 	} apply {getPlayerUID _x};
 
 	private _zeuses = (missionNamespace getVariable ["ZeusArray", []]) - [""];

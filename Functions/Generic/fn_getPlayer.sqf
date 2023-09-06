@@ -15,7 +15,7 @@ if ([_identity] call Shadec_fnc_isStringNumberValid) then {
 	};
 } else {
 	// Name
-	_unit = (allPlayers select {name _x isEqualTo _identity}) # 0;
+	_unit = (allPlayers select {toLower(name _x) isEqualTo toLower(_identity)}) # 0;
 };
 
 if (isNil {_unit}) then {_unit = objNull};

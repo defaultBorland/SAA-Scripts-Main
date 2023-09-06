@@ -45,7 +45,7 @@ if (_showNotification) then {
 					[] spawn {
 						sleep 1;
 						[player getVariable "SAA_forcedRespawnPosition"] call Shadec_fnc_respawnTeleport;
-						setPlayerRespawnTime getNumber(missionConfigFile >> 'respawnDelay');
+						setPlayerRespawnTime getNumber(missionConfigFile >> 'respawnDelay'); ////////////////////////////////////////////////////////////
 					};
 					player removeEventHandler ["Respawn", _thisEventHandler];
 				}];
@@ -59,7 +59,6 @@ if (_showNotification) then {
 		// if !(_position isEqualType "someString") then {
 		// 	[_position] call Shadec_fnc_respawnTeleport;
 		// };
-
 		
 	}] remoteExec ["call", _x];
 } forEach _targetsArray;

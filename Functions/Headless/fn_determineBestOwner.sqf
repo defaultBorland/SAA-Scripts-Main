@@ -11,7 +11,10 @@ private _bestHC = [objNull, 2, 9999, 0];
 	private _localUnitsCount = {owner _x isEqualTo _hcId} count allUnits;
 	private _fps = _hc getVariable ["SAA_HC_FPS", 0];
 
-	if (_localUnitsCount <= (_bestHC # 2) && {_fps >= (_bestHC # 3) - 2}) then {
+	if (
+		_localUnitsCount <= (_bestHC # 2) 
+		// && {_fps >= (_bestHC # 3) - 2}
+	) then {
 		_bestHC = [_x, _hcId, _localUnitsCount, _fps];
 	};
 } forEach _headlessClients;

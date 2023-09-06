@@ -11,7 +11,8 @@ params ["_vehicle"];
 
 		// If empty - do not respawn
 		if (count crew _vehicle < 1) exitWith {
-			[[_vehicle, _newOwner], {(_this # 0) setOwner (_this # 1)}] remoteExec ["call", _newOwner];
+			[_vehicle] call Shadec_fnc_vehicleRandomize;
+			[[_vehicle, _newOwner], {(_this # 0) setOwner (_this # 1)}] remoteExec ["call", 2];
 		};
 
 		// Respawn on server side
@@ -23,7 +24,6 @@ params ["_vehicle"];
 			private _dir = getDir _vehicle;
 			private _vehicleType = typeOf _vehicle;
 			private _side = side group _vehicle;
-			private _fuel = fuel _vehicle;
 
 			{ _vehicle deleteVehicleCrew _x } forEach crew _vehicle;
 			waitUntil {count crew _vehicle isEqualTo 0};
@@ -32,20 +32,8 @@ params ["_vehicle"];
 			waitUntil {_vehicle isEqualTo objNull};
 			sleep 0.4;
 			([_pos, _dir, _vehicleType, _side] call BIS_fnc_spawnVehicle) params ["_vehicle", "_crew", "_group"];
-			
-			sleep 0.1;
-			_vehicle setFuel _fuel;
-			[_vehicle, true, true, true, true] call Shadec_fnc_clearContainerInventory;
-			
-			sleep 1;
-			switch(true) do {
-				case (_vehicle isKindOf "Air"): {
-					_vehicle addBackpackCargoGlobal ["B_Parachute", 8];
-				};
-				default {
-					_vehicle setFuel ((random [18, 33, 65]) / 100);
-				};
-			};
+
+			[_vehicle] call Shadec_fnc_vehicleRandomize;
 		}] remoteExec ["spawn", _newOwner];
 
 	}] remoteExec ["call", 2];

@@ -41,6 +41,15 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		[{[_this] call Shadec_fnc_showUserInfo;}, player, 5] call CBA_fnc_waitAndExecute;
 	};
 
+	// Disable "Back to map" button
+	[{
+		(!isNull ((findDisplay 60492) displayCtrl 88811))
+		&& !alive player
+	}, {
+		private _ctrl = (findDisplay 60492) displayCtrl 88811;
+		_ctrl ctrlEnable false;
+	}, nil, playerRespawnTime, {}] call CBA_fnc_waitUntilAndExecute;
+
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
 	[{
 		params ["_unit"];

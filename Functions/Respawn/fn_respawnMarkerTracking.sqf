@@ -14,13 +14,13 @@ while {!isNil{_marker}} do {
 	};
 
 	// Player of another side
-	if (side player isNotEqualTo _side) then {
+	if ((side group player) isNotEqualTo _side) then {
 		_marker setMarkerAlphaLocal 0;
 		continue;
 	};
 
-	// Player does not have any navigation device
-	if (!([player] call Shadec_fnc_hasNavigationItem)) then {
+	// Player does not have any navigation device and alive
+	if (alive player && !([player] call Shadec_fnc_hasNavigationItem)) then {
 		_marker setMarkerAlphaLocal 0;
 		continue;
 	};

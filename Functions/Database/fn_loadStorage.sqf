@@ -1,5 +1,4 @@
 params["_unit"];
-_unit = _this # 0;
 _uid = getPlayerUID _unit;
 _data = [_uid,_unit];
 

@@ -9,7 +9,7 @@ private _finalArray = [[], [], []];
 	{	
 		_x params ["_classname", "_count"];
 
-		diag_log format ["fnc_parseOrders| _x: %1", _x];
+		//diag_log format ["fnc_parseOrders| _x: %1", _x];
 
 		switch ((_classname call BIS_fnc_itemType) # 0) do {
 			case "Weapon": {(_finalArray # 0) pushBack _x};

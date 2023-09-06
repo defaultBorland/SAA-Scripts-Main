@@ -16,24 +16,28 @@
 *
 */
 
-params ["_vehicle", "_clearWeapons", "_clearMagazines", "_clearItems", "_clearBackpacks"];
+params [["_vehicle", objNull], ["_clearWeapons", true], ["_clearMagazines", true], ["_clearItems", true], ["_clearBackpacks", true]];
+
+if (_vehicle isEqualTo objNull) exitWith {
+	["fnc_clearContainerInventory | Error: Object doesn't exists.", "Info"] call Shadec_fnc_createLogServer;
+};
 
 if (_vehicle isKindOf "CAManBase") exitWith { // If object is kind of Man
 	["fnc_clearContainerInventory | Error: Trying to clear inventory of a man.", "Info"] call Shadec_fnc_createLogServer;
 }; 
 
-if (!(isNil "_clearWeapons") && {_clearWeapons}) then {
+if (_clearWeapons) then {
 	clearWeaponCargoGlobal _vehicle;
 };
 
-if (!(isNil "_clearMagazines") && {_clearMagazines}) then {
+if (_clearMagazines) then {
 	clearMagazineCargoGlobal _vehicle;
 };
 
-if (!(isNil "_clearItems") && {_clearItems}) then {
+if (_clearItems) then {
 	clearItemCargoGlobal _vehicle;
 };
 
-if (!(isNil "_clearBackpacks") && {_clearBackpacks}) then {
+if (_clearBackpacks) then {
 	clearBackpackCargoGlobal _vehicle;
 };

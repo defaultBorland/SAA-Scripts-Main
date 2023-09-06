@@ -57,7 +57,7 @@
 	// Check if any player is dead with tickets present
 	private _isAnyPlayerWaitForRespawn = false;
 	if (
-		({!alive _x} count allPlayers) > 0 &&
+		({!alive _x} count (call Shadec_fnc_getPlayers)) > 0 &&
 		{({(_x call BIS_fnc_respawnTickets) > 0} count [west, east, independent, civilian]) > 0} &&
 		{count (missionNamespace getVariable ["SAA_respawnPoints", []]) > 0}
 	) then {

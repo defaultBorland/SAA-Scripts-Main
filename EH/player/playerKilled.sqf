@@ -32,18 +32,27 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
     	call Shadec_fnc_savePlayerRadioSettings;
 
     	[_unit] call Shadec_fnc_createDeadRecord;
-		
+
 		// Fill player display with black screen with text only in case if player was not rejoin being KIA
 		titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
 		
 	} else {
-		if (_unit getVariable ["KIA_returnTicket", false]) then {[playerSide, 1] call BIS_fnc_respawnTickets};
+		if (_unit getVariable ["KIA_returnTicket", false]) then {[side group player, 1] call BIS_fnc_respawnTickets};
 		[{[_this] call Shadec_fnc_showUserInfo;}, player, 5] call CBA_fnc_waitAndExecute;
 	};
 
+	// Disable "Back to map" button
+	[{
+		(!isNull ((findDisplay 60492) displayCtrl 88811))
+		&& !alive player
+	}, {
+		private _ctrl = (findDisplay 60492) displayCtrl 88811;
+		_ctrl ctrlEnable false;
+	}, nil, playerRespawnTime, {}] call CBA_fnc_waitUntilAndExecute;
+
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
 	[{
-		private _unit = _this # 0;
+		params ["_unit"];
 
 		removeAllItems _unit; 
 		removeAllWeapons _unit; 
@@ -52,10 +61,20 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		_droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 7];
 		{deleteVehicle _x} forEach _droppedGear;
 
-		titleFadeOut 3;
-	}, [_unit], 5] call CBA_fnc_waitAndExecute;
+		//
+		[_unit] spawn {
+			params ["_unit"];
+			
+			sleep 3;
+			while {!([_unit, "ItemMap"] call BIS_fnc_hasItem)} do {
+				sleep 1;
+				_unit linkItem "ItemMap";
+			};
 
-	[{player linkItem "itemMap"}, [_unit], 5] call CBA_fnc_waitAndExecute;
+			titleFadeOut 3;
+		};
+		
+	}, [_unit], 5] call CBA_fnc_waitAndExecute;
 
 	//
 	_unit setVariable ["KIA_onExit", nil];
@@ -66,3 +85,17 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	publicVariableServer "playerKilled";
 	playerKilled = nil;
 }];
+
+
+
+
+
+//
+// [{
+// 	[true, 1] call ace_medical_feedback_fnc_effectUnconscious;
+// }, [], 2] call CBA_fnc_waitAndExecute;
+
+// //Fill player display with black screen with text only in case if player was not rejoin being KIA
+// [{
+// 	titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK FADED", 0, false, true];
+// }, [], 4] call CBA_fnc_waitAndExecute;

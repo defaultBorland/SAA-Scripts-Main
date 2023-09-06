@@ -3,7 +3,7 @@ params [];
 
 if (missionNamespace getVariable ["isDebug", false]) exitWith {};
 
-_uid = getPlayerUID player;
+private _uid = getPlayerUID player;
 
 if !(hasInterface) exitWith {"fnc_saveModlist: Player only local function"};
 
@@ -20,7 +20,7 @@ _clientModlist = _clientModlist - (_serverModlist arrayIntersect _clientModlist)
 if !((player getVariable ["SAA_isZeus", false]) or {_uid isEqualTo "76561198066438612"}) then {
 
 	private _allowedMods = ["Larger ACE Nightvision Border", "A3 Thermal Improvement", "Larger ACE Nightvision Border - RHS Compat", "Larger ACE Nightvision Border - CUP Compat"] apply {toLower _x};
-	private _restrictedKeywords = ["spawn", "personal", "arsenal", "remove", "stamina", "fatigue", "casual", "scopenvti", "vision", "thermal", "sway", "recoil", "bullet casings", "double weapon", "scope with goggles", "hitmarker", "compass bearing & range distance hud", "logic fsm", "develop", "tool", "Assistant", "Double Weapon", "HelpMe", "POLPOX", "Arma 3 Perfomance Extension", "Swap Your Weapons", "Ladder Tweak", "Cheat", "Simple Single Player Cheat Menu", "ZlodziejServMod"] apply {toLower _x};
+	private _restrictedKeywords = ["spawn", "personal", "arsenal", "remove", "stamina", "fatigue", "casual", "scopenvti", "vision", "thermal", "sway", "recoil", "bullet casings", "double weapon", "scope with goggles", "hitmarker", "compass bearing & range distance hud", "logic fsm", "develop", "tool", "Assistant", "Double Weapon", "HelpMe", "POLPOX", "Arma 3 Perfomance Extension", "Swap Your Weapons", "Ladder Tweak", "Cheat", "Simple Single Player Cheat Menu", "ZlodziejServMod", "Weapon Slinging"] apply {toLower _x};
 
 	{
 		_mod = _x;

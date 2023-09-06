@@ -1,7 +1,9 @@
 //
 params ["_box", "_uniform"];
 
-[{missionNamespace getVariable format["loadoutLoaded_%1", getPlayerUID player]}, {
+[{ // Condition
+	missionNamespace getVariable format["loadoutLoaded_%1", getPlayerUID player]
+}, { // Statement
 	_this params ["_box", "_uniform"];
 
 	if ((_box isEqualTo objNull) || (!alive _box)) exitWith {diag_log format ["fnc_addArsenalSpecificItems | Error: _box not alive or nil"]};
@@ -18,6 +20,6 @@ params ["_box", "_uniform"];
 		default {};
 	};
 	[_box, _arsenalItems, false] call ACE_arsenal_fnc_addVirtualItems;	
-}, _this, 45, {
+}, _this, 60, {
 	diag_log format ["fnc_addArsenalSpecificItems | Timeout reached"];
 }] call CBA_fnc_waitUntilAndExecute;

@@ -58,7 +58,7 @@
 			};
 
 			_markerNum = {(str _side) in _x} count allMapMarkers;
-			_marker = createMarker [format["%1_%2_%3", _markerPrefix, _side, _markerNum], _position]; // [format["respawn_%1_%2", _SIDE, _markerNum], _position];
+			_marker = createMarker [format["%1_%2_%3", _markerPrefix, _side, ceil serverTime], _position];
 			_marker setMarkerType _markerType;
 			_marker setMarkerColor _color;
 			_marker setMarkerText _markerText;

@@ -1,6 +1,6 @@
 //
 
-params ["_marker", "_showNotification"];
+params ["_marker", ["_showNotification", true]];
 
 _respawnPositions = missionNamespace getVariable ["SAA_respawnPoints", []]; //diag_log format ["VARS CHECK RRP | _respawnPositions: %1", _respawnPositions];
 _respawnPositionIndex = _respawnPositions findIf {(_x # 0) isEqualTo _marker};

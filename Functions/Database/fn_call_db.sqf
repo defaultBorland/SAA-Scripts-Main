@@ -30,12 +30,17 @@ switch (_act) do {
 			private _order = [_uid] call Shadec_fnc_getOrdersServer;
 			[_storage, owner _unit, _uid, _order] spawn Shadec_fnc_createStorage;
 
+			if (_rank isEqualTo "GUEST") then {
+				private _guestLoadout = missionNamespace getVariable [format["SAA_GuestLoadout_%1", getPlayerUID _unit], nil];
+				if (!isNil{_guestLoadout}) then {_inventory = _guestLoadout};
+			};
+
 			//
 			_unit setVariable ["SAA_loadLoadout", _inventory, true];
 			_unit setUnitLoadout _inventory;
 
 			// try to achieve restricted items removing...
-			 [{
+			[{
 				// Condition
 				params ["_unit", "_inventory"];
 				(getUnitLoadout _unit) isEqualTo _inventory;
@@ -48,19 +53,21 @@ switch (_act) do {
 
 				_unit setVariable ["LoadoutLoaded", true, true];
 				missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
-			}, [_unit, _inventory, _uid], 15, {
+			}, [_unit, _inventory, _uid], 180, {
 				params ["_unit", "_inventory"];
-				[format["%1 | fnc_call_db: loadAll DB action inventory comparing timeout.", name _unit], "Warning"] call Shadec_fnc_createLogServer;
-				
+				diag_log format["fnc_call_db | loadAll DB action inventory comparing timeout: %1", name _unit];
+				diag_log format["Unit Loadout: %1", getUnitLoadout _unit];
+				diag_log format["Loaded loadout: %1", _inventory];
+				[format["fnc_call_db | loadAll DB action inventory comparing timeout: %1", name _unit], "Warning"] call Shadec_fnc_createLogServer;
 			}] call CBA_fnc_waitUntilAndExecute;
 
 			// diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _order, _uid];
 		} else { 
 			// Player is not exists in db, create a new one
-			private _unit = _info # 1;// unit
+			_info params ["_uid", "_unit"];
 			private _loadout = call Shadec_fnc_selectRandomLoadout;
 
-			"Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, getPlayerUID _unit, str name _unit, _loadout];
+			"Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, _uid, str name _unit, _loadout];
 			sleep 3;
 			[_act, _info] spawn Shadec_fnc_call_db;
 		};
@@ -100,7 +107,7 @@ switch (_act) do {
 
 			private _order = [_uid] call Shadec_fnc_getOrdersServer;
 
-			diag_log format ["loadStorage params: %1 | %2 | %3", owner _player, _uid, _order];
+			// diag_log format ["loadStorage params: %1 | %2 | %3", owner _player, _uid, _order];
 			[_storageContent, owner _player, _uid, _order] spawn Shadec_fnc_createStorage;
 		};
 	};

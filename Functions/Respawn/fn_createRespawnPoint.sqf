@@ -1,6 +1,5 @@
 //
-
-params ["_position","_objectUnderCursor", "_side", "_marker",  "_showNotification"];
+params ["_position","_objectUnderCursor", "_side", "_marker",  ["_showNotification", true]];
 
 _respawnPositions = missionNamespace getVariable ["SAA_respawnPoints", []];
 _respawnPositionData = [];

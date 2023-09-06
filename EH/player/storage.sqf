@@ -26,7 +26,7 @@ _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 
     // Save inventory
-    [player, getPlayerUID player, name player] spawn Shadec_fnc_saveInventory;
+    [player, getPlayerUID player] spawn Shadec_fnc_saveInventory;
 
     // If not storage - exit
     if !(_container getVariable ["SAA_isPersonalStorage", false]) exitWith {};

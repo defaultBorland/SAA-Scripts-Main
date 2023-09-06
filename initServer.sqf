@@ -38,21 +38,36 @@ missionNamespace setVariable ["respawnTime", respawnTime, true];
 missionNamespace setVariable ["isDebug", true, true];
 ["Warning! Debug Session Enabled. No saving!", "Warning"] call Shadec_fnc_createLogServer;
 
-//
+// Timed Players Saving
 [] spawn {
-	while {
-		missionNamespace getVariable ["SAA_PlayersTimedSaving", true];
-	} do {
+	while {true} do {
 		sleep (10 * 60);
+		if !(missionNamespace getVariable ["SAA_PlayersTimedSaving", true]) exitWith {};
 		private _players = ["All", "Id"] call Shadec_fnc_usersIDs;
-		if (count _players > 0) then {
+		if (count _players < 1) then { continue };
+		{
 			{
-				{
-					[player] call Shadec_fnc_savePlayer;
-					profileNamespace setVariable ["SAA_Project_Inventory", getUnitLoadout player];
-				} remoteExec ["call", _x];
-			} forEach _players;
-			["Players data saving...", "Info"] call Shadec_fnc_createLogServer;
+				[player] call Shadec_fnc_savePlayer;
+			} remoteExec ["call", _x];
+		} forEach _players;
+		["Players data saving...", "Info"] call Shadec_fnc_createLogServer;
+	};
+};
+
+// Auto Transfer Server bots to HC
+[] spawn {
+	while {true} do {
+		sleep (0.5 * 60);
+		if !(missionNamespace getVariable ["SAA_AutoTransferToServer", true]) exitWith {};
+		private _serverGroups = allGroups select {
+			private _group = _x;
+			(count units _group) isEqualTo ({_x isKindOf "Man"} count units _group) &&
+			(count units _group) isEqualTo ({!isPlayer _x} count units _group) &&
+			groupOwner _group isEqualTo 2
 		};
+		if (count _serverGroups < 1 || (call Shadec_fnc_determineBestOwner) isEqualTo 2) then { continue };
+		{
+			[_x] call Shadec_fnc_transferGroupOwnership;
+		} forEach _serverGroups;
 	};
 };

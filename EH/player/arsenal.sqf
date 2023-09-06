@@ -4,8 +4,9 @@
 
 // BIS Arsenal Handler
 [missionNamespace, "arsenalOpened", {
+    params ["_display"];
     disableSerialization;
-    _display = _this select 0;
+
     _display closeDisplay 1;
 	hint "BIS Arsenal is not allowed.";
 }] call BIS_fnc_addScriptedEventHandler;
@@ -17,6 +18,7 @@ _EH_ArsenalOpened = ["ace_arsenal_displayOpened", {
 
     hint "";
     player setVariable["isArsenalOpened", true, true];
+    if (player getVariable ["SAA_isArsenalUnrestricted", false]) exitWith {};
 	["save"] call Shadec_fnc_gearList;
 
     _display call Shadec_fnc_hideBottomButtons;
@@ -33,6 +35,7 @@ _EH_LeftPanelFilled = ["ace_arsenal_leftPanelFilled", {
 	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
 	disableSerialization;
 
+    if (player getVariable ["SAA_isArsenalUnrestricted", false]) exitWith {};
     if (_leftPanelIDC isEqualTo 2002) then {
         [_display] call ace_arsenal_fnc_buttonStats;
         [_display, false] call Shadec_fnc_toggleLeftPanel;
@@ -51,6 +54,7 @@ _EH_RightPanelFilled = ["ace_arsenal_rightPanelFilled", {
 	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
 	disableSerialization;
 
+    if (player getVariable ["SAA_isArsenalUnrestricted", false]) exitWith {};
     _display call Shadec_fnc_hideRightPanel;
 
 }] call CBA_fnc_addEventHandler;
@@ -59,6 +63,7 @@ _EH_RightPanelFilled = ["ace_arsenal_rightPanelFilled", {
 _EH_ArsenalClose = ["ace_arsenal_displayClosed", {
     player setVariable ["isArsenalOpened", false, true];
 
+    if (player getVariable ["SAA_isArsenalUnrestricted", false]) exitWith {};
     ["load"] call Shadec_fnc_gearList;
     player setSpeaker "ACE_NoVoice";
 

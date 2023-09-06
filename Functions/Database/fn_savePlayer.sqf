@@ -4,9 +4,9 @@ if (missionNamespace getVariable ["isDebug", false]) exitWith {};
 
 private _uid = getPlayerUID _unit;
 
-if (_unit getVariable ["SAA_isZeus", false]) exitWith {diag_log "This is Zeus, abort saving."; false};
-if !(missionNamespace getVariable (format["loadoutLoaded_%1", _uid])) exitWith {diag_log "loadoutLoaded is false, abort saving."; false};
-if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {diag_log "This is GUEST, abort saving."; false};
+if (_unit getVariable ["SAA_isZeus", false]) exitWith {diag_log format ["fnc_savePlayer | This is Zeus, abort saving."]; false};
+if !(missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) exitWith {diag_log format ["fnc_savePlayer | loadoutLoaded is false, abort saving."]; false};
+if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {diag_log format ["fnc_savePlayer | This is GUEST, abort saving."]; false};
 
 [[], Shadec_fnc_savePlayerRadioSettings] remoteExec ["call", _unit];
 

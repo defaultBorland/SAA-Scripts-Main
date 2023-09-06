@@ -1,9 +1,7 @@
 //local exec only
-params ["_unit"];
+params ["_unit", "_uid"];
 
 if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
-private _uid = getPlayerUID _unit;
 
 if (_unit getVariable ["SAA_isZeus", false]) exitWith {diag_log "This is Zeus, abort saving."; false};
 if !(missionNamespace getVariable (format["loadoutLoaded_%1", _uid])) exitWith {};

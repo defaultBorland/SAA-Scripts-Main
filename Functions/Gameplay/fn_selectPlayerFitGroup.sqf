@@ -42,14 +42,14 @@ if (_class isNotEqualTo "None") then {
 
 } else {
 	
-	private _groupClasses = (_groupPlayers apply {[
+	private _groupClasses = flatten (_groupPlayers apply {[
 		_x getVariable ["SAA_PrimaryClass", "Rifleman"],
 		_x getVariable ["SAA_SecondaryClass", "None"]
-	]}) - ["None"];
-	flatten _groupClasses;
+	]});
+	_groupClasses = _groupClasses - ["None"];
 
 	private _noGroupClasses = (_noGroupPlayers apply {[_x # 1, _x # 2]}) - ["None"];
-	flatten _noGroupClasses;
+	_noGroupClasses = flatten _noGroupClasses;
 	_noGroupClasses = _noGroupClasses arrayIntersect ["Medic", "AT", "Engineer", "Machinegunner", "Grenadier", "Marksman", "Rifleman"];
 	_noGroupClasses = _noGroupClasses apply {
 		private _class = _x;

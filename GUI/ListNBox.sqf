@@ -16,8 +16,8 @@ _listNBox ctrlAddEventHandler ["LBDblClick", {
 	params ["_ctrl", "_row"];
 	private _classname = _ctrl lnbText [_row, 4];
 
-	[[_classname, name player], {systemChat format ["%1 highlight item: %2", _this # 1, _this # 0]}] remoteExec ["call", -2];
-	[[_classname, name player], {format ["%1 highlight item: %2", _this # 1, _this # 0]}] remoteExec ["call", 2];
+	[[_classname, name player], {systemChat format["%1 highlight item: %2", _this # 1, _this # 0]}] remoteExec ["call", -2];
+	[[_classname, name player], {diag_log format["%1 highlight item: %2", _this # 1, _this # 0]}] remoteExec ["call", 2];
 }];
 
 private _coloumnHeader1 = _display displayCtrl 1011;

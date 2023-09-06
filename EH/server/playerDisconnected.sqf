@@ -5,11 +5,12 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_pcid", "_uid", "_name"];
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
-		[_unit] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
+
+		[_unit, _uid] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
 		[_uid] spawn Shadec_fnc_deleteStorage;
 
 		if (alive _unit) then {
-			if ((_unit getvariable ["ACE_isUnconscious", false]) and alive _unit) then { // If player was Unconscious and alive (mechanics abuse)
+			if ((_unit getvariable ["ACE_isUnconscious", false]) && {alive _unit}) then { // If player was Unconscious and alive (mechanics abuse)
 				[[_name], {
 					systemChat format["> Server: %1 %2!", _this # 0, localize "STR_SAA_MESSAGE_PLAYER_LEFT_UNCONSCIOUS"];
 				}] remoteExec ["call", -2];
@@ -20,14 +21,21 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 			private _isTicketsRemain = [false, true] select (([side _unit, 0] call BIS_fnc_respawnTickets) > 0);
 			missionNamespace setVariable [format["KIAonExit_%1", _uid], [true, _isTicketsRemain], true];
 		};
+
+		if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {
+			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
+		};
 		
 	} else { // If player equipment didn't load for some reason - don't save
 		diag_log format ["Loadout not loaded, abort player saving: %1", _name];
 	};
 	missionNamespace setVariable [format["loadoutLoaded_%1", _uid], nil, true];
 
-	// Update connection record
-	[_uid] call Shadec_fnc_updateConnectionRecord;
+	// No headless record
+    if (!("headlessclient" in _name)) then {
+		// Update connection record
+		[_uid] call Shadec_fnc_updateConnectionRecord;
+	};
 
 	// Unlock server if no zeus or administrator present
 

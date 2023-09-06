@@ -4,7 +4,7 @@ addMissionEventHandler ["GroupCreated", {
 	[{
 		params ["_group"];
 		count units _group > 0
-
+		
 	}, {
 		params ["_group"];
 
@@ -15,12 +15,13 @@ addMissionEventHandler ["GroupCreated", {
 			}, {
 				//[format["Group %1: Player is loaded.", _this], "Info"] call Shadec_fnc_createLogServer;
 				["SAA_TM_RefreshPanel", ["UnitJoined"] + [_this, objNull]] call CBA_fnc_globalEvent;
-			}, _group, 30, {
+			}, _group, 180, {
 				if (_this isEqualTo grpNull) exitWith {};
-				if ({_x getVariable ["SAA_isZeus", false]} count (units _this) > 0) exitWith {};
 				if ((count units _this) < 1) exitWith {};
-
-				[format["Group %1: Not all players loaded within 30 secs...", _this], "Warning"] call Shadec_fnc_createLogServer;
+				if ({_x getVariable ["SAA_isZeus", false]} count (units _this) > 0) exitWith {};
+				if ({typeOf _x isEqualTo "HeadlessClient_F"} count (units _this) > 0) exitWith {};
+				
+				[format["Group %1 (%2): Not all players loaded within 180 secs...", _this, (units _this) apply {name _x} joinString ", "], "Warning"] call Shadec_fnc_createLogServer;
 			}] call CBA_fnc_waitUntilAndExecute;
 		};
 

@@ -1,14 +1,16 @@
 //Player init
 waitUntil {!isNull player};
-[] call BIS_fnc_VRFadeOut;
+if (!hasInterface) exitWith {
+	[format["%1 connected", name player]] call Shadec_fnc_createLogServer;
+	[] execVM "initHC.sqf";
+};
 
+[] call BIS_fnc_VRFadeOut;
 
 // Check if player has World that loaded on server
 if !(isClass (configFile >> "CfgWorlds" >> worldName)) exitWith {
 	[(name player) + " have not loaded needed map. Kicking out."] call Shadec_fnc_createLogServer;
-
 	[[name player], {systemChat format ["%1 %2", _this # 0, localize "STR_SAA_MESSAGE_WORLD_NOT_LOADED"]}] remoteExec ["call", -2];
-
 	"missingMap" call BIS_fnc_endMission;
 };
 
@@ -98,7 +100,6 @@ player setVariable ["tf_sendingDistanceMultiplicator", missionNamespace getVaria
 
 // Reset player group
 [player] joinSilent grpNull;
-
 
 //Spectator
 {

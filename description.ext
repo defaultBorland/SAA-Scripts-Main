@@ -68,6 +68,8 @@ class CfgFunctions
 			class getWhitelistedMods {};
 			class blacklistMod {};
 			class whitelistMod {};
+			class processMultipartMsg {};
+			class processExtensionReturn {};
         };
 		class Fuel {
 			class setStationsFuel {};

@@ -4,15 +4,37 @@ if (_numComs < 1) exitWith {};
 
 [format["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_PLAYER_INIT_COMMRAND", _initiatorName]] remoteExec ["systemChat", -2];
 
-_pComs = ([side player] call Shadec_fnc_getPlayers) select {(_x getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT"]};
-[[_pComs apply {name _x}],{systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_POTENTIAL_COMMANDERS", (_this # 0) joinString ", "]}] remoteExec ["call", -2];
+private _potentialComs = ([side player] call Shadec_fnc_getPlayers) select {(_x getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT"]};
+[[_potentialComs apply {name _x}],{systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_POTENTIAL_COMMANDERS", (_this # 0) joinString ", "]}] remoteExec ["call", -2];
 
-_pComs = _pComs select {_x getVariable ["SAA_isPotentialCommander", true]};
-_aComs = []; 
-for "_i" from 1 to _numComs do { 
-	_temp = selectRandom _pComs;
-	_pComs = _pComs - [_temp];
-	_aComs = _acoms + [_temp];
+_potentialComs = _potentialComs select {_x getVariable ["SAA_isPotentialCommander", true]};
+private _comsStats = ["getCommandingStats", [_potentialComs apply {getPlayerUID _x}]] call Shadec_fnc_call_db;
+private _weights = [];
+private _players = [];
+private _max = selectMax (_comsStats apply {_x # 1});
+private _min = selectMin (_comsStats apply {_x # 1});
+{
+	private _uid = getPlayerUID _x;
+	private _index = (_comsStats apply {_x # 0}) findIf {_x isEqualTo _uid};
+	if (_index > -1) then {
+		private _stats = _comsStats # _index # 1;
+		_weights pushBack (linearConversion [_min, _max, _stats, _max, _min]);
+	} else {
+		_weights pushBack 5;
+	};
+	_players pushBack _x;
+} forEach _potentialComs;
+
+_weights = _weights apply {_x * 2};
+
+private _selectedComs = []; 
+for "_i" from 1 to _numComs do {
+	private _selected = _players selectRandomWeighted _weights;
+	private _index = _players findIf {_x isEqualTo _selected};
+	if (_index < 0) exitWith {diag_log format["fnc_randomCommanders | Error: _index < 0"]};
+	_players deleteAt _index;
+	_weights deleteAt _index;
+	_selectedComs pushBack _selected;
 };
 
 [[_numComs, _selectedComs apply {name _x}], {systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_RANDOMED_COMMANDERS", _this # 0, (_this # 1) joinString ", "]}] remoteExec ["call", -2];
@@ -21,4 +43,4 @@ for "_i" from 1 to _numComs do {
 		while {dialog} do {closeDialog 0};
 		[format["<t size='1'>%1</t>", localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_YOU_WERE_CHOSEN"], -1, -1, 6, 1, 0] spawn BIS_fnc_dynamicText;
 	} remoteExec ["call", _x];
-} forEach _aComs;
+} forEach _selectedComs;

@@ -6,6 +6,11 @@ _prefix = _prefixMain + "Main\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"endMission",
 	"promoteToZeus"
+	, "addMarkerTracking"
+	, "removeMarkerTracking"
+	, "toggleGPS"
+];
+
 // Arsenal
 _prefix = _prefixMain + "Arsenal\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [

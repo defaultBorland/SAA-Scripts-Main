@@ -98,7 +98,6 @@ class CfgFunctions
 			class getPlayer {};
 			class isStringNumberValid {};
 			class leftPad {};
-			class hasNavigationItem {};
 		};
 		class Headless {
 			class determineBestOwner {};
@@ -114,6 +113,13 @@ class CfgFunctions
 			class processModlist {};
 			class initPenalty {};
 			class kickRestrictedMods {};
+		};
+		class Navigation {
+			class markerTracking {};
+			class renderMarker {};
+			class hasNavigationItem {};
+			class toggleGPS {};
+			class toggleMicroDAGR {};
 		};
 		class Radio {
 			class assignJammer {};
@@ -131,7 +137,6 @@ class CfgFunctions
 			class forcedRespawn {};
 			class removeFob {};
 			class removeRespawnPoint {};
-			class respawnMarkerTracking {};
 		};
 		class Storage {
 			class addActionToStorage {};

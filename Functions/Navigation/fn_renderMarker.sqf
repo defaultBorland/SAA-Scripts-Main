@@ -9,6 +9,9 @@ if (player getVariable ["SAA_isZeus", false]) exitWith {
 	_marker setMarkerPosLocal _position;
 };
 
+// GPS is disabled
+if (missionNamespace getVariable ["SAA_isGPSDisabled", false]) exitWith {
+	_marker setMarkerAlphaLocal 0;
 };
 
 // Player of another side

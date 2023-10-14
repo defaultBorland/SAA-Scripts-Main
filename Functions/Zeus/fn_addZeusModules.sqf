@@ -4,9 +4,14 @@ private _prefixMain = "ZeusModules\";
 // Main
 _prefix = _prefixMain + "Main\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
-	"addShadecArsenal",
 	"endMission",
 	"promoteToZeus"
+// Arsenal
+_prefix = _prefixMain + "Arsenal\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"addShadecArsenal",
+	"removeShadecArsenal",
+	"changeArsenalRestrictions"
 ];
 
 // Radio

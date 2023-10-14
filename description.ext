@@ -27,6 +27,7 @@ class CfgFunctions
 		class Arsenal {
 			class addArsenalSpecificItems {};
 			class addShadecArsenal {};
+			class removeShadecArsenal {};
 			class hideBottomButtons {};
 			class toggleLeftPanel {};
 			class hideLeftPanelButtons {};
@@ -34,17 +35,6 @@ class CfgFunctions
 			class gearList {};
 			class addCapacityTooltips {};
 			class repositionArsenalButtons {};
-		};
-		class Classes {
-			class classSwitcher {};
-			class Rifleman {};
-			class Machinegunner {};
-			class Grenadier {};
-			class Engineer {};
-			class AT {};
-			class Medic {};
-			class Marksman {};
-			class Sniper {};
 		};
         class Database {
             class call_db {};
@@ -94,6 +84,7 @@ class CfgFunctions
 			class selectPlayerFitGroup {};
 		};
 		class Generic {
+			class classSwitcher {};
 			class clearContainerInventory {};
 			class getContainerInventory {};
 			class setContainerInventory {};

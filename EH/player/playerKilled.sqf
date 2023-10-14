@@ -69,7 +69,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		params ["_unit"];
 
 		removeAllItems _unit; 
-		removeAllWeapons _unit; 
+		removeAllWeapons _unit;
 		removeAllAssignedItems _unit;
 
 		_droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 7];
@@ -84,7 +84,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 				sleep 1;
 				_unit linkItem "ItemMap";
 			};
-
+			
 			titleFadeOut 3;
 		};
 		
@@ -99,9 +99,6 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	publicVariableServer "playerKilled";
 	playerKilled = nil;
 }];
-
-
-
 
 
 //

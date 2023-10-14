@@ -28,7 +28,6 @@ fnc_generateVehiclesActions = {
 	params ["_position", "_objects", "_groups", "_waypoints", "_markers", "_hoveredEntity", "_args"];
 	_args params ["_garageVehicles"];
 
-
 	private _childActions = [];
 
 	{ // forEach
@@ -78,7 +77,6 @@ fnc_generateLoadoutsActions = {
 	};
 
 	private _childActions = [];
-
 	{
 		_x params ["_loadoutName", "_loadout"];
 

@@ -14,10 +14,9 @@
 // Define variables
 missionNamespace setVariable ["tf_reciveVar", 1, true];
 missionNamespace setVariable ["tf_sendVar", 1, true];
-respawnTime = getNumber (missionConfigFile >> "respawnDelay");
-missionNamespace setVariable ["respawnTime", respawnTime, true];
 missionNamespace setVariable ["SAA_ServerMods", [] call Shadec_fnc_getModList, true];
 missionNamespace setVariable ["SAA_SaaBoxAddons", [] call Shadec_fnc_getShadecBoxAddons, true];
+missionNamespace setVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay"), true];
 
 [{
 	["getGarageVehicles", []] call Shadec_fnc_call_db;

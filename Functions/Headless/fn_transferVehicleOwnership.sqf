@@ -37,4 +37,4 @@ params ["_vehicle"];
 		}] remoteExec ["spawn", _newOwner];
 
 	}] remoteExec ["call", 2];
-}, [_vehicle], 0.4] call CBA_fnc_waitAndExecute;
+}, [_vehicle], 0.6] call CBA_fnc_waitAndExecute;

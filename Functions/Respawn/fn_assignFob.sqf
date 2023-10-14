@@ -51,7 +51,7 @@ if (_showNotification) then {
 // Monitor CV status (marker-tracking is local side now)
 [_vehicle, _marker] spawn {
 	params ["_respawnVehicle", "_marker"];
-	while {(alive _respawnVehicle) and (_respawnVehicle getVariable ["SAA_isCV", false])} do {
+	while {(alive _respawnVehicle) && (_respawnVehicle getVariable ["SAA_isCV", false])} do {
 		sleep 1;
 	};
 

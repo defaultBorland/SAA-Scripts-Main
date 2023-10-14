@@ -36,7 +36,7 @@
 					player removeAction (player getVariable "itemsDelivered_actionID");
 
 					player setVariable ["itemsDelivered_actionID", nil];
-					missionNamespace setVariable [format["deliveredItems_%1", getPlayerUID player], [], true];
+					missionNamespace setVariable [format["SAA_deliveredItems_%1", getPlayerUID player], [], true];
 				}];
 			}, [_deliveredItemsArray]]
 		];

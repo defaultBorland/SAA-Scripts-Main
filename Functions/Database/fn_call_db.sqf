@@ -3,6 +3,7 @@ params ["_act", "_info"];
 //[format["%1: %2", _act, _info joinString ", "], "Debug"] call Shadec_fnc_createLogServer;
 
 switch (_act) do {
+
 	case "saveAll" : {
 		_info params ["_name", "_inventory", "_storage", "_uid"];
 		"Extdb3" callExtension format ["1:%1:savePlayer:%2:%3:%4:%5", PROTOCOL,

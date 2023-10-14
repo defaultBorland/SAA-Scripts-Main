@@ -162,11 +162,12 @@ class CfgFunctions
 			class promoteToZeus {};
 		};
 		class GUI {
+			class getComboListRows {};
+			class nulifyListNBoxRow {};
+
 			class fillListNBox {file = "GUI\fn_fillListNBox.sqf";};
 
-			class getComboListRows {};
-			class nulifyListNBoxRow {file = "GUI\TeamManagement\fn_nulifyListNBoxRow.sqf";}; 
-			class fillGroupListNBox {file = "GUI\TeamManagement\fn_fillGroupListNBox.sqf";}
+			class fillGroupListNBox {file = "GUI\TeamManagement\fn_fillGroupListNBox.sqf";};
 			class refreshPanel {file = "GUI\TeamManagement\fn_refreshPanel.sqf";};
 			class getGroups {file = "GUI\TeamManagement\fn_getGroups.sqf";};
 

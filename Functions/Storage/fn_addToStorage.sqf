@@ -22,8 +22,8 @@ switch (_action) do {
 		{_storage addItemCargoGlobal _x} forEach _items;
 
 		private _allDelivered = _weapons + _magazines + _items;
-		_allDelivered append (missionNamespace getVariable [format["deliveredItems_%1", _uid], []]);
-		missionNamespace setVariable [format["deliveredItems_%1", _uid], _allDelivered];
+		_allDelivered append (missionNamespace getVariable [format["SAA_deliveredItems_%1", _uid], []]);
+		missionNamespace setVariable [format["SAA_deliveredItems_%1", _uid], _allDelivered];
 
 		private _id = owner ([_uid] call Shadec_fnc_getPlayer);
 		

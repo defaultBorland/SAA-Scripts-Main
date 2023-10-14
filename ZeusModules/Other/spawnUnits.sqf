@@ -23,7 +23,7 @@
 					1, 24, 1, 0
 				]
 			],
-			["SIDES", [localize "STR_SAA_ZEUS_MODULES_RESPAWN_CHANGE_TICKETS_AMOUNT_DIALOG_SIDE_DISPLAYNAME", localize ""],
+			["SIDES", [localize "STR_SAA_GENERAL_SIDE", localize ""],
 				west
 			],
 			["CHECKBOX", [localize "STR_SAA_CLASSES_RIFLEMAN", localize ""],

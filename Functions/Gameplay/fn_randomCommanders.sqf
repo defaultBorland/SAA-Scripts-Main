@@ -15,7 +15,7 @@ for "_i" from 1 to _numComs do {
 	_aComs = _acoms + [_temp];
 };
 
-[[_numComs, _aComs apply {name _x}], {systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_RANDOMED_COMMANDERS", _this # 0, (_this # 1) joinString ", "]}] remoteExec ["call", -2];
+[[_numComs, _selectedComs apply {name _x}], {systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_RANDOMED_COMMANDERS", _this # 0, (_this # 1) joinString ", "]}] remoteExec ["call", -2];
 {
 	{
 		while {dialog} do {closeDialog 0};

@@ -5,7 +5,7 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
 
     // Fill player display with black screen with text
-    titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", "Back In Action", "Let's try this again..."], "BLACK", 0.2, false, true];
+    titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", localize "STR_SAA_RESPAWN_MESSAGE_TITLE", localize "STR_SAA_RESPAWN_MESSAGE_BODY"], "BLACK", 0.2, false, true];
     
     // Create public var and send it to server to trigger event
 	playerRespawned = [_unit, getPlayerUID _unit];

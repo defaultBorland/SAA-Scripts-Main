@@ -1,6 +1,6 @@
 private _removeArsenal = [
     "RemoveArsenal",
-    localize "STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_MODULENAME",
+    localize "STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_MODULENAME",
     "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa",
     {   // Statement
         params ["_position", "_objects", "_groups", "_waypoints", "_markers", "_hoveredEntity", "_args"];
@@ -11,7 +11,7 @@ private _removeArsenal = [
         private _jipID = _hoveredEntity getVariable ["SAA_arsenalJIP", ""];
         remoteExec ["", _jipID];
 
-        [localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_MAIN_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+        [localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
     }, 
     { // Condition
         params ["_position", "_objects", "_groups", "_waypoints", "_markers", "_hoveredEntity", "_args"];
@@ -23,4 +23,3 @@ private _removeArsenal = [
     }
 ] call zen_context_menu_fnc_createAction;
 private _removeArsenalActionPath = [_removeArsenal, [], 0] call zen_context_menu_fnc_addAction;
-// player setVariable ["SAA_zenContextActions", [_removeArsenalActionPath]];

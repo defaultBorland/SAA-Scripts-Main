@@ -24,6 +24,9 @@ fnc_typeSwitcher = {
 		case "Судно";
 		case "Vessel": {"Vessel"};
 
+		case "ПВО";
+		case "AA": {"AA"};
+
 		default {"Other"};
 	};
 

@@ -1,6 +1,6 @@
 private _assignArsenalRoot = [
     "AssignArsenal",
-    localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_MODULENAME",
+    localize "STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_MODULENAME",
     "\a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa",
     {}, // Statement
     { // Condition
@@ -30,7 +30,7 @@ private _assignArsenalRoot = [
                     _args params ["_type"];
 
                     [[_hoveredEntity, _type, true, true], Shadec_fnc_addShadecArsenal] remoteExec ["call", 2];
-                    [localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
+                    [localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;
                 },
                 { // Condition
                     true
@@ -41,12 +41,12 @@ private _assignArsenalRoot = [
             ] call zen_context_menu_fnc_createAction;
             _childActions pushBack [_assignArsenalType, [], _priority];
         } forEach [
-            ["STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_ARID", "Arid"], 
-            ["STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_SEMIARID", "Semiarid"], 
-            ["STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_FOREST", "Forest"], 
-            ["STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_WINTER", "Winter"], 
-            ["STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_BLACK", "Black"], 
-            ["STR_SAA_ZEUS_MODULES_MAIN_ADD_ARSENAL_UNIFORMTYPE_ALL", "All"]
+            ["STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_UNIFORM_CAMO_ARID", "Arid"], 
+            ["STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_UNIFORM_CAMO_SEMIARID", "Semiarid"], 
+            ["STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_UNIFORM_CAMO_FOREST", "Forest"], 
+            ["STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_UNIFORM_CAMO_WINTER", "Winter"], 
+            ["STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_UNIFORM_CAMO_BLACK", "Black"], 
+            ["STR_SAA_ZEUS_MODULES_ARSENAL_ADD_ARSENAL_UNIFORM_CAMO_ALL", "All"]
         ];
 
         _childActions

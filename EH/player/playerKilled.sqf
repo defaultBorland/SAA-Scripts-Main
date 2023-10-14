@@ -60,6 +60,8 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	}, {
 		private _ctrl = (findDisplay 60492) displayCtrl 88811;
 		_ctrl ctrlEnable false;
+
+		["SAA_PlayerDeath", 1, false] call ace_common_fnc_setHearingCapability;
 	}, nil, playerRespawnTime, {}] call CBA_fnc_waitUntilAndExecute;
 
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting

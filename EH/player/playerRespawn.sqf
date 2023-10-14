@@ -16,6 +16,8 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
     if (_unit getVariable ["SAA_isZeus", false]) then {
         [[_unit, "assign"], Shadec_fnc_manageCurators] remoteExec ["call", 2];
     };
+
+    ["SAA_PlayerDeath", 1, false] call ace_common_fnc_setHearingCapability;
     
     [_unit] spawn {
         params ["_unit"];

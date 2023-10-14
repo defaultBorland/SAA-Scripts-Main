@@ -207,15 +207,59 @@ switch (_act) do {
 		if !(isNil {_getData}) then {
 			_getData params ["_deadTime"];
 
-			[format["Player %1 dead time: %2", _uid, _deadTime], "Debug"] call Shadec_fnc_createLogServer;
-			if (isNil {_deadTime}) exitWith {};
+	case "saveModlist" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
+		_info params ["_unit", "_modlist"];
 
-			// Problem: need to considerate wave respawnTemplate (x2 time to respawn)
-			private _timeToRespawn = (respawnTime - _deadTime) max 10;
+		private _processedMods = [_unit, _modlist] call Shadec_fnc_processModlist;
+		_processedMods params ["_clientMods", "_suspiciousMods", "_restrictedMods"];
 
-			[format["Player %1 time to respawn: %2", _uid, _timeToRespawn], "Debug"] call Shadec_fnc_createLogServer;
+		private _count = count _clientMods; // _modlist
+		
+		"Extdb3" callExtension format ["1:%1:saveModlist:%2:%3:%4:%5:%6:%7", PROTOCOL,
+			getPlayerUID _unit,
+			name _unit,
+			_count,
+			_clientMods, // _modlist
+			_suspiciousMods,
+			_restrictedMods
+		];
+	};
 
-			// [_timeToRespawn] remoteExec ["setPlayerRespawnTime", _unit];
+	case "getBlacklistedMods" : {
+		private _return = "Extdb3" callExtension format ["0:%1:getBlacklistedMods", PROTOCOL];
+		private _mods = [_return] call Shadec_fnc_processExtensionReturn;
+		if !(isNil {_mods}) then {
+			if (true) exitWith { _mods };
+		} else {
+			if (true) exitWith { [] };
 		};
+	};
+
+	case "getWhitelistedMods" : {
+		private _return = "Extdb3" callExtension format ["0:%1:getWhitelistedMods", PROTOCOL];
+		private _mods = [_return] call Shadec_fnc_processExtensionReturn;
+		if !(isNil {_mods}) then {
+			if (true) exitWith { _mods };
+		} else {
+			if (true) exitWith { [] };
+		};
+	};
+
+	case "blacklistMod" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
+		_info params ["_modName", "_modWorkshopId", "_modHash", "_initiator_name"];
+		"Extdb3" callExtension format ["1:%1:blacklistMod:%2:%3:%4:%5", PROTOCOL, _modName, _modWorkshopId, _modHash, _initiator_name];
+	};
+
+	case "whitelistMod" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
+		_info params ["_modName", "_modWorkshopId", "_modHash", "_initiator_name"];
+		"Extdb3" callExtension format ["1:%1:whitelistMod:%2:%3:%4:%5", PROTOCOL, _modName, _modWorkshopId, _modHash, _initiator_name];
+	};
+
 	};
 };

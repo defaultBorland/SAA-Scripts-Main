@@ -1,7 +1,7 @@
 #include "GUI\Base_Classes.hpp"
 #include "GUI\ListNBox_dialog.h"
 #include "GUI\TeamManagement\Menu_dialog.h"
-
+#include "GUI\ModsApproval\Menu_dialog.h"
 
 briefingName = "SAA Server";
 onLoadName = "SAA Project [DEV]";
@@ -64,6 +64,10 @@ class CfgFunctions
 			class createConnectionRecord {};
 			class updateConnectionRecord {};
 			class getRespawnTimeDB {};
+			class getBlacklistedMods {};
+			class getWhitelistedMods {};
+			class blacklistMod {};
+			class whitelistMod {};
         };
 		class Fuel {
 			class setStationsFuel {};
@@ -92,7 +96,6 @@ class CfgFunctions
 			class getContainerInventory {};
 			class setContainerInventory {};
 			class createLogServer {};
-			class getModList {};
 			class getPlayers {};
 			class parseOrder {};
 			class removeInventoryRestrictedItems {};
@@ -109,6 +112,15 @@ class CfgFunctions
 			class transferGroupOwnership {};
 			class transferVehicleOwnership {};
 			class vehicleRandomize {};
+		};
+		class Moderation {
+			class checkRestrictedMods {};
+			class getModList {};
+			class getShadecBoxAddons {};
+			class validateShadecBoxContent {};
+			class processModlist {};
+			class initPenalty {};
+			class kickRestrictedMods {};
 		};
 		class Radio {
 			class assignJammer {};
@@ -159,6 +171,10 @@ class CfgFunctions
 			class fillGroupListNBox {file = "GUI\TeamManagement\fn_fillGroupListNBox.sqf";}
 			class refreshPanel {file = "GUI\TeamManagement\fn_refreshPanel.sqf";};
 			class getGroups {file = "GUI\TeamManagement\fn_getGroups.sqf";};
+
+			class refreshPanelMA {file = "GUI\ModsApproval\fn_refreshPanel.sqf";};
+			class MA_addModToWhitelisted {file = "GUI\ModsApproval\fn_addModToWhitelisted.sqf";};
+			class MA_addModToBlacklisted {file = "GUI\ModsApproval\fn_addModToBlacklisted.sqf";};
 		};
 		class Mechanics {
 			class getPlayersByGroupState {file = "Mechanics\TeamManagement\fn_getPlayersByGroupState.sqf";};
@@ -223,7 +239,23 @@ class CfgDebriefing
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
+	class addonsMismatch {
+		title = "$STR_SAA_DEBRIEFING_SAABOX_ADDONS_MISMATCH_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING__SAABOX_ADDONS_MISMATCH_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_SAABOX_ADDONS_MISMATCH_DESCRIPTION";
+		picture = "\A3\Modules_F_Curator\Data\portraitObjective_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
 	class somethingWentWrong {
+		title = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_DESCRIPTION";
+		picture = "\A3\UI_F\data\GUI\Cfg\Hints\Doors_ca";
+		pictureColor[] = {1,1,1,1};
+	};
+
+	class restrictedModsFound {
 		title = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_TITLE";
 		subtitle = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_SUBTITLE";
 		description = "$STR_SAA_DEBRIEFING_SOMETHING_WENT_WRONG_DESCRIPTION";
@@ -248,4 +280,11 @@ disableChannels[] = {
 	{ 4, true, true },
 	{ 5, true, false },
 	{ 6, false, true }
+};
+
+class CfgCommands {
+	allowedHTMLLoadURIs[] = {
+		"https://steamcommunity.com/sharedfiles/filedetails/?id=*",
+		"steamcommunity.com/sharedfiles/*"
+	};
 };

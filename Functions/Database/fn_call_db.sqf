@@ -261,6 +261,16 @@ switch (_act) do {
 		"Extdb3" callExtension format ["1:%1:whitelistMod:%2:%3:%4:%5", PROTOCOL, _modName, _modWorkshopId, _modHash, _initiator_name];
 	};
 
+	case "getAvailiableItems" : {
+		_info params ["_pClass", "_sClass"];
+		private _sql = format["SELECT classname FROM items_restrictions WHERE %1_P = 1", _pClass];
+		if (_sClass isNotEqualTo "None") then {_sql = format["%1 OR %2_S = 1", _sql, _sClass]};
+		
+		private _return = "Extdb3" callExtension format ["0:SQL:%1", _sql];
+	
+		if (true) exitWith { [_return] call Shadec_fnc_processExtensionReturn };
+	};
+
 	case "getUniform" : {
 		_info params [["_camo", "None"], ["_class", "None"], ["_type", "None"]];
 		private _sql = format["SELECT classname FROM uniforms WHERE 1=1"];

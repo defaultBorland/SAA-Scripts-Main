@@ -1,23 +1,10 @@
-params ["_uid"];
+params ["_firstClass", "_secondClass"];
 
-(missionNamespace getVariable [format["%1_DATA", _uid], ["PV1", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
-if (missionNamespace getVariable [format["availiableItems_%1_%2", _firstClass, _secondClass], []] isEqualTo []) then {
-	
-	private _arrayP = ["Primary"] call call compile format ["Shadec_fnc_%1", _firstClass];
-	
-	private _arrayS = [];
-	if !(_secondClass isEqualTo "None") then {
-		_arrayS = ["Secondary"] call call compile format ["Shadec_fnc_%1", _secondClass];
-	};
+private _array = ["getAvailiableItems", [_firstClass, _secondClass]] call Shadec_fnc_call_db;
+_array = _array apply {toLower (_x # 0)};
+private _hashmap = _array createHashMapFromArray [];
 
-	private _array = [];
-	_array append _arrayP;
-	_array append _arrayS;
-	_array = _array arrayIntersect _array;
-	_array = _array apply {toLower _x};
-	
-	missionNamespace setVariable [format["availiableItems_%1_%2", _firstClass, _secondClass], _array];
-};
+missionNamespace setVariable [format["SAA_availiableItems_%1_%2", _firstClass, _secondClass], _hashmap];
 
 //return
-true
+_hashmap

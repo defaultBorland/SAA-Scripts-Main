@@ -5,7 +5,7 @@ params ["_act", "_info"];
 switch (_act) do {
 	case "saveAll" : {
 		_info params ["_name", "_inventory", "_storage", "_uid"];
-		"Extdb3" callExtension format ["0:%1:savePlayer:%2:%3:%4:%5", PROTOCOL,
+		"Extdb3" callExtension format ["1:%1:savePlayer:%2:%3:%4:%5", PROTOCOL,
 			str _name,
 			_inventory,
 			_storage,
@@ -16,10 +16,12 @@ switch (_act) do {
 	};
 
 	case "loadAll" : {
-		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:loadPlayer:%2", PROTOCOL, _info # 0])) # 1) # 0;
-		if !(isNil {_getData}) then {
+		_info params ["_uid"];
+		private _return = "Extdb3" callExtension format ["0:%1:loadPlayer:%2", PROTOCOL, _uid];
+		private _data = [_return, true] call Shadec_fnc_processExtensionReturn;
+		if !(isNil {_data}) then {
 			_info params ["_uid", "_unit"];
-			_getData params ["_rank", "_pclass", "_sclass", "_inventory", "_storage"];
+			_data params ["_rank", "_pclass", "_sclass", "_inventory", "_storage"];
 
 			_unit setVariable ["SAA_Rank", _rank, true];
 			_unit setVariable ["SAA_PrimaryClass", _pclass, true];
@@ -75,7 +77,7 @@ switch (_act) do {
 
 	case "saveInventory" : {
 		_info params ["_uid", "_inventory"];
-		"Extdb3" callExtension format ["0:%1:saveInventory:%2:%3", PROTOCOL,
+		"Extdb3" callExtension format ["1:%1:saveInventory:%2:%3", PROTOCOL,
 			_inventory,
 			_uid
 		];
@@ -83,9 +85,10 @@ switch (_act) do {
 
 	case "loadInventory" : {
 		_info params ["_uid", "_unit"];
-		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:getInventory:%2", PROTOCOL, _uid])) # 1) # 0;
-		if !(isNil {_getData}) then {
-			_getData params ["_inventory"];
+		private _return = "Extdb3" callExtension format ["0:%1:getInventory:%2", PROTOCOL, _uid];
+		private _data = [_return, true] call Shadec_fnc_processExtensionReturn;
+		if !(isNil {_data}) then {
+			_data params ["_inventory"];
 
 			_unit setUnitLoadout _inventory;
 		};
@@ -93,7 +96,7 @@ switch (_act) do {
 
 	case "saveStorage" : {
 		_info params ["_uid", "_storageContent"];
-		"Extdb3" callExtension format ["0:%1:saveStorage:%2:%3", PROTOCOL,
+		"Extdb3" callExtension format ["1:%1:saveStorage:%2:%3", PROTOCOL,
 			_storageContent,
 			_uid
 		];
@@ -101,9 +104,10 @@ switch (_act) do {
 
 	case "loadStorage" : {
 		_info params ["_uid", "_player"];
-		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:getStorage:%2", PROTOCOL, _uid])) # 1) # 0;
-		if !(isNil {_getData}) then {
-			_getData params ["_storageContent"];
+		private _return = "Extdb3" callExtension format ["0:%1:getStorage:%2", PROTOCOL, _uid];
+		private _data = [_return, true] call Shadec_fnc_processExtensionReturn;
+		if !(isNil {_data}) then {
+			_data params ["_storageContent"];
 
 			private _order = [_uid] call Shadec_fnc_getOrdersServer;
 
@@ -114,7 +118,7 @@ switch (_act) do {
 
 	case "erasePurchaseOrder" : {
 		_info params ["_uid"];
-		"Extdb3" callExtension format ["0:%1:erasePurchaseOrders:%2", PROTOCOL,
+		"Extdb3" callExtension format ["1:%1:erasePurchaseOrders:%2", PROTOCOL,
 			_uid
 		];
 		// diag_log format ["PurchaseOrder was erased. UID:%1", _info # 0];
@@ -129,32 +133,25 @@ switch (_act) do {
 		];
 	};
 
-	case "saveModlist" : {
-		_info params ["_uid", "_modlist"];
-		"Extdb3" callExtension format ["0:%1:saveModlist:%2:%3", PROTOCOL,
-			_modlist,
-			_uid
-		];
-		diag_log format ["modlist was saved. UID:%1 | MODLIST: %2", _info # 0, _info # 1];
-	};
-
 	case "getGarageVehicles" : {
-		_garageVehiclesData = (call compile ("Extdb3" callExtension format ["0:%1:getGarageVehicles", PROTOCOL])) # 1;
+		private _garageVehiclesReturn = "Extdb3" callExtension format ["0:%1:getGarageVehicles", PROTOCOL];
+		private _garageVehiclesData = [_garageVehiclesReturn] call Shadec_fnc_processExtensionReturn;
+		diag_log format ["fnc_call_db | getGarageVehicles: %1", _garageVehiclesData];
 		if !(isNil {_garageVehiclesData}) then {
-
 			// Another call for all loadouts
-			_loadoutsData = (call compile ("Extdb3" callExtension format ["0:%1:getVehiclesLoadouts", PROTOCOL])) # 1;
-			if !(isNil {_loadoutsData}) then {
-
+			private _vehiclesLoadoutsReturn = "Extdb3" callExtension format ["0:%1:getVehiclesLoadouts", PROTOCOL];
+			private _vehiclesLoadoutsData = [_vehiclesLoadoutsReturn] call Shadec_fnc_processExtensionReturn;
+			diag_log format ["fnc_call_db | _vehiclesLoadoutsData: %1", _vehiclesLoadoutsData];
+			if !(isNil {_vehiclesLoadoutsData}) then {
 				{
 					private _tablename = _x # 1;
-
-					private _index = _loadoutsData findIf {(_x # 1) isEqualTo _tablename};
-					if (_index > 0) then {
-						_x pushBack ((_loadoutsData # _index) select [2, 2]);
+					private _loadouts = _vehiclesLoadoutsData select {(_x # 1) isEqualTo _tablename};
+					if (_loadouts isNotEqualTo []) then {
+						_x pushBack (_loadouts apply {_x select [2, 2]});
+						diag_log format ["fnc_call_db | _x: %1", _x];
 					};
 				} forEach _garageVehiclesData;
-				missionNamespace setVariable ["SAA_vehiclesLoadouts", _loadoutsData, true];
+				missionNamespace setVariable ["SAA_vehiclesLoadouts", _vehiclesLoadoutsData, true];
 			};
 
 			missionNamespace setVariable ["SAA_garageVehicles", _garageVehiclesData, true];
@@ -183,9 +180,10 @@ switch (_act) do {
 
 	case "getRespawnInventory" : {
 		_info params ["_uid", "_unit"];
-		_getData = ((call compile ("Extdb3" callExtension format ["0:%1:getRespawnInventory:%2", PROTOCOL, _uid])) # 1) # 0;
-		if !(isNil {_getData}) then {
-			_getData params ["_inventory"];
+		private _return = "Extdb3" callExtension format ["0:%1:getRespawnInventory:%2", PROTOCOL, _uid];
+		private _data = [_return, true] call Shadec_fnc_processExtensionReturn;
+		if !(isNil {_data}) then {
+			_data params ["_inventory"];
 
 			_unit setUnitLoadout _inventory;
 		};

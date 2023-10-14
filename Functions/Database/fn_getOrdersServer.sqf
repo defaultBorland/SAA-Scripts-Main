@@ -1,5 +1,4 @@
 // Server Exec Only
-
 if (!isDedicated) exitWith {diag_log format["fnc_getOrdersServer | ERROR: Non-server execution is prohibited"]};
 
 params["_uid"];

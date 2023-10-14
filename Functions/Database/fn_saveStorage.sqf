@@ -1,7 +1,5 @@
 params["_uid"];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 if (_uid in (missionNamespace getVariable "ZeusArray")) exitWith {}; // Player is Zeus
 if !(missionNamespace getVariable (format["loadoutLoaded_%1", _uid])) exitWith {}; // Loadout not properly loaded in case of crash or something
 if (((missionNamespace getVariable (format["%1_DATA", _uid])) # 0) isEqualTo "GUEST") exitWith {}; // Player is Guest with static loadout

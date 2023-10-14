@@ -1,7 +1,5 @@
 params ["_unit"];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 // Needs to be on client side bc of sync issues
 private _inventory = getUnitLoadout _unit;
 

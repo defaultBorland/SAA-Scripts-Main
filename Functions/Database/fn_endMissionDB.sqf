@@ -1,8 +1,6 @@
 //
 params [""];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 {
 	private _missionID = missionNamespace getVariable "MissionID";
 	if (isNil {_missionID}) exitWith {};

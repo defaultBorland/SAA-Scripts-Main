@@ -1,7 +1,7 @@
 // FNC EXEC LOCALLY
 params [];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+if !(hasInterface) exitWith {diag_log "fnc_saveModlist | Player only local function"};
 
 private _modlist = [] call Shadec_fnc_getModList;
 

@@ -1,7 +1,5 @@
 params ["_uid"];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 [[_uid], {
 	params ["_uid"];
 

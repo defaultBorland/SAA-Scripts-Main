@@ -1,7 +1,5 @@
 params ["_unit"];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 private _uid = getPlayerUID _unit;
 
 if (_unit getVariable ["SAA_isZeus", false]) exitWith {diag_log format ["fnc_savePlayer | This is Zeus, abort saving."]; false};

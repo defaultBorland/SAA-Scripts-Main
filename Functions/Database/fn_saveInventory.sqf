@@ -1,8 +1,6 @@
 //local exec only
 params ["_unit", "_uid"];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 if (_unit getVariable ["SAA_isZeus", false]) exitWith {diag_log "This is Zeus, abort saving."; false};
 if !(missionNamespace getVariable (format["loadoutLoaded_%1", _uid])) exitWith {};
 if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {};

@@ -1,7 +1,5 @@
 params ["_unit"];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 [[_unit], {
 	params ["_unit"];
 

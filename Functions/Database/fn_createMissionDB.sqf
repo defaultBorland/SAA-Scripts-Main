@@ -1,8 +1,6 @@
 //
 params [""];
 
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
-
 {
 	systemTime params ["_year", "_month", "_day", "_hours", "_minutes"];
 

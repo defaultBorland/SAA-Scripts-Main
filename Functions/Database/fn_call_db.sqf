@@ -5,6 +5,8 @@ params ["_act", "_info"];
 switch (_act) do {
 
 	case "saveAll" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+
 		_info params ["_name", "_inventory", "_storage", "_uid"];
 		"Extdb3" callExtension format ["1:%1:savePlayer:%2:%3:%4:%5", PROTOCOL,
 			str _name,
@@ -77,6 +79,8 @@ switch (_act) do {
 	};
 
 	case "saveInventory" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+
 		_info params ["_uid", "_inventory"];
 		"Extdb3" callExtension format ["1:%1:saveInventory:%2:%3", PROTOCOL,
 			_inventory,
@@ -96,6 +100,8 @@ switch (_act) do {
 	};
 
 	case "saveStorage" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid", "_storageContent"];
 		"Extdb3" callExtension format ["1:%1:saveStorage:%2:%3", PROTOCOL,
 			_storageContent,
@@ -118,6 +124,8 @@ switch (_act) do {
 	};
 
 	case "erasePurchaseOrder" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid"];
 		"Extdb3" callExtension format ["1:%1:erasePurchaseOrders:%2", PROTOCOL,
 			_uid
@@ -126,6 +134,8 @@ switch (_act) do {
 	};
 
 	case "changeClasses" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid", "_pclass", "_sClass"];
 		"Extdb3" callExtension format ["0:%1:changeClasses:%2:%3:%4", PROTOCOL,
 			_pclass,
@@ -160,21 +170,29 @@ switch (_act) do {
 	};
 
 	case "createMission" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_missionID", "_map"];
 		"Extdb3" callExtension format ["0:%1:createMission:%2:%3", PROTOCOL, _missionID, _map];
 	};
 
 	case "endMission" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_missionID", "_zeuses", "_cmds"];
 		"Extdb3" callExtension format ["0:%1:endMission:%2:%3:%4", PROTOCOL, _zeuses, _cmds, _missionID];
 	};
 
 	case "createDeadRecord" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid", "_name", "_inventory"];
 		"Extdb3" callExtension format ["0:%1:createDeadRecord:%2:%3:%4", PROTOCOL, _uid, _name, _inventory];
 	};
 
 	case "updateDeadRecord" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid"];
 		"Extdb3" callExtension format ["0:%1:updateDeadRecord:%2", PROTOCOL, _uid];
 	};
@@ -191,11 +209,15 @@ switch (_act) do {
 	};
 
 	case "createConnectionRecord" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid", "_name", "_mission"];
 		"Extdb3" callExtension format ["0:%1:createConnectionRecord:%2:%3:%4", PROTOCOL, _uid, _name, _mission];
 	};
 
 	case "updateConnectionRecord" : {
+		if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+		
 		_info params ["_uid", "_mission"];
 		"Extdb3" callExtension format ["0:%1:updateConnectionRecord:%2:%3", PROTOCOL, _uid, _mission];
 	};

@@ -16,3 +16,4 @@ params["_vehicle"];
 			_vehicle setFuel ((random [18, 33, 65]) / 100);
 		};
 	};
+};

@@ -60,10 +60,14 @@ _prefix = _prefixMain + "Achilles\";
 ];
 
 // Fuel
-_prefix = _prefixMain + "Fuel\";
+_prefix = _prefixMain + "FuelRearmCargo\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"spawnCanister",
-	"setStationsFuel"
+	"setStationsFuel",
+	"setCargoSpace",
+	"setObjectCargoSize",
+	"setObjectRearm"
+	//"setObjectRearmSpecificVehicle"
 ];
 
 // Fortify

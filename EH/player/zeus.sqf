@@ -10,6 +10,7 @@ _EH_ObjectPlaced = _zeusLogic addEventHandler ["CuratorObjectPlaced", {
 	params ["_curator", "_entity"];
 
 	if (_entity isKindOf "LandVehicle" || _entity isKindOf "Air" || _entity isKindOf "Ship") then {
+		_entity setVariable ["ace_rearm_scriptedLoadout", true, true];
 		if (player getVariable ["SAA_TransferAI_Toggled", true]) then {
 			[_entity] call Shadec_fnc_transferVehicleOwnership;
 		};

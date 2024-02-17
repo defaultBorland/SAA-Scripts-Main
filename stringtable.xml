@@ -2199,6 +2199,20 @@
             
             </Container>
 
+            <Container name = "Lock Server">
+        
+                <Key ID="STR_SAA_ZEUS_LOCK_SERVER_ACTIONNAME"> 
+                    <Original>Lock Server</Original> 
+                    <Russian>Закрыть сервер</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_UNLOCK_SERVER_ACTIONNAME"> 
+                    <Original>Unlock Server</Original> 
+                    <Russian>Открыть сервер</Russian> 
+                </Key>
+            
+            </Container>
+
         </Container> 
 
     </Container>
@@ -2342,7 +2356,15 @@
             <Russian>Исправление лодаута было применено</Russian> 
         </Key>
 
+        <Key ID="STR_SAA_MESSAGE_SERVER_LOCKED"> 
+            <Original>Server Locked</Original> 
+            <Russian>Сервер закрыт</Russian> 
+        </Key>
 
+        <Key ID="STR_SAA_MESSAGE_SERVER_UNLOCKED"> 
+            <Original>Server Unlocked</Original> 
+            <Russian>Сервер открыт</Russian> 
+        </Key>
 
     </Container>
 

@@ -5,10 +5,8 @@ if (_numComs < 1) exitWith {};
 [format["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_PLAYER_INIT_COMMRAND", _initiatorName]] remoteExec ["systemChat", -2];
 
 private _potentialComs = ([side player] call Shadec_fnc_getPlayers) select {(_x getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT"]};
-[[_potentialComs apply {name _x}],{systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_POTENTIAL_COMMANDERS", (_this # 0) joinString ", "]}] remoteExec ["call", -2];
 
-_potentialComs = _potentialComs select {_x getVariable ["SAA_isPotentialCommander", true]};
-private _comsStats = ["getCommandingStats", [_potentialComs apply {getPlayerUID _x}]] call Shadec_fnc_call_db;
+private _comsStats = [_potentialComs apply {getPlayerUID _x}] call Shadec_db_server_fnc_getCommandingStats;
 private _weights = [];
 private _players = [];
 private _max = selectMax (_comsStats apply {_x # 1});
@@ -26,6 +24,18 @@ private _min = selectMin (_comsStats apply {_x # 1});
 } forEach _potentialComs;
 
 _weights = _weights apply {_x * 2};
+
+private _weightsTotal = [_weights] call Shadec_fnc_sumArray;
+
+private _comsWithChances = [];
+{_comsWithChances pushBack format["%1 (%2%3)", name _x, round((_weights # _forEachIndex) / _weightsTotal * 100), "%"]} forEach _players;
+
+[[_comsWithChances], {systemChat format ["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_POTENTIAL_COMMANDERS", (_this # 0) joinString ", "]}] remoteExec ["call", -2];
+
+{
+	if !(_x getVariable ["SAA_isPotentialCommander", true]) then {_weights deleteAt _forEachIndex};
+} forEach _players;
+_players = _players select {_x getVariable ["SAA_isPotentialCommander", true]};
 
 private _selectedComs = []; 
 for "_i" from 1 to _numComs do {

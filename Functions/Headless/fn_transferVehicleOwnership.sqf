@@ -11,8 +11,8 @@ params ["_vehicle"];
 
 		// If empty - do not respawn
 		if (count crew _vehicle < 1) exitWith {
-			[_vehicle] call Shadec_fnc_vehicleRandomize;
 			[[_vehicle, _newOwner], {(_this # 0) setOwner (_this # 1)}] remoteExec ["call", 2];
+			[_vehicle] call Shadec_fnc_vehicleRandomize;
 		};
 
 		// Respawn on server side

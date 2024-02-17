@@ -16,7 +16,7 @@ if (_clearInventory) then {
 };
 
 private _camo = [_uniformCamo, "None"] select (_uniformCamo isEqualTo "All");
-private _uniform = ["getUniform", [_camo, "All"]] call Shadec_fnc_call_db;
+private _uniform = [_camo, "All"] call Shadec_db_server_fnc_getUniform;
 _uniform = _uniform apply {_x # 0};
 private _items = ["TFAR_anprc152", "ItemMap"];
 

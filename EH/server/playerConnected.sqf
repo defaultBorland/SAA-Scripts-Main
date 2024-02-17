@@ -6,7 +6,7 @@ _EH_PlayerConnected = addMissionEventHandler ["PlayerConnected", {
 
     // Create connection record if not HC
     if (!("headlessclient" in _name)) then {
-		[_uid, _name] call Shadec_fnc_createConnectionRecord;
+		[_uid, _name] call Shadec_db_server_fnc_createConnectionRecord;
 	};
 
 }];

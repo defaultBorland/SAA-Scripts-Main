@@ -6,12 +6,12 @@ params ["_endType"];
 	[[_forEachIndex], {	
 		params["_forEachI"];
 
-		[getPlayerUID player] call Shadec_fnc_updateConnectionRecord;
+		[getPlayerUID player] call Shadec_db_client_fnc_updateConnectionRecord;
 
 		if (player getVariable ["SAA_isZeus", false]) exitWith {};
 		
 		if (dialog) then {closeDialog 602; true};
-		[player] call Shadec_fnc_savePlayer;
+		[player] call Shadec_db_client_fnc_savePlayer;
 		
 		[[_forEachI, name player],{
 			params["_index", "_name"];
@@ -21,7 +21,7 @@ params ["_endType"];
 
 } forEach (allPlayers - entities "HeadlessClient_F");
 
-[] call Shadec_fnc_endMissionDB;
+[] call Shadec_db_server_fnc_endMission;
 
 ["Mission ended.", "Info"] call Shadec_fnc_createLogServer;
 

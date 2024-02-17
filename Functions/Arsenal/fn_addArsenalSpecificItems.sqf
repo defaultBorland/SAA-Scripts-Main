@@ -15,7 +15,7 @@ params ["_box", "_camo"];
 	[[_box, _camo, _firstClass], {
 		params ["_box", "_camo", "_class"];
 
-		private _specificUniform = ["getUniform", [_camo, _class]] call Shadec_fnc_call_db;
+		private _specificUniform = [_camo, _class] call Shadec_db_server_fnc_getUniform;
 		_specificUniform = _specificUniform apply {_x # 0};
 
 		[[_box, _specificUniform], {

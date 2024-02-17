@@ -6,7 +6,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
 
-		[_unit, _uid] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
+		[_uid, getUnitLoadout _unit] spawn Shadec_db_server_fnc_saveInventory; // Shadec_fnc_savePlayer
 		[_uid] spawn Shadec_fnc_deleteStorage;
 
 		if (alive _unit) then {
@@ -34,11 +34,10 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	// No headless record
     if (!("headlessclient" in _name)) then {
 		// Update connection record
-		[_uid] call Shadec_fnc_updateConnectionRecord;
+		[_uid] call Shadec_db_server_fnc_updateConnectionRecord;
 	};
 
 	// Unlock server if no zeus or administrator present
-
 	private _zeusesAndAdmin = (missionNamespace getVariable "ZeusArray") + ["76561198066438612"];
 	private _allPlayersUIDs = allPlayers apply {getPlayerUID _x};
 

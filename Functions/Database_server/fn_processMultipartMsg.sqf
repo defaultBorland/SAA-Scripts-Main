@@ -1,4 +1,4 @@
-// Server-side exec only
+// Server-side only
 if (!isDedicated) exitWith {diag_log "fnc_processMultipartMsg | Server only function"};
 
 params ["_msgId"];

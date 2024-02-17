@@ -1,5 +1,5 @@
 // Connect to database
-[] execVM "Functions\Database\connectDB.sqf";
+[] execVM "Functions\Database_server\connectDB.sqf";
 
 // Init Zeus
 [] execVM "initZeus.sqf";
@@ -20,8 +20,8 @@ missionNamespace setVariable ["respawnTime", getNumber (missionConfigFile >> "re
 missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, true];
 
 [{
-	["getGarageVehicles", []] call Shadec_fnc_call_db;
-	[] call Shadec_fnc_createMissionDB;
+	[] call Shadec_db_server_fnc_getGarageVehicles;
+	[] call Shadec_db_server_fnc_createMission;
 }, [], 3] call CBA_fnc_waitAndExecute;
 
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
@@ -48,7 +48,7 @@ missionNamespace setVariable ["isDebug", true, true];
 		if (count _players < 1) then { continue };
 		{
 			{
-				[player] call Shadec_fnc_savePlayer;
+				[player] call Shadec_db_client_fnc_savePlayer;
 			} remoteExec ["call", _x];
 		} forEach _players;
 		["Players data saving...", "Info"] call Shadec_fnc_createLogServer;

@@ -22,6 +22,53 @@ zeusCompositionScriptLevel = 2;
 //Function library definitions
 class CfgFunctions
 {
+	class Shadec_db_client {
+		class Database_client {
+			class loadInventory {};
+			class saveInventory {};
+			class loadStorage {};
+			class saveStorage {};
+            class loadPlayer {};
+            class savePlayer {};
+			class saveModlist {};
+        };
+	};
+
+	class Shadec_db_server {
+		class Database_server {
+			class loadInventory {};
+			class saveInventory {};
+			class loadStorage {};
+			class saveStorage {};
+			class loadPlayer {};
+			class savePlayer {};
+			class saveModlist {};
+
+			class createMission {};
+			class endMission {};
+			class blacklistMod {};
+			class getBlacklistedMods {};
+			class whitelistMod {};
+			class getWhitelistedMods {};
+			class createConnectionRecord {};
+			class updateConnectionRecord {};
+			class createDeadRecord {};
+			class updateDeadRecord {};
+			class changeClasses {};
+			class getOrders {};
+			class eraseOrders {};
+			class getAvailiableItems {};
+			class getCommandingStats {};
+			class getGarageVehicles {};
+			class loadRespawnInventory {};
+			class getRespawnTime {};
+			class getUniform {};
+
+			class processExtensionReturn {};
+			class processMultipartMsg {};
+		};
+	};
+
     class Shadec {
 
 		class Arsenal {
@@ -36,31 +83,6 @@ class CfgFunctions
 			class addCapacityTooltips {};
 			class repositionArsenalButtons {};
 		};
-        class Database {
-            class call_db {};
-			class getInventory {};
-			class saveInventory {};
-			class loadStorage {};
-			class saveStorage {};
-            class loadPlayer {};
-            class savePlayer {};
-			class saveModlist {};
-			class getOrdersServer {};
-			class createMissionDB {};
-			class endMissionDB {};
-			class createDeadRecord {};
-			class updateDeadRecord {};
-			class getRespawnInventory {};
-			class createConnectionRecord {};
-			class updateConnectionRecord {};
-			class getRespawnTimeDB {};
-			class getBlacklistedMods {};
-			class getWhitelistedMods {};
-			class blacklistMod {};
-			class whitelistMod {};
-			class processMultipartMsg {};
-			class processExtensionReturn {};
-        };
 		class Fuel {
 			class setStationsFuel {};
 			class spawnCanister {};
@@ -157,6 +179,7 @@ class CfgFunctions
 			class isItemAllowed {};
 			class removeStorageRestrictedItems {};
 			class restrictStorageAccess {};
+			class getStorageInventory {};
 		};
 		class Zeus {
 			class addContextActions {};
@@ -238,6 +261,14 @@ class CfgDebriefing
 		title = "$STR_SAA_DEBRIEFING_MISSING_MAP_TITLE";
 		subtitle = "$STR_SAA_DEBRIEFING_MISSING_MAP_SUBTITLE";
 		description = "$STR_SAA_DEBRIEFING_MISSING_MAP_DESCRIPTION";
+		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+
+	class missingMapDependencies {
+		title = "$STR_SAA_DEBRIEFING_MISSING_MAP_DEPENDENCIES_TITLE";
+		subtitle = "$STR_SAA_DEBRIEFING_MISSING_MAP_DEPENDENCIES_SUBTITLE";
+		description = "$STR_SAA_DEBRIEFING_MISSING_MAP_DEPENDENCIES_DESCRIPTION";
 		picture = "\A3\UI_F\data\GUI\Cfg\Debriefing\endDefault_ca";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};

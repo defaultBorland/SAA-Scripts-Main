@@ -5,8 +5,8 @@ params ["_modlist"];
 
 // Check only client differ to server mods
 private _serverMods = missionNamespace getVariable ["SAA_ServerMods", []];
-private _whitelistedMods = ["getWhitelistedMods"] call Shadec_fnc_call_db;
-private _blacklistedMods = ["getBlacklistedMods"] call Shadec_fnc_call_db;
+private _whitelistedMods = [] call Shadec_db_server_fnc_getWhitelistedMods;
+private _blacklistedMods = [] call Shadec_db_server_fnc_getBlacklistedMods;
 
 
 // Remove server mods

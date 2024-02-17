@@ -1,6 +1,6 @@
 params ["_firstClass", "_secondClass"];
 
-private _array = ["getAvailiableItems", [_firstClass, _secondClass]] call Shadec_fnc_call_db;
+private _array = [_firstClass, _secondClass] call Shadec_db_server_fnc_getAvailiableItems;
 _array = _array apply {toLower (_x # 0)};
 private _hashmap = _array createHashMapFromArray [];
 

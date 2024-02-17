@@ -50,7 +50,7 @@ if !(player getVariable ["KIA_onExit", false]) then {
 
 
 // Loading player data from db or assign zeus (if uid in ZeusArray)
-[player] spawn Shadec_fnc_loadPlayer;
+[player] spawn Shadec_db_client_fnc_loadPlayer;
 
 // Add ACE Actions
 [] execVM "Mechanics\Root\RootActions_init.sqf";
@@ -95,7 +95,7 @@ if (player getVariable ["KIA_onExit", false]) then {player setDamage 1} else {
 };
 
 // Saving Player Modlist to db
-[] spawn Shadec_fnc_saveModlist;
+[] spawn Shadec_db_client_fnc_saveModlist;
 
 // Recieve variables from server
 ["Check"] spawn Shadec_fnc_objectJamming; 

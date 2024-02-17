@@ -691,9 +691,9 @@
                 <Russian>[SAA] Другое</Russian> 
             </Key>
         
-            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FUEL"> 
-                <Original>[SAA] Fuel</Original> 
-                <Russian>[SAA] Топливо</Russian> 
+            <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FUEL_CARGO_REARM"> 
+                <Original>[SAA] Fuel/Rearm/Cargo</Original> 
+                <Russian>[SAA] Топливо/Реарм/Груз</Russian> 
             </Key>
 
             <Key ID="STR_SAA_ZEUS_MODULES_CATEGORIES_FORTIFY"> 
@@ -2015,6 +2015,103 @@
                 <Key ID="STR_SAA_ZEUS_MODULES_MAIN_TOGGLE_GPS_ZEUSMESSAGE_SUCCESS_ENABLED"> 
                     <Original>GPS has been enabled</Original> 
                     <Russian>GPS включен</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Set Cargo Space">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SPACE_MODULENAME"> 
+                    <Original>Set Cargo Space</Original> 
+                    <Russian>Изменить размер грузового отсека</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SPACE_DIALOG_HEADER"> 
+                    <Original>Setting Cargo Space</Original> 
+                    <Russian>Изменение размера грузового отсека</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SPACE_DIALOG_SPACE_DISPLAYNAME"> 
+                    <Original>Cargo Space</Original> 
+                    <Russian>Вместимость</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SPACE_DIALOG_SPACE_TOOLTIP"> 
+                    <Original>Set Cargo Space. -1 disables cargo functionality. A value greater than 0 includes functionality for selected object.</Original> 
+                    <Russian>Вместимость грузового отсека. -1 отключает грузовой отсек. Значение больше 0 включает функционал для выбранного объекта.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SPACE_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Cargo Space Changed</Original> 
+                    <Russian>Размер грузового отсека изменён</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Set Cargo Size">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SIZE_MODULENAME"> 
+                    <Original>Set Object Cargo Size</Original> 
+                    <Russian>Изменить размер объекта в грузовом отсеке</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SIZE_DIALOG_HEADER"> 
+                    <Original>Setting Object Cargo Size</Original> 
+                    <Russian>Изменение размера объекта в грузовом отсеке</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SIZE_DIALOG_SIZE_DISPLAYNAME"> 
+                    <Original>Object Cargo Size</Original> 
+                    <Russian>Размер объекта</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SIZE_DIALOG_SPACE_TOOLTIP"> 
+                    <Original>Set Object Cargo Size. -1 disables loading into cargo functionality for selected object. A value greater than 0 includes functionality for selected object.</Original> 
+                    <Russian>Размер объекта в грузововом отсеке. -1 отключает возможность загружать объект. Значение больше 0 включает функционал для выбранного объекта.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_CARGO_SET_CARGO_SIZE_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Object Cargo Size Changed</Original> 
+                    <Russian>Размер объекта в грузовом отсеке изменён</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Set Object Rearm">
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_MODULENAME"> 
+                    <Original>Set Rearm Source [WIP]</Original> 
+                    <Russian>Настроить источник аммуниции [WIP]</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_DIALOG_HEADER"> 
+                    <Original>Setting Rearm Source</Original> 
+                    <Russian>Настройка источника аммуниции</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_DIALOG_SIZE_DISPLAYNAME"> 
+                    <Original>Supplies Amount</Original> 
+                    <Russian>Количество припасов</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_DIALOG_SPACE_TOOLTIP"> 
+                    <Original>Set source of ammunition for VEHICLES ONLY at the selected object. If the object is already a source, only the amount of supplies will be changed. -1 - disable rearming from this source.For the rearm, an amount of points spent is equal to the sum of the calibers of all the guns of this unit, where the ammunition is not full.</Original> 
+                    <Russian>Установка источника боеприпасов ТОЛЬКО ДЛЯ ТЕХНИКИ на указанный объект. Если объект уже является источником - будет изменено только количество припасов. -1 - отключить возможность реарма из данного источника. За перевооружение техники тратится количество очков, равное сумме калибров всех орудий этой единицы, где боезапас не полный.</Russian> 
+                </Key>
+            
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_DISABLE_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>Rearm from selected object disabled</Original> 
+                    <Russian>Перевооружение из выбранного источника отключено</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>The object is set as Rearm</Original> 
+                    <Russian>Объект назначен источником припасов</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_REARM_SET_OBJECT_REARM_SUPPLIES_ZEUSMESSAGE_SUCCESS"> 
+                    <Original>The amount of supplies in the source has been changed</Original> 
+                    <Russian>Количество припасов в источнике изменено</Russian> 
                 </Key>
             
             </Container>

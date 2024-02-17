@@ -1,4 +1,4 @@
-[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_FUEL", localize "STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_MODULENAME",
+[localize "STR_SAA_ZEUS_MODULES_CATEGORIES_FUEL_CARGO_REARM", localize "STR_SAA_ZEUS_MODULES_FUEL_SPAWN_CANISTER_MODULENAME",
 {
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];

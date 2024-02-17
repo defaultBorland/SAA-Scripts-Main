@@ -72,3 +72,14 @@ missionNamespace setVariable ["isDebug", true, true];
 		} forEach _serverGroups;
 	};
 };
+
+// Monitoring Server And Headlesses FPS, send info to clients
+[] spawn {
+	while {true} do {
+		sleep 3;
+		if !(missionNamespace getVariable ["SAA_ServerFpsMonitoring", true]) exitWith {};
+
+		private _serverHcsFpsInfo = [true, true] call Shadec_fnc_getHeadlessInfo;
+		["SAA_ServerFpsMonitoring", [_serverHcsFpsInfo]] call CBA_fnc_globalEvent;
+	};
+};

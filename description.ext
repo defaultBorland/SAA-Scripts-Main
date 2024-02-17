@@ -102,6 +102,7 @@ class CfgFunctions
 			class sumArray {};
 		};
 		class Headless {
+			class getHeadlessInfo {};
 			class determineBestOwner {};
 			class transferGroupOwnership {};
 			class transferVehicleOwnership {};
@@ -180,6 +181,7 @@ class CfgFunctions
 		class Mechanics {
 			class getPlayersByGroupState {file = "Mechanics\TeamManagement\fn_getPlayersByGroupState.sqf";};
 			class showGarageVehicles {file = "Mechanics\ShowGarageVehicles\fn_showGarageVehicles.sqf";};
+			class showServerFps {file = "Mechanics\Zeus\ShowServerFps\fn_showServerFps.sqf";};
 		};
 		class ZeusContextMenu {
 			class spawnVehicle {file = "ZeusContextMenu\Garage\fn_spawnVehicle.sqf";};

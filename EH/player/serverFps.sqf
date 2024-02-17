@@ -13,7 +13,16 @@ with uiNamespace do {
 			private _text = if (_fps > 24) then {"OK"} else {"BAD"};
 
 			[format["> Server: FPS - %1 (%2)", _fps, _text]] remoteExec ["systemChat", remoteExecutedOwner];
-			["Server FPS: " + str _fps] call Shadec_fnc_createLogServer;
+
+			private _hcs = [] call Shadec_fnc_getHeadlessInfo;
+			
+			private _text = _hcs apply {
+				format["%1 U:%2 - FPS: %3", 
+				_x # 0, 
+				[_x # 1, 3, " "] call Shadec_fnc_leftPad, 
+				[_x # 2, 2, " "] call Shadec_fnc_leftPad]
+			} joinString " | ";
+			[_text] call Shadec_fnc_createLogServer;
 		} remoteExec ["call", 2];
 	}];
 };

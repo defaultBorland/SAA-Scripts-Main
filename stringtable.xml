@@ -2166,6 +2166,20 @@
             
             </Container>
 
+            <Container name = "Show Fps Server">
+        
+                <Key ID="STR_SAA_ZEUS_SHOW_SERVER_FPS_ENABLE_ACTIONNAME"> 
+                    <Original>Enable Show Server FPS</Original> 
+                    <Russian>Включить показ фпс сервера</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_SHOW_SERVER_FPS_DISABLE_ACTIONNAME"> 
+                    <Original>Disable Show Server FPS</Original> 
+                    <Russian>Выключить показ фпс сервера</Russian> 
+                </Key>
+            
+            </Container>
+
         </Container> 
 
     </Container>

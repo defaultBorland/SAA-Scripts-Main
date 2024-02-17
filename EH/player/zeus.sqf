@@ -72,25 +72,8 @@ _EH_CuratorRegistered = _zeusLogic addEventHandler ["CuratorObjectRegistered", {
 [] execVM "Mechanics\Zeus\TransferAIToggle\TransferAI_On.sqf";
 [] execVM "Mechanics\Zeus\TransferAIToggle\TransferAI_Off.sqf";
 
-//
-with uiNamespace do {
-	disableSerialization;
-	ctrlLock = findDisplay 12 ctrlCreate ["RscButton", -1];
-	ctrlLock ctrlSetPosition [safeZoneX + safeZoneW - 0.2, safeZoneY + 0.1, 0.15, 0.05];
-	ctrlLock ctrlCommit 0;
-	ctrlLock ctrlSetText "LOCK SERVER";
-	ctrlLock ctrlAddEventHandler ["ButtonDown",	{	
-		params ["_ctrl"];
-		if (ctrlText _ctrl isEqualTo "LOCK SERVER") then {
-			{"f5znFms2" serverCommand "#lock"} remoteExec ["call", 2];
-			_ctrl ctrlSetText "UNLOCK SERVER";
-			["> Server: Server locked."] remoteExec ["systemChat"];
-		} else {
-			{"f5znFms2" serverCommand "#unlock"} remoteExec ["call", 2];
-			_ctrl ctrlSetText "LOCK SERVER";
-			["> Server: Server unlocked."] remoteExec ["systemChat"];
-		};
-	}];
-};
+[] execVM "Mechanics\Zeus\ShowServerFps\ShowServerFps_On.sqf";
+[] execVM "Mechanics\Zeus\ShowServerFps\ShowServerFps_Off.sqf";
+
 
 player setVariable ["SAA_zeus_init_complete", true];

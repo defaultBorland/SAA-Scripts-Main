@@ -806,13 +806,32 @@
             <Container name = "Remove Arsenal Restrictions">
         
                 <Key ID="STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_MODULENAME"> 
-                    <Original>Remove Arsenal Restrictions</Original> 
-                    <Russian>Снять ограничения арсенала</Russian> 
+                    <Original>Arsenal Restrictions</Original> 
+                    <Russian>Ограничение арсенала</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_TOOLTIP"> 
+                    <Original>Attention! The removal of restrictions on the arsenal is allowed only in agreement with the project administration.</Original> 
+                    <Russian>Внимание! Снятие ограничений на арсенал допускается только по согласованию с администрацией проекта.</Russian> 
                 </Key>
 
                 <Key ID="STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_ZEUSMESSAGE_SUCCESS"> 
                     <Original>Arsenal restriction settings changed</Original> 
                     <Russian>Настройки ограничения арсенала изменены</Russian> 
+                </Key>
+            
+            </Container>
+
+            <Container name = "Remove Arsenal Restrictions Global">
+        
+                <Key ID="STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_GLOBAL_MODULENAME"> 
+                    <Original>Arsenal Restrictions Global</Original> 
+                    <Russian>Ограничение арсенала (Глобально)</Russian> 
+                </Key>
+
+                <Key ID="STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_GLOBAL_DIALOG"> 
+                    <Original>Restrictions</Original> 
+                    <Russian>Ограничения</Russian> 
                 </Key>
             
             </Container>

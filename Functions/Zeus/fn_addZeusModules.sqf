@@ -16,7 +16,8 @@ _prefix = _prefixMain + "Arsenal\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"addShadecArsenal",
 	"removeShadecArsenal",
-	"changeArsenalRestrictions"
+	"changeArsenalRestrictions",
+	"changeArsenalRestrictionsGlobal"
 ];
 
 // Radio

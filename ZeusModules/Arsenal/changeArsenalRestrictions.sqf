@@ -14,8 +14,8 @@
 	private _checkboxes = _players apply {
 		[
 			"CHECKBOX",
-			name _x,
-			_x getVariable ["SAA_isArsenalUnrestricted", false],
+			[name _x, localize "STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_TOOLTIP"],
+			!(_x getVariable ["SAA_isArsenalUnrestricted", false]),
 			true
 		]
 	};
@@ -27,7 +27,7 @@
 			_args params ["_players"];
 
 			{
-				_x setVariable ["SAA_isArsenalUnrestricted", _dialogResult # _forEachIndex, true];
+				_x setVariable ["SAA_isArsenalUnrestricted", !(_dialogResult # _forEachIndex), true];
 			} forEach _players;
 
 			[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_ZEUSMESSAGE_SUCCESS", 3] call BIS_fnc_curatorHint;

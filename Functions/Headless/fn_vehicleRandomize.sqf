@@ -1,7 +1,8 @@
 params["_vehicle"];
 
-[{
-	params ["_vehicle"];
+[_vehicle] spawn {
+	params["_vehicle"];
+
 	sleep 0.1;
 	[_vehicle, true, true, true, true] call Shadec_fnc_clearContainerInventory;
 
@@ -15,4 +16,3 @@ params["_vehicle"];
 			_vehicle setFuel ((random [18, 33, 65]) / 100);
 		};
 	};
-}, [_vehicle], 0.4] call CBA_fnc_waitAndExecute;

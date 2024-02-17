@@ -17,6 +17,7 @@ missionNamespace setVariable ["tf_sendVar", 1, true];
 missionNamespace setVariable ["SAA_ServerMods", [] call Shadec_fnc_getModList, true];
 missionNamespace setVariable ["SAA_SaaBoxAddons", [] call Shadec_fnc_getShadecBoxAddons, true];
 missionNamespace setVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay"), true];
+missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, true];
 
 [{
 	["getGarageVehicles", []] call Shadec_fnc_call_db;

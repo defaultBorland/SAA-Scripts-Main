@@ -22,7 +22,7 @@ private _classname = toLower _passedClassname;
 if (_classname in _availiableItems) exitWith {true};
 
 //
-private _rarities = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold"];
+private _rarities = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold", "UK3CB_Cocaine_Brick"];
 if (_classname in _rarities) exitWith {true};
 
 private _itemType = ([_classname] call BIS_fnc_itemType) # 0;

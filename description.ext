@@ -98,6 +98,8 @@ class CfgFunctions
 			class getPlayer {};
 			class isStringNumberValid {};
 			class leftPad {};
+			class rightPad {};
+			class sumArray {};
 		};
 		class Headless {
 			class determineBestOwner {};

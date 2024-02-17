@@ -75,5 +75,7 @@ _EH_CuratorRegistered = _zeusLogic addEventHandler ["CuratorObjectRegistered", {
 [] execVM "Mechanics\Zeus\ShowServerFps\ShowServerFps_On.sqf";
 [] execVM "Mechanics\Zeus\ShowServerFps\ShowServerFps_Off.sqf";
 
+[] execVM "Mechanics\Zeus\LockServer\LockServer.sqf";
+[] execVM "Mechanics\Zeus\LockServer\UnlockServer.sqf";
 
 player setVariable ["SAA_zeus_init_complete", true];

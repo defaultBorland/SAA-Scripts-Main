@@ -31,6 +31,9 @@ class CfgFunctions
             class loadPlayer {};
             class savePlayer {};
 			class saveModlist {};
+			class createDeadRecord {};
+			class updateDeadRecord {};
+			class loadRespawnInventory {};
         };
 	};
 
@@ -43,6 +46,9 @@ class CfgFunctions
 			class loadPlayer {};
 			class savePlayer {};
 			class saveModlist {};
+			class createDeadRecord {};
+			class updateDeadRecord {};
+			class loadRespawnInventory {};
 
 			class createMission {};
 			class endMission {};
@@ -52,17 +58,15 @@ class CfgFunctions
 			class getWhitelistedMods {};
 			class createConnectionRecord {};
 			class updateConnectionRecord {};
-			class createDeadRecord {};
-			class updateDeadRecord {};
 			class changeClasses {};
 			class getOrders {};
 			class eraseOrders {};
 			class getAvailiableItems {};
 			class getCommandingStats {};
 			class getGarageVehicles {};
-			class loadRespawnInventory {};
 			class getRespawnTime {};
 			class getUniform {};
+			class saveRemovedRestrictedItems {};
 
 			class processExtensionReturn {};
 			class processMultipartMsg {};
@@ -114,7 +118,6 @@ class CfgFunctions
 			class getPlayers {};
 			class parseOrder {};
 			class removeInventoryRestrictedItems {};
-			class usersIDs {};
 			class objectHasInventory {};
 			class sortByRank {};
 			class getPlayer {};

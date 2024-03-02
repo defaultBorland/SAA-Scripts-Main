@@ -55,7 +55,8 @@ _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
             _container setVariable ["Take", false];
         };
 
-        [getPlayerUID player] spawn Shadec_db_client_fnc_saveStorage;
+        //[getPlayerUID player] spawn Shadec_db_client_fnc_saveStorage;
+        [player, "Storage exit"] call Shadec_db_client_fnc_savePlayer;
     };
 }];
 

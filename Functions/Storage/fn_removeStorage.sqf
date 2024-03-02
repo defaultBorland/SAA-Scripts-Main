@@ -1,12 +1,13 @@
 params ["_object", "_showInfo"];
 
 _object setVariable ["SAA_isStorageProxy", nil, true];
-_playersIDs = ["All", "ID"] call Shadec_fnc_usersIDs;
+private _players = [] call Shadec_fnc_getPlayers;
 {
 	[[_object], {
-		[_this # 0] call Shadec_fnc_removeActionFromStorage;
+		params ["_object"];
+		[_object] call Shadec_fnc_removeActionFromStorage;
 	}] remoteExec ["call", _x];
-} forEach _playersIDs;
+} forEach _players;
 
 _object enableSimulationGlobal true;
 _object lock false;

@@ -1,5 +1,5 @@
 // Server-side only
-if (!isDedicated) exitWith {diag_log "fnc_loadPlayer | Server only function"};
+if (!isDedicated) exitWith {diag_log "fnc_getAvailiableItems | Server only function"};
 
 params ["_pClass", "_sClass"];
 

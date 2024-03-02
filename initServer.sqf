@@ -41,14 +41,15 @@ missionNamespace setVariable ["isDebug", true, true];
 
 // Timed Players Saving
 [] spawn {
+	if (missionNamespace getVariable ["isDebug", false]) exitWith {};
 	while {true} do {
 		sleep (10 * 60);
 		if !(missionNamespace getVariable ["SAA_PlayersTimedSaving", true]) exitWith {};
-		private _players = ["All", "Id"] call Shadec_fnc_usersIDs;
+		private _players = [] call Shadec_fnc_getPlayers;
 		if (count _players < 1) then { continue };
 		{
 			{
-				[player] call Shadec_db_client_fnc_savePlayer;
+				[player, "Timed"] call Shadec_db_client_fnc_savePlayer;
 			} remoteExec ["call", _x];
 		} forEach _players;
 		["Players data saving...", "Info"] call Shadec_fnc_createLogServer;

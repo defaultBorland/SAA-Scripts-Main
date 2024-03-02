@@ -3,8 +3,25 @@
 
 params ["_storageList", "_pcid", "_uid", "_purchaseOrder"];
 
-(missionNamespace getVariable [format["%1_DATA", _uid], ["PV1","Rifleman", "None"]]) params ["_rank", "_primClass", "_secClass"];
-private _boxMaxLoad = [_rank, _primClass, _secClass] call Shadec_fnc_calcStorageSize;
+private _unit = [_uid] call Shadec_fnc_getPlayer;
+
+private _rank = _unit getVariable ["SAA_Rank", "PV1"];
+private _firstClass = _unit getVariable ["SAA_PrimaryClass", "Rifleman"];
+private _secondClass = _unit getVariable ["SAA_SecondaryClass", "None"];
+
+private _boxMaxLoad = [_rank, _firstClass, _secondClass] call Shadec_fnc_calcStorageSize;
+
+// Check if storage already exists and delete it
+private _oldStorage = missionNamespace getVariable [format["pStorage_%1", _uid], objNull];
+if (!isNull _oldStorage) then {
+	[[_uid], {
+		params ["_uid"];
+		[_uid] call Shadec_db_client_fnc_saveStorage;
+	}] remoteExec ["call", _unit];
+	
+	deleteVehicle _oldStorage;
+	missionNamespace setVariable [format["pStorage_%1", _uid], nil, true];
+};
 
 private _storage = createVehicle ["B_supplyCrate_F", [0,0,0], [], 0, "CAN_COLLIDE"]; // CAN_COLLIDE || NONE
 _storage setVariable ["SAA_isPersonalStorage", true, true];

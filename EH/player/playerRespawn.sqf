@@ -26,8 +26,8 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
         sleep 2;
 
         // Reapply player loadout (In other case some items are local to player and don't save correctly on server)
-        [_unit] call Shadec_fnc_updateDeadRecord;
-        [_unit] call Shadec_fnc_getRespawnInventory;
+        [_unit] call Shadec_db_client_fnc_updateDeadRecord;
+        [_unit] call Shadec_db_client_fnc_loadRespawnInventory;
         titleFadeOut 1;
 
         // Reassign medic/engineer roles

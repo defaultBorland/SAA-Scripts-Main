@@ -34,7 +34,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		// belongs to this block bc if player reconnect being KIA - no need to save LR options (they can be not loaded)
     	call Shadec_fnc_savePlayerRadioSettings;
 
-    	[_unit] call Shadec_fnc_createDeadRecord;
+    	[_unit] call Shadec_db_client_fnc_createDeadRecord;
 
 		[] spawn {
 			// sleep 2;

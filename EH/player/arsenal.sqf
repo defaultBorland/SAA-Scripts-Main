@@ -35,8 +35,8 @@ _EH_LeftPanelFilled = ["ace_arsenal_leftPanelFilled", {
 	params ["_display", "_leftPanelIDC", "_rightPanelIDC"];
 	disableSerialization;
 
-    if (player getVariable ["SAA_isArsenalUnrestricted", false]) exitWith {};
-    if (_leftPanelIDC isEqualTo 2002) then {
+    if ((player getVariable ["SAA_isArsenalUnrestricted", false]) || (missionNamespace getVariable ["SAA_isArsenalUnrestricted", false])) exitWith {};
+	if (_leftPanelIDC isEqualTo 2002) then {
         // [_display] call ace_arsenal_fnc_buttonStats;
         [_display, false] call Shadec_fnc_toggleLeftPanel;
     } else {

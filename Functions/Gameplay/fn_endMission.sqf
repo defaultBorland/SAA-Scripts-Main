@@ -21,6 +21,10 @@ params ["_endType"];
 
 } forEach (allPlayers - entities "HeadlessClient_F");
 
+["SAA_MissionEnded", []] call CBA_fnc_serverEvent;
+
+missionNamespace setVariable ["SAA_missionEnded", true, true];
+
 [] call Shadec_db_server_fnc_endMission;
 
 ["Mission ended.", "Info"] call Shadec_fnc_createLogServer;

@@ -83,6 +83,9 @@ class CfgFunctions
 			class getAvailiableItems {};
 			class getGarageVehicles {};
 
+			class commandingStart {};
+			class commandingEnd {};
+
 		};
 	};
 

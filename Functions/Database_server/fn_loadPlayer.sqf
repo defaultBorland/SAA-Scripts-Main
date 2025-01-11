@@ -15,8 +15,8 @@ if !(isNil {_data}) then {
 
     [_unit, "Assign"] spawn Shadec_fnc_rolesAssign;
 
-    private _order = [_uid] call Shadec_db_server_fnc_getOrders;
-    [_storage, owner _unit, _uid, _order] spawn Shadec_fnc_createStorage;
+    private _orders = [_uid] call Shadec_db_server_fnc_getOrders;
+    [_storage, owner _unit, _uid, _orders] spawn Shadec_fnc_createStorage;
 
     if (_rank isEqualTo "GUEST") then {
         private _guestLoadout = missionNamespace getVariable [format["SAA_GuestLoadout_%1", getPlayerUID _unit], nil];
@@ -49,7 +49,7 @@ if !(isNil {_data}) then {
         [format["fnc_call_db | loadAll DB action inventory comparing timeout: %1", name _unit], "Warning"] call Shadec_fnc_createLogServer;
     }] call CBA_fnc_waitUntilAndExecute;
 
-    // diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _order, _uid];
+    // diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _orders, _uid];
 } else { 
     // Player is not exists in db, create a new one
     private _loadout = call Shadec_fnc_selectRandomLoadout;

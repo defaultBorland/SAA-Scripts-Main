@@ -2301,6 +2301,11 @@
             <Russian>не включена требуемая карта. Выпинываем.</Russian> 
         </Key>
 
+        <Key ID="STR_SAA_MESSAGE_WORLD_DEPENDENCY_NOT_LOADED"> 
+            <Original>required dependency for the map is not loaded. Kicking out.</Original> 
+            <Russian>не включены требуемые зависимости для карты. Выпинываем.</Russian> 
+        </Key>
+
         <Key ID="STR_SAA_MESSAGE_SAABOX_NOT_UPDATED"> 
             <Original>SAABOX mod is not up to date. Kicking out.</Original> 
             <Russian>не обновлён SAABOX. Выпинываем.</Russian> 
@@ -2436,6 +2441,25 @@
             <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_DESCRIPTION">
                 <Original>Check mission announcement for additional mods/maps. Go back to the Arma 3 Launcher and activate what is required, then come again.</Original> 
                 <Russian>Проверьте анонс миссии на наличие дополнительных модов/карт. Вернитесь в Arma 3 Launcher и активируйте всё, что необходимо, затем заходите снова.</Russian> 
+            </Key>
+
+        </Container>
+
+        <Container name = "Missing Map Dependencies">
+
+            <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_DEPENDENCIES_TITLE">
+                <Original>Missing Map Dependencies</Original> 
+                <Russian>Отсутствуют зависимости для карты</Russian> 
+            </Key>
+        
+            <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_DEPENDENCIES_SUBTITLE">
+                <Original>You have not loaded dependencies for this map</Original> 
+                <Russian>У вас не загружены требуемые зависимости для этой карты</Russian> 
+            </Key>
+
+            <Key ID="STR_SAA_DEBRIEFING_MISSING_MAP_DEPENDENCIES_DESCRIPTION">
+                <Original>Check map mod for dependencies. Go back to the Arma 3 Launcher and activate what is required, then come again.</Original> 
+                <Russian>Проверьте мод карты на наличие зависимостей. Вернитесь в Arma 3 Launcher и активируйте всё, что необходимо, затем заходите снова.</Russian> 
             </Key>
 
         </Container>

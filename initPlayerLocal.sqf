@@ -21,6 +21,12 @@ if !(call Shadec_fnc_validateShadecBoxContent) exitWith {
 	"addonsMismatch" call BIS_fnc_endMission;
 };
 
+// Check if player has maps mod dependencies (implement auto detecting all dependecies?)
+// if !(isClass (configFile >> "CfgPatches" >> "mbg_african_buildings")) exitWith {
+// 	[(name player) + " - " + localize "STR_SAA_MESSAGE_WORLD_DEPENDENCY_NOT_LOADED"] call Shadec_fnc_createLogServer;
+// 	[[name player], {systemChat format ["%1 - %2", _this # 0, localize "STR_SAA_MESSAGE_WORLD_DEPENDENCY_NOT_LOADED"]}] remoteExec ["call", -2];
+// 	"missingMapDependencies" call BIS_fnc_endMission;
+// };
 
 // Set variables
 private _uid = getPlayerUID player;

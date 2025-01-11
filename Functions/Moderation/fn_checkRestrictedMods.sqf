@@ -56,7 +56,7 @@ _modlist = _modlist - _restrictedMods;
 
 // Check suspicious keywords
 private _suspiciousKeywords = [
-	"spawn", "personal", "arsenal", "remove", "stamina", "fatigue", "casual", "scopenvti", "vision", "thermal", "sway", "recoil", "bullet casings", "double weapon", "scope with goggles", "hitmarker", "compass bearing", "range", "hud", "develop", "tool", "assist", "help", "Cheat"
+	"spawn", "personal", "arsenal", "remove", "stamina", "fatigue", "casual", "scopenvti", "vision", "thermal", "sway", "recoil", "bullet casings", "double weapon", "scope with goggles", "hitmarker", "compass bearing", "range", "hud", "develop", "tool", "assist", "help", "Cheat", "Location in One Click", "hole"
 ] apply {toLower _x};
 private _suspiciousMods = _modlist select {
 	_x params ["_name", "_workshopId", "_hash"];

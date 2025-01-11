@@ -20,8 +20,20 @@ if ((side group player) isNotEqualTo _side) exitWith {
 	_marker setMarkerAlphaLocal 0;
 };
 
-// Player does not have any navigation device and alive
-if (alive player && !([player] call Shadec_fnc_hasNavigationItem)) exitWith {
+// Player on foot and doesn't have any navigation device
+if (
+	(vehicle player) isEqualTo player
+	&& {!([player] call Shadec_fnc_hasNavigationItem)}
+) exitWith {
+	_marker setMarkerAlphaLocal 0;
+};
+
+// Player in vehicle that does not have any navigation device such as player
+if (
+	(vehicle player) isNotEqualTo player
+	&& {!([player] call Shadec_fnc_hasNavigationItem)}
+	&& {getNumber(configFile >> "CfgVehicles" >> typeOf (vehicle player) >> "enableGPS") isEqualTo 0}
+) exitWith {
 	_marker setMarkerAlphaLocal 0;
 };
 

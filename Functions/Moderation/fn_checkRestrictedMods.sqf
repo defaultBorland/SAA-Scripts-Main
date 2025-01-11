@@ -1,5 +1,5 @@
 // Server-side exec only
-if (!isDedicated) exitWith {diag_log "fnc_initPenalty | Server only function"};
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
 
 params ["_modlist"];
 

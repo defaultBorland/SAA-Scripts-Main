@@ -1,5 +1,5 @@
 // Local exec only
-if (!hasInterface) exitWith {diag_log "fnc_renderMarker | Client only local function"};
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
 
 params ["_position", "_marker", "_side"];
 

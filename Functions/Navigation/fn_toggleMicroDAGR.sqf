@@ -1,5 +1,5 @@
 // Local exec only
-if (!hasInterface) exitWith {diag_log "fnc_setGPSWorkability | Client only local function"};
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
 
 disableSerialization;
 

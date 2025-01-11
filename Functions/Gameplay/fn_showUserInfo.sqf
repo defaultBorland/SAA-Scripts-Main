@@ -1,4 +1,6 @@
 // ONLY LOCAL EXECUTE
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
+
 params ["_unit"];
 
 if (_unit getVariable ["SAA_isZeus", false]) then {

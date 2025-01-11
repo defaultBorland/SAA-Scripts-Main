@@ -1,3 +1,6 @@
+// Server-side only
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
+
 params ["_endType"];
 
 ["Mission ending started...", "Info"] call Shadec_fnc_createLogServer;

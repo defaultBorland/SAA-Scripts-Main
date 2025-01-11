@@ -1,8 +1,7 @@
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
+
 // Server-side only
 params["_unit", "_suspiciousMods", "_restrictedMods"];
-
-if (!isDedicated) exitWith {diag_log "fnc_initPenalty | Server only function"};
-
 
 //
 if (_restrictedMods isNotEqualTo []) then {

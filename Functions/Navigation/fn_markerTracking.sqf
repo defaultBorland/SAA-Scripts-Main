@@ -1,5 +1,5 @@
 // Server-side only
-if (!isDedicated) exitWith {"fnc_markerTracking | Server only function"};
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
 
 // fnc_deleteMarker = {
 // 	params ["_marker"];

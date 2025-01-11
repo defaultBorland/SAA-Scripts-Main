@@ -1,5 +1,8 @@
 // LOCAL USE ONLY
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
+
 params ["_storageProxy"];
+
 _pStorage = missionNamespace getVariable (format["pStorage_%1", getPlayerUID player]);
 _storageProxy addAction [
 	localize "STR_SAA_STORAGE_ACTION",

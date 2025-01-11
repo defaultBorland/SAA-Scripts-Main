@@ -37,7 +37,7 @@ missionNamespace setVariable [format["KIAonExit_%1", _uid], nil, true];
 
 if !(player getVariable ["KIA_onExit", false]) then {
 	// Welcome message while loadout is loading (KIA = false)
-	titleText [format["<t color='#ff0000' size='2' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2 | %3</t>", name player, localize "STR_SAA_WELCOME", "Shadec Asgardian Alliance"], "BLACK FADED", 2, false, true];
+	titleText [format["<t color='#ff0000' size='2' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2 | %3</t>", name player, localize "STR_SAA_WELCOME", "Shadec Asgardian Alliance" + (["", " [DEBUG]"] select (missionNamespace getVariable ["isDebug", false]))], "BLACK FADED", 2, false, true];
 	playMusic ["EventTrack02a_F_EPA", 3];
 	sleep 3;
 } else {

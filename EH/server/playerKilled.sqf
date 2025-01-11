@@ -6,7 +6,7 @@
 
 	// If player was a Zeus - instant respawn
 	if (_unit getVariable ["SAA_isZeus", false]) exitWith {
-		{setPlayerRespawnTime 0} remoteExec ["call", _unit];
+		{setPlayerRespawnTime 0; ["SAA_PlayerDeath", 1, false] call ace_common_fnc_setHearingCapability} remoteExec ["call", _unit];
 	};
 
 	// Adjust respawn time

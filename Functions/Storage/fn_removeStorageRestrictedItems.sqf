@@ -1,7 +1,10 @@
 //
 params ["_arrays", "_uid"];
 _arrays params ["_weapons", "_magazines", "_items"]; 
-(missionNamespace getVariable [format["%1_DATA", _uid], ["PV1", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
+
+private _player = [_uid] call Shadec_fnc_getPlayer;
+private _firstClass = _player getVariable ["SAA_PrimaryClass", "Rifleman"];
+private _secondClass = _player getVariable ["SAA_SecondaryClass", "None"];
 
 private _availiableEquipment = missionNamespace getVariable [
 	format["SAA_availiableItems_%1_%2", _firstClass, _secondClass], 
@@ -23,7 +26,7 @@ if !(_allRemoved isEqualTo []) then {
 	_allRemoved append (missionNamespace getVariable [format["removedItems_%1", _uid], []]);
 	missionNamespace setVariable [format["removedItems_%1", _uid], _allRemoved];
 
-	private _id = owner ([_uid] call Shadec_fnc_getPlayer);
+	private _id = owner _player;
 
 	removedItems = _allRemoved;
 	_id publicVariableClient "removedItems";

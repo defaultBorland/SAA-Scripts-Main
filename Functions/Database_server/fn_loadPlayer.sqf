@@ -11,7 +11,6 @@ if !(isNil {_data}) then {
     _unit setVariable ["SAA_Rank", _rank, true];
     _unit setVariable ["SAA_PrimaryClass", _pclass, true];
     _unit setVariable ["SAA_SecondaryClass", _sclass, true];
-    missionNamespace setVariable [format["%1_DATA", _uid], [_rank, _pclass, _sclass], true];
 
     [_unit, "Assign"] spawn Shadec_fnc_rolesAssign;
 
@@ -19,6 +18,7 @@ if !(isNil {_data}) then {
     [_storage, owner _unit, _uid, _orders] spawn Shadec_fnc_createStorage;
 
     if (_rank isEqualTo "GUEST") then {
+        missionNamespace setVariable [format["SAA_isGuest_%1", _uid], true, true];
         private _guestLoadout = missionNamespace getVariable [format["SAA_GuestLoadout_%1", getPlayerUID _unit], nil];
         if (!isNil{_guestLoadout}) then {_inventory = _guestLoadout};
     };

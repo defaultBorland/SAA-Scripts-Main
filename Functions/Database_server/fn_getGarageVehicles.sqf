@@ -1,5 +1,5 @@
 // Server-side only
-if (!isDedicated) exitWith {diag_log "fnc_loadPlayer | Server only function"};
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
 
 private _garageVehiclesReturn = "Extdb3" callExtension format ["0:%1:getGarageVehicles", PROTOCOL];
 private _garageVehiclesData = [_garageVehiclesReturn] call Shadec_db_server_fnc_processExtensionReturn;

@@ -1,5 +1,5 @@
 // Client-side only
-if (!hasInterface) exitWith {diag_log "fnc_saveModlist | Local only function"};
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
 
 private _modlist = [] call Shadec_fnc_getModList;
 

@@ -1,6 +1,6 @@
 // Server-side only
-if (!isDedicated) exitWith {diag_log "fnc_endMission | Server only function"};
-if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
+if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
 
 private _missionID = missionNamespace getVariable "MissionID";
 if (isNil {_missionID}) exitWith {};

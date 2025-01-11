@@ -1,3 +1,6 @@
+// Server-side only
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
+
 "Extdb3" callExtension "9:RESET";
 PROTOCOL = ceil random 9999;
 DataBase = "dbsaa";

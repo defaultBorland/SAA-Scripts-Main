@@ -39,6 +39,12 @@ missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, tru
 missionNamespace setVariable ["isDebug", true, true];
 ["Warning! Debug Session Enabled. No saving!", "Warning"] call Shadec_fnc_createLogServer;
 
+// Special mission setup
+// missionNamespace setVariable ["SAA_isMissionSpecial", true, true];
+// missionNamespace setVariable ["SAA_missionSpecial_loadStorage", true, true];
+// missionNamespace setVariable ["SAA_missionSpecial_processOrders", false, true];
+// missionNamespace setVariable ["SAA_missionSpecial_clearTable", true, true];
+
 // Timed Players Saving
 [] spawn {
 	if (missionNamespace getVariable ["isDebug", false]) exitWith {false};

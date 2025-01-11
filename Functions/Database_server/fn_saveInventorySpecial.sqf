@@ -4,11 +4,7 @@ if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
 
 params ["_uid", "_inventory"];
 
-if (missionNamespace getVariable ["SAA_isMissionSpecial", false]) exitWith {
-    _this call Shadec_db_server_fnc_saveInventorySpecial;
-};
-
-"Extdb3" callExtension format ["1:%1:saveInventory:%2:%3", PROTOCOL,
+"Extdb3" callExtension format ["1:%1:saveInventorySpecial:%2:%3", PROTOCOL,
     _inventory,
     _uid
 ];

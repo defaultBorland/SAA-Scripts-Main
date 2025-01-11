@@ -4,6 +4,10 @@
 	// Get all the passed parameters
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
+	if !(missionNamespace getVariable ["SAA_isMissionSpecial", false]) exitWith {
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_ARSENAL_RESTRICTIONS_CHANGES_PROHIBITED"] call bis_fnc_showCuratorFeedbackMessage;
+	};
+
 	[localize "STR_SAA_ZEUS_MODULES_ARSENAL_REMOVE_ARSENAL_RESTRICTIONS_GLOBAL_MODULENAME", 
 		[
 				["CHECKBOX", 

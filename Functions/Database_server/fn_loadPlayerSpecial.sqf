@@ -3,11 +3,7 @@ if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_
 
 params ["_uid", "_unit"];
 
-if (missionNamespace getVariable ["SAA_isMissionSpecial", false]) exitWith {
-   _this call Shadec_db_server_fnc_loadPlayerSpecial;
-};
-
-private _return = "Extdb3" callExtension format ["0:%1:loadPlayer:%2", PROTOCOL, _uid];
+private _return = "Extdb3" callExtension format ["0:%1:loadPlayerSpecial:%2", PROTOCOL, _uid];
 private _data = [_return, true] call Shadec_db_server_fnc_processExtensionReturn;
 if !(isNil {_data}) then {
     _data params ["_rank", "_pclass", "_sclass", "_inventory", "_storage"];
@@ -17,9 +13,11 @@ if !(isNil {_data}) then {
     _unit setVariable ["SAA_SecondaryClass", _sclass, true];
 
     [_unit, "Assign"] spawn Shadec_fnc_rolesAssign;
-
-    private _orders = [_uid] call Shadec_db_server_fnc_getOrders;
-    [_storage, owner _unit, _uid, _orders] spawn Shadec_fnc_createStorage;
+    
+    private _orders = [[], [_uid] call Shadec_db_server_fnc_getOrders] select (missionNamespace getVariable ["SAA_missionSpecial_processOrders", false]);
+    //if (missionNamespace getVariable ["SAA_missionSpecial_loadStorage", false]) then {
+        [_storage, owner _unit, _uid, _orders] spawn Shadec_fnc_createStorage;
+    //};
 
     if (_rank isEqualTo "GUEST") then {
         missionNamespace setVariable [format["SAA_isGuest_%1", _uid], true, true];
@@ -31,7 +29,6 @@ if !(isNil {_data}) then {
     _unit setVariable ["SAA_loadLoadout", _inventory, true];
     _unit setUnitLoadout _inventory;
 
-    // try to achieve restricted items removing...
     [{
         // Condition
         params ["_unit", "_inventory"];
@@ -39,9 +36,12 @@ if !(isNil {_data}) then {
     }, {
         // Statement
         params ["_unit", "_inventory", "_uid"];
-        [_unit] call Shadec_fnc_removeInventoryRestrictedItems;
-        [_unit] call Shadec_fnc_reassignUnitRadios;
-        [[], Shadec_fnc_loadPlayerRadioSettings] remoteExec ["call", _unit];
+        
+        [[_unit], {
+            params ["_unit"];
+            [_unit] call Shadec_fnc_reassignUnitRadios;
+            [_unit] call Shadec_fnc_loadPlayerRadioSettings;
+        }] remoteExec ["call", _unit];
 
         _unit setVariable ["LoadoutLoaded", true, true];
         missionNamespace setVariable [format["loadoutLoaded_%1", _uid], true, true];
@@ -52,13 +52,15 @@ if !(isNil {_data}) then {
         diag_log format["Loaded loadout: %1", _inventory];
         [format["fnc_call_db | loadAll DB action inventory comparing timeout: %1", name _unit], "Warning"] call Shadec_fnc_createLogServer;
     }] call CBA_fnc_waitUntilAndExecute;
-
-    // diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _orders, _uid];
 } else { 
     // Player is not exists in db, create a new one
-    private _loadout = call Shadec_fnc_selectRandomLoadout;
+    private _loadout = getUnitLoadout _unit;
+    
+    private _ranksAndClasses = [_uid] call Shadec_db_server_fnc_getRankAndClasses;
+    _ranksAndClasses params [["_rank", "PV1"], ["_primaryClass", "Rifleman"], ["_secondaryClass", "None"]];
 
-    "Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, _uid, str name _unit, _loadout];
+    "Extdb3" callExtension format ["0:%1:newPlayerSpecial:%2:%3:%4:%5:%6:%7", PROTOCOL, _uid, name _unit, _loadout, _rank, _primaryClass, _secondaryClass];
+
     sleep 3;
-    [_uid, _unit] spawn Shadec_db_server_fnc_loadPlayer;
+    [_uid, _unit] spawn Shadec_db_server_fnc_loadPlayerSpecial;
 };

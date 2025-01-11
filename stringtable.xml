@@ -646,6 +646,11 @@
                 <Original>WARNING: There are players waiting to respawn!</Original>
                 <Russian>ВНИМАНИЕ: Есть ещё игроки, ожидающие возрождения!</Russian>
             </Key>
+
+            <Key ID="STR_SAA_ZEUS_MESSAGES_ERROR_ARSENAL_RESTRICTIONS_CHANGES_PROHIBITED"> 
+                <Original>Removing the arsenal restriction is PROHIBITED outside of special missions!</Original>
+                <Russian>Снятие ограничение на арсенал ЗАПРЕЩЕНО вне специальных миссий!</Russian>
+            </Key>
         
         </Container>
 

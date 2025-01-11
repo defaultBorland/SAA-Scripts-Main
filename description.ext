@@ -49,7 +49,15 @@ class CfgFunctions
 			class getOrders {};
 			class eraseOrders {};
 			class changeClasses {};
+			class getRankAndClasses {};
 			class saveRemovedRestrictedItems {};
+
+			class loadInventorySpecial {};
+			class saveInventorySpecial {};
+			class loadStorageSpecial {};
+			class saveStorageSpecial {};
+			class loadPlayerSpecial {};
+			class savePlayerSpecial {};
 
 			class createConnectionRecord {};
 			class updateConnectionRecord {};

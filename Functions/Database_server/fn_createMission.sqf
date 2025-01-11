@@ -12,6 +12,8 @@ private _missionID = format["%1-%2-%3-%4",
 missionNamespace setVariable ["MissionID", _missionID];
 
 private _map = toUpper getText(configFile >> "CfgWorlds" >> worldName >> "description");
+private _isSpecial = missionNamespace getVariable ["SAA_isMissionSpecial", false];
 
-"Extdb3" callExtension format ["0:%1:createMission:%2:%3", PROTOCOL, _missionID, _map];
+"Extdb3" callExtension format ["0:%1:createMission:%2:%3:%4", PROTOCOL, _missionID, _map, parseNumber(_isSpecial)];
+
 true

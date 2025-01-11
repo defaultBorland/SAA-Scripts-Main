@@ -11,6 +11,10 @@
 		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_NONZEUS_PLAYERS"] call bis_fnc_showCuratorFeedbackMessage;
 	};
 
+	if !(missionNamespace getVariable ["SAA_isMissionSpecial", false]) exitWith {
+		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_ARSENAL_RESTRICTIONS_CHANGES_PROHIBITED"] call bis_fnc_showCuratorFeedbackMessage;
+	};
+
 	private _checkboxes = _players apply {
 		[
 			"CHECKBOX",

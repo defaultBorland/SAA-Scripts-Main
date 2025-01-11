@@ -13,3 +13,12 @@ private _commanders = ([] call Shadec_fnc_getPlayers) select {
 private _zeuses = (missionNamespace getVariable ["ZeusArray", []]) - [""];
 
 "Extdb3" callExtension format ["0:%1:endMission:%2:%3:%4", PROTOCOL, _zeuses, _commanders, _missionID];
+
+if (
+	(missionNamespace getVariable ["SAA_isMissionSpecial", false]) 
+	&& {missionNamespace getVariable ["SAA_missionSpecial_clearTable", false]}
+) then {
+	"Extdb3" callExtension format ["0:%1:clearPlayersSpecial:%2", PROTOCOL, _missionID];
+};
+
+true

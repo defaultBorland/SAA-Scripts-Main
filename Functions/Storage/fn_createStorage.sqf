@@ -11,18 +11,6 @@ private _secondClass = _unit getVariable ["SAA_SecondaryClass", "None"];
 
 private _boxMaxLoad = [_rank, _firstClass, _secondClass] call Shadec_fnc_calcStorageSize;
 
-// Check if storage already exists and delete it
-private _oldStorage = missionNamespace getVariable [format["pStorage_%1", _uid], objNull];
-if (!isNull _oldStorage) then {
-	[[_uid], {
-		params ["_uid"];
-		[_uid] call Shadec_db_client_fnc_saveStorage;
-	}] remoteExec ["call", _unit];
-	
-	deleteVehicle _oldStorage;
-	missionNamespace setVariable [format["pStorage_%1", _uid], nil, true];
-};
-
 private _storage = createVehicle ["B_supplyCrate_F", [0,0,0], [], 0, "CAN_COLLIDE"]; // CAN_COLLIDE || NONE
 _storage setVariable ["SAA_isPersonalStorage", true, true];
 _storage setVariable ["SAA_storageOwner", _uid, true];

@@ -22,7 +22,9 @@ private _itemsRemoved = (_items - _itemsAllowed);
 private _allRemoved = _weaponsRemoved + _magazinesRemoved + _itemsRemoved;
 
 if !(_allRemoved isEqualTo []) then {
+	[_uid, name _player, _allRemoved] call Shadec_db_server_fnc_saveRemovedRestrictedItems;
 	
+	// Aggregate removed items to one array
 	_allRemoved append (missionNamespace getVariable [format["removedItems_%1", _uid], []]);
 	missionNamespace setVariable [format["removedItems_%1", _uid], _allRemoved];
 

@@ -49,6 +49,7 @@ class CfgFunctions
 			class getOrders {};
 			class eraseOrders {};
 			class changeClasses {};
+			class saveRemovedRestrictedItems {};
 
 			class createConnectionRecord {};
 			class updateConnectionRecord {};

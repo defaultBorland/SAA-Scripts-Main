@@ -7,6 +7,9 @@ params ["_uid", "_name"];
 private _mission = missionNamespace getVariable "MissionID";
 if (isNil {_mission}) exitWith {
 	["fnc_createConnectionRecord | ERROR: MissionID is nil!" ,"Warning"] call Shadec_fnc_createLogServer;
+	false
 };
 
 "Extdb3" callExtension format ["0:%1:createConnectionRecord:%2:%3:%4", PROTOCOL, _uid, _name, _mission];
+
+true

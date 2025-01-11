@@ -21,7 +21,7 @@ addMissionEventHandler ["GroupCreated", {
 				if ({_x getVariable ["SAA_isZeus", false]} count (units _this) > 0) exitWith {};
 				if ({typeOf _x isEqualTo "HeadlessClient_F"} count (units _this) > 0) exitWith {};
 				
-				[format["Group %1 (%2): Not all players loaded within 180 secs...", _this, (units _this) apply {name _x} joinString ", "], "Warning"] call Shadec_fnc_createLogServer;
+				[format["Group %1 (%3): Not all players loaded within 180 secs...", _this, (units _this) apply {name _x} joinString ", "], "Warning"] call Shadec_fnc_createLogServer;
 			}] call CBA_fnc_waitUntilAndExecute;
 		};
 

@@ -36,7 +36,7 @@ private _EH_ServerFpsMonitoring_ID = ["SAA_ServerFpsMonitoring", {
                 [_x # 1, 3, " "] call Shadec_fnc_leftPad,
                 [_x # 2, 2, " "] call Shadec_fnc_leftPad,
                 _totalBotsWarningColor,
-                "ffffff"
+                "#ffffff"
                 //["#ffffff", "#ff0000"] select ((parseNumber str(_x # 2)) < 25)
             ];
         };

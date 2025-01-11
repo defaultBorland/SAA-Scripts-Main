@@ -7,3 +7,5 @@ params ["_uid"];
 "Extdb3" callExtension format ["1:%1:eraseOrders:%2", PROTOCOL,
     _uid
 ];
+
+true

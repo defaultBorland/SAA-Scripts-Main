@@ -9,3 +9,5 @@ params ["_uid", "_pclass", "_sClass"];
     _sClass,
     _uid
 ];
+
+true

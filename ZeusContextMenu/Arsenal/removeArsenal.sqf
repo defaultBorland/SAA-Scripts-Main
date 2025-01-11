@@ -16,10 +16,10 @@ private _removeArsenal = [
     { // Condition
         params ["_position", "_objects", "_groups", "_waypoints", "_markers", "_hoveredEntity", "_args"];
 
-        (player getVariable ["SAA_Context_Toggled", false]) &&
-        {_hoveredEntity isEqualType objNull} && 
-		{_hoveredEntity isNotEqualTo objNull} && 
-        {_hoveredEntity getVariable ["SAA_isArsenal", false]}
+        (player getVariable ["SAA_Context_Toggled", false]) 
+        && {_hoveredEntity isEqualType objNull} 
+        // && {!(_hoveredEntity isEqualTo objNull)} 
+        && {_hoveredEntity getVariable ["SAA_isArsenal", false]}
     }
 ] call zen_context_menu_fnc_createAction;
 private _removeArsenalActionPath = [_removeArsenal, [], 0] call zen_context_menu_fnc_addAction;

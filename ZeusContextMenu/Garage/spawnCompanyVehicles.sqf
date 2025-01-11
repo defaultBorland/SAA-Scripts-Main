@@ -1,4 +1,4 @@
-_garageVehicles = missionNamespace getVariable ["SAA_garageVehicles", []];
+private _garageVehicles = missionNamespace getVariable ["SAA_garageVehicles", []];
 if (count _garageVehicles < 1) exitWith {
 	diag_log format ["%1 | %2", "file_spawnCompanyVehicles", "Info: No garage vehicles"]
 };

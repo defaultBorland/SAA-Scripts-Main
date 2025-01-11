@@ -14,3 +14,4 @@ missionNamespace setVariable ["MissionID", _missionID];
 private _map = toUpper getText(configFile >> "CfgWorlds" >> worldName >> "description");
 
 "Extdb3" callExtension format ["0:%1:createMission:%2:%3", PROTOCOL, _missionID, _map];
+true

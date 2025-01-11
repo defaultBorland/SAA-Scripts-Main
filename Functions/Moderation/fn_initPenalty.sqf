@@ -7,7 +7,7 @@ params["_unit", "_suspiciousMods", "_restrictedMods"];
 if (_restrictedMods isNotEqualTo []) then {
 	private _text = (_restrictedMods apply {_x # 0}) joinString ", ";
 
-	[[name _unit], {systemChat format["> Server: %1! '%2' %3:", localize "STR_SAA_GENERAL_WARNING", _this # 0, localize "STR_SAA_MESSAGE_RESTRICTED_MODS_FOUND"]}] remoteExec ["call", -2];
+	[[name _unit], {systemChat format["> Server: %1! '%2' - %3:", localize "STR_SAA_GENERAL_WARNING", _this # 0, localize "STR_SAA_MESSAGE_RESTRICTED_MODS_FOUND"]}] remoteExec ["call", -2];
 	[[_text],{systemChat (_this # 0)}] remoteExec ["call", -2];
 	
 	[(name _unit) + " has restricted mods:", "Warning"] call Shadec_fnc_createLogServer;
@@ -27,7 +27,7 @@ if (_restrictedMods isNotEqualTo []) then {
 if (_suspiciousMods isNotEqualTo []) then {
 	private _text = (_suspiciousMods apply {_x # 0}) joinString ", ";
 	
-	[[name _unit], {systemChat format["> Server: %1! '%2' %3:", localize "STR_SAA_GENERAL_WARNING", _this # 0, localize "STR_SAA_MESSAGE_SUSPICIOUS_MODS_FOUND"]}] remoteExec ["call", -2];
+	[[name _unit], {systemChat format["> Server: %1! '%2' - %3:", localize "STR_SAA_GENERAL_WARNING", _this # 0, localize "STR_SAA_MESSAGE_SUSPICIOUS_MODS_FOUND"]}] remoteExec ["call", -2];
 	[[_text],{systemChat (_this # 0)}] remoteExec ["call", -2];
 	
 	[(name _unit) + " has suspicious mods:", "Warning"] call Shadec_fnc_createLogServer;

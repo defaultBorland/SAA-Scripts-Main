@@ -46,30 +46,34 @@ class CfgFunctions
 			class loadPlayer {};
 			class savePlayer {};
 			class saveModlist {};
+			class getOrders {};
+			class eraseOrders {};
+			class changeClasses {};
+
+			class createConnectionRecord {};
+			class updateConnectionRecord {};
+
 			class createDeadRecord {};
 			class updateDeadRecord {};
 			class loadRespawnInventory {};
+			class getRespawnTime {};
+
+			class processExtensionReturn {};
+			class processMultipartMsg {};
+			class getCommandingStats {};
 
 			class createMission {};
 			class endMission {};
+
 			class blacklistMod {};
 			class getBlacklistedMods {};
 			class whitelistMod {};
 			class getWhitelistedMods {};
-			class createConnectionRecord {};
-			class updateConnectionRecord {};
-			class changeClasses {};
-			class getOrders {};
-			class eraseOrders {};
-			class getAvailiableItems {};
-			class getCommandingStats {};
-			class getGarageVehicles {};
-			class getRespawnTime {};
-			class getUniform {};
-			class saveRemovedRestrictedItems {};
 
-			class processExtensionReturn {};
-			class processMultipartMsg {};
+			class getUniform {};
+			class getAvailiableItems {};
+			class getGarageVehicles {};
+
 		};
 	};
 

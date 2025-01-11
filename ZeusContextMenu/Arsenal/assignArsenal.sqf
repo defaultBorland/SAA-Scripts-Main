@@ -6,11 +6,11 @@ private _assignArsenalRoot = [
     { // Condition
         params ["_position", "_objects", "_groups", "_waypoints", "_markers", "_hoveredEntity", "_args"];
 
-        (player getVariable ["SAA_Context_Toggled", false]) &&
-        {_hoveredEntity isEqualType objNull} && 
-		{_hoveredEntity isNotEqualTo objNull} && 
-        {!(_hoveredEntity isKindOf "Man")} &&
-        {!(_hoveredEntity getVariable ["SAA_isArsenal", false])}
+        (player getVariable ["SAA_Context_Toggled", false]) 
+        && {_hoveredEntity isEqualType objNull} 
+        //&& {_hoveredEntity isNotEqualTo objNull} 
+        && {!(_hoveredEntity isKindOf "Man")} 
+        && {!(_hoveredEntity getVariable ["SAA_isArsenal", false])}
     }, 
     [], 
     { // Children

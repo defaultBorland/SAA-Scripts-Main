@@ -1,7 +1,9 @@
 //
-params[""];
+params [""];
 
 private _serverSaaBoxAddons = missionNamespace getVariable ["SAA_SaaBoxAddons", []];
+if (_serverSaaBoxAddons isEqualTo []) exitWith {true}; // SAABOX does not enabled on server. No checks needed.
+
 private _clientSaaBoxAddons = [] call Shadec_fnc_getShadecBoxAddons;
 
 _serverSaaBoxAddons sort true;

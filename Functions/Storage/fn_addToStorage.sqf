@@ -1,9 +1,9 @@
 params ["_action", "_arrays", "_uid"];
 
-if !(count _arrays > 0) exitWith {diag_log format ["fn_AddToStorage | Empty array is passed."]};
+if !(count _arrays > 0) exitWith {diag_log format ["fn_AddToStorage | Empty array is passed."]; false};
 
 _storage = missionNamespace getVariable [format["pStorage_%1", _uid], nil];
-if (isNil {_storage}) exitWith {diag_log format ["fn_AddToStorage |  Can't find the storage."]};
+if (isNil {_storage}) exitWith {diag_log format ["fn_AddToStorage |  Can't find the storage."]; false};
 
 _arrays = [_arrays, _uid] call Shadec_fnc_removeStorageRestrictedItems;
 _arrays params ["_weapons", "_magazines", "_items"];
@@ -30,7 +30,7 @@ switch (_action) do {
 		deliveredItems = _allDelivered;
 		_id publicVariableClient "deliveredItems";
 		deliveredItems = nil;
-		diag_log format ["DELIVERED ITEMS %1: %2", _uid, _allDelivered];
+		// diag_log format ["DELIVERED ITEMS %1: %2", _uid, _allDelivered];
 
 		[_uid] spawn Shadec_db_server_fnc_eraseOrders;
 	};

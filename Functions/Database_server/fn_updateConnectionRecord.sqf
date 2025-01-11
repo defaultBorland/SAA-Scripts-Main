@@ -9,4 +9,6 @@ if (isNil {_mission}) exitWith {
 	["fnc_updateConnectionRecord | ERROR: MissionID is nil!" ,"Warning"] call Shadec_fnc_createLogServer;
 };
 	
-"Extdb3" callExtension format ["0:%1:updateConnectionRecord:%2:%3", PROTOCOL, _uid, _mission];
+"Extdb3" callExtension format ["1:%1:updateConnectionRecord:%2:%3", PROTOCOL, _uid, _mission];
+
+true

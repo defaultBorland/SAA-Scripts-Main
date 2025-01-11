@@ -3,8 +3,9 @@ if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_
 if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
 
 params ["_uid", "_storageContent"];
-		
 "Extdb3" callExtension format ["1:%1:saveStorage:%2:%3", PROTOCOL,
     _storageContent,
     _uid
 ];
+
+true

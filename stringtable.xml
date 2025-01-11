@@ -1953,16 +1953,6 @@
                     <Russian>Маркер будет удалён, если целевой объект будет уничтожен</Russian> 
                 </Key>
 
-                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_TRACKING_MARKER_DIALOG_DELETEIFDEAD"> 
-                    <Original>Delete On Dead</Original> 
-                    <Russian>Удалить при смерти</Russian> 
-                </Key>
-
-                <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_TRACKING_MARKER_DIALOG_DELETEIFDEAD_TOOLTIP"> 
-                    <Original>Marker will be deleted on target death</Original> 
-                    <Russian>Маркер будет удалён, если целевой объект будет уничтожен</Russian> 
-                </Key>
-
                 <Key ID="STR_SAA_ZEUS_MODULES_MAIN_ADD_TRACKING_MARKER_DIALOG_UPDATE_TIME"> 
                     <Original>Update Frequency, in seconds</Original> 
                     <Russian>Частота обновления, в секундах</Russian> 

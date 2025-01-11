@@ -17,3 +17,5 @@ private _count = count _clientMods; // _modlist
     _suspiciousMods,
     _restrictedMods
 ];
+
+true

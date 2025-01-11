@@ -41,7 +41,7 @@ missionNamespace setVariable ["isDebug", true, true];
 
 // Timed Players Saving
 [] spawn {
-	if (missionNamespace getVariable ["isDebug", false]) exitWith {};
+	if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
 	while {true} do {
 		sleep (10 * 60);
 		if !(missionNamespace getVariable ["SAA_PlayersTimedSaving", true]) exitWith {};

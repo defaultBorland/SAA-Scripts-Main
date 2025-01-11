@@ -8,3 +8,5 @@ params ["_uid", "_inventory"];
     _inventory,
     _uid
 ];
+
+true

@@ -1,6 +1,5 @@
 //
 params ["_arrays", "_uid"];
-
 _arrays params ["_weapons", "_magazines", "_items"]; 
 (missionNamespace getVariable [format["%1_DATA", _uid], ["PV1", "Rifleman", "None"]]) params ["_rank", "_firstClass", "_secondClass"];
 
@@ -29,7 +28,7 @@ if !(_allRemoved isEqualTo []) then {
 	removedItems = _allRemoved;
 	_id publicVariableClient "removedItems";
 	removedItems = nil;
-	diag_log format ["REMOVED ITEMS %1: %2", _uid, _allRemoved];
+	// diag_log format ["REMOVED ITEMS %1: %2", _uid, _allRemoved];
 };
 
 // return

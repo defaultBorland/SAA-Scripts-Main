@@ -18,4 +18,4 @@ private _assignStorage = [
         {!(_hoveredEntity getVariable ["SAA_isStorageProxy", false])}
     }
 ] call zen_context_menu_fnc_createAction;
-private _assignArsenalActionPath = [_assignStorage, [], 0] call zen_context_menu_fnc_addAction;
+private _assignStorageActionPath = [_assignStorage, [], 0] call zen_context_menu_fnc_addAction;

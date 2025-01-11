@@ -9,6 +9,11 @@ if (player getVariable ["SAA_isZeus", false]) exitWith {
 	_marker setMarkerPosLocal _position;
 };
 
+// Player not alive
+// if (!alive player) exitWith {
+// 	_marker setMarkerAlphaLocal 0;
+// };
+
 // GPS is disabled
 // Maybe just exit to leave marker as is (no signal but last data saved?)
 if (missionNamespace getVariable ["SAA_isGPSDisabled", false]) exitWith {

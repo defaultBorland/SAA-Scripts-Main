@@ -26,6 +26,8 @@ params ["_endType"];
 missionNamespace setVariable ["SAA_missionEnded", true, true];
 
 [] call Shadec_db_server_fnc_endMission;
+[] call Shadec_db_server_fnc_setParticipationZeus;
+
 
 ["Mission ended.", "Info"] call Shadec_fnc_createLogServer;
 

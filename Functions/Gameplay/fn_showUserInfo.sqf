@@ -24,7 +24,7 @@ if (_unit getVariable ["SAA_isZeus", false]) then {
 
 			[format["%1 | %2 | %3", toUpper getText(configFile >> "CfgWorlds" >> worldName >> "description"), mapGridPosition _unit, [daytime, "HH:MM"] call BIS_fnc_timeToString, date select 4], "<t align = 'left' shadow = '1' size = '0.7'>%1</t><br/>", 8],
 			[localize "STR_SAA_GENERAL_STATUS", "<t align = 'left' shadow = '1' size = '0.7' font='PuristaBold'>%1: </t>"],
-			[[localize "STR_SAA_GENERAL_KIA", localize "STR_SAA_GENERAL_IN_ACTION"] select (alive _unit), "<t align = 'left' shadow = '1' size = '0.7'>%1: %2</t><br/>", 50]
+			[[localize "STR_SAA_GENERAL_KIA", localize "STR_SAA_GENERAL_IN_ACTION"] select (alive _unit), "<t align = 'left' shadow = '1' size = '0.7'>%1</t><br/>", 50]
 		], 1, 1
 	] spawn BIS_fnc_typeText;
 };

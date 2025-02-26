@@ -50,7 +50,9 @@ _this spawn {
 			_position = [[[_position, _precision]], [[[0,0,0], 1]]] call BIS_fnc_randomPos;
 		};
 
-		[[_position, _marker, _side], {_this call Shadec_fnc_renderMarker}] remoteExec ["call", -2];
+		// Mb need to call modified Shadec_fnc_getPlayers to filter players for remoteExec to prevent excessive spamming? (Include Zeus)(Make setting to show only to zeus of current side?)
+		private _players = allPlayers - entities "HeadlessClient_F";
+		[[_position, _marker, _side], {_this call Shadec_fnc_renderMarker}] remoteExec ["call", _players];
 		
 	};
 

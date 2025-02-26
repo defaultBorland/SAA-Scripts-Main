@@ -70,7 +70,7 @@ _structuredText = format ["<t size='1.8' color='#ff0000' align='center' font='Pu
 	_currentTypeArray = _x # 1;
 	_structuredText = _structuredText + format["<t size='1.5' align='center'> %1 </t><br/>", _currentTypeHeader];
 	{
-		_structuredText = _structuredText + format["<t size='1.0' align='center' color='%3'>%1 (%2)</t><br/>", _x # 0, _x # 1, ["ffffff", "#ff0000"] select (_x # 2)];
+		_structuredText = _structuredText + format["<t size='1.0' align='center' color='%3'>%1 (%2)</t><br/>", _x # 0, _x # 1, ["#ffffff", "#ff0000"] select (_x # 2)];
 	} forEach _currentTypeArray;
 } forEach _textArrays;
 

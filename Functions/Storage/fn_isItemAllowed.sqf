@@ -13,6 +13,33 @@ fnc_searchParents = {
 };
 
 
+// CBA_fnc_switchableAttachments (for some reason CBA_fnc doesn't work server-side)
+fnc_getVariants = {
+	params ["_item"];
+
+	private _cfgWeapons = configfile >> "CfgWeapons";
+	private _config = _cfgWeapons >> _item;
+
+	private _forward = [];
+	while {
+		_config = _cfgWeapons >> getText (_config >> "MRT_SwitchItemNextClass");
+		isClass _config && {_forward pushBackUnique configName _config != -1}
+	} do {};
+
+	_config = _cfgWeapons >> _item;
+	private _backward = [];
+	while {
+		_config = _cfgWeapons >> getText (_config >> "MRT_SwitchItemPrevClass");
+		isClass _config && {_backward pushBackUnique configName _config != -1}
+	} do {};
+
+	_forward = _forward + _backward;
+	_forward = _forward arrayIntersect _forward;
+
+	_forward
+};
+
+
 params ["_passedClassname", "_availiableItems"];
 
 private _return = false;
@@ -22,7 +49,7 @@ private _classname = toLower _passedClassname;
 if (_classname in _availiableItems) exitWith {true};
 
 //
-private _rarities = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold"];
+private _rarities = ["CUP_arifle_AKS_Gold", "CUP_hgun_TaurusTracker455_gold", "UK3CB_Cocaine_Brick"] apply {toLower _x};
 if (_classname in _rarities) exitWith {true};
 
 private _itemType = ([_classname] call BIS_fnc_itemType) # 0;
@@ -37,7 +64,7 @@ switch (_itemType) do {
 		};
 
 		if (getText(configFile >> "CfgWeapons" >> _classname >> "mrt_SwitchItemNextClass") isNotEqualTo "") then { // Others (SMA can be problem)
-			private _variations = (_classname call CBA_fnc_switchableAttachments) apply {toLower _x};
+			private _variations = (_classname call fnc_getVariants) apply {toLower _x};
 			{
 				if (_x in _availiableItems) exitWith {_classname = _x};
 			} forEach _variations;

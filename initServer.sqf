@@ -1,5 +1,5 @@
 // Connect to database
-[] execVM "Functions\Database\connectDB.sqf";
+[] execVM "Functions\Database_server\connectDB.sqf";
 
 // Init Zeus
 [] execVM "initZeus.sqf";
@@ -14,13 +14,14 @@
 // Define variables
 missionNamespace setVariable ["tf_reciveVar", 1, true];
 missionNamespace setVariable ["tf_sendVar", 1, true];
-missionNamespace setVariable ["ServerMods", [] call Shadec_fnc_getModList, true];
-respawnTime = getNumber (missionConfigFile >> "respawnDelay");
-missionNamespace setVariable ["respawnTime", respawnTime, true];
+missionNamespace setVariable ["SAA_ServerMods", [] call Shadec_fnc_getModList, true];
+missionNamespace setVariable ["SAA_SaaBoxAddons", [] call Shadec_fnc_getShadecBoxAddons, true];
+missionNamespace setVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay"), true];
+missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, true];
 
 [{
-	["getGarageVehicles", []] call Shadec_fnc_call_db;
-	[] call Shadec_fnc_createMissionDB;
+	[] call Shadec_db_server_fnc_getGarageVehicles;
+	[] call Shadec_db_server_fnc_createMission;
 }, [], 3] call CBA_fnc_waitAndExecute;
 
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
@@ -38,16 +39,23 @@ missionNamespace setVariable ["respawnTime", respawnTime, true];
 missionNamespace setVariable ["isDebug", true, true];
 ["Warning! Debug Session Enabled. No saving!", "Warning"] call Shadec_fnc_createLogServer;
 
+// Special mission setup
+// missionNamespace setVariable ["SAA_isMissionSpecial", true, true];
+// missionNamespace setVariable ["SAA_missionSpecial_loadStorage", true, true];
+// missionNamespace setVariable ["SAA_missionSpecial_processOrders", false, true];
+// missionNamespace setVariable ["SAA_missionSpecial_clearTable", true, true];
+
 // Timed Players Saving
 [] spawn {
+	if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
 	while {true} do {
 		sleep (10 * 60);
 		if !(missionNamespace getVariable ["SAA_PlayersTimedSaving", true]) exitWith {};
-		private _players = ["All", "Id"] call Shadec_fnc_usersIDs;
+		private _players = [] call Shadec_fnc_getPlayers;
 		if (count _players < 1) then { continue };
 		{
 			{
-				[player] call Shadec_fnc_savePlayer;
+				[player, "Timed"] call Shadec_db_client_fnc_savePlayer;
 			} remoteExec ["call", _x];
 		} forEach _players;
 		["Players data saving...", "Info"] call Shadec_fnc_createLogServer;
@@ -69,5 +77,16 @@ missionNamespace setVariable ["isDebug", true, true];
 		{
 			[_x] call Shadec_fnc_transferGroupOwnership;
 		} forEach _serverGroups;
+	};
+};
+
+// Monitoring Server And Headlesses FPS, send info to clients
+[] spawn {
+	while {true} do {
+		sleep 3;
+		if !(missionNamespace getVariable ["SAA_ServerFpsMonitoring", true]) exitWith {};
+
+		private _serverHcsFpsInfo = [true, true] call Shadec_fnc_getHeadlessInfo;
+		["SAA_ServerFpsMonitoring", [_serverHcsFpsInfo]] call CBA_fnc_globalEvent;
 	};
 };

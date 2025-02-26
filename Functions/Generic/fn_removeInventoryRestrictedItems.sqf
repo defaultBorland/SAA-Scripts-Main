@@ -4,7 +4,7 @@ params ["_unit"];
 {
 	while {[_unit, _x] call BIS_fnc_hasItem} do {
 		_unit removeItems _x;
-		diag_log format ["fnc_removeInventoryRestrictedItems | %1 has %2 in their inventory. Removing...", name _unit, _x];
+		// diag_log format ["fnc_removeInventoryRestrictedItems | %1 has %2 in their inventory. Removing...", name _unit, _x];
 	};
 } forEach ["MineDetector", "H_HelmetO_ViperSP_ghex_F", "H_HelmetO_ViperSP_hex_F"];
 
@@ -13,7 +13,7 @@ if ((_unit getVariable ["SAA_PrimaryClass", "Rifleman"]) isNotEqualTo "Engineer"
 	{
 		while {[_unit, _x] call BIS_fnc_hasItem} do {
 			_unit removeItems _x;
-			diag_log format ["fnc_removeInventoryRestrictedItems | %1 has %2 in their inventory. Removing...", name _unit, _x];
+			// diag_log format ["fnc_removeInventoryRestrictedItems | %1 has %2 in their inventory. Removing...", name _unit, _x];
 		};
 	} forEach ["I_UavTerminal","C_UavTerminal","O_UavTerminal","B_UavTerminal"];
 };

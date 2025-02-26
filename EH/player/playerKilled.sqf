@@ -1,21 +1,24 @@
 // On Player Killed Event Handler
 
-// Vars with texts to be randomly displayed on death screen
-textKIA = "You were Killed In Action | KIA";
-textsArray = [
-	"''It's not bad to die, after all.''", 
-	"''Professional soldiers are predictable. The world is full of dangerous amateurs.''", 
-	"''People die every time. That's just part of life around here.''", 
-	"''I ain't afraid to die anymore. I'd done it already.''", 
-	"''We're gonna die. That's a thought. Everybody dies.''", 
-	"''We’re at war. And in war, people die.''", 
-	"''We all die eventually. The real tragedy is forgetting to live.''", 
-	"''Death is not to be feared, but it shouldn’t be pursued. There’s a difference.''", 
-	"''It doesn’t matter how you die, you come back. We all come back.''", 
-	"''All of us have to get out of life somehow one day — that's certain — but few of us have the chance of making such a triumphant exit.''",
-	"''You lost your job when you died.''"
-];
-	
+/*
+
+	Если это глупо, но работает - значит, это не глупо.
+	Когда сомневаешься - опустоши магазин.
+	Все важное всегда так просто.
+	Все простое всегда так сложно.
+	Короткий путь всегда заминирован.
+	Не выгляди броско - это привлекает на тебя огонь противника.
+	Когда ты обезопасил очередной район, не забудь об этом сообщить врагу.
+	Любой приказ, который может быть неправильно понят, понимается неправильно.
+	Любой план предстоящего боя разваливается в самом начале столкновения.
+	Нет такой вещи, как совершенный план.
+	При артиллерийском обстреле не выясняй, чей он - просто прячься.
+	Если враг в пределах досягаемости, ты - тоже.
+	Направление трассеров видно обеим сторонам.
+	Мины - оружие равных возможностей.
+	Та из вещей, которая нужна больше всего, всегда отсутствует.
+
+*/
 
 // Player Killed Event Hanlder
 _EH_PlayerKilled = player addEventHandler ["Killed", {
@@ -31,11 +34,20 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		// belongs to this block bc if player reconnect being KIA - no need to save LR options (they can be not loaded)
     	call Shadec_fnc_savePlayerRadioSettings;
 
-    	[_unit] call Shadec_fnc_createDeadRecord;
+    	[_unit] call Shadec_db_client_fnc_createDeadRecord;
 
-		// Fill player display with black screen with text only in case if player was not rejoin being KIA
-		titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", textKIA, selectRandom textsArray], "BLACK", 2, false, true];
-		
+		[] spawn {
+			// sleep 2;
+
+			// Fill player display with black screen with text only in case if player was not rejoin being KIA
+			titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", localize "STR_SAA_GENERAL_DIED", localize ("STR_SAA_DEATH_CITATE_" + str (round(random 10) + 1))], "BLACK", 2, false, true];
+
+			for "_i" from 10 to 0 step -0.5 do {
+				sleep 0.1;
+				["SAA_PlayerDeath", _i / 10, true] call ace_common_fnc_setHearingCapability;
+			};
+			["SAA_PlayerDeath", 0, true] call ace_common_fnc_setHearingCapability;
+		}; 	
 	} else {
 		if (_unit getVariable ["KIA_returnTicket", false]) then {[side group player, 1] call BIS_fnc_respawnTickets};
 		[{[_this] call Shadec_fnc_showUserInfo;}, player, 5] call CBA_fnc_waitAndExecute;
@@ -48,6 +60,8 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	}, {
 		private _ctrl = (findDisplay 60492) displayCtrl 88811;
 		_ctrl ctrlEnable false;
+
+		["SAA_PlayerDeath", 1, false] call ace_common_fnc_setHearingCapability;
 	}, nil, playerRespawnTime, {}] call CBA_fnc_waitUntilAndExecute;
 
 	// Remove player weapons and items to escape of creating duplucates and friendly-looting
@@ -55,7 +69,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 		params ["_unit"];
 
 		removeAllItems _unit; 
-		removeAllWeapons _unit; 
+		removeAllWeapons _unit;
 		removeAllAssignedItems _unit;
 
 		_droppedGear = nearestObjects [_unit, ["WeaponHolder", "WeaponHolderSimulated", "GroundWeaponHolder"], 7];
@@ -70,7 +84,7 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 				sleep 1;
 				_unit linkItem "ItemMap";
 			};
-
+			
 			titleFadeOut 3;
 		};
 		
@@ -85,9 +99,6 @@ _EH_PlayerKilled = player addEventHandler ["Killed", {
 	publicVariableServer "playerKilled";
 	playerKilled = nil;
 }];
-
-
-
 
 
 //

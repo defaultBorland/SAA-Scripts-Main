@@ -5,8 +5,14 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_pcid", "_uid", "_name"];
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
-
-		[_unit, _uid] spawn Shadec_fnc_saveInventory; // Shadec_fnc_savePlayer
+		
+		private _isGuest = toUpper(_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST";
+		if (_isGuest) then {
+			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
+			missionNamespace setVariable [format["SAA_isGuest_%1", _uid], nil, true];
+		} else {	
+			[_uid, getUnitLoadout _unit] spawn Shadec_db_server_fnc_saveInventory; // Shadec_fnc_savePlayer
+		};
 		[_uid] spawn Shadec_fnc_deleteStorage;
 
 		if (alive _unit) then {
@@ -20,12 +26,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 		} else {	// If player was dead
 			private _isTicketsRemain = [false, true] select (([side _unit, 0] call BIS_fnc_respawnTickets) > 0);
 			missionNamespace setVariable [format["KIAonExit_%1", _uid], [true, _isTicketsRemain], true];
-		};
-
-		if ((_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST") exitWith {
-			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
-		};
-		
+		};		
 	} else { // If player equipment didn't load for some reason - don't save
 		diag_log format ["Loadout not loaded, abort player saving: %1", _name];
 	};
@@ -34,11 +35,10 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	// No headless record
     if (!("headlessclient" in _name)) then {
 		// Update connection record
-		[_uid] call Shadec_fnc_updateConnectionRecord;
+		[_uid] call Shadec_db_server_fnc_updateConnectionRecord;
 	};
 
 	// Unlock server if no zeus or administrator present
-
 	private _zeusesAndAdmin = (missionNamespace getVariable "ZeusArray") + ["76561198066438612"];
 	private _allPlayersUIDs = allPlayers apply {getPlayerUID _x};
 

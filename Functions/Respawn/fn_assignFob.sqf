@@ -51,16 +51,9 @@ if (_showNotification) then {
 // Monitor CV status (marker-tracking is local side now)
 [_vehicle, _marker] spawn {
 	params ["_respawnVehicle", "_marker"];
-	while {(alive _respawnVehicle) and (_respawnVehicle getVariable ["SAA_isCV", false])} do {
+	while {(alive _respawnVehicle) && (_respawnVehicle getVariable ["SAA_isCV", false])} do {
 		sleep 1;
 	};
 
-	// // Notification if vehicle is destroyed but not deleted 
-	// if (!isNil{_respawnVehicle} && {!alive _respawnVehicle}) then { // If not deleted and dead
-	// 	[[_respawnVehicle getVariable ["SAA_respawnPointName", "???"]], {
-	// 		systemChat format ["> Server: %1 '%2' %3!", localize "STR_SAA_GENERAL_RESPAWN_CV", _this # 0, localize "STR_SAA_MESSAGE_HAS_BEEN_DESTROYED"];
-	// 	}] remoteExec ["call", -2];
-	// };
-
-	[_marker] call Shadec_fnc_removeRespawnPoint;
+	[_marker, false] call Shadec_fnc_removeRespawnPoint;
 };

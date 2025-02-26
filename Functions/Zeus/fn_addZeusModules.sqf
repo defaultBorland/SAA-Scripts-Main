@@ -4,9 +4,20 @@ private _prefixMain = "ZeusModules\";
 // Main
 _prefix = _prefixMain + "Main\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
-	"addShadecArsenal",
 	"endMission",
 	"promoteToZeus"
+	, "addMarkerTracking"
+	, "removeMarkerTracking"
+	, "toggleGPS"
+];
+
+// Arsenal
+_prefix = _prefixMain + "Arsenal\";
+{[] execVM (_prefix + _x + ".sqf")} forEach [
+	"addShadecArsenal",
+	"removeShadecArsenal",
+	"changeArsenalRestrictions",
+	"changeArsenalRestrictionsGlobal"
 ];
 
 // Radio
@@ -49,10 +60,14 @@ _prefix = _prefixMain + "Achilles\";
 ];
 
 // Fuel
-_prefix = _prefixMain + "Fuel\";
+_prefix = _prefixMain + "FuelRearmCargo\";
 {[] execVM (_prefix + _x + ".sqf")} forEach [
 	"spawnCanister",
-	"setStationsFuel"
+	"setStationsFuel",
+	"setCargoSpace",
+	"setObjectCargoSize",
+	"setObjectRearm"
+	//"setObjectRearmSpecificVehicle"
 ];
 
 // Fortify

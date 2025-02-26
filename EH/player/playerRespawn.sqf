@@ -5,7 +5,7 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
 
     // Fill player display with black screen with text
-    titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", "Back In Action", "Let's try this again..."], "BLACK", 0.2, false, true];
+    titleText [format["<t color='#ff0000' size='3' align='center' valign='middle' font='PuristaBold'>%1</t><br/><br/><t size='1.5' align='center' valign='middle' font='EtelkaMonospacePro'>%2</t>", localize "STR_SAA_RESPAWN_MESSAGE_TITLE", localize "STR_SAA_RESPAWN_MESSAGE_BODY"], "BLACK", 0.2, false, true];
     
     // Create public var and send it to server to trigger event
 	playerRespawned = [_unit, getPlayerUID _unit];
@@ -16,6 +16,8 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
     if (_unit getVariable ["SAA_isZeus", false]) then {
         [[_unit, "assign"], Shadec_fnc_manageCurators] remoteExec ["call", 2];
     };
+
+    ["SAA_PlayerDeath", 1, false] call ace_common_fnc_setHearingCapability;
     
     [_unit] spawn {
         params ["_unit"];
@@ -24,8 +26,8 @@ _EH_PlayerRespawn = player addEventHandler ["Respawn", {
         sleep 2;
 
         // Reapply player loadout (In other case some items are local to player and don't save correctly on server)
-        [_unit] call Shadec_fnc_updateDeadRecord;
-        [_unit] call Shadec_fnc_getRespawnInventory;
+        [_unit] call Shadec_db_client_fnc_updateDeadRecord;
+        [_unit] call Shadec_db_client_fnc_loadRespawnInventory;
         titleFadeOut 1;
 
         // Reassign medic/engineer roles

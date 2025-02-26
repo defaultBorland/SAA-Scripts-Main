@@ -1,19 +1,8 @@
-fnc_generateSpaces = {
-	params ["_num"];
-
-	private _string = "";
-	for "_i" from 0 to _num do {
-		_string = _string + " ";
-	};
-
-	_string
-};
-
 fnc_formatName = {
 	params ["_name", "_maxNameLength"];
 
 	if (count _name isEqualTo _maxNameLength) exitWith {_name};
-	if (count _name < _maxNameLength) exitWith {_name + ([_maxNameLength - count _name - 1] call fnc_generateSpaces)};
+	if (count _name < _maxNameLength) exitWith {[_name, _maxNameLength, " "] call Shadec_fnc_rightPad};
 	_name select [0, _maxNameLength]
 };
 
@@ -43,7 +32,7 @@ private _allPlayersCount = count _players;
 switch (toLower _status) do {
 	case "alive": {_players = _players select {alive _x}};
 	case "dead": {_players = _players select {!alive _x}};
-	default {};
+	default {[]};
 };
 
 private _targetPlayersCount = count _players;

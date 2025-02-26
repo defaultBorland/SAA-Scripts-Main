@@ -18,9 +18,10 @@
 	};
 
 	if (_objectUnderCursor getVariable ["SAA_isZeus", false]) exitWith {
-		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_ALREADY_ZEUS"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORALREADYZEUS
+		[objNull, localize "STR_SAA_ZEUS_MODULES_MAIN_PROMOTE_TO_ZEUS_ERROR_ALREADY_ZEUS"] call bis_fnc_showCuratorFeedbackMessage; // SAA_ZEUS_MESSAGES_ERRORALREADYZEUS
 	};
 
 	[_objectUnderCursor] call Shadec_fnc_promoteToZeus;
 	
-}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;
+	[localize "STR_SAA_GENERAL_SUCCESS", localize "STR_SAA_ZEUS_MODULES_MAIN_PROMOTE_TO_ZEUS_SUCCESS", 3] call BIS_fnc_curatorHint;
+	}, "img\Actions\SAA_Logo.paa"] call zen_custom_modules_fnc_register;

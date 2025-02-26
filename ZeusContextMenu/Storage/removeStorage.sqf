@@ -18,4 +18,4 @@ private _removeStorage = [
         {(_hoveredEntity getVariable ["SAA_isStorageProxy", false])}
     }
 ] call zen_context_menu_fnc_createAction;
-private _assignArsenalActionPath = [_removeStorage, [], 0] call zen_context_menu_fnc_addAction;
+private _assignStorageActionPath = [_removeStorage, [], 0] call zen_context_menu_fnc_addAction;

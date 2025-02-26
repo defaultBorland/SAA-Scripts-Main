@@ -21,7 +21,7 @@
 	};
 
 	private _hasInventory = [_objectUnderCursor] call Shadec_fnc_objectHasInventory;
-	private _playersCount = count (["All", "Object"] call Shadec_fnc_usersIDs);
+	private _playersCount = count ([] call Shadec_fnc_getPlayers);
 
 	private _dialog = [
 		["SIDES", [localize "STR_SAA_GENERAL_SIDE", localize "STR_SAA_ZEUS_MODULES_FORTIFY_ASSIGN_FORTIFY_SUPPLY_DIALOG_SIDE_TOOLTIP"],

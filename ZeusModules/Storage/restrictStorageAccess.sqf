@@ -6,7 +6,7 @@
 	params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
 	// All players exclude curators and alive ones
-	private _players = ["all", "object"] call Shadec_fnc_usersIDs;
+	private _players = [] call Shadec_fnc_getPlayers;
 
 	if (count _players < 1) exitWith {
 		[objNull, localize "STR_SAA_ZEUS_MESSAGES_ERROR_NO_NONZEUS_PLAYERS"] call bis_fnc_showCuratorFeedbackMessage;
@@ -30,7 +30,7 @@
 
 	[localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_HEADER",
 		[
-			["COMBO", [localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_DISPLAYNAME", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_TOOLTIP"],
+			["COMBO", [localize "STR_SAA_GENERAL_TARGET", localize "STR_SAA_ZEUS_MODULES_STORAGE_RESTRICT_STORAGE_ACCESS_DIALOG_TARGET_TOOLTIP"],
 				[
 					_returnValues,
 					_displayValues,

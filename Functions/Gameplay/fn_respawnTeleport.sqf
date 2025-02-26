@@ -1,4 +1,5 @@
 // Local execution only
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
 
 fnc_getEmptyVehiclePlace = {
 	params["_vehicle"];

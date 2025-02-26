@@ -71,6 +71,7 @@ private _IDC_loadIndicatorBar = 701;
 private _IDC_rightTabContent = 14;
 private _IDC_rightTabContentListnBox = 15;
 private _IDC_sortRightTab = 17;
+private _IDC_sortRightTabDirection = 171;
 private _IDC_rightSearchbar = 19;
 private _IDC_rightSearchbarButton = 42;
 
@@ -84,6 +85,7 @@ private _IDC_rightSearchbarButton = 42;
     _IDC_rightTabContent,
     _IDC_rightTabContentListnBox,
     _IDC_sortRightTab,
+	_IDC_sortRightTabDirection,
     _IDC_iconBackgroundOptic, 
 	_IDC_iconBackgroundItemAcc, 
 	_IDC_iconBackgroundMuzzle, 

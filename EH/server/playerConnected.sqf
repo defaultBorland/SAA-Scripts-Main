@@ -4,18 +4,9 @@
 _EH_PlayerConnected = addMissionEventHandler ["PlayerConnected", {
 	params["_pcid", "_uid", "_name", "_jip", "_owner"];
 
-    [
-        {missionNamespace getVariable [format["loadoutLoaded_%1", _this # 0], false]}, // Wait when players loadout will be loaded
-        {[_this # 0] call Shadec_fnc_composeAvailiableItems}, // Generate list with available items for player classes
-        [_uid],
-        15,
-        {}
-    ] call CBA_fnc_waitUntilAndExecute;
-
-    // No headless record
+    // Create connection record if not HC
     if (!("headlessclient" in _name)) then {
-		// Create connection record
-		[_uid, _name] call Shadec_fnc_createConnectionRecord;
+		[_uid, _name] call Shadec_db_server_fnc_createConnectionRecord;
 	};
 
 }];

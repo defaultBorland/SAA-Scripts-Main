@@ -8,12 +8,12 @@ missionNamespace setVariable ["storagesProxys", _storages, true];
 
 [_object] call Shadec_fnc_initStorage;
 
-_playersIDs = ["All", "ID"] call Shadec_fnc_usersIDs;
+private _players = [] call Shadec_fnc_getPlayers;
 {
 	[[_object], {
 		[_this # 0] call Shadec_fnc_addActionToStorage;
 	}] remoteExec ["spawn", _x];
-} forEach _playersIDs;
+} forEach _players;
 
 if (_showInfo) then {
 	[[_object],

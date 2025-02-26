@@ -1,7 +1,5 @@
-//
-
 // Only local exec allowed
-if (isDedicated) exitWith {};
+if (!hasInterface) exitWith {diag_log format["%1 | Local only function", __FILE_NAME__]; false};
 
 private _swSavedData = profileNamespace getVariable ["SAA_lastRadioSwSettings", []];
 private _lrSavedData = profileNamespace getVariable ["SAA_lastRadioLrSettings", []];

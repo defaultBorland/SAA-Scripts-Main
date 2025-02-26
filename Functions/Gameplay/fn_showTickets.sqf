@@ -1,6 +1,7 @@
 // Server Side Only
+if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
+
 params ["_unit", "_side"];
-if (!isServer) exitWith {diag_log "fnc_showTickets | Error: Executed not on server side."};
 
 private _sidesInfo = [
 	[east, "#800000", "\A3\UI_F\data\Map\Markers\NATO\o_unknown"], 

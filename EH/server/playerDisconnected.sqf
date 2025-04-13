@@ -6,8 +6,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
 		
-		private _isGuest = toUpper(_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST";
-		if (_isGuest) then {
+		if (_unit getVariable ["SAA_isGuest", false]) then {
 			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
 			missionNamespace setVariable [format["SAA_isGuest_%1", _uid], nil, true];
 		} else {	

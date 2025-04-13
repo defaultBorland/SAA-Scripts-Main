@@ -4,7 +4,11 @@ _action = ["teamManagementMenu", localize "STR_SAA_GENERAL_MENU", "img\Actions\t
 		createDialog "TeamManagementDisplay";
 	},	// Statement
 	{
-		(player isEqualTo (leader group player)) and {(player getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT","SPC"]}
+		(player isEqualTo (leader group player)) 
+		&& {
+			(player getVariable ["SAA_Rank", "PV1"]) isEqualTo "SPC"
+			|| (player getVariable ["SAA_isOfficer", false])
+		}
 	},	// Condition
 	{},
 	[]

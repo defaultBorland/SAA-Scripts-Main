@@ -4,7 +4,10 @@ if (_numComs < 1) exitWith {};
 
 [format["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_PLAYER_INIT_COMMRAND", _initiatorName]] remoteExec ["systemChat", -2];
 
-private _potentialComs = ([side player] call Shadec_fnc_getPlayers) select {(_x getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT"]};
+private _potentialComs = ([side player] call Shadec_fnc_getPlayers) select {
+	!(_x getVariable ["SAA_isGuest", false]) 
+	&& (_x getVariable ["SAA_isOfficer", false])
+};
 
 private _comsStats = [_potentialComs apply {getPlayerUID _x}] call Shadec_db_server_fnc_getCommandingStats;
 private _weights = [];

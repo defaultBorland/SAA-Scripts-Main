@@ -49,8 +49,7 @@ class CfgFunctions
 			class savePlayer {};
 			class saveModlist {};
 			class getOrders {};
-			class eraseOrders {};
-			class changeClasses {};
+			class setOrdersRecieved {};
 			class getRankAndClasses {};
 			class saveRemovedRestrictedItems {};
 
@@ -89,6 +88,7 @@ class CfgFunctions
 			class commandingEnd {};
 
 			class setParticipationZeus {};
+			class getDefaultLoadouts {};
 		};
 	};
 
@@ -124,7 +124,6 @@ class CfgFunctions
 			class rolesAssign {};
 			class showTickets {};
 			class showUserInfo {};
-			class selectRandomLoadout {};
 			class randomCommanders {};
 			class selectPlayerFitGroup {};
 		};

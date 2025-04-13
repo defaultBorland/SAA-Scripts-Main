@@ -5,7 +5,7 @@ private _storageInventory = [_uid] call Shadec_fnc_getStorageInventory;
 if (_storageInventory isEqualTo false) then {
     diag_log format["fnc_getStorageInventory | Error: Trying to save Storage that unaccessible: %1", _uid]}
 else {
-    [_uid, _storageInventory] call Shadec_db_server_fnc_saveStorage;
+    [_uid, _storageInventory, "Delete"] call Shadec_db_server_fnc_saveStorage;
 };
 
 private _pStorage = missionNamespace getVariable [format["pStorage_%1", _uid], objNull];

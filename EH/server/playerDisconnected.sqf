@@ -39,7 +39,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	// Unlock server if no zeus or administrator present
-	private _zeusesAndAdmin = (missionNamespace getVariable "ZeusArray") + ["76561198066438612"];
+	private _zeusesAndAdmin = (missionNamespace getVariable ["ZeusArray", []]) + [getText(missionConfigFile >> "adminUID")];
 	private _allPlayersUIDs = allPlayers apply {getPlayerUID _x};
 
 	if ((_zeusesAndAdmin arrayIntersect _allPlayersUIDs) isEqualTo []) then {

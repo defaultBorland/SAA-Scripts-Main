@@ -13,10 +13,12 @@ respawnOnStart = -1;
 respawnTemplates[] = {"MenuPosition", "Spectator", "Tickets"}; // "Spectator" "Wave"
 saving = 0;
 disabledAI = 1;
-enableDebugConsole[] = {"76561198066438612"};
 debriefing = 0;
 allowProfileGlasses = 0;
 zeusCompositionScriptLevel = 2;
+adminUID = "76561198066438612";
+subAdminUIDs[] = {"76561198036166294", "76561198042919168"};
+enableDebugConsole[] = {"76561198066438612"};
 // skipLobby = 1;
 
 //Function library definitions

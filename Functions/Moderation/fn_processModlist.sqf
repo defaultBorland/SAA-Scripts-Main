@@ -7,7 +7,7 @@ params ["_unit", "_modlist"];
 private _uid = getPlayerUID _unit;
 
 
-if (_uid isEqualTo "76561198066438612") exitWith {[_clientMods, _suspiciousMods, _restrictedMods]};
+if (_uid isEqualTo getText(missionConfigFile >> "adminUID")) exitWith {[_clientMods, _suspiciousMods, _restrictedMods]};
 
 if (
 	!(_unit getVariable ["SAA_isZeus", false]) 

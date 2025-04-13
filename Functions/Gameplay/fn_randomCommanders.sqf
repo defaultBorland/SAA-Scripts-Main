@@ -1,5 +1,7 @@
 params ["_numComs", "_initiatorName"];
 
+private _searchDepth = 10;
+
 if (_numComs < 1) exitWith {};
 
 [format["> Server: " + localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_PLAYER_INIT_COMMRAND", _initiatorName]] remoteExec ["systemChat", -2];
@@ -9,7 +11,7 @@ private _potentialComs = ([side player] call Shadec_fnc_getPlayers) select {
 	&& (_x getVariable ["SAA_isOfficer", false])
 };
 
-private _comsStats = [_potentialComs apply {getPlayerUID _x}] call Shadec_db_server_fnc_getCommandingStats;
+private _comsStats = [_potentialComs apply {getPlayerUID _x}, _searchDepth] call Shadec_db_server_fnc_getCommandingStats;
 private _weights = [];
 private _players = [];
 private _max = selectMax (_comsStats apply {_x # 1});
@@ -19,14 +21,12 @@ private _min = selectMin (_comsStats apply {_x # 1});
 	private _index = (_comsStats apply {_x # 0}) findIf {_x isEqualTo _uid};
 	if (_index > -1) then {
 		private _stats = _comsStats # _index # 1;
-		_weights pushBack (linearConversion [_min, _max, _stats, _max, _min]);
+		_weights pushBack (linearConversion [0, _searchDepth, _stats, _searchDepth, 0]); // min, max, value, max, min
 	} else {
-		_weights pushBack 5;
+		_weights pushBack _searchDepth;
 	};
 	_players pushBack _x;
 } forEach _potentialComs;
-
-_weights = _weights apply {_x * 2};
 
 private _weightsTotal = [_weights] call Shadec_fnc_sumArray;
 

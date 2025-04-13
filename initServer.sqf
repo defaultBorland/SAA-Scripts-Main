@@ -70,7 +70,9 @@ if (missionNamespace getVariable ["SAA_isDebug", false]) then {
 		if (count _players < 1) then { continue };
 		{
 			{
-				[player, "Timed"] call Shadec_db_client_fnc_savePlayer;
+				[player, getPlayerUID player, "Timed"] call Shadec_db_client_fnc_saveInventory;
+				//[getPlayerUID player, "Timed"] call Shadec_db_client_fnc_saveStorage;
+				[] call Shadec_fnc_savePlayerRadioSettings;
 			} remoteExec ["call", _x];
 		} forEach _players;
 		["Players data saving...", "Info"] call Shadec_fnc_createLogServer;

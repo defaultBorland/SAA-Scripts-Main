@@ -10,7 +10,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
 			missionNamespace setVariable [format["SAA_isGuest_%1", _uid], nil, true];
 		} else {	
-			[_uid, getUnitLoadout _unit] spawn Shadec_db_server_fnc_saveInventory; // Shadec_fnc_savePlayer
+			[_uid, getUnitLoadout _unit, "Disconnect"] spawn Shadec_db_server_fnc_saveInventory;
 		};
 		[_uid] spawn Shadec_fnc_deleteStorage;
 

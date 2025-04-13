@@ -25,9 +25,6 @@ _EH_StorageOpened = player addEventHandler ["InventoryOpened", {
 _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 
-    // Save inventory
-    [player, getPlayerUID player] spawn Shadec_db_client_fnc_saveInventory;
-
     // If not storage - exit
     if !(_container getVariable ["SAA_isPersonalStorage", false]) exitWith {};
 
@@ -55,8 +52,8 @@ _EH_StorageClosed = player addEventHandler ["InventoryClosed", {
             _container setVariable ["Take", false];
         };
 
-        //[getPlayerUID player] spawn Shadec_db_client_fnc_saveStorage;
-        [player, "Storage exit"] call Shadec_db_client_fnc_savePlayer;
+        [player, getPlayerUID player, "Storage exit"] spawn Shadec_db_client_fnc_saveInventory;
+        [getPlayerUID player, "Storage exit"] spawn Shadec_db_client_fnc_saveStorage;
     };
 }];
 

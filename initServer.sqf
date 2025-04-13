@@ -47,7 +47,7 @@ missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, tru
 
 // Timed Players Saving
 [] spawn {
-	if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
+	if (missionNamespace getVariable ["SAA_isDebug", false]) exitWith {false};
 	while {true} do {
 		sleep (10 * 60);
 		if !(missionNamespace getVariable ["SAA_PlayersTimedSaving", true]) exitWith {};

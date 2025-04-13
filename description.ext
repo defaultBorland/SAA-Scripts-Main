@@ -7,7 +7,7 @@ briefingName = "SAA Server";
 onLoadName = "SAA Project [DEV]";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
-respawnDelay = 120;
+respawnDelay = 150;
 respawnButton = 0;
 respawnOnStart = -1;
 respawnTemplates[] = {"MenuPosition", "Spectator", "Tickets"}; // "Spectator" "Wave"
@@ -237,8 +237,7 @@ class CfgFunctions
 };
 
 //Remote execution config
-class CfgRemoteExec
-{
+class CfgRemoteExec {
     class Functions {
 		mode = 2;
 		jip = 1;
@@ -246,8 +245,7 @@ class CfgRemoteExec
     };
 };
 
-class CfgDebriefing
-{  
+class CfgDebriefing {
 	class Win {
 		title = "$STR_SAA_DEBRIEFING_WIN_TITLE";
 		subtitle = "$STR_SAA_DEBRIEFING_WIN_SUBTITLE";

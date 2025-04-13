@@ -1,5 +1,19 @@
 // Disable writes to DB (not reads)
 missionNamespace setVariable ["SAA_isDebug", true, true];
+
+// Special mission setup
+missionNamespace setVariable ["SAA_isMissionSpecial", false, true];
+// missionNamespace setVariable ["SAA_missionSpecial_loadStorage", true, true];
+// missionNamespace setVariable ["SAA_missionSpecial_processOrders", false, true];
+// missionNamespace setVariable ["SAA_missionSpecial_clearTable", true, true];
+
+// Check for HCs
+if (!(missionNamespace getVariable ["SAA_isDebug", false])
+	&& {count(entities "HeadlessClient_F") < 1}) exitWith {
+	["No HC-entities are present in mission! Please FIX. All server scripts stopped, server locked.", "Warning"] call Shadec_fnc_createLogServer;
+	"f5znFms2" serverCommand "#lock";
+};
+
 // Connect to database
 [] execVM "Functions\Database_server\connectDB.sqf";
 
@@ -21,11 +35,6 @@ missionNamespace setVariable ["SAA_SaaBoxAddons", [] call Shadec_fnc_getShadecBo
 missionNamespace setVariable ["respawnTime", getNumber (missionConfigFile >> "respawnDelay"), true];
 missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, true];
 
-[{
-	[] call Shadec_db_server_fnc_getGarageVehicles;
-	[] call Shadec_db_server_fnc_createMission;
-}, [], 3] call CBA_fnc_waitAndExecute;
-
 {deleteMarker _x} forEach (allMapMarkers select {"respawn" in _x});
 
 { // Nulify respawn tickets for each side
@@ -33,17 +42,23 @@ missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, tru
 	[_x, -1] call BIS_fnc_respawnTickets;
 } forEach [west, east, independent, civilian];
 
+
+
 ["Server Console Extention Initialization..."] call Shadec_fnc_createLogServer;
 "f5znFms2" serverCommand "#monitords 60";
 "f5znFms2" serverCommand "#shutdownaftermission";
 
-["Warning! Debug Session Enabled. No saving!", "Warning"] call Shadec_fnc_createLogServer;
+if (missionNamespace getVariable ["SAA_isDebug", false]) then {
+	["Warning! Debug Session Enabled. No saving!", "Warning"] call Shadec_fnc_createLogServer;
+};
 
-// Special mission setup
-// missionNamespace setVariable ["SAA_isMissionSpecial", true, true];
-// missionNamespace setVariable ["SAA_missionSpecial_loadStorage", true, true];
-// missionNamespace setVariable ["SAA_missionSpecial_processOrders", false, true];
-// missionNamespace setVariable ["SAA_missionSpecial_clearTable", true, true];
+// TODO: change to waitUntil connectDB.sfq
+[{
+	[] call Shadec_db_server_fnc_createMission;
+	[] call Shadec_Pythia_fnc_syncSupabaseToMariaDb;
+	[] call Shadec_db_server_fnc_getGarageVehicles;
+}, [], 3] call CBA_fnc_waitAndExecute;
+
 
 // Timed Players Saving
 [] spawn {

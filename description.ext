@@ -89,6 +89,16 @@ class CfgFunctions
 
 			class setParticipationZeus {};
 			class getDefaultLoadouts {};
+
+			class savePythiaLog {};
+		};
+	};
+
+	class Shadec_Pythia {
+		class Pythia {
+			class syncSupabaseToMariaDb {};
+			class syncMariaDbToSupabase {};
+			class processParticipation {};
 		};
 	};
 

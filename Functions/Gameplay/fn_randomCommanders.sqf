@@ -51,6 +51,10 @@ for "_i" from 1 to _numComs do {
 {
 	{
 		while {dialog} do {closeDialog 0};
-		[format["<t size='1'>%1</t>", localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_YOU_WERE_CHOSEN"], -1, -1, 6, 1, 0] spawn BIS_fnc_dynamicText;
+		[
+			localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_MESSAGE_YOU_WERE_CHOSEN",
+			localize "STR_SAA_GENERAL_NOTIFICATION",
+			"OK"
+		] spawn BIS_fnc_guiMessage;
 	} remoteExec ["call", _x];
 } forEach _selectedComs;

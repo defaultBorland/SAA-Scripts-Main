@@ -1,3 +1,5 @@
+// Disable writes to DB (not reads)
+missionNamespace setVariable ["SAA_isDebug", true, true];
 // Connect to database
 [] execVM "Functions\Database_server\connectDB.sqf";
 
@@ -35,8 +37,6 @@ missionNamespace setVariable ["ace_medical_engine_disableSeatLocking", true, tru
 "f5znFms2" serverCommand "#monitords 60";
 "f5znFms2" serverCommand "#shutdownaftermission";
 
-// Disable writes to DB (not reads)
-missionNamespace setVariable ["isDebug", true, true];
 ["Warning! Debug Session Enabled. No saving!", "Warning"] call Shadec_fnc_createLogServer;
 
 // Special mission setup

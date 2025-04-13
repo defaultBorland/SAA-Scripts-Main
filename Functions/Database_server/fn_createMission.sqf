@@ -1,6 +1,6 @@
 // Server-side only
 if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
-if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
+if (missionNamespace getVariable ["SAA_isDebug", false]) exitWith {false};
 
 systemTime params ["_year", "_month", "_day", "_hours", "_minutes"];
 

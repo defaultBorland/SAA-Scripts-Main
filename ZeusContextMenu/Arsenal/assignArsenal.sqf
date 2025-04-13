@@ -8,7 +8,7 @@ private _assignArsenalRoot = [
 
         (player getVariable ["SAA_Context_Toggled", false]) 
         && {_hoveredEntity isEqualType objNull} 
-        //&& {_hoveredEntity isNotEqualTo objNull} 
+        && {_hoveredEntity isNotEqualTo objNull} 
         && {!(_hoveredEntity isKindOf "Man")} 
         && {!(_hoveredEntity getVariable ["SAA_isArsenal", false])}
     }, 

@@ -434,6 +434,11 @@
             <Russian>Цель</Russian>
         </Key>
 
+        <Key ID="STR_SAA_GENERAL_NOTIFICATION"> 
+            <Original>Notification</Original> 
+            <Russian>Уведомление</Russian> 
+        </Key>
+
         <Key ID="STR_SAA_RESPAWN_MESSAGE_TITLE"> 
             <Original>Back In Action</Original> 
             <Russian>Снова в строю</Russian> 

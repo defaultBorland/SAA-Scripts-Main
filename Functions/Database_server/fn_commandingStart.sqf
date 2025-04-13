@@ -1,6 +1,6 @@
 // Server-side only
 if (!isDedicated) exitWith {diag_log format["%1 | Server only function", _fnc_scriptName]; false};
-if (missionNamespace getVariable ["isDebug", false]) exitWith {false};
+if (missionNamespace getVariable ["SAA_isDebug", false]) exitWith {false};
 if (missionNamespace getVariable ["SAA_missionEnded", false]) exitWith {false};
 
 params ["_groupid", "_uid"];

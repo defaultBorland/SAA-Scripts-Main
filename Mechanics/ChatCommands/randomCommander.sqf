@@ -2,7 +2,7 @@
 ["comrand", {
     params ["_num"];
 
-	if !((player getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT"]) exitWith {};
+	if !(player getVariable ["SAA_isOfficer", false]) exitWith {};
 
 	private _minIntervalLocal = 60;
 	private _minIntervalGlobal = 30;
@@ -30,7 +30,10 @@
 		systemChat format ["> Server: %1", localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_BE_GREATER_THAN_ONE"];
 	};
 
-	private _potentialCommandersNum = count (([side player] call Shadec_fnc_getPlayers) select {(_x getVariable ["SAA_Rank", "PV1"]) in ["CPT","1LT","2LT","CWO","WO1","SMC","MSG","SSG","SGT"]});
+	private _potentialCommandersNum = count (([side player] call Shadec_fnc_getPlayers) select {
+		!(_x getVariable ["SAA_isGuest", false])
+		&& (_x getVariable ["SAA_isOfficer", false])
+	});
 
 	if (_num > _potentialCommandersNum) exitWith {
 		systemChat format ["> Server: %1: %2", localize "STR_SAA_CHAT_COMMANDS_RANDOM_COMMANDERS_ERROR_MUST_NOT_BE_GREATER_THAN_POTENTIAL_COMMANDERS", _potentialCommandersNum];

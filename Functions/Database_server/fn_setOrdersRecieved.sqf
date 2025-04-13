@@ -2,7 +2,7 @@
 if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
 if (missionNamespace getVariable ["SAA_isDebug", false]) exitWith {false};
 
-params ["_groupid", "_uid", "_context"];
+params ["_uid"];
 
 private _mission = missionNamespace getVariable "MissionID";
 if (isNil {_mission}) exitWith {
@@ -10,10 +10,6 @@ if (isNil {_mission}) exitWith {
 	false
 };
 
-if (isNil {_uid}) then {
-    "Extdb3" callExtension format ["0:%1:endCommanding:%2:%3:%4", PROTOCOL, _mission, _groupid, _context];
-} else {
-    "Extdb3" callExtension format ["0:%1:endCommandingUid:%2:%3:%4", PROTOCOL, _mission, _uid, _context];
-};
+"Extdb3" callExtension format ["1:%1:setOrdersRecieved:%2:%3", PROTOCOL, _mission, _uid];
 
 true

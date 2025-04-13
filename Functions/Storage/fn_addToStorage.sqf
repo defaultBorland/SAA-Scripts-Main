@@ -32,7 +32,7 @@ switch (_action) do {
 		deliveredItems = nil;
 		// diag_log format ["DELIVERED ITEMS %1: %2", _uid, _allDelivered];
 
-		[_uid] spawn Shadec_db_server_fnc_eraseOrders;
+		[_uid] spawn Shadec_db_server_fnc_setOrdersRecieved;
 	};
 	default {diag_log format  ["Invalid action. Player: %1", _uid]};
 };

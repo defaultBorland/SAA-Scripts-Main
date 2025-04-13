@@ -9,19 +9,21 @@ if (missionNamespace getVariable ["SAA_isMissionSpecial", false]) exitWith {
 
 private _return = "Extdb3" callExtension format ["0:%1:loadPlayer:%2", PROTOCOL, _uid];
 private _data = [_return, true] call Shadec_db_server_fnc_processExtensionReturn;
-if !(isNil {_data}) then {
-    _data params ["_rank", "_pclass", "_sclass", "_inventory", "_storage"];
+if !(isNil {_data} || {(_data # 3) isEqualTo "" || (_data # 4) isEqualTo ""}) then {
+    _data params ["_rank", "_pclass", "_sclass", "_inventory", "_storage", "_is_guest", "_is_officer"];
 
     _unit setVariable ["SAA_Rank", _rank, true];
     _unit setVariable ["SAA_PrimaryClass", _pclass, true];
-    _unit setVariable ["SAA_SecondaryClass", _sclass, true];
+    _unit setVariable ["SAA_SecondaryClass", [_sclass, "None"] select (_sclass isEqualTo ""), true];
+    _unit setVariable ["SAA_isGuest", _is_guest, true];
+    _unit setVariable ["SAA_isOfficer", _is_officer, true];
 
     [_unit, "Assign"] spawn Shadec_fnc_rolesAssign;
 
     private _orders = [_uid] call Shadec_db_server_fnc_getOrders;
     [_storage, owner _unit, _uid, _orders] spawn Shadec_fnc_createStorage;
 
-    if (_rank isEqualTo "GUEST") then {
+    if (_is_guest) then {
         missionNamespace setVariable [format["SAA_isGuest_%1", _uid], true, true];
         private _guestLoadout = missionNamespace getVariable [format["SAA_GuestLoadout_%1", getPlayerUID _unit], nil];
         if (!isNil{_guestLoadout}) then {_inventory = _guestLoadout};
@@ -54,11 +56,11 @@ if !(isNil {_data}) then {
     }] call CBA_fnc_waitUntilAndExecute;
 
     // diag_log format ["%1's info was loaded. Rank: %2 | PClass: %3 | SClass: %4 | Inventory: %5 | Storage: %6 | PurchaseOrder: %7 | UID: %8", name _unit, _rank, _pclass, _sclass, _inventory, _storage, _orders, _uid];
-} else { 
+} else {
     // Player is not exists in db, create a new one
-    private _loadout = call Shadec_fnc_selectRandomLoadout;
+    private _loadouts = call Shadec_db_server_fnc_getDefaultLoadouts;
 
-    "Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, _uid, str name _unit, _loadout];
+    "Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, _uid, name _unit, selectRandom _loadouts];
     sleep 3;
     [_uid, _unit] spawn Shadec_db_server_fnc_loadPlayer;
 };

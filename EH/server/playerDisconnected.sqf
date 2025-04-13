@@ -6,12 +6,11 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	
 	if (missionNamespace getVariable [format["loadoutLoaded_%1", _uid], false]) then { // If player load correctly
 		
-		private _isGuest = toUpper(_unit getVariable ["SAA_Rank", "PV1"]) isEqualTo "GUEST";
-		if (_isGuest) then {
+		if (_unit getVariable ["SAA_isGuest", false]) then {
 			missionNamespace setVariable [format["SAA_GuestLoadout_%1", _uid], getUnitLoadout _unit, true];
 			missionNamespace setVariable [format["SAA_isGuest_%1", _uid], nil, true];
 		} else {	
-			[_uid, getUnitLoadout _unit] spawn Shadec_db_server_fnc_saveInventory; // Shadec_fnc_savePlayer
+			[_uid, getUnitLoadout _unit, "Disconnect"] spawn Shadec_db_server_fnc_saveInventory;
 		};
 		[_uid] spawn Shadec_fnc_deleteStorage;
 
@@ -39,7 +38,7 @@ _EH_PlayerDisconnected = addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	// Unlock server if no zeus or administrator present
-	private _zeusesAndAdmin = (missionNamespace getVariable "ZeusArray") + ["76561198066438612"];
+	private _zeusesAndAdmin = (missionNamespace getVariable ["ZeusArray", []]) + [getText(missionConfigFile >> "adminUID")];
 	private _allPlayersUIDs = allPlayers apply {getPlayerUID _x};
 
 	if ((_zeusesAndAdmin arrayIntersect _allPlayersUIDs) isEqualTo []) then {

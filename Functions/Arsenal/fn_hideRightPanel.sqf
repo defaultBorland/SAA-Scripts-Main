@@ -25,37 +25,40 @@ private _IDC_buttonMisc = 38;
 private _IDC_buttonRemoveAllSelected = 39;
 private _IDC_buttonRemoveAll = 40;
 
+private _IDCs_rightPanelCustomButtons = [61, 63, 65, 67, 69, 71, 73, 75, 77, 79];
+private _IDCs_rightPanelCustomBackgrounds = [60, 62, 64, 66, 68, 70, 72, 74, 76, 78];
+
 //private _IDC_tabRight = ;
 private _IDC_arrowMinus = 101;
 private _IDC_arrowPlus = 102;
 
 // private _RIGHT_PANEL_ACC_IDCS = [
-// 	_IDC_buttonOptic, 
-// 	_IDC_buttonItemAcc, 
-// 	_IDC_buttonMuzzle, 
+// 	_IDC_buttonOptic,
+// 	_IDC_buttonItemAcc,
+// 	_IDC_buttonMuzzle,
 // 	_IDC_buttonBipod
 // ];
 
 // private = _RIGHT_PANEL_ACC_BACKGROUND_IDCS = [
-// 	_IDC_iconBackgroundOptic, 
-// 	_IDC_iconBackgroundItemAcc, 
-// 	_IDC_iconBackgroundMuzzle, 
+// 	_IDC_iconBackgroundOptic,
+// 	_IDC_iconBackgroundItemAcc,
+// 	_IDC_iconBackgroundMuzzle,
 // 	_IDC_iconBackgroundBipod
 // ];
 
 // private _RIGHT_PANEL_ITEMS_IDCS = [
-// 	_IDC_buttonMag, 
-// 	_IDC_buttonMagALL, 
-// 	_IDC_buttonThrow, 
-// 	_IDC_buttonPut, 
+// 	_IDC_buttonMag,
+// 	_IDC_buttonMagALL,
+// 	_IDC_buttonThrow,
+// 	_IDC_buttonPut,
 // 	_IDC_buttonMisc
 // ];
 
 // private _RIGHT_PANEL_ITEMS_BACKGROUND_IDCS = [
-// 	_IDC_iconBackgroundMag, 
-// 	_IDC_iconBackgroundMagALL, 
-// 	_IDC_iconBackgroundThrow, 
-// 	_IDC_iconBackgroundPut, 
+// 	_IDC_iconBackgroundMag,
+// 	_IDC_iconBackgroundMagALL,
+// 	_IDC_iconBackgroundThrow,
+// 	_IDC_iconBackgroundPut,
 // 	_IDC_iconBackgroundMisc
 // ];
 
@@ -77,8 +80,9 @@ private _IDC_rightSearchbarButton = 42;
 
 {
 	(_display displayCtrl _x) ctrlShow false;
+	(_display displayCtrl _x) ctrlEnable false;
 	(_display displayCtrl _x) ctrlCommit 0;
-} forEach [
+} forEach ([
 	_IDC_blockRightFrame,
     _IDC_blockRighttBackground,
     _IDC_loadIndicator,
@@ -86,24 +90,25 @@ private _IDC_rightSearchbarButton = 42;
     _IDC_rightTabContentListnBox,
     _IDC_sortRightTab,
 	_IDC_sortRightTabDirection,
-    _IDC_iconBackgroundOptic, 
-	_IDC_iconBackgroundItemAcc, 
-	_IDC_iconBackgroundMuzzle, 
+    _IDC_iconBackgroundOptic,
+	_IDC_iconBackgroundItemAcc,
+	_IDC_iconBackgroundMuzzle,
 	_IDC_iconBackgroundBipod,
-    _IDC_buttonOptic, 
-	_IDC_buttonItemAcc, 
-	_IDC_buttonMuzzle, 
+    _IDC_buttonOptic,
+	_IDC_buttonItemAcc,
+	_IDC_buttonMuzzle,
 	_IDC_buttonBipod,
-    _IDC_buttonMag, 
-	_IDC_buttonMagALL, 
-	_IDC_buttonThrow, 
-	_IDC_buttonPut, 
+    _IDC_buttonMag,
+	_IDC_buttonMagALL,
+	_IDC_buttonThrow,
+	_IDC_buttonPut,
 	_IDC_buttonMisc,
-    _IDC_iconBackgroundMag, 
-	_IDC_iconBackgroundMagALL, 
-	_IDC_iconBackgroundThrow, 
-	_IDC_iconBackgroundPut, 
+    _IDC_iconBackgroundMag,
+	_IDC_iconBackgroundMagALL,
+	_IDC_iconBackgroundThrow,
+	_IDC_iconBackgroundPut,
 	_IDC_iconBackgroundMisc,
+	_IDC_buttonRemoveAllSelected,
     _IDC_buttonRemoveAll,
     _IDC_rightSearchbar,
     _IDC_rightSearchbarButton,
@@ -113,4 +118,4 @@ private _IDC_rightSearchbarButton = 42;
     _IDC_iconBackgroundCurrentMag2,
 	_IDC_arrowMinus,
 	_IDC_arrowPlus
-];
+] + _IDCs_rightPanelCustomButtons + _IDCs_rightPanelCustomBackgrounds);

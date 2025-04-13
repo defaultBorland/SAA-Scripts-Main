@@ -7,16 +7,18 @@ briefingName = "SAA Server";
 onLoadName = "SAA Project [DEV]";
 //loadScreen 		= "img\logo.jpg";
 respawn = 3;
-respawnDelay = 120;
+respawnDelay = 150;
 respawnButton = 0;
 respawnOnStart = -1;
 respawnTemplates[] = {"MenuPosition", "Spectator", "Tickets"}; // "Spectator" "Wave"
 saving = 0;
 disabledAI = 1;
-enableDebugConsole[] = {"76561198066438612"};
 debriefing = 0;
 allowProfileGlasses = 0;
 zeusCompositionScriptLevel = 2;
+adminUID = "76561198066438612";
+subAdminUIDs[] = {"76561198036166294", "76561198042919168"};
+enableDebugConsole[] = {"76561198066438612"};
 // skipLobby = 1;
 
 //Function library definitions
@@ -29,7 +31,6 @@ class CfgFunctions
 			class loadStorage {};
 			class saveStorage {};
             class loadPlayer {};
-            class savePlayer {};
 			class saveModlist {};
 			class createDeadRecord {};
 			class updateDeadRecord {};
@@ -44,11 +45,9 @@ class CfgFunctions
 			class loadStorage {};
 			class saveStorage {};
 			class loadPlayer {};
-			class savePlayer {};
 			class saveModlist {};
 			class getOrders {};
-			class eraseOrders {};
-			class changeClasses {};
+			class setOrdersRecieved {};
 			class getRankAndClasses {};
 			class saveRemovedRestrictedItems {};
 
@@ -87,6 +86,17 @@ class CfgFunctions
 			class commandingEnd {};
 
 			class setParticipationZeus {};
+			class getDefaultLoadouts {};
+
+			class savePythiaLog {};
+		};
+	};
+
+	class Shadec_Pythia {
+		class Pythia {
+			class syncSupabaseToMariaDb {};
+			class syncMariaDbToSupabase {};
+			class processParticipation {};
 		};
 	};
 
@@ -122,7 +132,6 @@ class CfgFunctions
 			class rolesAssign {};
 			class showTickets {};
 			class showUserInfo {};
-			class selectRandomLoadout {};
 			class randomCommanders {};
 			class selectPlayerFitGroup {};
 		};
@@ -235,8 +244,7 @@ class CfgFunctions
 };
 
 //Remote execution config
-class CfgRemoteExec
-{
+class CfgRemoteExec {
     class Functions {
 		mode = 2;
 		jip = 1;
@@ -244,8 +252,7 @@ class CfgRemoteExec
     };
 };
 
-class CfgDebriefing
-{  
+class CfgDebriefing {
 	class Win {
 		title = "$STR_SAA_DEBRIEFING_WIN_TITLE";
 		subtitle = "$STR_SAA_DEBRIEFING_WIN_SUBTITLE";

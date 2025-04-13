@@ -39,7 +39,7 @@ private _allMods = missionNamespace getVariable ["SAA_AllMods", []];
 	if !(_modHash in _restrictedModsHashes) then { continue };
 	
 	_userIds params ["_uid", "_name"];
-	if (_uid isEqualTo "76561198066438612") then { continue };
+	if (_uid isEqualTo getText(missionConfigFile >> "adminUID")) then { continue };
 	
 	private _player = [_uid] call Shadec_fnc_getPlayer;
 	if (_player getVariable ["SAA_isZeus", false]) then { continue };

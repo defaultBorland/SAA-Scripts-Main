@@ -1,47 +1,28 @@
 // Server-side only
 if (!isDedicated) exitWith {diag_log format["%1 | Server only function", __FILE_NAME__]; false};
 
-params ["_uids"];
+params ["_uids", "_searchDepth"];
 
 private _sql = format [
 "
-    SELECT
-        CONCAT ('""', S_PCS.uid, '""')
-        , S_PCS.cnt
+    SELECT 
+        CONCAT ('""', s.uid_player, '""') com_uid
+        , SUM(if(s.role = 'C', 1, 0)) com_cnt
     FROM (
-        SELECT 
-            S_PP.mission mission
-            , S_PP.name name
-            , S_PP.uid uid
-            , COUNT(uid) OVER (PARTITION BY uid) cnt
-        FROM (
-            SELECT
-                M.id AS mission
-                , P.name AS name
-                , p.uid AS uid
-                , SUM(TIMESTAMPDIFF(MINUTE, PC.connected, PC.disconnected)) AS PT_sum
-                , (TIMESTAMPDIFF(MINUTE, M.`start`, M.`end`) - 45) AS M_time
-                , RANK() OVER (PARTITION BY P.uid ORDER BY m.id DESC) AS RNK
-            FROM players_connections PC
-            JOIN missions M
-                ON M.id = PC.mission
-            JOIN players P
-                ON P.uid = PC.uid
-            WHERE P.uid IN (%1)
-            GROUP BY P.name, M.id
-        ) S_PP
-        LEFT JOIN missions m
-            ON S_PP.mission = m.id 
-                AND m.commanders LIKE CONCAT('%2', S_PP.uid, '%2')
-                AND m.zeuses NOT LIKE CONCAT('%2', S_PP.uid, '%2')
-        WHERE ROUND(S_PP.PT_sum / S_PP.M_time, 2) * 100 > 40
-            AND RNK > 1 AND RNK < 7
-            AND m.id IS NOT NULL
-        ORDER BY 2 ASC, 1 DESC
-    ) S_PCS
-    GROUP BY S_PCS.uid, S_PCS.cnt
+        SELECT
+            pmp.*
+            , pmpr.code role
+            , ROW_NUMBER() OVER (PARTITION BY uid_player ORDER BY uid_mission DESC) row_cnt
+        FROM players_mission_participation pmp
+        INNER JOIN players_mission_participation_roles pmpr
+            ON pmp.id_role = pmpr.id
+        WHERE uid_player IN (%1)
+            AND pmpr.code <> 'Z'
+    ) s
+    WHERE s.row_cnt < %2
+    GROUP BY uid_player
     ;
-", _uids apply {"'" + _x + "'"} joinString ", ", "%"];
+", _uids apply {"'" + _x + "'"} joinString ", ", _searchDepth + 1];
 
 private _return = "Extdb3" callExtension format ["0:SQL:%1", _sql];
 if (true) exitWith { [_return] call Shadec_db_server_fnc_processExtensionReturn };

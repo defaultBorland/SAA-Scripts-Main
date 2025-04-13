@@ -6,11 +6,12 @@ params ["_uid", "_unit"];
 private _return = "Extdb3" callExtension format ["0:%1:loadPlayerSpecial:%2", PROTOCOL, _uid];
 private _data = [_return, true] call Shadec_db_server_fnc_processExtensionReturn;
 if !(isNil {_data}) then {
-    _data params ["_rank", "_pclass", "_sclass", "_inventory", "_storage"];
+    _data params ["_rank", "_pclass", "_sclass", "_inventory", "_storage", "_is_guest"];
 
     _unit setVariable ["SAA_Rank", _rank, true];
     _unit setVariable ["SAA_PrimaryClass", _pclass, true];
-    _unit setVariable ["SAA_SecondaryClass", _sclass, true];
+    _unit setVariable ["SAA_SecondaryClass", [_sclass, "None"] select (_sclass isEqualTo ""), true];
+    _unit setVariable ["SAA_isGuest", _is_guest];
 
     [_unit, "Assign"] spawn Shadec_fnc_rolesAssign;
     
@@ -19,7 +20,7 @@ if !(isNil {_data}) then {
         [_storage, owner _unit, _uid, _orders] spawn Shadec_fnc_createStorage;
     //};
 
-    if (_rank isEqualTo "GUEST") then {
+    if (_is_guest) then {
         missionNamespace setVariable [format["SAA_isGuest_%1", _uid], true, true];
         private _guestLoadout = missionNamespace getVariable [format["SAA_GuestLoadout_%1", getPlayerUID _unit], nil];
         if (!isNil{_guestLoadout}) then {_inventory = _guestLoadout};
@@ -54,13 +55,26 @@ if !(isNil {_data}) then {
     }] call CBA_fnc_waitUntilAndExecute;
 } else { 
     // Player is not exists in db, create a new one
+    private _loadouts = call Shadec_db_server_fnc_getDefaultLoadouts;
+    "Extdb3" callExtension format ["0:%1:newPlayer:%2:%3:%4", PROTOCOL, _uid, str name _unit, selectRandom _loadouts];
+
+    // Player is not exists in db special, create a new one
     private _loadout = getUnitLoadout _unit;
     
     private _ranksAndClasses = [_uid] call Shadec_db_server_fnc_getRankAndClasses;
     _ranksAndClasses params [["_rank", "PV1"], ["_primaryClass", "Rifleman"], ["_secondaryClass", "None"]];
 
-    "Extdb3" callExtension format ["0:%1:newPlayerSpecial:%2:%3:%4:%5:%6:%7", PROTOCOL, _uid, name _unit, _loadout, _rank, _primaryClass, _secondaryClass];
+    _secondaryClass = [_secondaryClass, "None"] select (_secondaryClass isEqualTo "");
 
-    sleep 3;
+    "Extdb3" callExtension format ["0:%1:newPlayerSpecial:%2:%3:%4:%5:%6:%7", PROTOCOL, 
+        _uid, 
+        name _unit, 
+        _rank, 
+        _primaryClass, 
+        _secondaryClass, 
+        _loadout 
+    ];
+
+    sleep 1;
     [_uid, _unit] spawn Shadec_db_server_fnc_loadPlayerSpecial;
 };
